@@ -2,25 +2,33 @@ const mysql  = require('mysql')
 
 /** call database */
 const db = mysql.createPool({
-  host: process.env.host,
-  user: process.env.user,
+  user: "root",
+  host: "localhost",
   password: "",
-  database:  process.env.database,
+  database: "jtcindia_admin",
+  dateStrings:true,
+  waitForConnections: true,
+  connectionLimit: 50,
+  queueLimit: 50,
 });
 
 /** database connection for all Api's */
-exports.executeQuery = async (newQuery, args) => {
+export const executeQuery = async (newQuery, args) => {
   try {
+  
     return new Promise(async (resolve, reject) => {
       db.getConnection((err, connection) => {
         if (err) {
           return;
         }
         connection.query(newQuery, args, async (err, data) => {
+        
           if (data) {
-            const value = resolve(data);
+           return resolve(data);
             connection.release();
+     
             return value;
+
           } else {
             const value = reject(err);
             connection.release();
