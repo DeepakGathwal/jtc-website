@@ -1,0 +1,87 @@
+import React from 'react'
+
+export default function Header() {
+  return (
+    <>
+      <header className="edu-header header-style-2 disable-transparent header-sticky">
+            <div className="row align-items-center">
+                <div className="col-lg-6 col-xl-2 col-md-6 col-6">
+                    <div className="logo">
+                        <a href="https://www.jtcindia.org">
+                            <img className="logo-light" src="assets/images/logo/logo.webp" alt="JTC LOGO" />
+                        </a>
+                    </div>
+                </div>
+
+                <div className="col-lg-6 d-none d-xl-block">
+                    <nav className="mainmenu-nav">
+                        <ul className="mainmenu">
+                            <li className="has-droupdown"><a href="https://www.jtcindia.org">Home</a></li>
+                            <li className="has-droupdown"><a href="https://www.jtcindia.org/about_us.php">About Us</a></li>
+                            <li className="has-droupdown"><a href="https://www.jtcindia.org/courses.php">Courses</a>
+                              
+                            </li>
+                            <li className="has-droupdown"><a href="https://www.jtcindia.org/tutorials/index.php">Tutorial</a></li>
+							<li className="has-droupdown "><a className="popup-btn" data-popup="hirefrom" href="javascript:;">Hire from Us</a></li>
+							<li className="has-droupdown"><a className="popup-btn" data-popup="joinNow" href="javascript:;" >Join Us</a></li>
+                            <li className="has-droupdown"><a href="https://www.jtcindia.org/blog">Blog</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div className="col-lg-6 col-xl-4 col-md-6 col-6">
+                    <div className="header-right d-flex justify-content-end">
+                        <div className="header-menu-bar">
+                            <div className="call-icon d-none d-md-block">
+                                <a href="tel:09990699111" className="edu-btn btn-medium left-icon btn-white">
+<i className="ri-phone-fill"></i> +91-999-0699-111</a>
+                            </div>
+                            <div className="quote-icon quote-user d-block d-md-none ml--15 ml_sm--5">
+                                <a className="white-box-icon popup-btn" href="tel:09990699111"><i className="ri-phone-fill"></i> </a>
+                            </div>
+                            <div className="quote-icon quote-user d-none d-md-block ml--15">
+                                <a className="edu-btn btn-medium left-icon btn-white popup-btn" data-popup="enqNow" href="javascript:;"><i className="ri-chat-1-line"></i>Enquire Now</a>
+                            </div>
+
+                            <div className="quote-icon quote-user d-block d-md-none ml--15 ml_sm--5">
+                                <a className="white-box-icon popup-btn" data-popup="enqNow" href="javascript:;"><i className="ri-chat-1-line"></i></a>
+                            </div>
+
+                            <div className="mobile-menu-bar ml--15 ml_sm--5 d-block d-xl-none">
+                                <div className="hamberger">
+                                    <button className="white-box-icon hamberger-button">
+                                        <i className="ri-menu-line"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           
+            </div>
+        </header>
+
+
+    
+    </>
+  )
+}
+
+//             $(window).ready(function() {	  
+//  $('.mega-menu').hide();
+// $("nav.inline-menu ul li").click(function () {
+  	
+//     $(this).siblings().find(".mega-menu").hide();
+//     $(this).find(".mega-menu").toggle();
+   
+// });
+
+// $("html").click(function(event) {
+//     if ($(event.target).closest('nav.inline-menu ul li').length === 0) {
+//         $('.mega-menu').hide();
+//     }
+// });
+  
+// /* End Jquery */
+// });
+    

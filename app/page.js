@@ -1,9 +1,14 @@
+import BannerAreaHome from "@/Components/BannerAreaHome";
+import Header from "@/Components/Header";
+// import WhyChooseUs from "@/Components/WhyChooseUs";
 import Image from "next/image";
 
 export default function Home() {
   return (
-   <h1>
-    dssghd
-   </h1>
+   <>
+    <Header />
+    <BannerAreaHome/>
+    {/* <WhyChooseUs/> */}
+   </>
   );
 }
