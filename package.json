@@ -9,17 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "mysql": "^2.18.1",
-    "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
-    "redis": "^4.6.13"
+    "next": "14.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.0",
     "postcss": "^8",
-    "tailwindcss": "^3.3.0"
+    "tailwindcss": "^3.3.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0"
   }
 }
