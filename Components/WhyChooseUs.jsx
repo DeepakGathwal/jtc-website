@@ -1,5 +1,4 @@
 import React from 'react'
-import 'odometer/themes/odometer-theme-default.css';
 import Counter from './Counter';
 function WhyChooseUs() {
     const countersConfig = [
