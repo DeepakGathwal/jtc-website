@@ -77,8 +77,8 @@ function WhyChooseUs() {
                                 <div class="section-title text-left" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
                                     <span class="pre-title" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">Worldwide Our Achievement</span>
                                     <h3 class="title tg-svg">Why <span class="position-relative color-primary"><span class="svg-icon" id="svg-5"><svg width="100%" height="100%" viewBox="0 0 145 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.00016 15.2711C18.1407 8.34427 70.832 -1.93441 144.473 12.3652" stroke="currentcolor" stroke-width="4" style="stroke-dasharray: 146, 148; stroke-dashoffset: 0;"></path>
-                                    <path d="M26.2943 14.0041C38.9177 9.44643 77.3772 3.50055 130.227 16.1786" stroke="currentcolor" stroke-width="2" style="stroke-dasharray: 106, 108; stroke-dashoffset: 0;"></path>
+                                    <path d="M1.00016 15.2711C18.1407 8.34427 70.832 -1.93441 144.473 12.3652" stroke="currentcolor" stroke-width="4" ></path>
+                                    <path d="M26.2943 14.0041C38.9177 9.44643 77.3772 3.50055 130.227 16.1786" stroke="currentcolor" stroke-width="2"></path>
                                     </svg></span>Choose</span> Us</h3>
                                 </div>
                                 <ul class="jtcWhy">

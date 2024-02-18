@@ -24,8 +24,8 @@ function BannerAreaHome() {
                     <div class="col-lg-12 col-xl-6 banner-right-content">
                         <div class="row g-5">
                             <div class="col-lg-9 col-md-6 col-sm-6 offset-lg-3">
-                               
-                                <div class="edu-card card-type-6 radius-small" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                            {/* data-sal-delay="150" data-sal="slide-up" data-sal-duration="800" */}
+                                <div class="edu-card card-type-6 radius-small">
                                     <div class="inner">
                                         <div class="container checkout-page-style"  style={{padding:0}}>
                                             <div class="login-form-box">
