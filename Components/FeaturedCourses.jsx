@@ -1,6 +1,28 @@
-import React from 'react'
+import React , {useRef} from 'react'
+import Slider from "react-slick";
+
 
 function FeaturedCourses() {
+    let sliderRef = useRef(null);
+    const next = () => {
+      sliderRef.slickNext();
+    };
+    const previous = () => {
+      sliderRef.slickPrev();
+    };
+    var settings = {
+        autoplay: false,
+        className :"center",
+        dots: false,
+        caseEase : "linear",
+        autoplaySpeed : 1000,
+        prevArrow:null,
+        infinite: true,
+        speed: 2000,
+        slidesToShow: 4 ,
+        verticalSwiping: true,
+        slidesToScroll: 1
+      };
   return (
     <>
 
@@ -21,7 +43,10 @@ function FeaturedCourses() {
                 <div class="row">
                     <div class="col-lg-12 mt--60 mb_dec--20 slick-activation-wrapper service-activation-item5 edu-slick-arrow-top order-3">
                         {/* <!-- Start Single Service  --> */}
-                        <div class="single-slick-card">
+                        <Slider ref={slider => {
+          sliderRef = slider;
+        }} {...settings}>
+            <div class="single-slick-card">
                             <div class="service-card service-card-8 shape-bg-1">
                                 <div class="inner">
                                     <div class="icon">
@@ -145,8 +170,17 @@ function FeaturedCourses() {
                                 </div>
                             </div>
                         </div>
+    </Slider>
                         {/* <!-- End Single Service  --> */}
                     </div>
+                    <div style={{ textAlign: "center" }}>
+        <button className="slide-arrow prev-arrow slick-arrow" onClick={previous}>
+          Previous
+        </button>
+        <button className="button" onClick={next}>
+          Next
+        </button>
+      </div>
                 </div>
                 <div class="row">
                         <div class="col-lg-12">
@@ -168,6 +202,7 @@ function FeaturedCourses() {
                     </div>
                 </div>
             </div>
+           
         </div> 
     
     </>

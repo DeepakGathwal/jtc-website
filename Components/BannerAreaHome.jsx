@@ -8,7 +8,7 @@ function BannerAreaHome() {
   return (
     <>
         {/* Start Banner Area */}
-        <div className="slider-area banner-style-1 bg-white height-650 d-flex align-items-center">
+        <div className="slider-area banner-style-1 bg-white height-650 d-flex align-items-center" >
             <div className="container eduvibe-animated-shape">
                 <div className="row g-5 align-items-center">
                     <div className="col-lg-12 col-xl-6 my-4">
@@ -16,7 +16,7 @@ function BannerAreaHome() {
                             <div className="content">
                                 <span className="pre-title" id="changingPreTitle">Your Future Starts Now</span>
                                 <h1 className="title" id="changingTitle">Transforming Lives Through Education.</h1>
-                                 {/* <p className="description" data-sal-delay="250" data-sal="slide-up" data-sal-duration="800">Learning is a life-long journey that in fact we never find the terminate stop. Stop searching, enjoy the process.</p> */}
+                                 
                                 <div className="read-more-btn">
                                     <a className="edu-btn" href="courses.php">Get Started Today <i className="icon-arrow-right-line-right"></i></a>
                                 </div>
@@ -65,12 +65,12 @@ function BannerAreaHome() {
                     </div>
                 </div>
                 <div className="shape-dot-wrapper shape-wrapper d-xl-block d-none">
-                    <div className="shape shape-1"><img src="assets/images/shapes/shape-01.png" alt="Shape Thumb" /></div>
-                    <div className="shape shape-2"><img src="assets/images/shapes/shape-02.png" alt="Shape Thumb" /></div>
-                    <div className="shape shape-3"><img src="assets/images/shapes/shape-03.png" alt="Shape Thumb" /></div>
-                    <div className="shape shape-4"><img src="assets/images/shapes/shape-04.png" alt="Shape Thumb" /></div>
-                    <div className="shape shape-5"><img src="assets/images/shapes/shape-05.png" alt="Shape Thumb" /></div>
-                    <div className="shape shape-6"><img src="assets/images/shapes/shape-05-05.png" alt="Shape Thumb" /></div>
+                    <div className="shape shape-1"><img src="/assets/images/shapes/shape-01.png" alt="Shape Thumb" /></div>
+                    <div className="shape shape-2"><img src="/assets/images/shapes/shape-02.png" alt="Shape Thumb" /></div>
+                    <div className="shape shape-3"><img src="/assets/images/shapes/shape-03.png" alt="Shape Thumb" /></div>
+                    <div className="shape shape-4"><img src="/assets/images/shapes/shape-04.png" alt="Shape Thumb" /></div>
+                    <div className="shape shape-5"><img src="/assets/images/shapes/shape-05.png" alt="Shape Thumb" /></div>
+                    <div className="shape shape-6"><img src="/assets/images/shapes/shape-05-05.png" alt="Shape Thumb" /></div>
                 </div>
                 <div className="shape-round"><img src="assets/images/banner/banner-01/shape-27.png" alt="Shape Images" /></div>
             </div>
