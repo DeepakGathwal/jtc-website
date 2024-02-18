@@ -1,4 +1,6 @@
 import React from 'react'
+import { FaArrowRight} from "react-icons/fa6";
+
 // ES6 modules
 
 
@@ -18,7 +20,7 @@ function BannerAreaHome() {
                                 <h1 className="title" id="changingTitle">Transforming Lives Through Education.</h1>
                                  
                                 <div className="read-more-btn">
-                                    <a className="edu-btn" href="courses.php">Get Started Today <i className="icon-arrow-right-line-right"></i></a>
+                                    <a className="edu-btn" href="courses.php">Get Started Today <FaArrowRight/></a>
                                 </div>
                             </div>
                         </div>

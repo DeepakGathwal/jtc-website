@@ -7,6 +7,9 @@ import sal from 'sal.js';
 import WhyChooseUs from "@/Components/WhyChooseUs";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import StudentPlaced from "@/Components/StudentPlaced";
+import Testimonials from "@/Components/Testimonials";
+import LatestBlogs from "@/Components/LatestBlogs";
 
 export default function Home() {
   sal();
@@ -17,6 +20,9 @@ export default function Home() {
     <BannerAreaHome/>
     <WhyChooseUs/>
     <FeaturedCourses/>
+    <StudentPlaced/>
+    <Testimonials/>
+    <LatestBlogs/>
    </>
   );
 }

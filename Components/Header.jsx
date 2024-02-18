@@ -1,9 +1,11 @@
 import React from 'react'
 import { IoCall } from "react-icons/io5";
 import { RiChat1Line } from "react-icons/ri";
-
+import Link from 'next/link';
+import { FaGripLines } from "react-icons/fa";
 
 export default function Header() {
+   
   return (
     <>
     
@@ -21,8 +23,12 @@ export default function Header() {
                     <nav className="mainmenu-nav">
                         <ul className="mainmenu">
                             <li className="has-droupdown"><a href="https://www.jtcindia.org">Home</a></li>
-                            <li className="has-droupdown"><a href="https://www.jtcindia.org/about_us.php">About Us</a></li>
-                            <li className="has-droupdown"><a href="https://www.jtcindia.org/courses.php">Courses</a>
+                            <li className="has-droupdown" >
+                                <Link href="/about">
+                                About Us
+                                </Link>
+                                </li>
+                            <li className="has-droupdown"><a href="h =ttps://www.jtcindia.org/courses.php">Courses</a>
                               
                             </li>
                             <li className="has-droupdown"><a href="https://www.jtcindia.org/tutorials/index.php">Tutorial</a></li>
@@ -44,17 +50,17 @@ export default function Header() {
                                 <a className="white-box-icon popup-btn" href="tel:09990699111"><IoCall /> </a>
                             </div>
                             <div className="quote-icon quote-user d-none d-md-block ml--15">
-                                <a className="edu-btn btn-medium left-icon btn-white popup-btn" data-popup="enqNow" href="javascript:;"><i className="ri-chat-1-line"></i>Enquire Now</a>
+                                <a className="edu-btn btn-medium left-icon btn-white popup-btn" data-popup="enqNow" href="javascript:;"><RiChat1Line/> Enquire Now</a>
                             </div>
 
                             <div className="quote-icon quote-user d-block d-md-none ml--15 ml_sm--5">
-                                <a className="white-box-icon popup-btn" data-popup="enqNow" href="javascript:;"><i className="ri-chat-1-line"></i></a>
+                                <a className="white-box-icon popup-btn" data-popup="enqNow" href="javascript:;"><RiChat1Line/> </a>
                             </div>
 
                             <div className="mobile-menu-bar ml--15 ml_sm--5 d-block d-xl-none">
                                 <div className="hamberger">
                                     <button className="white-box-icon hamberger-button">
-                                        <i className="ri-menu-line"></i>
+                                        <FaGripLines/>
                                     </button>
                                 </div>
                             </div>

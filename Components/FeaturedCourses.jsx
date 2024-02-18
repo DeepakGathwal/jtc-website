@@ -1,6 +1,6 @@
 import React , {useRef} from 'react'
 import Slider from "react-slick";
-
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa6";
 
 function FeaturedCourses() {
     let sliderRef = useRef(null);
@@ -21,7 +21,29 @@ function FeaturedCourses() {
         speed: 2000,
         slidesToShow: 4 ,
         verticalSwiping: true,
-        slidesToScroll: 1
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                }
+            }, 
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            }, 
+            {
+                breakpoint: 577,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }, 
+        ]
       };
   return (
     <>
@@ -42,6 +64,12 @@ function FeaturedCourses() {
 
                 <div class="row">
                     <div class="col-lg-12 mt--60 mb_dec--20 slick-activation-wrapper service-activation-item5 edu-slick-arrow-top order-3">
+                    <div style={{ textAlign: "center" }}>
+        <button className="slide-arrow prev-arrow" onClick={previous}>
+        <FaArrowLeft/></button>
+        <button className="slide-arrow next-arrow" onClick={next}><FaArrowRight />
+        </button>
+      </div>
                         {/* <!-- Start Single Service  --> */}
                         <Slider ref={slider => {
           sliderRef = slider;
@@ -59,7 +87,7 @@ function FeaturedCourses() {
                                         
                                     </div>
                                     <div class="hover-action">
-                                        <a class="read-more-btn" href="java-fullstack.php"><i class="icon-arrow-right-line-right"></i></a>
+                                        <a class="read-more-btn" href="java-fullstack.php"><FaArrowRight /></a>
                                     </div>
                                 </div>
                             </div>
@@ -80,7 +108,7 @@ function FeaturedCourses() {
                                        
                                     </div>
                                     <div class="hover-action">
-                                        <a class="read-more-btn" href="web-development.php"><i class="icon-arrow-right-line-right"></i></a>
+                                        <a class="read-more-btn" href="web-development.php"><FaArrowRight /></a>
                                     </div>
                                 </div>
                             </div>
@@ -101,7 +129,7 @@ function FeaturedCourses() {
                                         
                                     </div>
                                     <div class="hover-action">
-                                        <a class="read-more-btn" href="page_error.php"><i class="icon-arrow-right-line-right"></i></a>
+                                        <a class="read-more-btn" href="page_error.php"><FaArrowRight /></a>
                                     </div>
                                 </div>
                                 
@@ -123,7 +151,7 @@ function FeaturedCourses() {
                                        
                                     </div>
                                     <div class="hover-action">
-                                        <a class="read-more-btn" href="page_error.php"><i class="icon-arrow-right-line-right"></i></a>
+                                        <a class="read-more-btn" href="page_error.php"><FaArrowRight /></a>
                                     </div>
                                 </div>
                             </div>
@@ -144,7 +172,7 @@ function FeaturedCourses() {
                                         
                                     </div>
                                     <div class="hover-action">
-                                        <a class="read-more-btn" href="page_error.php"><i class="icon-arrow-right-line-right"></i></a>
+                                        <a class="read-more-btn" href="page_error.php"><FaArrowRight /></a>
                                     </div>
                                 </div>
                             </div>
@@ -165,7 +193,7 @@ function FeaturedCourses() {
                                         
                                     </div>
                                     <div class="hover-action">
-                                        <a class="read-more-btn" href="page_error.php"><i class="icon-arrow-right-line-right"></i></a>
+                                        <a class="read-more-btn" href="page_error.php"><FaArrowRight /></a>
                                     </div>
                                 </div>
                             </div>
@@ -173,19 +201,11 @@ function FeaturedCourses() {
     </Slider>
                         {/* <!-- End Single Service  --> */}
                     </div>
-                    <div style={{ textAlign: "center" }}>
-        <button className="slide-arrow prev-arrow slick-arrow" onClick={previous}>
-          Previous
-        </button>
-        <button className="button" onClick={next}>
-          Next
-        </button>
-      </div>
                 </div>
                 <div class="row">
                         <div class="col-lg-12">
-                            <div class="load-more-btn mt--60 text-center">
-                                <a class="edu-btn" href="courses.php">View All Courses<i class="icon-arrow-right-line-right"></i></a>
+                            <div class="load-more-btn mt--60 text-center aling-items-center">
+                                <a class="edu-btn" href="courses.php">View All Courses <FaArrowRight /></a>
                             </div>
                         </div>
                     </div>

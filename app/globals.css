@@ -6902,8 +6902,8 @@ button.edu-btn {
 /*---------------------------
  * Home 2 Testimonial
 ----------------------------*/
-/* .eduvibe-home-two-testimonial {
-  background-image: url(../images/bg/home-two-testimonial.jpg); } */
+.eduvibe-home-two-testimonial {
+  background-image: url(/assets/images/bg/home-two-testimonial.jpg); }
   .eduvibe-home-two-testimonial .shape-image {
     position: absolute;
     z-index: -1; }
@@ -9693,9 +9693,9 @@ justify-content: center; }
       background: var(--color-primary);
       color: var(--color-white);
       display: inline-block;
-      line-height: 43px;
+      line-height: 38px;
       border-radius: 100%;
-      font-size: 20px; }
+      font-size: 23px;}
 
 .service-card-8.shape-bg-2 .inner {
   background: #FFF3EE; }
@@ -17030,7 +17030,7 @@ height: 100vh; }
 .jtcWhy {list-style: none;}
 .jtcWhy li {position:relative; padding-left:40px; margin-top:15px; margin-bottom:0; font-weight: 600;}
 .jtcWhy li:before{content:''; position:absolute; left:0; width:26px; height:27px;
-   /* background:url("../images/icons/whyIcon.png") no-repeat; */
+   background:url("/assets/images/icons/whyIcon.png") no-repeat;
 }
 .title span:not(.svg-icon) {
     color: var(--tg-theme-primary);

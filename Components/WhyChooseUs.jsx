@@ -29,7 +29,7 @@ return (
                                 <div className="edu-counterup">
                                     <div className="inner">
                                         <div className="icon">
-                                            <img src="assets/images/icons/yearestablished.webp" alt="Icons Images"/>
+                                            <img src="assets/images/icons/year.png" alt="Icons Images"/>
                                         </div>
                                         <div className="content">
                                             <h3 className="counter">
@@ -48,7 +48,7 @@ return (
                                 <div className="edu-counterup">
                                     <div className="inner">
                                         <div className="icon">
-                                            <img src="assets/images/icons/courseicon.webp" alt="Icons Images"/>
+                                            <img src="assets/images/icons/courses.png" alt="Icons Images"/>
                                         </div>
                                         <div className="content">
                                             <h3 className="counter"><span className="odometer" data-count="50">{countersConfig1.map((config, index) => (
@@ -65,7 +65,7 @@ return (
                                 <div className="edu-counterup">
                                     <div className="inner">
                                         <div className="icon">
-                                            <img src="assets/images/icons/student.webp" alt="Icons Images"/>
+                                            <img src="assets/images/icons/students.png" alt="Icons Images"/>
                                         </div>
                                         <div className="content">
                                             <h3 className="counter">{countersConfig2.map((config, index) => (
@@ -82,7 +82,7 @@ return (
                                 <div className="edu-counterup">
                                     <div className="inner">
                                         <div className="icon">
-                                            <img src="assets/images/icons/companies.webp" alt="Icons Images"/>
+                                            <img src="assets/images/icons/companies.png" alt="Icons Images"/>
                                         </div>
                                         <div className="content">
                                             <h3 className="counter">{countersConfig3.map((config, index) => (
