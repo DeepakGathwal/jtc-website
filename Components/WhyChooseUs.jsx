@@ -1,13 +1,12 @@
 import React from 'react'
-import 'odometer/themes/odometer-theme-default.css';
 import Counter from './Counter';
 function WhyChooseUs() {
     const countersConfig = [
-        { initialValue: 0, finalValue: 10, intervalDuration: 100 },
+        { initialValue: 0, finalValue: 12, intervalDuration: 100 },
         
       ];
       const countersConfig1 =[
-        { initialValue: 1800, finalValue: 2000 },
+        { initialValue: 0, finalValue: 50 },
         
       ]
       const countersConfig2 =[
@@ -15,7 +14,7 @@ function WhyChooseUs() {
         
       ]
       const countersConfig3 =[
-        { initialValue: 1800, finalValue: 2000 },
+        { initialValue: 0, finalValue: 50 },
         
       ]
 return (
