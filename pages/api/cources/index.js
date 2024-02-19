@@ -8,7 +8,7 @@ import { client } from "@/utils/redisFile";
 export default async function handler(req, res) {
     const method = req.method
     switch (method) {
-        case 'GET':  await choosePoint(req, res);
+        case 'GET':  await cources(req, res);
             break;
       
         default:
@@ -21,14 +21,14 @@ export default async function handler(req, res) {
 
 
 // Get All Chossing Point
-export const choosePoint = catchError(async(req,res) =>{
-    const redisdata = await client.get("choosePoint");
+export const cources = catchError(async(req,res) =>{
+    const redisdata = await client.get("cources");
     if(!redisdata){
-        const query =  `Select point from jtc_choosing_point `
+        const query =  `Select name, icon from jtc_cources WHERE deleted_by = '0' `
         const data = await executeQuery(query);
         if(data.length > 0) {
-        const value = await JSON.stringify(data)
-        await client.set("choosePoint", value, {
+        const value =  await JSON.stringify(data)
+        await client.set("cources", value, {
             EX: 1000,   
             NX: true
           });
