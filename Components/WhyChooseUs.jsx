@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Counter from './Counter';
+import { allChoosingPoint } from '@/apis/apis';
 function WhyChooseUs() {
+    const [state, setState] = useState([])
     const countersConfig = [
         { initialValue: 0, finalValue: 12, intervalDuration: 100 },
         
@@ -17,6 +19,18 @@ function WhyChooseUs() {
         { initialValue: 0, finalValue: 50 },
         
       ]
+
+      const allData = async() => {
+        const data = await allChoosingPoint();
+    
+        if(data.success){
+
+            setState(data.data)
+        }
+      }
+      useEffect(() => {
+        allData()
+      },[])
 return (
     <>
     
@@ -108,15 +122,11 @@ return (
                                     </svg></span>Choose</span> Us</h3>
                                 </div>
                                 <ul className="jtcWhy">
-									<li>Assured placements</li>
-									<li>Over 12 years of training experience</li>
-									<li>Time-bound skilling programs</li>
-									<li>Industry demanded skilling courses</li>
-									<li>Veteran faculty with industry experience</li>
-									<li>Flexible course timings and learning options</li>
-									<li>Multiple batches and slots</li>
-									<li>Batch timings suited for students/working candidates</li>
-									<li>Offline as well as online tutoring</li>
+									
+                                    {state && state.map((el) => (
+                                        <li>{el.point}</li>
+                                        
+                                    ))}
 								</ul>
                             </div>
                         </div>

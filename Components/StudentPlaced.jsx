@@ -1,9 +1,10 @@
 import React , {useRef} from 'react';
 import Slider from "react-slick";
+// import executeQuery from '..'
 
 
 function StudentPlaced() {
-
+   
     let sliderRef = useRef(null);
     const next = () => {
       sliderRef.slickNext();
@@ -135,5 +136,26 @@ function StudentPlaced() {
     </>
   )
 }
+
+// export async function getServerSideProps() {
+//     // Make API calls concurrently
+//     // const data =  await 
+//     const query = `Select name,icon, link from  jtc_companies where deleted_by = '0'`
+//     const data = await executeQuery(query)
+//   let response ;
+//   if(data.length > 0){
+//     response = JSON.stringify(data)
+// }else response;
+//   // Parse the JSON responses
+ 
+ 
+//   return {
+//     props: {
+//       response
+//     }
+//   };
+//   }
+  
+
 
 export default StudentPlaced
