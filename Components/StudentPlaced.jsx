@@ -1,8 +1,6 @@
 import { homeCompany } from '@/apis/apis';
 import React, { useRef, useState, useEffect } from 'react';
 import Slider from "react-slick";
-// import executeQuery from '..'
-
 
 function StudentPlaced() {
     const [state, setState] = useState([])
@@ -10,18 +8,11 @@ function StudentPlaced() {
         const data = await homeCompany();
         if (data.success) setState(data.data)
     }
-
-
     useEffect(() => {
         allData()
     }, [])
     let sliderRef = useRef(null);
-    const next = () => {
-        sliderRef.slickNext();
-    };
-    const previous = () => {
-        sliderRef.slickPrev();
-    };
+    
     var settings = {
         dots: true,
         infinite: true,
@@ -114,26 +105,6 @@ function StudentPlaced() {
         </>
     )
 }
-
-// export async function getServerSideProps() {
-//     // Make API calls concurrently
-//     // const data =  await 
-//     const query = `Select name,icon, link from  jtc_companies where deleted_by = '0'`
-//     const data = await executeQuery(query)
-//   let response ;
-//   if(data.length > 0){
-//     response = JSON.stringify(data)
-// }else response;
-//   // Parse the JSON responses
-
-
-//   return {
-//     props: {
-//       response
-//     }
-//   };
-//   }
-
 
 
 export default StudentPlaced
