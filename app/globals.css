@@ -17612,3 +17612,11 @@ form.send-form .main-btn-rect {
   .modal-content{width:auto !important;}
   .edu-event.event-list1 .inner {padding:0;}
 }
+.copyright-area.copyright-default {
+  background: #1b1830;
+}
+.copyright-default p {
+  color: var(--color-white);
+  margin-bottom: 0;
+  padding: 15px;
+}

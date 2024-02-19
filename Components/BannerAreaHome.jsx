@@ -49,7 +49,7 @@ function BannerAreaHome() {
                                                         </select>
                                                     </div>
                                                     <div className="comment-form-consent input-box mb--20">
-                                                    <label><input id="checkbox-6" type="checkbox" required/></label>
+                                                    <label><input id="checkbox-6" type="checkbox" required style={{width: "auto", position: "static", height: "auto", opacity:"1", marginRight:"15px"}}/></label>
 														<label for="checkbox-6"> I have reviewed all <a
 																href="termsandcondition.html" target="_blank"> Terms and
 																Conditions</a>.</label>
