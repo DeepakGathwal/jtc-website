@@ -8,16 +8,16 @@ function LatestBlogs() {
   return (
     <>
       
-      <div class="eduvibe-home-two-blog edu-blog-area edu-section-gap bg-image">
-            <div class="wrapper">
-                <div class="container eduvibe-animated-shape">
-                    <div class="row g-5">
-                        <div class="col-lg-6 col-md-6">
-                            <div class="section-title text-start" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-                                <span class="pre-title">Always Smart to Read Blogs</span>
-                                <h3 class="title tg-svg">Latest <span class="position-relative color-primary"><span class="svg-icon" id="svg-3"><svg width="100%" height="100%" viewBox="0 0 145 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1.00016 15.2711C18.1407 8.34427 70.832 -1.93441 144.473 12.3652" stroke="currentcolor" stroke-width="4" ></path>
-                                <path d="M26.2943 14.0041C38.9177 9.44643 77.3772 3.50055 130.227 16.1786" stroke="currentcolor" stroke-width="2" ></path>
+      <div className="eduvibe-home-two-blog edu-blog-area edu-section-gap bg-image">
+            <div className="wrapper">
+                <div className="container eduvibe-animated-shape">
+                    <div className="row g-5">
+                        <div className="col-lg-6 col-md-6">
+                            <div className="section-title text-start" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                                <span className="pre-title">Always Smart to Read Blogs</span>
+                                <h3 className="title tg-svg">Latest <span className="position-relative color-primary"><span className="svg-icon" id="svg-3"><svg width="100%" height="100%" viewBox="0 0 145 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.00016 15.2711C18.1407 8.34427 70.832 -1.93441 144.473 12.3652" stroke="currentcolor" strokeWidth="4" ></path>
+                                <path d="M26.2943 14.0041C38.9177 9.44643 77.3772 3.50055 130.227 16.1786" stroke="currentcolor" strokeWidth="2" ></path>
                                 </svg></span>Blog</span></h3>
                             </div>
                         </div>
@@ -29,12 +29,12 @@ function LatestBlogs() {
                         </div>
                     </div>
                     </div>
-                    <div class="row g-5 mt--30">
+                    <div className="row g-5 mt--30">
 
-                        <div class="col-lg-4 col-md-6 col-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-                            <div class="edu-blog blog-type-2 bg-white radius-small">
-                                <div class="inner">
-                                    <div class="thumbnail">
+                        <div className="col-lg-4 col-md-6 col-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                            <div className="edu-blog blog-type-2 bg-white radius-small">
+                                <div className="inner">
+                                    <div className="thumbnail">
                                         <a href="blog/roadmap-to-prepare-for-campus-placement.php">
                                             <img src="assets/images/banner/road_map.jpg" alt="Blog Images"/>
                                         </a>
@@ -56,10 +56,10 @@ function LatestBlogs() {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-12" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">
-                            <div class="edu-blog blog-type-2 bg-white radius-small">
-                                <div class="inner">
-                                    <div class="thumbnail">
+                        <div className="col-lg-4 col-md-6 col-12" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">
+                            <div className="edu-blog blog-type-2 bg-white radius-small">
+                                <div className="inner">
+                                    <div className="thumbnail">
                                         <a href="Amazing-Java-Application-you-should-know-about.php">
                                             <img src="assets/images/banner/java_6_amazing.jpg" alt="Blog Images"/>
                                         </a>
@@ -82,10 +82,10 @@ function LatestBlogs() {
                                 
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-12" data-sal-delay="250" data-sal="slide-up" data-sal-duration="800">
-                            <div class="edu-blog blog-type-2 bg-white radius-small">
-                                <div class="inner">
-                                    <div class="thumbnail">
+                        <div className="col-lg-4 col-md-6 col-12" data-sal-delay="250" data-sal="slide-up" data-sal-duration="800">
+                            <div className="edu-blog blog-type-2 bg-white radius-small">
+                                <div className="inner">
+                                    <div className="thumbnail">
                                         <a href="blog/Python-Machine-Learning-Libraries.php">
                                             <img src="assets/images/banner/PythonMachineLearningbanner.jpg" alt="Blog Images"/>
                                         </a>
@@ -110,22 +110,22 @@ function LatestBlogs() {
 
                     </div>
 
-                    <div class="shape-dot-wrapper shape-wrapper d-xl-block d-none">
-                        <div class="shape-image shape-image-1">
+                    <div className="shape-dot-wrapper shape-wrapper d-xl-block d-none">
+                        <div className="shape-image shape-image-1">
                             <img src="assets/images/shapes/shape-13-06.png" alt="Shape Thumb" />
                         </div>
-                        <div class="shape-image shape-image-3">
+                        <div className="shape-image shape-image-3">
                             <img src="assets/images/shapes/shape-13-05.png" alt="Shape Thumb" />
                         </div>
-                        <div class="shape-image shape-image-4">
+                        <div className="shape-image shape-image-4">
                             <img src="assets/images/shapes/shape-25.png" alt="Shape Thumb" />
                         </div>
                     </div>
 
                 </div>
 
-                <div class="shape-dot-wrapper shape-wrapper d-xl-block d-none">
-                    <div class="shape-image shape-image-2">
+                <div className="shape-dot-wrapper shape-wrapper d-xl-block d-none">
+                    <div className="shape-image shape-image-2">
                         <img src="assets/images/shapes/shape-24.png" alt="Shape Thumb" />
                     </div>
                 </div>
