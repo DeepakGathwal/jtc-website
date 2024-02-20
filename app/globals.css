@@ -14495,8 +14495,8 @@ Gallery Item
       top: 95px;
       right: -160px; }
     .banner-style-1 .shape-dot-wrapper .shape.shape-4 {
-      bottom: 10px;
-      right: -173px; }
+      bottom: -54px;
+      right: -54px; }
     .banner-style-1 .shape-dot-wrapper .shape.shape-5 {
       bottom: -23px;
       left: 654px; }
@@ -17611,4 +17611,12 @@ form.send-form .main-btn-rect {
 @media screen and (max-width:768px){
   .modal-content{width:auto !important;}
   .edu-event.event-list1 .inner {padding:0;}
+}
+.copyright-area.copyright-default {
+  background: #1b1830;
+}
+.copyright-default p {
+  color: var(--color-white);
+  margin-bottom: 0;
+  padding: 15px;
 }

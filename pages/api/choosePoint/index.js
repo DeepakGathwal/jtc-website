@@ -29,7 +29,7 @@ export const choosePoint = catchError(async(req,res) =>{
         if(data.length > 0) {
         const value = await JSON.stringify(data)
         await client.set("choosePoint", value, {
-            EX: 1000,   
+            EX: 86400,   
             NX: true
           });
           return res.status(200).json({data, success : true})

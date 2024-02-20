@@ -1,10 +1,17 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
+
 import { IoCall } from "react-icons/io5";
 import { RiChat1Line } from "react-icons/ri";
 import Link from 'next/link';
 import { FaGripLines } from "react-icons/fa";
+import Test from './test';
 
 export default function Header() {
+    const [show, setShow] = useState(false)
+    const handelShow = () => {
+        setShow(true)
+    }
    
   return (
     <>
@@ -49,13 +56,14 @@ export default function Header() {
                             <div className="quote-icon quote-user d-block d-md-none ml--15 ml_sm--5">
                                 <a className="white-box-icon popup-btn" href="tel:09990699111"><IoCall /> </a>
                             </div>
-                            <div className="quote-icon quote-user d-none d-md-block ml--15">
+                            <div className="quote-icon quote-user d-none d-md-block ml--15" onClick={handelShow}>
                                 <a className="edu-btn btn-medium left-icon btn-white popup-btn" data-popup="enqNow" href="javascript:;"><RiChat1Line/> Enquire Now</a>
                             </div>
 
                             <div className="quote-icon quote-user d-block d-md-none ml--15 ml_sm--5">
                                 <a className="white-box-icon popup-btn" data-popup="enqNow" href="javascript:;"><RiChat1Line/> </a>
                             </div>
+                            <Test show={show} setShow={setShow}/>
 
                             <div className="mobile-menu-bar ml--15 ml_sm--5 d-block d-xl-none">
                                 <div className="hamberger">

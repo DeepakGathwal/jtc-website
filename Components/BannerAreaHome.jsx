@@ -39,7 +39,7 @@ function BannerAreaHome() {
                             <div className="row g-5">
                                 <div className="col-lg-9 col-md-6 col-sm-6 offset-lg-3">
 
-                                    <div className="edu-card card-type-6 radius-small" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                                    <div className="edu-card card-type-6 radius-small"  data-sal="slide-up" data-sal-duration="800">
                                         <div className="inner">
                                             <div className="container checkout-page-style" style={{ padding: 0 }}>
                                                 <div className="login-form-box">

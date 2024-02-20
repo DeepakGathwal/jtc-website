@@ -10,19 +10,23 @@ import "slick-carousel/slick/slick-theme.css";
 import StudentPlaced from "@/Components/StudentPlaced";
 import Testimonials from "@/Components/Testimonials";
 import LatestBlogs from "@/Components/LatestBlogs";
+import Footer from "@/Components/Footer";
+import Test from "@/Components/test";
 
 export default function Home() {
   sal();
   
   return (
    <>
-    <Header />
+ 
     <BannerAreaHome/>
     <WhyChooseUs/>
     <FeaturedCourses/>
     <StudentPlaced/>
     <Testimonials/>
     <LatestBlogs/>
+ 
+    <Test/>
    </>
   );
 }
