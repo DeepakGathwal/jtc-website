@@ -41,7 +41,7 @@ export default function Test({show, setShow}) {
     </select>
     </div>
     <div class="comment-form-consent input-box mb--20">
-    <input id="checkbox-1" type="checkbox" required />
+    <label><input id="checkbox-1" type="checkbox" required  className='termChecked'/></label>
     <label htmnlFor="checkbox-1">I have reviewed all <a href="termsandcondition.php"
     target="_blank"> Terms and Conditions</a>.</label>
     </div>
