@@ -24,7 +24,7 @@ export default async function handler(req, res) {
 export const cources = catchError(async(req,res) =>{
     const redisdata = await client.get("cources");
     if(!redisdata){
-        const query =  `Select name, icon from jtc_cources WHERE deleted_by = '0' `
+        const query =  `Select id, name, icon from jtc_cources WHERE deleted_by = '0' `
         const data = await executeQuery(query);
         if(data.length > 0) {
         const value =  await JSON.stringify(data)

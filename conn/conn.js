@@ -2,10 +2,10 @@ import mysql from 'mysql2'
 
 /** call database */
 const db = mysql.createPool({
-  user: "root",
-  host: "localhost",
-  password: "",
-  database: "jtcindia_admin",
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  password:  process.env.DB_PASS,
+  database:  process.env.DB_DATABASE,
   dateStrings:true,
   waitForConnections: true,
   connectionLimit: 50,
