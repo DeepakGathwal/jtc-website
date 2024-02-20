@@ -29,7 +29,7 @@ export const cources = catchError(async(req,res) =>{
         if(data.length > 0) {
         const value =  await JSON.stringify(data)
         await client.set("cources", value, {
-            EX: 1000,   
+            EX: process.env.REDIS_EXP,    
             NX: true
           });
           return res.status(200).json({data, success : true})
