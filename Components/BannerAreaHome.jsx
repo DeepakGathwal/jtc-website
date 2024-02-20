@@ -1,21 +1,36 @@
 import React, { useState, useEffect } from 'react'
 import { FaArrowRight } from "react-icons/fa6";
-import { homeCources } from '@/apis/apis';
+import { homeCources, joinUsForm } from '@/apis/apis';
 
 // ES6 modules
 function BannerAreaHome() {
     const [state, setState] = useState([])
+    const [field, setField] = useState({
+        name : "", phone : " " , cource : "", email : ""
+    })
 
     const allData = async () => {
         const data = await homeCources()
         if (data.success) setState(data.data)
     }
 
+   
+  const handelChange = (e) => {
+    setField({ ...field, [e.target.name]: e.target.value })
+  }
 
     useEffect(() => {
         allData()
     }, [])
 
+
+    const handelSubmit = async(e) => {
+        e.preventDefault()
+        const data = await joinUsForm(field)
+        setField("")
+        if(data.success == true) return alert(data.message)
+        else return alert(data.message)
+    }
 
     return (
         <>
@@ -44,16 +59,19 @@ function BannerAreaHome() {
                                             <div className="container checkout-page-style" style={{ padding: 0 }}>
                                                 <div className="login-form-box">
                                                     <h3 className="mb-30">Get in Touch</h3>
-                                                    <form className="login-form" id="downloadSyllabus" onsubmit="sendMailEnquiry(); reset(); return false;">
+                                                    <form className="login-form" id="downloadSyllabus" onSubmit={handelSubmit}>
                                                         <div className="input-box mb--20">
-                                                            <input type="text" placeholder="Name" Name="name6" id="name6" required />
+                                                            <input type="text" placeholder="Name" name="name" id="name6" required onChange={handelChange} value={field.name}/>
                                                         </div>
                                                         <div className="input-box mb--20">
-                                                            <input type="tel" id="phone6" className="phone-input" name="phone6" placeholder="Mobile Number" required />
+                                                            <input type="number"  min="10" id="phone" className="phone-input" name="phone" placeholder="Mobile Number" required onChange={handelChange} value={field.phone}/>
                                                         </div>
+                                                        {/* <div className="input-box mb--20">
+                                                            <input type="email"   id="phone" className="phone-input" name="email" placeholder="@email.com" required onChange={handelChange} value={field.email}/>
+                                                        </div> */}
                                                         <div className="input-box mb--20">
-                                                            <select name="courses3" id="courses3" className="courses valid" aria-invalid="false" required >
-                                                                <option value="">Select Course</option>
+                                                            <select name="cource" id="courses3"  className="courses valid" aria-invalid="false" value={field.cource} required onChange={handelChange}>
+                                                                <option disabled>Select Course</option>
                                                                 {state && state.map((el) => (
                                                                     <option value={el.name}>{el.name}</option>
 
@@ -62,7 +80,7 @@ function BannerAreaHome() {
                                                             </select>
                                                         </div>
                                                         <div className="comment-form-consent input-box mb--20">
-                                                            <label><input id="checkbox-6" type="checkbox" required /></label>
+                                                            <label><input id="checkbox-6" type="checkbox" required checked /></label>
                                                             <label htmlFor="checkbox-6"> I have reviewed all <a
                                                                 href="termsandcondition.html" target="_blank"> Terms and
                                                                 Conditions</a>.</label>
@@ -87,7 +105,6 @@ function BannerAreaHome() {
                         <div className="shape shape-5"><img src="/assets/images/shapes/shape-05.png" alt="Shape Thumb" /></div>
                         <div className="shape shape-6"><img src="/assets/images/shapes/shape-05-05.png" alt="Shape Thumb" /></div>
                     </div>
-                    <div className="shape-round"><img src="assets/images/banner/banner-01/shape-27.png" alt="Shape Images" /></div>
                 </div>
             </div>
         </>
