@@ -1,4 +1,8 @@
 import React from 'react'
+import { FaArrowRight } from "react-icons/fa6";
+import { SiOpenbadges } from "react-icons/si";
+import { SlCalender } from "react-icons/sl";
+
 
 function LatestBlogs() {
   return (
@@ -17,11 +21,10 @@ function LatestBlogs() {
                                 </svg></span>Blog</span></h3>
                             </div>
                         </div>
-                        <div className="col-lg-6 col-md-6">
-                        <div className="view-more-btn text-end">
-                            <a className="edu-btn" href="blog/index.php">
-                                Browse All Blogs
-                                <i className="icon-arrow-right-line-right"></i>
+                        <div class="col-lg-6 col-md-6">
+                        <div class="view-more-btn text-end">
+                            <a class="edu-btn" href="blog/index.php">
+                                Browse All Blogs  <FaArrowRight />
                             </a>
                         </div>
                     </div>
@@ -36,17 +39,17 @@ function LatestBlogs() {
                                             <img src="assets/images/banner/road_map.jpg" alt="Blog Images"/>
                                         </a>
                                     </div>
-                                    <div className="content">
-                                        <div className="status-group">
-                                            <a href="blog/roadmap-to-prepare-for-campus-placement.php" className="eduvibe-status status-05"><i className="icon-price-tag-3-line"></i> Education</a>
+                                    <div class="content">
+                                        <div class="status-group">
+                                            <a href="blog/roadmap-to-prepare-for-campus-placement.php" class="eduvibe-status status-05"><SiOpenbadges /> Education</a>
                                         </div>
-                                        <h5 className="title"><a href="blog/roadmap-to-prepare-for-campus-placement.php">Roadmap To Prepare For Campus Placement</a></h5>
-                                        <div className="blog-card-bottom">
-                                            <ul className="blog-meta">
-                                                <li><i className="icon-calendar-2-line"></i>01 Aug, 2023</li>
+                                        <h5 class="title"><a href="blog/roadmap-to-prepare-for-campus-placement.php">Roadmap To Prepare For Campus Placement</a></h5>
+                                        <div class="blog-card-bottom">
+                                            <ul class="blog-meta">
+                                                <li><SlCalender /> 01 Aug, 2023</li>
                                             </ul>
-                                            <div className="read-more-btn">
-                                                <a className="btn-transparent" href="blog/roadmap-to-prepare-for-campus-placement.php">Read More<i className="icon-arrow-right-line-right"></i></a>
+                                            <div class="read-more-btn">
+                                                <a class="btn-transparent" href="blog/roadmap-to-prepare-for-campus-placement.php">Read More <FaArrowRight /></a>
                                             </div>
                                         </div>
                                     </div>
@@ -61,17 +64,17 @@ function LatestBlogs() {
                                             <img src="assets/images/banner/java_6_amazing.jpg" alt="Blog Images"/>
                                         </a>
                                     </div>
-                                    <div className="content">
-                                        <div className="status-group">
-                                            <a href="Amazing-Java-Application-you-should-know-about.php" className="eduvibe-status status-05"><i className="icon-price-tag-3-line"></i> Education</a>
+                                    <div class="content">
+                                        <div class="status-group">
+                                            <a href="Amazing-Java-Application-you-should-know-about.php" class="eduvibe-status status-05"><SiOpenbadges /> Education</a>
                                         </div>
-                                        <h5 className="title"><a href="Amazing-Java-Application-you-should-know-about.php">6 Amazing Java Applications You Should Know About</a></h5>
-                                        <div className="blog-card-bottom">
-                                            <ul className="blog-meta">
-                                                <li><i className="icon-calendar-2-line"></i>05 Aug, 2023</li>
+                                        <h5 class="title"><a href="Amazing-Java-Application-you-should-know-about.php">6 Amazing Java Applications You Should Know About</a></h5>
+                                        <div class="blog-card-bottom">
+                                            <ul class="blog-meta">
+                                                <li><SlCalender /> 05 Aug, 2023</li>
                                             </ul>
-                                            <div className="read-more-btn">
-                                                <a className="btn-transparent" href="Amazing-Java-Application-you-should-know-about.php">Read More<i className="icon-arrow-right-line-right"></i></a>
+                                            <div class="read-more-btn">
+                                                <a class="btn-transparent" href="Amazing-Java-Application-you-should-know-about.php">Read More <FaArrowRight /></a>
                                             </div>
                                         </div>
                                     </div>
@@ -87,17 +90,17 @@ function LatestBlogs() {
                                             <img src="assets/images/banner/PythonMachineLearningbanner.jpg" alt="Blog Images"/>
                                         </a>
                                     </div>
-                                    <div className="content">
-                                        <div className="status-group">
-                                            <a href="blog/Python-Machine-Learning-Libraries.php" className="eduvibe-status status-05"><i className="icon-price-tag-3-line"></i> Education</a>
+                                    <div class="content">
+                                        <div class="status-group">
+                                            <a href="blog/Python-Machine-Learning-Libraries.php" class="eduvibe-status status-05"><SiOpenbadges /> Education</a>
                                         </div>
-                                        <h5 className="title"><a href="blog/Python-Machine-Learning-Libraries.php">Python Machine Learning Libraries</a></h5>
-                                        <div className="blog-card-bottom">
-                                            <ul className="blog-meta">
-                                                <li><i className="icon-calendar-2-line"></i>08 Aug, 2023</li>
+                                        <h5 class="title"><a href="blog/Python-Machine-Learning-Libraries.php">Python Machine Learning Libraries</a></h5>
+                                        <div class="blog-card-bottom">
+                                            <ul class="blog-meta">
+                                                <li><SlCalender /> 08 Aug, 2023</li>
                                             </ul>
-                                            <div className="read-more-btn">
-                                                <a className="btn-transparent" href="blog/Python-Machine-Learning-Libraries.php">Read More<i className="icon-arrow-right-line-right"></i></a>
+                                            <div class="read-more-btn">
+                                                <a class="btn-transparent" href="blog/Python-Machine-Learning-Libraries.php">Read More <FaArrowRight /></a>
                                             </div>
                                         </div>
                                     </div>
