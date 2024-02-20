@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Counter from './Counter';
+import { allChoosingPoint } from '@/apis/apis';
 function WhyChooseUs() {
+    const [state, setState] = useState([])
     const countersConfig = [
         { initialValue: 0, finalValue: 12, intervalDuration: 100 },
         
@@ -17,6 +19,16 @@ function WhyChooseUs() {
         { initialValue: 0, finalValue: 50 },
         
       ]
+
+      const allData = async() => {
+        const data = await allChoosingPoint();
+        if(data.success) setState(data.data)
+      }
+
+      
+      useEffect(() => {
+        allData()
+      },[])
 return (
     <>
     
@@ -103,20 +115,16 @@ return (
                                 <div className="section-title text-left" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
                                     <span className="pre-title" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">Worldwide Our Achievement</span>
                                     <h3 className="title tg-svg">Why <span className="position-relative color-primary"><span className="svg-icon" id="svg-5"><svg width="100%" height="100%" viewBox="0 0 145 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.00016 15.2711C18.1407 8.34427 70.832 -1.93441 144.473 12.3652" stroke="currentcolor" stroke-width="4" style={{strokeDasharray: "146, 148", strokeDashoffset: "0"}}></path>
-                                    <path d="M26.2943 14.0041C38.9177 9.44643 77.3772 3.50055 130.227 16.1786" stroke="currentcolor" stroke-width="2" style={{strokeDasharray: "106, 108", strokeDashoffset: "0"}}></path>
+                                    <path d="M1.00016 15.2711C18.1407 8.34427 70.832 -1.93441 144.473 12.3652" stroke="currentcolor" strokeWidth="4" style={{strokeDasharray: "146, 148", strokeDashoffset: "0"}}></path>
+                                    <path d="M26.2943 14.0041C38.9177 9.44643 77.3772 3.50055 130.227 16.1786" stroke="currentcolor" strokeWidth="2" style={{strokeDasharray: "106, 108", strokeDashoffset: "0"}}></path>
                                     </svg></span>Choose</span> Us</h3>
                                 </div>
                                 <ul className="jtcWhy">
-									<li>Assured placements</li>
-									<li>Over 12 years of training experience</li>
-									<li>Time-bound skilling programs</li>
-									<li>Industry demanded skilling courses</li>
-									<li>Veteran faculty with industry experience</li>
-									<li>Flexible course timings and learning options</li>
-									<li>Multiple batches and slots</li>
-									<li>Batch timings suited for students/working candidates</li>
-									<li>Offline as well as online tutoring</li>
+									
+                                    {state && state.map((el) => (
+                                        <li>{el.point}</li>
+                                        
+                                    ))}
 								</ul>
                             </div>
                         </div>

@@ -82,22 +82,3 @@ export default function Header() {
     </>
   )
 }
-
-//             $(window).ready(function() {	  
-//  $('.mega-menu').hide();
-// $("nav.inline-menu ul li").click(function () {
-  	
-//     $(this).siblings().find(".mega-menu").hide();
-//     $(this).find(".mega-menu").toggle();
-   
-// });
-
-// $("html").click(function(event) {
-//     if ($(event.target).closest('nav.inline-menu ul li').length === 0) {
-//         $('.mega-menu').hide();
-//     }
-// });
-  
-// /* End Jquery */
-// });
-    
