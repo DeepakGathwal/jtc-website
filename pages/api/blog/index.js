@@ -35,7 +35,7 @@ export const blogs = catchError(async(req,res) =>{
           });
           return res.status(200).json({data, success : true})
         }
-        else return res.status(200).json({message : "Data Empty", success : false})
+        else return res.status(206).json({message : "Data Empty", success : false})
     }else{ 
      const value = await JSON.parse(redisdata)
      return res.status(200).json({data : value, success : true})

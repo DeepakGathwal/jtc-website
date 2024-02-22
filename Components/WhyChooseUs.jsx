@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Counter from './Counter';
 import { allChoosingPoint } from '@/apis/apis';
-function WhyChooseUs() {
+export default function WhyChooseUs() {
     const [state, setState] = useState([])
     const countersConfig = [
         { initialValue: 0, finalValue: 12, intervalDuration: 100 },
@@ -145,5 +145,3 @@ return (
     </>
   )
 }
-
-export default WhyChooseUs

@@ -2,7 +2,7 @@ import React , {useRef, useState,useEffect} from 'react';
 import { alltestimonials } from '@/apis/apis';
 import Slider from "react-slick";
 
-function Testimonials() {
+export default function Testimonials() {
     const [state, setState] = useState([])
     const allData = async() => {
         const data = await alltestimonials();
@@ -106,5 +106,3 @@ function Testimonials() {
     </>
   )
 }
-
-export default Testimonials

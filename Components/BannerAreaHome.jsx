@@ -3,7 +3,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import { homeCources, joinUsForm } from '@/apis/apis';
 
 // ES6 modules
-function BannerAreaHome() {
+export default function BannerAreaHome() {
     const [state, setState] = useState([])
     const [field, setField] = useState({
         name : "", phone : " " , cource : "", email : ""
@@ -110,5 +110,3 @@ function BannerAreaHome() {
         </>
     )
 }
-
-export default BannerAreaHome

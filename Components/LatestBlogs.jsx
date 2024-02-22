@@ -5,11 +5,10 @@ import { SiOpenbadges } from "react-icons/si";
 import { SlCalender } from "react-icons/sl";
 
 
-function LatestBlogs() {
+export default function LatestBlogs() {
     const [state, setState] = useState([])
     const allData = async() => {
         const data = await blogs();
-        console.log(data.data);
         if(data.success) setState(data.data)
       }
 
@@ -99,4 +98,3 @@ function LatestBlogs() {
   )
 }
 
-export default LatestBlogs
