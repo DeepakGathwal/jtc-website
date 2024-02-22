@@ -1,15 +1,19 @@
-import React , {useRef} from 'react';
+import React , {useRef, useState,useEffect} from 'react';
+import { alltestimonials } from '@/apis/apis';
 import Slider from "react-slick";
 
 function Testimonials() {
+    const [state, setState] = useState([])
+    const allData = async() => {
+        const data = await alltestimonials();
+        if(data.success) setState(data.data)
+      }
 
+      useEffect(() => {
+        allData()
+      },[])
     let sliderRef = useRef(null);
-    const next = () => {
-      sliderRef.slickNext();
-    };
-    const previous = () => {
-      sliderRef.slickPrev();
-    };
+
     var settings = {
         dots: true,
         infinite: true,
@@ -42,6 +46,9 @@ function Testimonials() {
             }
         ]
       };
+      useEffect(() => {
+        allData()
+      },[])
   return (
     <>
       
@@ -63,100 +70,23 @@ function Testimonials() {
                 <Slider ref={slider => {
           sliderRef = slider;
         }} {...settings}>
+            {state && state.map((el) => (
                     <div className="testimonial-card-box">
                         <div className="inner">
                             <div className="client-info">
                                 <div className="thumbnail">
-                                    <img src="assets/images/icons/abhishek.webp" alt="Client Images"/>
+                                    <img src={el.image} alt={el.name}/>
                                 </div>
                                 <div className="content">
-                                    <h6 className="title">Abhishek Raj</h6>
+                                    <h6 className="title">{el.name}</h6>
                                 </div>
                             </div>
-                            <p className="description">“ I become nothing to something when I joined JTC and placed on time Many many thanx to all JTC members specially Som Sir, Vivek sir, Alia Mam where I always guided by best tutor and if
-anyone wants to join JTC” <a href="https://g.co/kgs/NhbHuz" target="_blank">Read More...</a></p>
+                            <p className="description">{el.description}<a href={el.read_link} target="_blank">Read More...</a></p>
                         </div>
                     </div>
-                    <div className="testimonial-card-box">
-                        <div className="inner">
-                            <div className="client-info">
-                                <div className="thumbnail">
-                                    <img src="assets/images/icons/amit.webp" alt="Client Images"/>
-                                </div>
-                                <div className="content">
-                                    <h6 className="title">Amit Sharma</h6>
-                                </div>
-                            </div>
-                            <p className="description">“ Hi, I would like to start my journey from the beginning,,, I have done my B.E in IT branch in 2014 and then through campus I joined Accenture. But there I got a project of production support i.e L2 support where I have to work days ”  <a href="https://g.co/kgs/HRw7jX" target="_blank">Read More...</a></p>
-                        </div>
-                    </div>
-                    <div className="testimonial-card-box">
-                        <div className="inner">
-                            <div className="client-info">
-                                <div className="thumbnail">
-                                    <img src="assets/images/icons/manju.webp" alt="Client Images"/>
-                                </div>
-                                <div className="content">
-                                    <h6 className="title">Manju Patidar</h6>
-                                </div>
-                            </div>
-                            <p className="description">“ HI, I am Manju. Today I'm going to tell you journary  of my life with jtc.
-I have done mca in 2011 after that i did  job in vodafone as
-a RelationshipManager for a HNI customer.after that i  married & busy in my new lifestyle, how.” <a href="https://g.co/kgs/dmPQhC" target="_blank">Read More...</a></p>
-                        </div>
-                    </div>
-                    <div className="testimonial-card-box">
-                        <div className="inner">
-                            <div className="client-info">
-                                <div className="thumbnail">
-                                    <img src="assets/images/icons/raj.webp" alt="Client Images"/>
-                                </div>
-                                <div className="content">
-                                    <h6 className="title">Raj Arya</h6>
-                                </div>
-                            </div>
-                            <p className="description">“It's been a great journey from a 2016 ECE graduate with 4 years of experience in telecom sector to a software engineer in one of the top mnc's in India.It's hard to put in words the role which JTC INDIA has played ” <a href="https://g.co/kgs/G5fiSK" target="_blank">Read More...</a></p>
-                        </div>
-                    </div>
-                    <div className="testimonial-card-box">
-                        <div className="inner">
-                            <div className="client-info">
-                                <div className="thumbnail">
-                                    <img src="assets/images/icons/prabhat.webp" alt="Client Images"/>
-                                </div>
-                                <div className="content">
-                                    <h6 className="title">Prabhat Kumar</h6>
-                                </div>
-                            </div>
-                            <p className="description">“My experience with JTC India is very good . You will never find anywhere the kind of material they provide you here for learning .Faculties are good and experienced. Before joining JTC India I was doing private job” <a href="https://g.co/kgs/ea9XLY" target="_blank">Read More...</a></p>
-                        </div>
-                    </div>
-                    <div className="testimonial-card-box">
-                        <div className="inner">
-                            <div className="client-info">
-                                <div className="thumbnail">
-                                    <img src="assets/images/icons/diwakar.webp" alt="Client Images"/>
-                                </div>
-                                <div className="content">
-                                    <h6 className="title">Diwakar Tiwari</h6>
-                                </div>
-                            </div>
-                            <p className="description">Completing JTC's Java Full Stack Developer program marked a turning point in my career. The program's holistic curriculum, spanning front-end essentials like HTML ,CSS ,JavaScript to back-end frameworks such as Spring,  <a href="https://g.co/kgs/FSSjgYw" target="_blank">Read More...</a></p>
-                        </div>
-                    </div>
-                    <div className="testimonial-card-box">
-                        <div className="inner">
-                            <div className="client-info">
-                                <div className="thumbnail">
-                                    <img src="assets/images/icons/lucky.webp" alt="Client Images"/>
-                                </div>
-                                <div className="content">
-                                    <h6 className="title">Lucky upadhyay</h6>
-                                </div>
-                            </div>
-                            <p className="description">I recently completed coaching at JTC India, and I must say it was a transformative experience. The content provided was not only efficient but also tailored to the needs of the students. The instructors demonstrated <a href="https://g.co/kgs/gVFvwQm" target="_blank">Read More...</a></p>
-                        </div>
-                    </div>
+
+            ))}
+                   
                 </Slider>
 
                 </div>

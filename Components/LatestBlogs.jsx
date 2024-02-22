@@ -1,10 +1,21 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
+import { blogs } from '@/apis/apis';
 import { FaArrowRight } from "react-icons/fa6";
 import { SiOpenbadges } from "react-icons/si";
 import { SlCalender } from "react-icons/sl";
 
 
 function LatestBlogs() {
+    const [state, setState] = useState([])
+    const allData = async() => {
+        const data = await blogs();
+        console.log(data.data);
+        if(data.success) setState(data.data)
+      }
+
+      useEffect(() => {
+        allData()
+      },[])
   return (
     <>
       
@@ -30,85 +41,37 @@ function LatestBlogs() {
                     </div>
                     </div>
                     <div className="row g-5 mt--30">
+                        {state.length > 0 && state.map((el) => (
+                          
+                            <>
+                             <div className="col-lg-4 col-md-6 col-12">
+                         <div className="edu-blog blog-type-2 bg-white radius-small"> 
+                                <div className="inner">
+                                    <div className="thumbnail">
+                                         <img src={el.icon} alt={el.name}/>
+                                    </div>
+                                    <div class="content">
+                                        <div class="status-group">
+                                         <SiOpenbadges /> {el.category}
+                                        </div>
+                                        <h5 class="title">{el.name}</h5>
+                                        <div class="blog-card-bottom">
+                                            <ul class="blog-meta">
+                                                <li><SlCalender /> {el.addedAt}</li>
+                                            </ul>
+                                            <div class="read-more-btn">
+                                                Read More <FaArrowRight />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                             </div>
+                              </div>
+                               </>
+                        ))}
+                        </div>
+                       
 
-                        <div className="col-lg-4 col-md-6 col-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-                            <div className="edu-blog blog-type-2 bg-white radius-small">
-                                <div className="inner">
-                                    <div className="thumbnail">
-                                        <a href="blog/roadmap-to-prepare-for-campus-placement.php">
-                                            <img src="assets/images/banner/road_map.jpg" alt="Blog Images"/>
-                                        </a>
-                                    </div>
-                                    <div class="content">
-                                        <div class="status-group">
-                                            <a href="blog/roadmap-to-prepare-for-campus-placement.php" class="eduvibe-status status-05"><SiOpenbadges /> Education</a>
-                                        </div>
-                                        <h5 class="title"><a href="blog/roadmap-to-prepare-for-campus-placement.php">Roadmap To Prepare For Campus Placement</a></h5>
-                                        <div class="blog-card-bottom">
-                                            <ul class="blog-meta">
-                                                <li><SlCalender /> 01 Aug, 2023</li>
-                                            </ul>
-                                            <div class="read-more-btn">
-                                                <a class="btn-transparent" href="blog/roadmap-to-prepare-for-campus-placement.php">Read More <FaArrowRight /></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6 col-12" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">
-                            <div className="edu-blog blog-type-2 bg-white radius-small">
-                                <div className="inner">
-                                    <div className="thumbnail">
-                                        <a href="Amazing-Java-Application-you-should-know-about.php">
-                                            <img src="assets/images/banner/java_6_amazing.jpg" alt="Blog Images"/>
-                                        </a>
-                                    </div>
-                                    <div class="content">
-                                        <div class="status-group">
-                                            <a href="Amazing-Java-Application-you-should-know-about.php" class="eduvibe-status status-05"><SiOpenbadges /> Education</a>
-                                        </div>
-                                        <h5 class="title"><a href="Amazing-Java-Application-you-should-know-about.php">6 Amazing Java Applications You Should Know About</a></h5>
-                                        <div class="blog-card-bottom">
-                                            <ul class="blog-meta">
-                                                <li><SlCalender /> 05 Aug, 2023</li>
-                                            </ul>
-                                            <div class="read-more-btn">
-                                                <a class="btn-transparent" href="Amazing-Java-Application-you-should-know-about.php">Read More <FaArrowRight /></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6 col-12" data-sal-delay="250" data-sal="slide-up" data-sal-duration="800">
-                            <div className="edu-blog blog-type-2 bg-white radius-small">
-                                <div className="inner">
-                                    <div className="thumbnail">
-                                        <a href="blog/Python-Machine-Learning-Libraries.php">
-                                            <img src="assets/images/banner/PythonMachineLearningbanner.jpg" alt="Blog Images"/>
-                                        </a>
-                                    </div>
-                                    <div class="content">
-                                        <div class="status-group">
-                                            <a href="blog/Python-Machine-Learning-Libraries.php" class="eduvibe-status status-05"><SiOpenbadges /> Education</a>
-                                        </div>
-                                        <h5 class="title"><a href="blog/Python-Machine-Learning-Libraries.php">Python Machine Learning Libraries</a></h5>
-                                        <div class="blog-card-bottom">
-                                            <ul class="blog-meta">
-                                                <li><SlCalender /> 08 Aug, 2023</li>
-                                            </ul>
-                                            <div class="read-more-btn">
-                                                <a class="btn-transparent" href="blog/Python-Machine-Learning-Libraries.php">Read More <FaArrowRight /></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
 
                     <div className="shape-dot-wrapper shape-wrapper d-xl-block d-none">
                         <div className="shape-image shape-image-1">

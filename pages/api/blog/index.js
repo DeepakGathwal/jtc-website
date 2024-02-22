@@ -9,9 +9,9 @@ import { client } from "@/utils/redisFile";
 export default async function handler(req, res) {
     const method = req.method
     switch (method) {
-        case 'GET':  await choosePoint(req, res);
+        case 'GET':  await blogs(req, res);
             break;
-        case 'POST': await escapeRequestBody(req,res);  await getInTouch(req, res);
+        case 'POST':   await getInTouch(req, res);
             break;
         default: return res.status(405).end(`Method ${method} Not Allowed`);
     }
@@ -22,14 +22,14 @@ export default async function handler(req, res) {
 
 
 // Get All Chossing Point
-export const choosePoint = catchError(async(req,res) =>{
-    const redisdata = await client.get("choosePoint");
+export const blogs = catchError(async(req,res) =>{
+    const redisdata = await client.get("blogs");
     if(!redisdata){
-        const query =  `Select point from jtc_choosing_point `
+        const query =  `Select blog.id,blog.name,category.name as category, blog.icon, Date_Format(blog.created_at, '%d-%M-%Y') as addedAt from jtc_blogs as blog Left Join jtc_blog_category as category On category.id = blog.blog_category Where blog.deleted_by = '0' `
         const data = await executeQuery(query);
         if(data.length > 0) {
         const value = await JSON.stringify(data)
-        await client.set("choosePoint", value, {
+        await client.set("blogs", value, {
             EX: process.env.REDIS_EXP,   
             NX: true
           });
