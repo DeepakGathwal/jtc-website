@@ -5,6 +5,7 @@ import { RiChat1Line } from "react-icons/ri";
 import { FaGripLines } from "react-icons/fa";
 import { useRouter } from 'next/navigation';
 import Test from './test';
+import "./Header.css";
 
 export default function Header() {
     const router = useRouter();
@@ -15,8 +16,8 @@ export default function Header() {
    
   return (
   
-      <header className="edu-header header-style-2 disable-transparent header-sticky">
-            <div className="row align-items-center">
+      <header className="edu-header header-style-2 disable-transparent header-sticky row-flex space-between-row align-items-center-row">
+            <div className="row align-items-center w-100">
                 <div className="col-lg-6 col-xl-2 col-md-6 col-6">
                     <div className="logo" onClick={() => router.push("/")}>
                      
@@ -46,7 +47,8 @@ export default function Header() {
                         <div className="header-menu-bar">
                             <div className="call-icon d-none d-md-block">
                                 <a href="tel:09990699111" className="edu-btn btn-medium left-icon btn-white">
-<IoCall /> +91-999-0699-111</a>
+                                    <IoCall /> +91-999-0699-111
+                                </a>
                             </div>
                             <div className="quote-icon quote-user d-block d-md-none ml--15 ml_sm--5">
                                 <a className="white-box-icon popup-btn" href="tel:09990699111"><IoCall /> </a>

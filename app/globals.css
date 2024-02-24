@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap");
-@import url("https://jtcindia.org/website/assets/css/vendor/bootstrap.min.css");
+@import url("https://www.jtcindia.org/assets/css/vendor/bootstrap.min.css");
 @import 'sal.js/dist/sal.css';
 :root {
   --color-primary: #525FE1;
@@ -6035,7 +6035,11 @@ body.sal-disabled [data-sal|='flip'] {
   @media only screen and (max-width: 767px) {
     .header-style-2 {
       padding: 0 15px; }
-	  .edu-header .logo {width:80px;}
+	  .edu-header .logo {
+      width:80px;
+      display: flex;
+      align-items: center;
+    }
 	  .edu-footer-widget .logo{text-align: center;}
 	  .edu-footer-widget .logo img {width:80px;}
 
@@ -6064,7 +6068,16 @@ body.sal-disabled [data-sal|='flip'] {
     .white-box-icon {
       height: 40px;
       line-height: 40px;
-      width: 40px; } }
+      width: 40px; 
+    }
+    .edu-header .header-menu-bar .quote-icon, .mobile-menu-bar {
+      width: 40px;
+      height: 40px;
+      line-height:normal;
+      padding: 0;
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.06);
+    }
+    }
 
 @keyframes headerSticky {
   0% {

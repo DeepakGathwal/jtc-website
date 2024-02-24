@@ -1,0 +1,58 @@
+
+.edu-header .logo {
+    width: 135px;
+    height: 70px;
+}
+.edu-header {
+    min-height: 90px;
+}
+
+.row-flex {
+    display: flex;
+    flex-direction: row;
+}
+.column-flex {
+    display: flex;
+    flex-direction: column;
+}
+.col-flex-start {
+    align-items: flex-start;
+}
+.space-between-row {
+    justify-content: space-between;
+}
+.align-items-center-row {
+    align-items: center;
+}
+.align-items-center-column {
+    justify-content: center;
+}
+.w-100 {
+    width: 100%;
+}
+.mainmenu li {
+    color: #231f40;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0 14px;
+    display: block;
+    height: 80px;
+    line-height: 80px;
+    transition: 0.3s;
+}
+.edu-header .header-menu-bar .quote-icon {
+    text-decoration: none;
+    background: #fff;
+    color: #525fe1;
+    line-height: 46px;
+    box-shadow: 2px 2px 4px #ccc;
+    height: 50px;
+    padding: 0 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    transition: 0.4s;
+}
