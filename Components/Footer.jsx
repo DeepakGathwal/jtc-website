@@ -6,13 +6,12 @@ import { FaAngleDoubleRight } from "react-icons/fa";
 export default function Footer() {
     const [state, setState] = useState([])
     const allData = async() => {
-        const data = await footerData();
-        if(data.success){
-            const value = data.data
-             setState(...value)
-            }
+        const {data} = await footerData();
+        if(data.length > 0)
+        return setState(...data)
       }
-     
+    
+
       useEffect(() => {
         allData()
       },[])

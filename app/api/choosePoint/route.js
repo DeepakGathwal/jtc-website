@@ -1,28 +1,13 @@
 import { escapeRequestBody, executeQuery } from "@/conn/conn";
 import catchError from "@/middelware/catchError";
 import { sendEmail } from "@/middelware/sendEmail";
-
+import { NextResponse } from "next/server";
 import { client } from "@/utils/redisFile";
 
 
 
-export default async function handler(req, res) {
-    const method = req.method
-    switch (method) {
-        case 'GET':  await choosePoint(req, res);
-            break;
-        case 'POST': await escapeRequestBody(req,res);  await getInTouch(req, res);
-            break;
-        default: return res.status(405).end(`Method ${method} Not Allowed`);
-    }
-}
-
-
-
-
-
-// Get All Chossing Point
-export const choosePoint = catchError(async(req,res) =>{
+// // Get All Chossing Point
+export async  function GET(req){
     const redisdata = await client.get("choosePoint");
     if(!redisdata){
         const query =  `Select point from jtc_choosing_point `
@@ -33,17 +18,17 @@ export const choosePoint = catchError(async(req,res) =>{
             EX: process.env.REDIS_EXP,   
             NX: true
           });
-          return res.status(200).json({data, success : true})
+          return NextResponse.json({data},{success : true}, {status : 200})
         }
-        else return res.status(200).json({message : "Data Empty", success : false})
+        else return NextResponse.json({message : "Data Empty"},{success : false}, {status : 206})
     }else{ 
      const value = await JSON.parse(redisdata)
-     return res.status(200).json({data : value, success : true})
+     return NextResponse.json({data : value}, { success : true}, {status : 200})
 }
-})
+}
 
 
-export const getInTouch = catchError(async(req,res) => {
+export async  function POST(req){
     const {name, phone, cource, email} = req.body
     const  query =  `Insert into jtc_enquiry_form SET name = ${name}, email = ${email} , phone_number = ${phone}, cource = (SELECT id from jtc_cources WHERE name = ${cource}), form_id = '1'`
     const insertData = await executeQuery(query);
@@ -52,6 +37,7 @@ export const getInTouch = catchError(async(req,res) => {
         const subject = "Get In Touch"
         const options = {message, subject};
        await sendEmail(options)
-    return res.status(200).json({message : "Form Submited Successfully", success : true})}
-    else  return res.status(200).json({message : "Form Submition Issue", success : false})
-})
+   return NextResponse.json({message : "Form Submited Successfully"},{success : true}, {status : 200})
+    }
+    else return NextResponse.json({message : "Form Submition Issue"},{success : false}, {status : 206})
+}

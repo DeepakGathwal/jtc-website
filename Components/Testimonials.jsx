@@ -5,13 +5,12 @@ import Slider from "react-slick";
 export default function Testimonials() {
     const [state, setState] = useState([])
     const allData = async() => {
-        const data = await alltestimonials();
-        if(data.success) setState(data.data)
+        const {data} = await alltestimonials();
+        if(data.length > 0)
+        return setState(data)
       }
 
-      useEffect(() => {
-        allData()
-      },[])
+     
     let sliderRef = useRef(null);
 
     var settings = {

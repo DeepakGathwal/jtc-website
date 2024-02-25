@@ -5,8 +5,9 @@ import Slider from "react-slick";
 export default function StudentPlaced() {
     const [state, setState] = useState([])
     const allData = async () => {
-        const data = await homeCompany();
-        if (data.success) setState(data.data)
+        const {data} = await homeCompany();
+        if(data.length > 0)
+       return setState(data)
     }
     useEffect(() => {
         allData()

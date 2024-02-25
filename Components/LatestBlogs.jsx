@@ -8,8 +8,9 @@ import { SlCalender } from "react-icons/sl";
 export default function LatestBlogs() {
     const [state, setState] = useState([])
     const allData = async() => {
-        const data = await blogs();
-        if(data.success) setState(data.data)
+        const {data} = await blogs();
+        if(data.length > 0)
+         return setState(data)
       }
 
       useEffect(() => {
@@ -31,9 +32,9 @@ export default function LatestBlogs() {
                                 </svg></span>Blog</span></h3>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6">
-                        <div class="view-more-btn text-end">
-                            <a class="edu-btn" href="blog/index.php">
+                        <div className="col-lg-6 col-md-6">
+                        <div className="view-more-btn text-end">
+                            <a className="edu-btn" href="blog/index.php">
                                 Browse All Blogs  <FaArrowRight />
                             </a>
                         </div>
@@ -49,16 +50,16 @@ export default function LatestBlogs() {
                                     <div className="thumbnail">
                                          <img src={el.icon} alt={el.name}/>
                                     </div>
-                                    <div class="content">
-                                        <div class="status-group">
+                                    <div className="content">
+                                        <div className="status-group">
                                          <SiOpenbadges /> {el.category}
                                         </div>
-                                        <h5 class="title">{el.name}</h5>
-                                        <div class="blog-card-bottom">
-                                            <ul class="blog-meta">
+                                        <h5 className="title">{el.name}</h5>
+                                        <div className="blog-card-bottom">
+                                            <ul className="blog-meta">
                                                 <li><SlCalender /> {el.addedAt}</li>
                                             </ul>
-                                            <div class="read-more-btn">
+                                            <div className="read-more-btn">
                                                 Read More <FaArrowRight />
                                             </div>
                                         </div>

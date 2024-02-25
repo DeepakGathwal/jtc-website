@@ -21,8 +21,10 @@ export default function WhyChooseUs() {
       ]
 
       const allData = async() => {
-        const data = await allChoosingPoint();
-        if(data.success) setState(data.data)
+        const {data} = await allChoosingPoint();
+        if(data.length > 0)
+        return setState(data);
+       
       }
 
       

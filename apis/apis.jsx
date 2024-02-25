@@ -6,6 +6,7 @@ let company = "company"
 let testimonials = "testimonials"
 let footer = "footer"
 let blog = "blog"
+let about = "about"
 
 
 export const blogs = async () => {
@@ -51,13 +52,6 @@ export const alltestimonials = async () => {
     return err
   }
 };
-
-
-
-
-
-
-
 export const homeCources = async () => {
   try{
     const { data } = await instance.get(cources);
@@ -75,6 +69,17 @@ export const homeCources = async () => {
 export const homeCompany = async () => {
   try{
     const { data } = await instance.get(company);
+    return data;
+
+  }catch(err){
+    return err
+  }
+};
+
+
+export const aboutUS = async () => {
+  try{
+    const { data } = await instance.get(about);
     return data;
 
   }catch(err){
