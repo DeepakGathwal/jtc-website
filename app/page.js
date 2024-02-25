@@ -17,9 +17,7 @@ export default function Home() {
   sal();
   
   return (
-   <>
- 
-   
+   <>  
     <BannerAreaHome/>
     <WhyChooseUs/>
      <FeaturedCourses/>

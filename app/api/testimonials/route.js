@@ -1,27 +1,10 @@
 import { executeQuery } from "@/conn/conn";
-import catchError from "@/middelware/catchError";
-
 import { client } from "@/utils/redisFile";
-
-
-
-export default async function handler(req, res) {
-    const method = req.method
-    switch (method) {
-        case 'GET':  await testimonials(req, res);
-            break;
-      
-        default:
-            return res.status(405).end(`Method ${method} Not Allowed`);
-    }
-}
-
-
-
+import { NextResponse } from "next/server";
 
 
 // Get All Chossing Point
-export const testimonials = catchError(async(req,res) =>{
+export async  function GET(req){
     const redisdata = await client.get("testimonials");
     if(!redisdata){
         const query =  `Select name, image, description, read_link from jtc_testimonials WHERE deleted_by = '0' `
@@ -32,11 +15,11 @@ export const testimonials = catchError(async(req,res) =>{
             EX: process.env.REDIS_EXP,    
             NX: true
           });
-          return res.status(200).json({data, success : true})
+          return NextResponse.json({data},{success : true}, {status : 200})
         }
-        else return res.status(200).json({message : "Data Empty", success : false})
+        else return NextResponse.json({message : "Data Empty"},{success : false}, {status : 206})
     }else{ 
      const value = await JSON.parse(redisdata)
-     return res.status(200).json({data : value, success : true})
+     return NextResponse.json({data : value}, { success : true}, {status : 200})
 }
-})
+}

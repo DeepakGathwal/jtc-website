@@ -8,8 +8,9 @@ import { SlCalender } from "react-icons/sl";
 export default function LatestBlogs() {
     const [state, setState] = useState([])
     const allData = async() => {
-        const data = await blogs();
-        if(data.success) setState(data.data)
+        const {data} = await blogs();
+        if(data.length > 0)
+         return setState(data)
       }
 
       useEffect(() => {
