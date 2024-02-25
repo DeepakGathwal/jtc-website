@@ -2,7 +2,7 @@ import { homeCompany } from '@/apis/apis';
 import React, { useRef, useState, useEffect } from 'react';
 import Slider from "react-slick";
 
-function StudentPlaced() {
+export default function StudentPlaced() {
     const [state, setState] = useState([])
     const allData = async () => {
         const data = await homeCompany();
@@ -105,6 +105,3 @@ function StudentPlaced() {
         </>
     )
 }
-
-
-export default StudentPlaced

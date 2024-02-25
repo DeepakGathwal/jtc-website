@@ -8,7 +8,7 @@ import { client } from "@/utils/redisFile";
 export default async function handler(req, res) {
     const method = req.method
     switch (method) {
-        case 'GET':  await comany(req, res);
+        case 'GET':  await footer(req, res);
             break;
       
         default:
@@ -21,14 +21,14 @@ export default async function handler(req, res) {
 
 
 // Get All Chossing Point
-export const comany = catchError(async(req,res) =>{
-    const redisdata = await client.get("company");
+export const footer = catchError(async(req,res) =>{
+    const redisdata = await client.get("footer");
     if(!redisdata){
-        const query =  `Select name, icon, link from jtc_companies WHERE deleted_by = '0' `
+        const query =  `Select * from jtc_footer`
         const data = await executeQuery(query);
         if(data.length > 0) {
         const value =  await JSON.stringify(data)
-        await client.set("company", value, {
+        await client.set("footer", value, {
             EX: process.env.REDIS_EXP,    
             NX: true
           });
