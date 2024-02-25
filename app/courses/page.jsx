@@ -1,18 +1,14 @@
-import Header from '@/Components/Header';
 import React from 'react';
-import "../../app/globals.css";
+import "../globals.css"
 import "./orbit.css";
 import { FaArrowRight } from "react-icons/fa6";
 import "./hero.css";
-import sal from 'sal.js';
 
 
 
 function Index() {
-  sal();
   return (
     <>
-        <Header/>
         <div className="hero-section">
             <div className="container">
                 <div className="row-flex hero-pad space-between-row">
@@ -61,7 +57,7 @@ function Index() {
             <div class="container eduvibe-animated-shape">
                 <div class="row g-5">
                     <div class="col-lg-12">
-                    <div class="section-title white-title" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                    <div class="section-title white-title">
                            
                            <h3 class="title tg-svg">Assured <span class="position-relative color-primary"><span class="svg-icon" id="svg-1"><svg width="100%" height="100%" viewBox="0 0 145 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M1.00016 15.2711C18.1407 8.34427 70.832 -1.93441 144.473 12.3652" stroke="currentcolor" stroke-width="4"></path>
@@ -168,4 +164,4 @@ function Index() {
   )
 }
 
-export default Inde
+export default Index

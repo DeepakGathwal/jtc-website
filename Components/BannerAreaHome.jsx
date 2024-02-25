@@ -54,7 +54,7 @@ export default function BannerAreaHome() {
                             <div className="row g-5">
                                 <div className="col-lg-9 col-md-6 col-sm-6 offset-lg-3">
 
-                                    <div className="edu-card card-type-6 radius-small"  data-sal="slide-up" data-sal-duration="800">
+                                    <div className="edu-card card-type-6 radius-small">
                                         <div className="inner">
                                             <div className="container checkout-page-style" style={{ padding: 0 }}>
                                                 <div className="login-form-box">
@@ -80,7 +80,7 @@ export default function BannerAreaHome() {
                                                             </select>
                                                         </div>
                                                         <div className="comment-form-consent input-box mb--20">
-                                                            <label><input id="checkbox-6" type="checkbox" required checked /></label>
+                                                            <label><input id="checkbox-6" type="checkbox" required className='termChecked'/></label>
                                                             <label htmlFor="checkbox-6"> I have reviewed all <a
                                                                 href="termsandcondition.html" target="_blank"> Terms and
                                                                 Conditions</a>.</label>
