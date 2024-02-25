@@ -84,8 +84,10 @@
     animation: rotateIt 10s linear infinite;
     border-radius: 100%;
 }
-@keyframes rotateIt 100% {
-    transform: rotate(360deg);
+@keyframes rotateIt {
+    100% {
+        transform: rotate(360deg);
+    }
 }
 .about-section .abt-img .badge-inner {
     position: absolute;
@@ -116,6 +118,57 @@
     padding: 40px 0;
 }
 
+.about-section .shape-bottom {
+    right: 8px;
+    position: absolute;
+    right: 88px;
+    top: 379px;
+    animation: eduvibe-vsm-y-move 3.5s alternate infinite linear;
+}
+.about-section {
+    position: relative;
+}
+@keyframes eduvibe-vsm-y-move {
+    0% {
+    -webkit-transform: translate(0, -30%);
+    transform: translate(0, -30%);
+}
+
+100% {
+    -webkit-transform: translate(0, 30%);
+    transform: translate(0, 30%);
+}
+}
+.about-section .abt-text .description {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    padding-left: 17px;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.about-section .abt-text .description::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    width: 2px;
+    height: 46px;
+    background: var(--color-primary);
+    top: 50%;
+    transform: translateY(-50%);
+}
+.about-section .abt-text .title-top .title {
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--color-primary);
+    display: inline-block;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    letter-spacing: 0.1em;
+}
+
 @media (min-width: 768px) {
 .about-hero-section .heroinfographic .cta-button {
     display: none;
@@ -125,6 +178,15 @@
     .about-hero-section .herocta {
         align-items: center;
         justify-content: center;
+    }
+    .about-section .shape-bottom {
+        display: none;
+    }
+    .about-section .abt-img .badge-inner {
+        display: none;
+    }
+    .about-section .abt-img {
+        margin-right: 0;
     }
     .about-hero-section .herocta .cta-button {
         display: none;
