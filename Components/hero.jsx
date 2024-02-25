@@ -2,10 +2,10 @@ import "./hero.css"
 import Image from "next/image";
 import Heroimg from "../public/assets/images/banner/aboutushero.svg"
 import Floatimg from "../public/assets/images/banner/floathero.svg"
-// import Aboutuspost from "../public/assets/images/banner/aboutimg/aboutuspost.png";
-// import Aboutfour from "../public/assets/images/banner/aboutimg/shape-04-01.png";
-// import Aboutnine from "../public/assets/images/banner/aboutimg/badge.png";
-// import Shapeseven from "../public/assets/images/banner/aboutimg/shape-07.png"
+import Aboutuspost from "../public/assets/images/banner/aboutimg/aboutuspost.png";
+import Aboutfour from "../public/assets/images/banner/aboutimg/shape-04-01.png";
+import Aboutnine from "../public/assets/images/banner/aboutimg/badge.png";
+import Shapeseven from "../public/assets/images/banner/aboutimg/shape-07.png"
 // import Aboutimagetwo from "../public/assets/images/banner/aboutimg/about-image-02.jpg"
 const HeroSection = () => {
     return (
@@ -48,7 +48,7 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-        {/* <div className="about-section">
+        <div className="about-section">
           <div className="container">
             <div className="row g-5">
               <div className="col-lg-6">
@@ -70,13 +70,13 @@ const HeroSection = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-lg-6 Abt-text">
+              <div className="col-lg-6 abt-text">
                 <div className="inner">
                   <div className="title-top">
                     <span className="title">About Us</span>
-                    <h3 className="title-head">
+                    {/* <h3 className="title-head">
                       Creating A Community Of Life Long Learners
-                    </h3>
+                    </h3> */}
                   </div>
                   <p className="description">
                     We were incorporated as a Training Center in the year 2012*
@@ -110,7 +110,7 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
       </>
     );
 }
