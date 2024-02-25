@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Header from "@/Components/Header";
 import Footer from "@/Components/Footer";             
 import "../app/globals.css";
-import HeroSection from "./hero";
+import HeroSection from "../Components/hero";
 import WhyChooseUs from "@/Components/WhyChooseUs";
 // import StudentPlaced from "@/Components/StudentPlaced";
 // import Testimonials from "@/Components/Testimonials";
