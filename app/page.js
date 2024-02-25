@@ -18,10 +18,11 @@ export default function Home() {
   
   return (
    <>
+ 
    
     <BannerAreaHome/>
     <WhyChooseUs/>
-    <FeaturedCourses/>
+     <FeaturedCourses/>
     <StudentPlaced/>
     <Testimonials/>
     <LatestBlogs/>
