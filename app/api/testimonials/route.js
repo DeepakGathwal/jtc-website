@@ -1,5 +1,5 @@
 import { executeQuery } from "@/conn/conn";
-import { client } from "@/utils/redisFile";
+import { client } from "@/middelware/redisFile";
 import { NextResponse } from "next/server";
 
 

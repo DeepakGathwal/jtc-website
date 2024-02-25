@@ -114,8 +114,8 @@ return (
                     <div className="col-lg-6">
                         <div className="choose-us-2">
                             <div className="inner">
-                                <div className="section-title text-left" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-                                    <span className="pre-title" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">Worldwide Our Achievement</span>
+                                <div className="section-title text-left" >
+                                    <span className="pre-title" >Worldwide Our Achievement</span>
                                     <h3 className="title tg-svg">Why <span className="position-relative color-primary"><span className="svg-icon" id="svg-5"><svg width="100%" height="100%" viewBox="0 0 145 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M1.00016 15.2711C18.1407 8.34427 70.832 -1.93441 144.473 12.3652" stroke="currentcolor" strokeWidth="4" style={{strokeDasharray: "146, 148", strokeDashoffset: "0"}}></path>
                                     <path d="M26.2943 14.0041C38.9177 9.44643 77.3772 3.50055 130.227 16.1786" stroke="currentcolor" strokeWidth="2" style={{strokeDasharray: "106, 108", strokeDashoffset: "0"}}></path>

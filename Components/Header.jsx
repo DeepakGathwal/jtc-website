@@ -33,7 +33,7 @@ export default function Header() {
                             <li className="has-droupdown" onClick={() => router.push("/about")}>
                                About Us
                                 </li>
-                            <li className="has-droupdown"  onClick={() => router.push("/cources")}>Courses
+                            <li className="has-droupdown"  onClick={() => router.push("/courses")}>Courses
                             </li>
                             <li className="has-droupdown"  onClick={() => router.push("/tutorial")}>Tutorial</li>
 							<li className="has-droupdown">Hire from Us</li>
