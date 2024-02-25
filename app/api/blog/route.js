@@ -2,7 +2,7 @@ import { escapeRequestBody, executeQuery } from "@/conn/conn";
 import catchError from "@/middelware/catchError";
 import { sendEmail } from "@/middelware/sendEmail";
 import { NextResponse } from "next/server";
-import { client } from "@/utils/redisFile";
+import { client } from "@/middelware/redisFile";
 
 
 // Get All Chossing Point
