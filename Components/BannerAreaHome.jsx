@@ -80,7 +80,7 @@ export default function BannerAreaHome() {
                                                             </select>
                                                         </div>
                                                         <div className="comment-form-consent input-box mb--20">
-                                                            <label><input id="checkbox-6" type="checkbox" required checked /></label>
+                                                            <label><input id="checkbox-6" type="checkbox" required className='termChecked'/></label>
                                                             <label htmlFor="checkbox-6"> I have reviewed all <a
                                                                 href="termsandcondition.html" target="_blank"> Terms and
                                                                 Conditions</a>.</label>
