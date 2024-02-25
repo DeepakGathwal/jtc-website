@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa6";
 import { homeCources } from '@/apis/apis';
 
-function FeaturedCourses() {
+export default function FeaturedCourses() {
     const [state, setState] = useState([])
     let sliderRef = useRef(null);
     const next = () => {
@@ -244,5 +244,3 @@ function FeaturedCourses() {
     </>
   )
 }
-
-export default FeaturedCourses

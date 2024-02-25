@@ -1,8 +1,22 @@
 "use client"
-import React from 'react';
+import { footerData } from '@/apis/apis';
+import React,{useState, useEffect} from 'react';
 import { FaAngleDoubleRight } from "react-icons/fa";
 
 export default function Footer() {
+    const [state, setState] = useState([])
+    const allData = async() => {
+        const data = await footerData();
+        if(data.success){
+            const value = data.data
+             setState(...value)
+            }
+      }
+     
+      useEffect(() => {
+        allData()
+      },[])
+
     return (
         <>
             <footer className="eduvibe-footer-one edu-footer footer-style-default">
@@ -16,16 +30,17 @@ export default function Footer() {
                                             <img className="logo-light" src="assets/images/logo/logoFooter.webp" alt="Site Logo" />
                                         </a>
                                     </div>
-                                    <p className="description">We were incorporated as a Training Center in the year 2012* with the moto
-                                        of skilling the youth population and assuring them standard placements.</p>
+                                    <p className="description">{state && state.about}</p>
                                     <ul className="social-share">
-                                        <li><a href="https://www.facebook.com/jtcindiaofficial" target="_blank"><i
+                                        <li><a href={state && state.facebook} target="_blank"><i
                                             className="icon-Fb"></i></a></li>
-                                        <li><a href="https://www.youtube.com/@JTCINDIA" target="_blank"><i
+                                        <li><a href={state && state.youtube} target="_blank"><i
                                             className="icon-youtube"></i></a></li>
-                                        <li><a href="https://www.linkedin.com/in/jtc-noida/" target="_blank"><i
+                                        <li><a href={state && state.linkedin} target="_blank"><i
                                             className="icon-linkedin"></i></a></li>
-                                        <li><a href="https://twitter.com/jtc_india" target="_blank"><i className="icon-Twitter"></i></a>
+                                        <li><a href={state && state.twitter} target="_blank"><i className="icon-Twitter"></i></a>
+                                        </li>
+                                        <li><a href={state && state.instagram} target="_blank"><i className="icon-Twitter"></i></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -68,14 +83,13 @@ export default function Footer() {
                                     <div className="inner">
                                         <div className="widget-information">
                                             <ul className="information-list">
-                                                <li><i className="icon-map-pin-line"></i>D-44, Second Floor, 93.5 Red FM,
-                                                    D-Block, Sector 2,Noida UP. 201301
+                                                <li><i className="icon-map-pin-line"></i>{state && state.contact}
                                                 </li>
-                                                <li><i className="icon-phone-fill"></i><a href="tel:+919990699111">+91-999-0699-111</a>
+                                                <li><i className="icon-phone-fill"></i><a href="tel:+919990699111">{state && state.phone}</a>
                                                 </li>
 
                                                 <li><i className="icon-mail-line-2"></i><a target="_blank"
-                                                    href="mailto:info@jtcindia.org">info@jtcindia.org</a></li>
+                                                    href="mailto:info@jtcindia.org">{state && state.email}</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -98,7 +112,7 @@ export default function Footer() {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="inner text-center">
-                                    <p>Copyright &copy; 2023 <a href="https://jtcindia.org/index.php">JTC</a>. All Rights Reserved
+                                    <p>Copyright &copy; {new Date().getFullYear()} <a href="https://jtcindia.org/index.php">{state && state.name}</a>. All Rights Reserved
                                     </p>
                                 </div>
                             </div>

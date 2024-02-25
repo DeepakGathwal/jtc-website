@@ -3,45 +3,41 @@ import React, { useState } from 'react'
 
 import { IoCall } from "react-icons/io5";
 import { RiChat1Line } from "react-icons/ri";
-import Link from 'next/link';
 import { FaGripLines } from "react-icons/fa";
+import { useRouter } from 'next/navigation';
 import Test from './test';
 
 export default function Header() {
+    const router = useRouter();
     const [show, setShow] = useState(false)
     const handelShow = () => {
         setShow(true)
     }
    
   return (
-    <>
-   
+  
       <header className="edu-header header-style-2 disable-transparent header-sticky">
             <div className="row align-items-center">
                 <div className="col-lg-6 col-xl-2 col-md-6 col-6">
-                    <div className="logo">
-                        <a href="https://www.jtcindia.org">
+                    <div className="logo" onClick={() => router.push("/")}>
+                     
                             <img className="logo-light" src="/assets/images/logo/logo.webp" alt="JTC LOGO" />
-                        </a>
-                    </div>
+                     </div>
                 </div>
 
                 <div className="col-lg-6 d-none d-xl-block">
                     <nav className="mainmenu-nav">
                         <ul className="mainmenu">
-                            <li className="has-droupdown"><a href="https://www.jtcindia.org">Home</a></li>
-                            <li className="has-droupdown" >
-                                <Link href="/about">
-                                About Us
-                                </Link>
+                            <li className="has-droupdown"  onClick={() => router.push("/")}>Home</li>
+                            <li className="has-droupdown" onClick={() => router.push("/about")}>
+                               About Us
                                 </li>
-                            <li className="has-droupdown"><a href="h =ttps://www.jtcindia.org/courses.php">Courses</a>
-                              
+                            <li className="has-droupdown"  onClick={() => router.push("/cources")}>Courses
                             </li>
-                            <li className="has-droupdown"><a href="https://www.jtcindia.org/tutorials/index.php">Tutorial</a></li>
-							<li className="has-droupdown "><a className="popup-btn" data-popup="hirefrom" href="javascript:;">Hire from Us</a></li>
-							<li className="has-droupdown"><a className="popup-btn" data-popup="joinNow" href="javascript:;" >Join Us</a></li>
-                            <li className="has-droupdown"><a href="https://www.jtcindia.org/blog">Blog</a></li>
+                            <li className="has-droupdown"  onClick={() => router.push("/tutorial")}>Tutorial</li>
+							<li className="has-droupdown">Hire from Us</li>
+							<li className="has-droupdown">Join Us</li>
+                            <li className="has-droupdown"  onClick={() => router.push("/blog")}>Blog</li>
                         </ul>
                     </nav>
                 </div>
@@ -56,8 +52,8 @@ export default function Header() {
                             <div className="quote-icon quote-user d-block d-md-none ml--15 ml_sm--5">
                                 <a className="white-box-icon popup-btn" href="tel:09990699111"><IoCall /> </a>
                             </div>
-                            <div className="quote-icon quote-user d-none d-md-block ml--15" onClick={handelShow}>
-                                <a className="edu-btn btn-medium left-icon btn-white popup-btn" data-popup="enqNow" href="javascript:;"><RiChat1Line/> Enquire Now</a>
+                            <div  data-popup="enqNow" className="edu-btn btn-medium left-icon btn-white popup-btn quote-icon quote-user d-none d-md-block ml--15" onClick={handelShow}>
+                            <RiChat1Line/> Enquire Now
                             </div>
 
                             <div className="quote-icon quote-user d-block d-md-none ml--15 ml_sm--5">
@@ -79,8 +75,5 @@ export default function Header() {
             </div>
         </header>
 
-
-    
-    </>
   )
 }
