@@ -1,12 +1,16 @@
 "use client"
 import React, { useState } from 'react'
 import Link from 'next/link';
+import Image from 'next/image'; 
 import { IoCall } from "react-icons/io5";
 import { RiChat1Line } from "react-icons/ri";
 import { FaGripLines } from "react-icons/fa";
 import { useRouter } from 'next/navigation';
 import Test from './test';
 import "./Header.css";
+import Javascriptlogo from "../public/assets/images/icons/Javascript-logo.svg";
+import WebDevIcon from "../public/assets/images/icons/webdev-icon.svg";
+import SalesForceIcon from "../public/assets/images/icons/webdev-icon.svg";
 
 export default function Header() {
     const router = useRouter();
@@ -15,55 +19,259 @@ export default function Header() {
         setShow(true)
     }
    
+    // State to manage which tab is active
+    const [activeTab, setActiveTab] = useState('tabOne');
+
+    // Event handler for tab mouse enter
+    const handleTabMouseEnter = (tabId) => {
+        setActiveTab(tabId);
+    };
+
   return (
   
       <header className="edu-header header-style-2 disable-transparent header-sticky row-flex space-between-row align-items-center-row">
             <div className="row align-items-center w-100">
                 <div className="col-lg-6 col-xl-2 col-md-6 col-6">
-                        <Link href="/">
-                    <div className="logo">
+                    <div className="logo" onClick={() => router.push("/")}>
+                     
                             <img className="logo-light" src="/assets/images/logo/logo.webp" alt="JTC LOGO" />
-                        
                      </div>
-                        </Link>
                 </div>
 
                 <div className="col-lg-6 d-none d-xl-block">
                     <nav className="mainmenu-nav">
                         <ul className="mainmenu">
-                            <Link href="/">
-                            <li className="has-droupdown" >
-                                Home
-
-                                </li>
-                            </Link>
-
-                            <Link href="/about">
-                            <li className="has-droupdown" >
+                            <li className="has-droupdown"  onClick={() => router.push("/")}>Home</li>
+                            <li className="has-droupdown" onClick={() => router.push("/about")}>
                                About Us
-
                                 </li>
-                            </Link>
-                            <Link href="/courses">
-                            <li className="has-droupdown" >
-                                Courses
-
+                            <li className="has-droupdown">Courses
+                                <div className="mega-menu row-flex">
+                                    <div className="column-flex course-hover">
+                                        <ul>
+                                            <li id="tabOne" onMouseEnter={() => handleTabMouseEnter('tabOne')}><Link href="/dashboard">Assured Job Courses</Link></li>
+                                            <li id="tabTwo" onMouseEnter={() => handleTabMouseEnter('tabTwo')}><Link href="/dashboard">Featured Courses</Link></li>
+                                            <li id="tabThree" onMouseEnter={() => handleTabMouseEnter('tabThree')}><Link href="/dashboard">Recomended Courses</Link></li>
+                                            <li id="tabFour" onMouseEnter={() => handleTabMouseEnter('tabFour')}><Link href="/dashboard">Course Categories</Link></li>
+                                            <li id="tabFive" onMouseEnter={() => handleTabMouseEnter('tabFive')}><Link href="/dashboard">Course Tutorials</Link></li>
+                                        </ul>
+                                    </div>
+                                    <div className="row-flex hover-results" id="contentOne" style={{ display: activeTab === 'tabOne' ? 'flex' : 'none' }}>
+                                        <div className="course-card">
+                                            <Link href="/dashboard" className="cardlinks column-flex">
+                                                <Image src={Javascriptlogo} alt="Javascript" className="courseIcon" />
+                                                <h3>Full Stack Java Developer</h3>
+                                                <div className="details">
+                                                    <span className="info">Assured Placements</span>
+                                                    <span className="time">9 months</span>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                        <div className="course-card">
+                                            <Link href="/dashboard" className="cardlinks column-flex">
+                                                <Image src={Javascriptlogo} alt="Javascript" className="courseIcon" />
+                                                <h3>Java Certification Training</h3>
+                                                <div className="details">
+                                                    <span className="info">Class Starts 19 Feb</span>
+                                                    <span className="time">9 months</span>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                        <div className="course-card">
+                                            <Link href="/dashboard" className="cardlinks column-flex">
+                                                <Image src={WebDevIcon} alt="Javascript" className="courseIcon" />
+                                                <h3>Java Certification Training</h3>
+                                                <div className="details">
+                                                    <span className="info">Class Starts 19 Feb</span>
+                                                    <span className="time">9 months</span>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                        <div className="course-card">
+                                            <Link href="/dashboard" className="cardlinks column-flex">
+                                                <Image src={SalesForceIcon} alt="Javascript" className="courseIcon" />
+                                                <h3>Salesforce</h3>
+                                                <div className="details">
+                                                    <span className="info">Class Starts 19 Feb</span>
+                                                    <span className="time">9 months</span>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                    <div className="row-flex hover-results" id="contentTwo" style={{ display: activeTab === 'tabTwo' ? 'flex' : 'none' }}>
+                                        <div className="course-card">
+                                                <Link href="/dashboard" className="cardlinks column-flex">
+                                                    <Image src={WebDevIcon} alt="Javascript" className="courseIcon" />
+                                                    <h3>Java Certification Training</h3>
+                                                    <div className="details">
+                                                        <span className="info">Class Starts 19 Feb</span>
+                                                        <span className="time">9 months</span>
+                                                    </div>
+                                                </Link>
+                                        </div>
+                                        <div className="course-card">
+                                            <Link href="/dashboard" className="cardlinks column-flex">
+                                                <Image src={SalesForceIcon} alt="Javascript" className="courseIcon" />
+                                                <h3>Salesforce</h3>
+                                                <div className="details">
+                                                    <span className="info">Class Starts 19 Feb</span>
+                                                    <span className="time">9 months</span>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                        <div className="course-card">
+                                            <Link href="/dashboard" className="cardlinks column-flex">
+                                                <Image src={Javascriptlogo} alt="Javascript" className="courseIcon" />
+                                                <h3>Full Stack Java Developer</h3>
+                                                <div className="details">
+                                                    <span className="info">Assured Placements</span>
+                                                    <span className="time">9 months</span>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                        <div className="course-card">
+                                            <Link href="/dashboard" className="cardlinks column-flex">
+                                                <Image src={Javascriptlogo} alt="Javascript" className="courseIcon" />
+                                                <h3>Java Certification Training</h3>
+                                                <div className="details">
+                                                    <span className="info">Class Starts 19 Feb</span>
+                                                    <span className="time">9 months</span>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                    <div className="row-flex hover-results" id="contentOne" style={{ display: activeTab === 'tabThree' ? 'flex' : 'none' }}>
+                                        <div className="course-card">
+                                            <Link href="/dashboard" className="cardlinks column-flex">
+                                                <Image src={Javascriptlogo} alt="Javascript" className="courseIcon" />
+                                                <h3>Java Certification Training</h3>
+                                                <div className="details">
+                                                    <span className="info">Class Starts 19 Feb</span>
+                                                    <span className="time">9 months</span>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                        <div className="course-card">
+                                            <Link href="/dashboard" className="cardlinks column-flex">
+                                                <Image src={Javascriptlogo} alt="Javascript" className="courseIcon" />
+                                                <h3>Full Stack Java Developer</h3>
+                                                <div className="details">
+                                                    <span className="info">Assured Placements</span>
+                                                    <span className="time">9 months</span>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                        <div className="course-card">
+                                            <Link href="/dashboard" className="cardlinks column-flex">
+                                                <Image src={WebDevIcon} alt="Javascript" className="courseIcon" />
+                                                <h3>Java Certification Training</h3>
+                                                <div className="details">
+                                                    <span className="info">Class Starts 19 Feb</span>
+                                                    <span className="time">9 months</span>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                        <div className="course-card">
+                                            <Link href="/dashboard" className="cardlinks column-flex">
+                                                <Image src={SalesForceIcon} alt="Javascript" className="courseIcon" />
+                                                <h3>Salesforce</h3>
+                                                <div className="details">
+                                                    <span className="info">Class Starts 19 Feb</span>
+                                                    <span className="time">9 months</span>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                    <div className="row-flex hover-results" id="contentOne" style={{ display: activeTab === 'tabFour' ? 'flex' : 'none' }}>
+                                        <div className="course-card">
+                                            <Link href="/dashboard" className="cardlinks column-flex">
+                                                <Image src={WebDevIcon} alt="Javascript" className="courseIcon" />
+                                                <h3>Java Certification Training</h3>
+                                                <div className="details">
+                                                    <span className="info">Class Starts 19 Feb</span>
+                                                    <span className="time">9 months</span>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                        <div className="course-card">
+                                            <Link href="/dashboard" className="cardlinks column-flex">
+                                                <Image src={Javascriptlogo} alt="Javascript" className="courseIcon" />
+                                                <h3>Full Stack Java Developer</h3>
+                                                <div className="details">
+                                                    <span className="info">Assured Placements</span>
+                                                    <span className="time">9 months</span>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                        <div className="course-card">
+                                            <Link href="/dashboard" className="cardlinks column-flex">
+                                                <Image src={Javascriptlogo} alt="Javascript" className="courseIcon" />
+                                                <h3>Java Certification Training</h3>
+                                                <div className="details">
+                                                    <span className="info">Class Starts 19 Feb</span>
+                                                    <span className="time">9 months</span>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                        <div className="course-card">
+                                            <Link href="/dashboard" className="cardlinks column-flex">
+                                                <Image src={SalesForceIcon} alt="Javascript" className="courseIcon" />
+                                                <h3>Salesforce</h3>
+                                                <div className="details">
+                                                    <span className="info">Class Starts 19 Feb</span>
+                                                    <span className="time">9 months</span>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                    <div className="row-flex hover-results" id="contentOne" style={{ display: activeTab === 'tabFive' ? 'flex' : 'none' }}>
+                                        <div className="course-card">
+                                            <Link href="/dashboard" className="cardlinks column-flex">
+                                                <Image src={WebDevIcon} alt="Javascript" className="courseIcon" />
+                                                <h3>Java Certification Training</h3>
+                                                <div className="details">
+                                                    <span className="info">Class Starts 19 Feb</span>
+                                                    <span className="time">9 months</span>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                        <div className="course-card">
+                                            <Link href="/dashboard" className="cardlinks column-flex">
+                                                <Image src={Javascriptlogo} alt="Javascript" className="courseIcon" />
+                                                <h3>Full Stack Java Developer</h3>
+                                                <div className="details">
+                                                    <span className="info">Assured Placements</span>
+                                                    <span className="time">9 months</span>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                        <div className="course-card">
+                                            <Link href="/dashboard" className="cardlinks column-flex">
+                                                <Image src={Javascriptlogo} alt="Javascript" className="courseIcon" />
+                                                <h3>Java Certification Training</h3>
+                                                <div className="details">
+                                                    <span className="info">Class Starts 19 Feb</span>
+                                                    <span className="time">9 months</span>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                        <div className="course-card">
+                                            <Link href="/dashboard" className="cardlinks column-flex">
+                                                <Image src={SalesForceIcon} alt="Javascript" className="courseIcon" />
+                                                <h3>Salesforce</h3>
+                                                <div className="details">
+                                                    <span className="info">Class Starts 19 Feb</span>
+                                                    <span className="time">9 months</span>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </div>
                             </li>
-                            </Link>
-                            <Link href="/tutorial">
-                            <li className="has-droupdown" >
-                                Tutorial
-
-                                </li>
-                            </Link>
+                            <li className="has-droupdown"  onClick={() => router.push("/tutorial")}>Tutorial</li>
 							<li className="has-droupdown">Hire from Us</li>
 							<li className="has-droupdown">Join Us</li>
-                                <Link href="/blog">
-                            <li className="has-droupdown" >
-                                Blog
-
-                                </li>
-                                </Link>
+                            <li className="has-droupdown"  onClick={() => router.push("/blog")}>Blog</li>
                         </ul>
                     </nav>
                 </div>
