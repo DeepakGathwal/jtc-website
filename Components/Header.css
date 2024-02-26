@@ -56,3 +56,163 @@
     font-weight: 700;
     transition: 0.4s;
 }
+.mainmenu-nav .mainmenu li .mega-menu li {
+    margin: 0;
+    padding: 0;
+    height: unset;
+}
+.edu-header .mainmenu-nav ul li {
+    position: relative;
+}
+.edu-header .mainmenu-nav ul li:hover .mega-menu {
+    top: 90%;
+    width: unset;
+}
+.edu-header .mainmenu-nav ul li .mega-menu {
+    position: absolute;
+    top: -350%;
+    left: -150px;
+    overflow: auto;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: #0000001c 0px 0px 16px;
+    z-index: 5;
+    transition: all 0.3s;
+    width: 0;
+    font-family: "Urbanist", sans-serif;
+}
+.edu-header .mainmenu-nav ul li .mega-menu .course-hover {
+    background: #F2F8FB;
+    min-width: 200px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+.edu-header .mainmenu-nav ul li .mega-menu .course-hover ul li {
+    display: flex;
+    flex-direction: column;
+}
+.edu-header .mainmenu-nav ul li .mega-menu .course-hover ul li a {
+    padding: 7px 14px;
+    text-decoration: none;
+    line-height: 30px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #8C8D9F;
+}
+.edu-header .mainmenu-nav ul li .mega-menu .course-hover ul li a:hover {
+    background: #fff;
+    color: #50515c;
+    font-weight: 500;
+}
+.edu-header .mainmenu-nav ul li .mega-menu .course-hover ul li.active a{
+    background: #fff;
+    color: #50515c;
+    font-weight: 500;
+}
+.edu-header .mainmenu-nav ul li .mega-menu .hover-results::-webkit-scrollbar-thumb {
+    background-color: #a9a9a946;
+    outline: 1px solid rgba(112, 128, 144, 0.089);
+    border-radius: 5px;
+}
+.edu-header .mainmenu-nav ul li .mega-menu .hover-results::-webkit-scrollbar {
+    width: 0.1em;
+    height: 0.2em;
+}
+.edu-header .mainmenu-nav ul li .mega-menu .hover-results {
+    padding: 10px;
+    min-width: 327.89999999999986px;
+    width: 509px;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-height: 212px;
+    overflow: scroll;
+}
+.edu-header .mainmenu-nav ul li .mega-menu .hover-results .course-card .cardlinks {
+    padding: 8px;
+    text-decoration: none;
+    color: #2E2B41;
+}
+.edu-header .mainmenu-nav ul li .mega-menu .hover-results .course-card .cardlinks h3 {
+    margin: 4px 0px 0px 0;
+}
+.edu-header .mainmenu-nav ul li .mega-menu .hover-results .course-card {
+    border-radius: 10px;
+    max-height: 96px;
+    width: 155px;
+}
+.edu-header .mainmenu-nav ul li .mega-menu .hover-results .course-card:nth-child(1),
+.edu-header .mainmenu-nav ul li .mega-menu .hover-results .course-card:nth-child(5) {
+    background: #EAF8F6;
+}
+.edu-header .mainmenu-nav ul li .mega-menu .hover-results .course-card:nth-child(2), 
+.edu-header .mainmenu-nav ul li .mega-menu .hover-results .course-card:nth-child(6) {
+    background: #FFF3EE;
+}
+.edu-header .mainmenu-nav ul li .mega-menu .hover-results>:nth-child(3), 
+.edu-header .mainmenu-nav ul li .mega-menu .hover-results>:nth-child(7) {
+    background: #FAEFFA;
+}
+.edu-header .mainmenu-nav ul li .mega-menu .hover-results>:nth-child(4), 
+.edu-header .mainmenu-nav ul li .mega-menu .hover-results>:nth-child(8) {
+    background: #EFF4FC;
+}
+.edu-header .mainmenu-nav ul li .mega-menu .hover-results .course-card .cardlinks .courseIcon {
+    width: 28px;
+    height: 28px;
+}
+.edu-header .mainmenu-nav ul li .mega-menu .hover-results .course-card .cardlinks h3 {
+    font-size: 14px;
+    line-height: 1.2em;
+    font-weight: 600;
+    color: #2E2B41;
+}
+.edu-header .mainmenu-nav ul li .mega-menu .hover-results .course-card .details {
+    font-size: 10px;
+    font-weight: 500;
+    color: #8C8D9F;
+    gap: 6px;
+    display: flex;
+    flex-direction: row;
+}
+.edu-header .mainmenu-nav ul li .mega-menu .hover-results .course-card .details .info {
+    position: relative;
+}
+.edu-header .mainmenu-nav ul li .mega-menu .hover-results .course-card .details .info::after {
+    content: "";
+    position: absolute;
+    right: -3px;
+    top: 3.9px;
+    height: 9px;
+    width: 0.5px;
+    background: #8C8D9F;
+}
+.edu-header .mainmenu-nav ul li .mega-menu .hover-results .course-card .details .info,
+.edu-header .mainmenu-nav ul li .mega-menu .hover-results .course-card .details .time {
+    line-height: 15px;
+}
+#contentOne {
+    display: none;
+}
+* .mega-menu ul {
+    padding: 0;
+    margin: 0;
+}
+
+.edu-header .space-between-row {
+    justify-content: space-between;
+}
+.edu-header .align-items-center-row {
+    align-items: center;
+}
+.edu-header .align-items-center-column {
+    justify-content: center;
+}
+.edu-header .inner-header {
+    min-height: 90px;
+}
+
+@media (max-width:768px) {
+    .edu-header .mainmenu-nav ul li .mega-menu {
+        display: none;
+    }
+}

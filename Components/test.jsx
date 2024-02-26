@@ -1,7 +1,8 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
+import Link from 'next/link'
 
-export default function Test({show, setShow}) {
+ const   Test = ({show, setShow}) => {
     const handelClose = async() => {
         setShow(false)
     }
@@ -42,8 +43,7 @@ export default function Test({show, setShow}) {
     </div>
     <div class="comment-form-consent input-box mb--20">
     <label><input id="checkbox-1" type="checkbox" required  className='termChecked'/></label>
-    <label htmnlFor="checkbox-1">I have reviewed all <a href="termsandcondition.php"
-    target="_blank"> Terms and Conditions</a>.</label>
+    <label htmnlFor="checkbox-1">I have reviewed all  <Link href="/termsandcondition">  Terms and Conditions</Link>.</label>
     </div>
     <button className="rn-btn edu-btn w-100 mb--20" type="submit">
     <span>Enquire Now</span>
@@ -65,3 +65,5 @@ export default function Test({show, setShow}) {
     </>
   )
 }
+
+export default Test

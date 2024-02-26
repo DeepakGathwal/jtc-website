@@ -34,8 +34,9 @@ export default function Footer() {
                                     <ul className="social-share">
                                         <li><a href={state && state.facebook} target="_blank"><FaFacebookF/></a></li>
                                         <li><a href={state && state.youtube} target="_blank"><FaYoutube/></a></li>
-                                        <li><a href={state && state.linkedin} target="_blank"><FaXTwitter/></a></li>
-                                        <li><a href={state && state.twitter} target="_blank"><FaLinkedinIn /></a>
+                                        <li><a href={state && state.linkedin} target="_blank"><FaLinkedinIn />
+                                            </a></li>
+                                        <li><a href={state && state.twitter} target="_blank"><FaXTwitter/></a>
                                         </li>
                                         <li><a href={state && state.instagram} target="_blank"><FaInstagram /></a>
                                         </li>

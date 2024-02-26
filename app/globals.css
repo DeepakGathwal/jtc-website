@@ -8717,7 +8717,7 @@ justify-content: center; }
 
     .edu-event.event-list1 .inner .batchdate .title{
       color: #fff;
-      margin: 18px;
+      margin: 16px;
     }
 /*-------------------------
     Team Styles  
@@ -17332,3 +17332,45 @@ form.send-form .main-btn-rect {
 .comment-form-consent {display:flex;}
 .comment-form-consent label {display:flex}
 .shape-bg-1:nth-of-type(2){background:#FFABAB}
+
+.accordion-item{
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.06);
+  border: none;
+}
+.accordion-button:focus{
+  box-shadow: none;
+}
+.accordion-button:not(.collapsed){
+  border: none !important;
+  background: #FFFFFF;
+  box-shadow: none;
+  border-radius: 5px;
+}
+.accordion-button {
+  font-size: 20px !important;
+  border: 0 none !important;
+  background: transparent !important;
+  width: 100% !important;
+  text-align: left !important;
+  padding: 13px 35px !important;
+  font-weight: 700 !important;
+  line-height: 32px !important;
+  position: relative !important;
+  border: 1px solid #EEEEEE !important;
+  border-radius: 5px !important;
+  transition: 0.4s !important; }
+.accordion-body {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  margin-bottom: 0;
+  padding: 0 35px;
+  padding-bottom: 35px; }
+
+.clr-org{
+  color: var(--color-secondary);
+  padding-right: 8px;
+  width: 25px;
+}

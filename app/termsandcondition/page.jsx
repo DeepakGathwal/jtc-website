@@ -1,0 +1,35 @@
+"use client"
+import React,{useState, useEffect} from 'react';
+import { usePathname } from 'next/navigation'
+import { termsAndCondition } from '@/apis/apis';
+
+const TermsAndCondition = () => {
+  const path = usePathname()
+  const [state, setState] = useState([])
+  const allData = async() => {
+      const {data} = await termsAndCondition(path);
+      return setState(data)
+    }
+  
+    useEffect(() => {
+      allData()
+    },[path, state])
+
+  
+
+  return (
+   <>
+      <div >
+    {state && state.map((el) => (
+       <>
+        <div className="m-5 p-5" style={{cssText : el.page_css}} dangerouslySetInnerHTML={{ __html: el.page_html }} />
+       </>
+
+      ))}
+   
+      </div>
+   </>
+  )
+}
+
+export default TermsAndCondition

@@ -13,14 +13,33 @@ export async  function GET(req, context){
         if(data.length > 0) {
         const value = await JSON.stringify(data)
         await client.set(`blog${id}`, value, {
-            EX: process.env.REDIS_EXP,   
-            NX: true
-          });
+          EX: process.env.REDIS_EXP,   
+          NX: true
+        });
           return NextResponse.json({data},{success : true}, {status : 200})
         }
         else return NextResponse.json({message : "Data Empty"},{success : false}, {status : 206})
     }else{ 
      const value = await JSON.parse(redisdata)
      return NextResponse.json({data : value}, { success : true}, {status : 200})
+}
+}
+
+
+export async  function PATCH(req, context){
+  const {id} = context.params;
+  const redisdata = await client.get(`tnc${id}`);
+  if(!redisdata){
+      const query =  `Select page_css,page_html from jtc_website_links WHERE nav_link = '/${id}' `
+      const data = await executeQuery(query);
+      if(data.length > 0) {
+      const value =  await JSON.stringify(data)
+      await client.set(`tnc${id}`, value);
+        return NextResponse.json({data},{success : true}, {status : 200})
+      }
+      else return NextResponse.json({message : "Data Empty"},{success : false}, {status : 206})
+  }else{ 
+   const value = await JSON.parse(redisdata)
+   return NextResponse.json({data : value}, { success : true}, {status : 200})
 }
 }
