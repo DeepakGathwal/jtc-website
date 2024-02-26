@@ -81,8 +81,7 @@ export default function Header() {
                                                 <Image src={el.icon} alt={el.name} width={20} height={20} className="courseIcon" />
                                                 <h3>{el.name}</h3>
                                                 <div className="details">
-                                                    <span className="info">Assured Placements</span>
-                                                    <span className="time">9 months</span>
+                                                    <span className="info">{el.name}</span>
                                                 </div>
                                             </Link>
                                         </div>
