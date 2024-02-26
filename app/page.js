@@ -8,7 +8,6 @@ import StudentPlaced from "@/Components/StudentPlaced";
 import Testimonials from "@/Components/Testimonials";
 import LatestBlogs from "@/Components/LatestBlogs";
 
-import Test from "@/Components/test";
 
 export default function Home() {
   
@@ -20,8 +19,6 @@ export default function Home() {
     <StudentPlaced/>
     <Testimonials/>
     <LatestBlogs/>
-   
-    {/* <Test/> */}
    </>
   );
 }

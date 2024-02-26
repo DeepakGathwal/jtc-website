@@ -6,7 +6,8 @@ export default function Testimonials() {
     const [state, setState] = useState([])
     const allData = async() => {
         const {data} = await alltestimonials();
-        if(data.length > 0)
+        console.log(data);
+        // if(data.length > 0)
         return setState(data)
       }
 
@@ -51,7 +52,7 @@ export default function Testimonials() {
   return (
     <>
       
-      <div className="eedu-testimonial-area eduvibe-home-two-testimonial bg-color-white testimonial-card-box-bg edu-section-gap position-relative bg-image">
+      {/* <div className="eedu-testimonial-area eduvibe-home-two-testimonial bg-color-white testimonial-card-box-bg edu-section-gap position-relative bg-image">
             <div className="container eduvibe-animated-shape">
                 <div className="row g-5">
                     <div className="col-lg-12">
@@ -100,7 +101,8 @@ export default function Testimonials() {
                 </div>
 
             </div>
-        </div>
+        </div> */}
+        <h1>Hello</h1>
 
     </>
   )

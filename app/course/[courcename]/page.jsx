@@ -628,7 +628,7 @@ const Page = () => {
 								<div class="edu-event event-list1 radius-small">
 									<div class="inner">
 												{/* <img src="assets/images/event/event-01/event-01.jpg" alt="Event Images">  */}
-										<div class="batchdate" id="ID10">
+									<div class="batchdate" id="ID10">
 											<div class="txtdate w-100">
 												<h5 class="title">09<sup>th</sup></h5>
 											</div>
@@ -705,7 +705,7 @@ const Page = () => {
 								<div class="edu-event event-list1 radius-small">
 									<div class="inner">
 											{/* <img src="assets/images/event/event-01/event-01.jpg" alt="Event Images"> */}
-										<div class="batchdate" id="ID16">
+									<div class="batchdate" id="ID16">
 											<div class="txtdate w-100">
 												<h5 class="title">18<sup>th</sup></h5>
 											</div>
@@ -819,7 +819,7 @@ const Page = () => {
             </div>
         </div>
 
-		<Testimonials/>
+		{/* <Testimonials/> */}
     </>
   )
 }

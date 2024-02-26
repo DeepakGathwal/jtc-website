@@ -33,7 +33,7 @@ export async  function GET(req){
 export async  function PATCH(req){
   const redisdata = await client.get("courceCategories");
   if(!redisdata){
-      const query =  `Select DISTINCT category.id, category.category from jtc_cources as cource Inner Join jtc_cource_category as category On category.id = cource.category WHERE cource.deleted_by = '0' `
+      const query =  `Select * from  jtc_cource_category`
       const data = await executeQuery(query);
       if(data.length > 0) {
       const value =  await JSON.stringify(data)
@@ -48,4 +48,24 @@ export async  function PATCH(req){
    const value = await JSON.parse(redisdata)
    return NextResponse.json({data : value}, { success : true}, {status : 200})
   }
+}
+
+
+
+export async  function POST(req){
+  const {id} = await req.json();
+  const redisdata = await client.get(`category${id}`);
+  if(!redisdata){
+    const query =  `Select id, name, icon from jtc_cources WHERE category Like '%${id}%' `
+      const data = await executeQuery(query);
+      if(data.length > 0) {
+      const value =  await JSON.stringify(data)
+      await client.set(`category${id}`, value);
+        return NextResponse.json({data},{success : true}, {status : 200})
+      }
+      else return NextResponse.json({message : "Data Empty"},{success : false}, {status : 206})
+  }else{ 
+   const value = await JSON.parse(redisdata)
+   return NextResponse.json({data : value}, { success : true}, {status : 200})
+}
 }
