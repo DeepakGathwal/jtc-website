@@ -10999,7 +10999,6 @@ justify-content: center; }
       background: rgba(255, 255, 255, 0.1);
       border-radius: 4px;
       width: 50px;
-      height: 50px;
       line-height: 55px;
       display: inline-block;
       font-size: 18px;
@@ -16787,11 +16786,12 @@ height: 100vh; }
     width: 100%;
     text-align: center;
 	margin-bottom:20px;
-}.view_all_cat a {
+}.view_all_cat span {
     color: #333;
     font-size: 14px;
     text-align: center;
 	border-bottom: 1px solid #035282;
+  cursor: pointer;
 }
 /* .slick-dots, .slick-arrow {display:none !important;} */
 
