@@ -20,50 +20,50 @@ export default function Header() {
       <header className="edu-header header-style-2 disable-transparent header-sticky row-flex space-between-row align-items-center-row">
             <div className="row align-items-center w-100">
                 <div className="col-lg-6 col-xl-2 col-md-6 col-6">
-                    <div className="logo">
                         <Link href="/">
+                    <div className="logo">
                             <img className="logo-light" src="/assets/images/logo/logo.webp" alt="JTC LOGO" />
                         
-                        </Link>
                      </div>
+                        </Link>
                 </div>
 
                 <div className="col-lg-6 d-none d-xl-block">
                     <nav className="mainmenu-nav">
                         <ul className="mainmenu">
-                            <li className="has-droupdown" >
                             <Link href="/">
+                            <li className="has-droupdown" >
                                 Home
 
-                            </Link>
                                 </li>
+                            </Link>
 
-                            <li className="has-droupdown" >
                             <Link href="/about">
+                            <li className="has-droupdown" >
                                About Us
 
-                            </Link>
                                 </li>
-                            <li className="has-droupdown" >
+                            </Link>
                             <Link href="/courses">
+                            <li className="has-droupdown" >
                                 Courses
 
-                            </Link>
                             </li>
-                            <li className="has-droupdown" >
+                            </Link>
                             <Link href="/tutorial">
+                            <li className="has-droupdown" >
                                 Tutorial
 
-                            </Link>
                                 </li>
+                            </Link>
 							<li className="has-droupdown">Hire from Us</li>
 							<li className="has-droupdown">Join Us</li>
-                            <li className="has-droupdown" >
                                 <Link href="/blog">
+                            <li className="has-droupdown" >
                                 Blog
 
-                                </Link>
                                 </li>
+                                </Link>
                         </ul>
                     </nav>
                 </div>
