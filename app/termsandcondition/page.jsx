@@ -13,21 +13,18 @@ const TermsAndCondition = () => {
   
     useEffect(() => {
       allData()
-    },[path, state])
+    },[path])
 
   
 
   return (
    <>
-      <div >
     {state && state.map((el) => (
        <>
         <div className="m-5 p-5" style={{cssText : el.page_css}} dangerouslySetInnerHTML={{ __html: el.page_html }} />
        </>
 
       ))}
-   
-      </div>
    </>
   )
 }

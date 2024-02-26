@@ -132,9 +132,21 @@ export const allCourceCategory = async () => {
 
 export const termsAndCondition = async (id) => {
   try{
-    const  {data}  = await instance.patch(id);
+    const {data}  = await instance.patch(id);
     return data;
+  }catch(err){
+    return err
+  }
+};
 
+
+
+
+export const courcesList = async (id) => {
+  try{
+    const value = JSON.stringify({id})
+    const {data}  = await instance.post(cources, value);
+    return data;
   }catch(err){
     return err
   }
