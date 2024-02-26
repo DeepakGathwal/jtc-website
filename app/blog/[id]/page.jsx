@@ -1,16 +1,41 @@
-import React, { useEffect } from 'react'
-import { useRouter } from 'next/router'
+"use client"
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'next/navigation'
+import { singleBlog } from '@/apis/apis'
 
 const Index = () => {
-  const router = useRouter()
-    const {id} = router.query
+  const [state, setState] = useState([])
+  const router = useParams()
+  const {id} = router
 
+  const allData = async()=>{
+    const {data} = await singleBlog(id)
+    setState(data);
+  }
 
+  useEffect(() => {
+    allData()
+  },[id])
 
-  
   return (
     <>
-      <h1>{id}</h1>
+      {state && state.map((el) => (
+        <>
+       <div className='d-flex justify-content-between fw-bold'>
+       <span>{el.addedAt}</span>
+        <span>{el.category}</span>
+       </div>
+        <h4 className='text-center'>{el.name}</h4>
+
+        <img src={el.icon} alt="" srcset="" />
+        <h6 className="m-3 p-3">{el.heading}</h6>
+        <div className="m-5 p-5" style={{cssText : el.blog_css}} dangerouslySetInnerHTML={{ __html: el.blog_html }} />
+        
+        
+<iframe className="m-4 p-4" width="560" height="315" src={el.video_link} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen/>
+
+        </>
+      ))}
     </>
   )
 }

@@ -6,13 +6,13 @@ import { NextResponse } from "next/server";
 
 // Get All Chossing Point
 export async  function GET(req){
-    const redisdata = await client.get("company");
+    const redisdata = await client.get("aboutUs");
     if(!redisdata){
-        const query =  `Select name, icon, link from jtc_companies WHERE deleted_by = '0' `
+        const query =  `Select description from jtc_about_points`
         const data = await executeQuery(query);
         if(data.length > 0) {
         const value =  await JSON.stringify(data)
-        await client.set("company", value, {
+        await client.set("aboutUs", value, {
              EX: process.env.REDIS_EXP,  
             NX: true
           });

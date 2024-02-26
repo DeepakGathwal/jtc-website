@@ -55,8 +55,8 @@ export default function Testimonials() {
             <div className="container eduvibe-animated-shape">
                 <div className="row g-5">
                     <div className="col-lg-12">
-                    <div className="section-title text-left mb--20 mt--20" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-                                    <span className="pre-title" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">Testimonials</span>
+                    <div className="section-title text-left mb--20 mt--20">
+                                    <span className="pre-title">Testimonials</span>
                                     <h3 className="title tg-svg">Our Student <span className="position-relative color-primary"><span className="svg-icon" id="svg-5"><svg width="100%" height="100%" viewBox="0 0 145 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M1.00016 15.2711C18.1407 8.34427 70.832 -1.93441 144.473 12.3652" stroke="currentcolor" strokeWidth="4" ></path>
                                     <path d="M26.2943 14.0041C38.9177 9.44643 77.3772 3.50055 130.227 16.1786" stroke="currentcolor" strokeWidth="2" ></path>

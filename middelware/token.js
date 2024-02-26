@@ -3,8 +3,6 @@ const cookie = require('cookie')
 const catchError = require('./catchError');
 
 
-
-
 export const token = catchError(async (userid, statuscode, res) => {
     const token = jwtToken.sign({id: userid}, "thisismysecretejsonWebToken", {
         expiresIn: "7d",
@@ -23,7 +21,6 @@ export const token = catchError(async (userid, statuscode, res) => {
 })
 
 export const verifyToken = async (req, res, next) => {
-
     const cookieData = req.cookies;
     if (!cookieData) {
         return res.status(400).json({message: "No Cookie Found"}) 

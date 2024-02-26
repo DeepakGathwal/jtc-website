@@ -6,11 +6,22 @@ let company = "company"
 let testimonials = "testimonials"
 let footer = "footer"
 let blog = "blog"
+let about = "about"
 
 
 export const blogs = async () => {
   try{
     const { data } = await instance.get(blog);
+    return data;
+
+  }catch(err){
+    return err
+  }
+};
+
+export const singleBlog = async (id) => {
+  try{
+    const { data } = await instance.get(id);
     return data;
 
   }catch(err){
@@ -51,13 +62,6 @@ export const alltestimonials = async () => {
     return err
   }
 };
-
-
-
-
-
-
-
 export const homeCources = async () => {
   try{
     const { data } = await instance.get(cources);
@@ -83,11 +87,37 @@ export const homeCompany = async () => {
 };
 
 
+export const aboutUS = async () => {
+  try{
+    const { data } = await instance.get(about);
+    return data;
+
+  }catch(err){
+    return err
+  }
+};
+
+
 
 
 export const joinUsForm = async (field) => {
   try{
     const { data } = await instance.post(choosePoint, {email : field.email, name : field.name, phone : field.phone, cource : field.cource});
+    return data;
+
+  }catch(err){
+    return err
+  }
+};
+
+
+
+
+
+export const allCourceCategory = async () => {
+  try{
+    const  data  = await instance.patch(cources);
+    console.log(data);
     return data;
 
   }catch(err){

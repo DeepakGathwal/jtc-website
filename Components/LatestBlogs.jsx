@@ -1,5 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import { blogs } from '@/apis/apis';
+import Link from 'next/link';
 import { FaArrowRight } from "react-icons/fa6";
 import { SiOpenbadges } from "react-icons/si";
 import { SlCalender } from "react-icons/sl";
@@ -24,7 +25,7 @@ export default function LatestBlogs() {
                 <div className="container eduvibe-animated-shape">
                     <div className="row g-5">
                         <div className="col-lg-6 col-md-6">
-                            <div className="section-title text-start" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                            <div className="section-title text-start">
                                 <span className="pre-title">Always Smart to Read Blogs</span>
                                 <h3 className="title tg-svg">Latest <span className="position-relative color-primary"><span className="svg-icon" id="svg-3"><svg width="100%" height="100%" viewBox="0 0 145 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1.00016 15.2711C18.1407 8.34427 70.832 -1.93441 144.473 12.3652" stroke="currentcolor" strokeWidth="4" ></path>
@@ -32,9 +33,9 @@ export default function LatestBlogs() {
                                 </svg></span>Blog</span></h3>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6">
-                        <div class="view-more-btn text-end">
-                            <a class="edu-btn" href="blog/index.php">
+                        <div className="col-lg-6 col-md-6">
+                        <div className="view-more-btn text-end">
+                            <a className="edu-btn" href="blog/index.php">
                                 Browse All Blogs  <FaArrowRight />
                             </a>
                         </div>
@@ -44,22 +45,24 @@ export default function LatestBlogs() {
                         {state.length > 0 && state.map((el) => (
                           
                             <>
-                             <div className="col-lg-4 col-md-6 col-12">
+                            <div className="col-lg-4 col-md-6 col-12">
                          <div className="edu-blog blog-type-2 bg-white radius-small"> 
                                 <div className="inner">
                                     <div className="thumbnail">
+                            <Link href={"/blog/"+el.id}>
                                          <img src={el.icon} alt={el.name}/>
+                            </Link>
                                     </div>
-                                    <div class="content">
-                                        <div class="status-group">
+                                    <div className="content">
+                                        <div className="status-group">
                                          <SiOpenbadges /> {el.category}
                                         </div>
-                                        <h5 class="title">{el.name}</h5>
-                                        <div class="blog-card-bottom">
-                                            <ul class="blog-meta">
+                                        <h5 className="title">{el.name}</h5>
+                                        <div className="blog-card-bottom">
+                                            <ul className="blog-meta">
                                                 <li><SlCalender /> {el.addedAt}</li>
                                             </ul>
-                                            <div class="read-more-btn">
+                                            <div className="read-more-btn">
                                                 Read More <FaArrowRight />
                                             </div>
                                         </div>
