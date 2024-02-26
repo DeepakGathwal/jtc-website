@@ -19,6 +19,16 @@ export const blogs = async () => {
   }
 };
 
+export const singleBlog = async (id) => {
+  try{
+    const { data } = await instance.get(id);
+    return data;
+
+  }catch(err){
+    return err
+  }
+};
+
 export const allChoosingPoint = async () => {
   try{
     const { data } = await instance.get(choosePoint);
@@ -93,6 +103,21 @@ export const aboutUS = async () => {
 export const joinUsForm = async (field) => {
   try{
     const { data } = await instance.post(choosePoint, {email : field.email, name : field.name, phone : field.phone, cource : field.cource});
+    return data;
+
+  }catch(err){
+    return err
+  }
+};
+
+
+
+
+
+export const allCourceCategory = async () => {
+  try{
+    const  data  = await instance.patch(cources);
+    console.log(data);
     return data;
 
   }catch(err){

@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react'
-
+import Link from 'next/link';
 import { IoCall } from "react-icons/io5";
 import { RiChat1Line } from "react-icons/ri";
 import { FaGripLines } from "react-icons/fa";
@@ -20,25 +20,50 @@ export default function Header() {
       <header className="edu-header header-style-2 disable-transparent header-sticky row-flex space-between-row align-items-center-row">
             <div className="row align-items-center w-100">
                 <div className="col-lg-6 col-xl-2 col-md-6 col-6">
-                    <div className="logo" onClick={() => router.push("/")}>
-                     
+                    <div className="logo">
+                        <Link href="/">
                             <img className="logo-light" src="/assets/images/logo/logo.webp" alt="JTC LOGO" />
+                        
+                        </Link>
                      </div>
                 </div>
 
                 <div className="col-lg-6 d-none d-xl-block">
                     <nav className="mainmenu-nav">
                         <ul className="mainmenu">
-                            <li className="has-droupdown"  onClick={() => router.push("/")}>Home</li>
-                            <li className="has-droupdown" onClick={() => router.push("/about")}>
-                               About Us
+                            <li className="has-droupdown" >
+                            <Link href="/">
+                                Home
+
+                            </Link>
                                 </li>
-                            <li className="has-droupdown"  onClick={() => router.push("/courses")}>Courses
+
+                            <li className="has-droupdown" >
+                            <Link href="/about">
+                               About Us
+
+                            </Link>
+                                </li>
+                            <li className="has-droupdown" >
+                            <Link href="/courses">
+                                Courses
+
+                            </Link>
                             </li>
-                            <li className="has-droupdown"  onClick={() => router.push("/tutorial")}>Tutorial</li>
+                            <li className="has-droupdown" >
+                            <Link href="/tutorial">
+                                Tutorial
+
+                            </Link>
+                                </li>
 							<li className="has-droupdown">Hire from Us</li>
 							<li className="has-droupdown">Join Us</li>
-                            <li className="has-droupdown"  onClick={() => router.push("/blog")}>Blog</li>
+                            <li className="has-droupdown" >
+                                <Link href="/blog">
+                                Blog
+
+                                </Link>
+                                </li>
                         </ul>
                     </nav>
                 </div>

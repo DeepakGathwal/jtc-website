@@ -1,8 +1,10 @@
+"use client"
 import React from 'react';
 import "../globals.css"
 import "./orbit.css";
 import { FaArrowRight } from "react-icons/fa6";
 import "./hero.css";
+import FeaturedCourses from '@/Components/FeaturedCourses';
 
 
 
@@ -69,6 +71,7 @@ function Index() {
 
                 <div class="row row--15">
                     <div class="mt--60 mb_dec--20 d-flex">
+                        <FeaturedCourses/>
                         <div class="single-slick-card col-md-3">
                             <div class="service-card service-card-8 shape-bg-1">
                                 <div class="inner">
@@ -140,7 +143,7 @@ function Index() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> 
 
                      
                     </div>

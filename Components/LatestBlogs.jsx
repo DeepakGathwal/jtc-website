@@ -1,5 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import { blogs } from '@/apis/apis';
+import Link from 'next/link';
 import { FaArrowRight } from "react-icons/fa6";
 import { SiOpenbadges } from "react-icons/si";
 import { SlCalender } from "react-icons/sl";
@@ -44,11 +45,13 @@ export default function LatestBlogs() {
                         {state.length > 0 && state.map((el) => (
                           
                             <>
-                             <div className="col-lg-4 col-md-6 col-12">
+                            <div className="col-lg-4 col-md-6 col-12">
                          <div className="edu-blog blog-type-2 bg-white radius-small"> 
                                 <div className="inner">
                                     <div className="thumbnail">
+                            <Link href={"/blog/"+el.id}>
                                          <img src={el.icon} alt={el.name}/>
+                            </Link>
                                     </div>
                                     <div className="content">
                                         <div className="status-group">

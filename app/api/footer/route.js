@@ -1,6 +1,4 @@
 import { executeQuery } from "@/conn/conn";
-import catchError from "@/middelware/catchError";
-
 import { client } from "@/middelware/redisFile";
 import { NextResponse } from "next/server";
 
