@@ -8,9 +8,6 @@ import { FaGripLines } from "react-icons/fa";
 import { useRouter } from 'next/navigation';
 import Test from './test';
 import "./Header.css";
-import Javascriptlogo from "../public/assets/images/icons/Javascript-logo.svg";
-import WebDevIcon from "../public/assets/images/icons/webdev-icon.svg";
-import SalesForceIcon from "../public/assets/images/icons/webdev-icon.svg";
 import { allCourceCategory, courcesList, homeCources } from '@/apis/apis';
 
 export default function Header() {
@@ -74,12 +71,7 @@ export default function Header() {
                                         <ul>
                                             {categories && categories.map((el) => (
                                                 <li id={el.id} onMouseEnter={() => handleTabMouseEnter(el.id)}><Link href="/">{el.category}</Link></li>
-
                                             ))}
-                                            {/* <li id="tabTwo" onMouseEnter={() => handleTabMouseEnter('tabTwo')}><Link href="/dashboard">Featured Courses</Link></li>
-                                            <li id="tabThree" onMouseEnter={() => handleTabMouseEnter('tabThree')}><Link href="/dashboard">Recomended Courses</Link></li>
-                                            <li id="tabFour" onMouseEnter={() => handleTabMouseEnter('tabFour')}><Link href="/dashboard">Course Categories</Link></li>
-                                            <li id="tabFive" onMouseEnter={() => handleTabMouseEnter('tabFive')}><Link href="/dashboard">Course Tutorials</Link></li> */}
                                         </ul>
                                     </div>
                                     <div className="row-flex hover-results" id="contentOne" style={{ display: activeTab == activeTab ? 'flex' : 'none' }}>
@@ -119,7 +111,7 @@ export default function Header() {
                             <div className="quote-icon quote-user d-block d-md-none ml--15 ml_sm--5">
                                 <a className="white-box-icon popup-btn" href="tel:09990699111"><IoCall /> </a>
                             </div>
-                            <div  data-popup="enqNow" className="edu-btn btn-medium left-icon btn-white popup-btn quote-icon quote-user d-none d-md-block ml--15" onClick={handelShow}>
+                            <div style={{cursor : "pointer"}} data-popup="enqNow" className="edu-btn btn-medium left-icon btn-white popup-btn quote-icon quote-user d-none d-md-block ml--15" onClick={handelShow}>
                             <RiChat1Line/> Enquire Now
                             </div>
 

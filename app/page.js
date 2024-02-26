@@ -20,8 +20,6 @@ export default function Home() {
     <StudentPlaced/>
     <Testimonials/>
     <LatestBlogs/>
-   
-    <Test/>
    </>
   );
 }
