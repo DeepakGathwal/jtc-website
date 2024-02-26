@@ -52,7 +52,7 @@ export default function Testimonials() {
   return (
     <>
       
-      {/* <div className="eedu-testimonial-area eduvibe-home-two-testimonial bg-color-white testimonial-card-box-bg edu-section-gap position-relative bg-image">
+      <div className="eedu-testimonial-area eduvibe-home-two-testimonial bg-color-white testimonial-card-box-bg edu-section-gap position-relative bg-image">
             <div className="container eduvibe-animated-shape">
                 <div className="row g-5">
                     <div className="col-lg-12">
@@ -101,8 +101,7 @@ export default function Testimonials() {
                 </div>
 
             </div>
-        </div> */}
-        <h1>Hello</h1>
+        </div>
 
     </>
   )

@@ -43,6 +43,7 @@ export default function Header() {
     useEffect(() => {
         allCourses()
     },[activeTab])
+
     useEffect(() => {
       allData()
     },[])
@@ -79,12 +80,11 @@ export default function Header() {
                                     <div className="row-flex hover-results" id="contentOne" style={{ display: activeTab == activeTab ? 'flex' : 'none' }}>
                                     {cources && cources.map((el) => (
                                         <div className="course-card">
-                                            <Link href="/dashboard" className="cardlinks column-flex">
+                                            <Link href="/" className="cardlinks column-flex">
                                                 <Image src={el.icon} alt={el.name} width={20} height={20} className="courseIcon" />
                                                 <h3>{el.name}</h3>
                                                 <div className="details">
-                                                    <span className="info">Assured Placements</span>
-                                                    <span className="time">9 months</span>
+                                                    <span className="info">{el.name}</span>
                                                 </div>
                                             </Link>
                                         </div>

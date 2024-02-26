@@ -41,7 +41,7 @@ const Test = ({ show, setShow }) => {
 
                           </select>
                         </div>
-                        <div class="comment-form-consent input-box mb--20">
+                        <div className="comment-form-consent input-box mb--20">
                           <label><input id="checkbox-1" type="checkbox" required className='termChecked' /></label>
                           <label htmnlFor="checkbox-1">I have reviewed all  <Link href="/termsandcondition">  Terms and Conditions</Link>.</label>
                         </div>

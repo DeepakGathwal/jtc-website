@@ -66,13 +66,13 @@ function Index() {
             </div>
         </div>
         
-        <div class="eduvibe-home-five-cats edu-about-area about-style-5 edu-section-gapTop bg-color-white pb--40">
-            <div class="container eduvibe-animated-shape">
-                {/* <div class="row g-5">
-                    <div class="col-lg-12">
-                    <div class="section-title white-title">
+        <div className="eduvibe-home-five-cats edu-about-area about-style-5 edu-section-gapTop bg-color-white pb--40">
+            <div className="container eduvibe-animated-shape">
+                {/* <div className="row g-5">
+                    <div className="col-lg-12">
+                    <div className="section-title white-title">
                            
-                           <h3 class="title tg-svg">Assured <span class="position-relative color-primary"><span class="svg-icon" id="svg-1"><svg width="100%" height="100%" viewBox="0 0 145 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <h3 className="title tg-svg">Assured <span className="position-relative color-primary"><span className="svg-icon" id="svg-1"><svg width="100%" height="100%" viewBox="0 0 145 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M1.00016 15.2711C18.1407 8.34427 70.832 -1.93441 144.473 12.3652" stroke="currentcolor" stroke-width="4"></path>
 <path d="M26.2943 14.0041C38.9177 9.44643 77.3772 3.50055 130.227 16.1786" stroke="currentcolor" stroke-width="2" ></path>
 </svg></span>Job Courses</span></h3>
@@ -80,8 +80,8 @@ function Index() {
                     </div>
                 </div> */}
 
-                <div class="row row--15">
-                    {/* <div class="mt--60 mb_dec--20 d-flex"> */}
+                <div className="row row--15">
+                    {/* <div className="mt--60 mb_dec--20 d-flex"> */}
                         <FeaturedCourses/>
                   
 
@@ -89,14 +89,14 @@ function Index() {
                     {/* </div> */}
                 </div>
 
-                <div class="shape-dot-wrapper shape-wrapper d-xl-block d-none">
-                    <div class="shape-image shape-image-1">
+                <div className="shape-dot-wrapper shape-wrapper d-xl-block d-none">
+                    <div className="shape-image shape-image-1">
                         <img src="assets/images/shapes/shape-07.png" alt="Shape Thumb" />
                     </div>
-                    <div class="shape-image shape-image-2">
+                    <div className="shape-image shape-image-2">
                         <img src="assets/images/shapes/shape-03-05.png" alt="Shape Thumb" />
                     </div>
-                    <div class="shape-image shape-image__3">
+                    <div className="shape-image shape-image__3">
                         <img src="assets/images/shapes/shape-04-06.png" alt="Shape Thumb" />
                     </div>
                 </div>

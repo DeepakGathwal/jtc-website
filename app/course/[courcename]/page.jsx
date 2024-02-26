@@ -1,5 +1,6 @@
 "use client"
 import Testimonials from '@/Components/Testimonials';
+import Faq from '@/Components/faq';
 import React from 'react';
 import { Accordion } from 'react-bootstrap-accordion';
 import { FaRegClock , FaArrowRight} from "react-icons/fa";
@@ -201,7 +202,6 @@ const Page = () => {
 								</svg></span> Curriculum</span></h3>
 				</div>
 				<div class="course-details-card mt--40">
-
 					<div class="container">
 						<div class="row justify-content-between">
 							<div class="col-md-7">
@@ -819,7 +819,8 @@ const Page = () => {
             </div>
         </div>
 
-		{/* <Testimonials/> */}
+		<Testimonials/>
+		<Faq/>
     </>
   )
 }
