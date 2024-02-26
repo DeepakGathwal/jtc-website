@@ -1,7 +1,8 @@
 "use client"
 import { footerData } from '@/apis/apis';
 import React,{useState, useEffect} from 'react';
-import { FaAngleDoubleRight } from "react-icons/fa";
+import { FaAngleDoubleRight , FaFacebookF , FaYoutube ,  FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
     const [state, setState] = useState([])
@@ -22,30 +23,27 @@ export default function Footer() {
                 <div className="footer-top">
                     <div className="container eduvibe-animated-shape">
                         <div className="row g-5">
-                            <div className="col-lg-3 col-md-6 col-sm-12 col-12">
+                            <div className="col-lg-4 col-md-6 col-sm-12 col-12">
                                 <div className="edu-footer-widget">
                                     <div className="logo">
                                         <a href="https://jtcindia.org/index.php">
-                                            <img className="logo-light" src="assets/images/logo/logoFooter.webp" alt="Site Logo" />
+                                            <img className="logo-light" src="../assets/images/logo/logoFooter.webp" alt="Site Logo" />
                                         </a>
                                     </div>
                                     <p className="description">{state && state.about}</p>
                                     <ul className="social-share">
-                                        <li><a href={state && state.facebook} target="_blank"><i
-                                            className="icon-Fb"></i></a></li>
-                                        <li><a href={state && state.youtube} target="_blank"><i
-                                            className="icon-youtube"></i></a></li>
-                                        <li><a href={state && state.linkedin} target="_blank"><i
-                                            className="icon-linkedin"></i></a></li>
-                                        <li><a href={state && state.twitter} target="_blank"><i className="icon-Twitter"></i></a>
+                                        <li><a href={state && state.facebook} target="_blank"><FaFacebookF/></a></li>
+                                        <li><a href={state && state.youtube} target="_blank"><FaYoutube/></a></li>
+                                        <li><a href={state && state.linkedin} target="_blank"><FaXTwitter/></a></li>
+                                        <li><a href={state && state.twitter} target="_blank"><FaLinkedinIn /></a>
                                         </li>
-                                        <li><a href={state && state.instagram} target="_blank"><i className="icon-Twitter"></i></a>
+                                        <li><a href={state && state.instagram} target="_blank"><FaInstagram /></a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
 
-                            <div className="col-lg-3 col-md-6 col-sm-6 col-6">
+                            <div className="col-lg-2 col-md-6 col-sm-6 col-6">
                                 <div className="edu-footer-widget explore-widget">
                                     <h5 className="widget-title">Explore</h5>
                                     <div className="inner">
@@ -98,10 +96,10 @@ export default function Footer() {
 
                         <div className="shape-dot-wrapper shape-wrapper d-md-block d-none">
                             <div className="shape-image shape-image-1">
-                                <img src="assets/images/shapes/shape-21-01.png" alt="Shape Thumb" />
+                                <img src="../assets/images/shapes/shape-21-01.png" alt="Shape Thumb" />
                             </div>
                             <div className="shape-image shape-image-2">
-                                <img src="assets/images/shapes/shape-35.png" alt="Shape Thumb" />
+                                <img src="../assets/images/shapes/shape-35.png" alt="Shape Thumb" />
                             </div>
                         </div>
                     </div>

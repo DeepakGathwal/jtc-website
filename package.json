@@ -20,6 +20,7 @@
     "optimize-css-assets-webpack-plugin": "^6.0.1",
     "react": "^18",
     "react-bootstrap": "^2.10.1",
+    "react-bootstrap-accordion": "^1.0.0",
     "react-dom": "^18",
     "react-icons": "^5.0.1",
     "react-slick": "^0.30.2",
