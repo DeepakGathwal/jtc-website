@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { FaArrowRight } from "react-icons/fa6";
 import { homeCources, joinUsForm } from '@/apis/apis';
+import Link from 'next/link'
+
 
 // ES6 modules
 export default function BannerAreaHome() {
@@ -81,9 +83,7 @@ export default function BannerAreaHome() {
                                                         </div>
                                                         <div className="comment-form-consent input-box mb--20">
                                                             <label><input id="checkbox-6" type="checkbox" required className='termChecked'/></label>
-                                                            <label htmlFor="checkbox-6"> I have reviewed all <a
-                                                                href="termsandcondition.html" target="_blank"> Terms and
-                                                                Conditions</a>.</label>
+                                                            <label htmlFor="checkbox-6"> I have reviewed all <Link href="/termsandcondition">  Terms and Conditions</Link>.</label>
                                                         </div>
                                                         <button className="rn-btn edu-btn w-100 mb--20" type="submit">
                                                             <span >Enquire Now</span>

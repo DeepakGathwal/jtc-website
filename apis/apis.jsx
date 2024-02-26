@@ -7,6 +7,7 @@ let testimonials = "testimonials"
 let footer = "footer"
 let blog = "blog"
 let about = "about"
+let terms = "terms"
 
 
 export const blogs = async () => {
@@ -116,8 +117,22 @@ export const joinUsForm = async (field) => {
 
 export const allCourceCategory = async () => {
   try{
-    const  data  = await instance.patch(cources);
-    console.log(data);
+    const  {data}  = await instance.patch(cources);
+ 
+    return data;
+
+  }catch(err){
+    return err
+  }
+};
+
+
+
+
+
+export const termsAndCondition = async (id) => {
+  try{
+    const  {data}  = await instance.patch(id);
     return data;
 
   }catch(err){
