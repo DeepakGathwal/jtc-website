@@ -1,18 +1,20 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
+import { courceViodePoint } from '@/apis/apis'
 import { Accordion } from 'react-bootstrap-accordion';
 
-const CourceCategory = () => {
+const CourceCategory = ({courcename}) => {
+  
   return (
-    <div class="col-md-7">
-    <div class="edu-card card-type-7 radius-small">
-        <div class="inner">
-            <div class="course-content">
-                <div class="edu-accordion-02">
+    <div className="col-md-7">
+    <div className="edu-card card-type-7 radius-small">
+        <div className="inner">
+            <div className="course-content">
+                <div className="edu-accordion-02">
                     <Accordion title='Core Java'>
-                        <div class="card-body">
-                                <div class="module">
+                        <div className="card-body">
+                                <div className="module">
                                     <h4>JDBC </h4>
-                                    <div class="list_mod">
+                                    <div className="list_mod">
                                         <p>Introduction of JDBC </p>
                                         <p>JDBC Drivers </p>
                                         <p>JDBC Statements</p>
@@ -21,9 +23,9 @@ const CourceCategory = () => {
                                         <p>Row Set</p>
                                     </div>
                                 </div>
-                                <div class="module">
+                                <div className="module">
                                     <h4>Servlet </h4>
-                                    <div class="list_mod">
+                                    <div className="list_mod">
                                         <p>Introduction of Servlet </p>
                                         <p>Introduction of Servlet</p>
                                         <p>Web Server | Web Client | Web Container | Http
@@ -45,9 +47,9 @@ const CourceCategory = () => {
                                         <p>Listeners</p>
                                     </div>
                                 </div>
-                                <div class="module">
+                                <div className="module">
                                     <h4>JSP </h4>
-                                    <div class="list_mod">
+                                    <div className="list_mod">
                                         <p>Introduction of JSP </p>
                                         <p>JSP Life-Cycle &amp; JSP Life-Cycle Methods</p>
                                         <p>JSP Implecit Objects</p>
@@ -63,10 +65,10 @@ const CourceCategory = () => {
                             </div>
                         </Accordion>
                         <Accordion title='Advance Java'>
-                        <div class="card-body">
-                                <div class="module">
+                        <div className="card-body">
+                                <div className="module">
                                     <h4>JDBC </h4>
-                                    <div class="list_mod">
+                                    <div className="list_mod">
                                         <p>Introduction of JDBC </p>
                                         <p>JDBC Drivers </p>
                                         <p>JDBC Statements</p>
@@ -75,9 +77,9 @@ const CourceCategory = () => {
                                         <p>Row Set</p>
                                     </div>
                                 </div>
-                                <div class="module">
+                                <div className="module">
                                     <h4>Servlet </h4>
-                                    <div class="list_mod">
+                                    <div className="list_mod">
                                         <p>Introduction of Servlet </p>
                                         <p>Introduction of Servlet</p>
                                         <p>Web Server | Web Client | Web Container | Http
@@ -99,9 +101,9 @@ const CourceCategory = () => {
                                         <p>Listeners</p>
                                     </div>
                                 </div>
-                                <div class="module">
+                                <div className="module">
                                     <h4>JSP </h4>
-                                    <div class="list_mod">
+                                    <div className="list_mod">
                                         <p>Introduction of JSP </p>
                                         <p>JSP Life-Cycle &amp; JSP Life-Cycle Methods</p>
                                         <p>JSP Implecit Objects</p>
@@ -118,10 +120,10 @@ const CourceCategory = () => {
                         </Accordion>
 
                         <Accordion title='Hibernate'>
-                            <div class="card-body">
-                                <div class="module">
+                            <div className="card-body">
+                                <div className="module">
                                     <h4>Hibernate </h4>
-                                    <div class="list_mod">
+                                    <div className="list_mod">
                                         <p>Introduction of Hibernate</p>
                                         <p>Difference between JDBC and Hibernate</p>
                                         <p>Hibernate Features</p>
@@ -166,10 +168,10 @@ const CourceCategory = () => {
                             </Accordion>
 
                         <Accordion title='Spring'>
-                            <div class="card-body">
-                                <div class="module">
+                            <div className="card-body">
+                                <div className="module">
                                     <h4>JSP </h4>
-                                    <div class="list_mod">
+                                    <div className="list_mod">
                                         <p>About Spring 5.x Training</p>
                                         <p>Spring 5.x Course Prerequisite</p>
                                         <p>Spring 5.x Training Course Objective</p>
@@ -197,10 +199,10 @@ const CourceCategory = () => {
                             </div>
                             </Accordion>
                         <Accordion title='Springboot'>
-                            <div class="card-body">
-                                <div class="module">
+                            <div className="card-body">
+                                <div className="module">
                                     <h4>Spring Boot </h4>
-                                    <div class="list_mod">
+                                    <div className="list_mod">
                                         <p>Spring Boot introduction</p>
                                         <p>Spring boot - Bootstrapping</p>
                                         <p>Spring boot - Tomcat Development </p>

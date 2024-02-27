@@ -1,0 +1,56 @@
+import React, { useEffect } from 'react'
+import { coursePoint } from '@/apis/apis'
+import { useState } from 'react'
+
+const CourceJoinPoint = ({courcename}) => {
+    const [state, setState]  = useState([])
+    const allData = async() => {
+        const {data} = await coursePoint(courcename)
+      
+        if(data.length > 0)  return setState(data)
+    }
+useEffect(() => {
+    allData()
+},[courcename])
+  return (
+   <>
+    <div className="section-title text-left sal-animate">
+                    <span className="pre-title sal-animate" >Why to</span>
+                    <h3 className="title tg-svg">Join This <span
+                            className="position-relative color-primary"><span className="svg-icon"
+                                id="svg-5"><svg width="100%" height="100%" viewBox="0 0 145 25"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1.00016 15.2711C18.1407 8.34427 70.832 -1.93441 144.473 12.3652"
+                                        stroke="currentcolor" stroke-width="4"
+                                        >
+                                    </path>
+                                    <path
+                                        d="M26.2943 14.0041C38.9177 9.44643 77.3772 3.50055 130.227 16.1786"
+                                        stroke="currentcolor" stroke-width="2"
+                                        >
+                                    </path>
+                                </svg></span> Course</span> </h3>
+                </div>
+                <div className="learnCourse">
+                    {state && state.map((el) => (
+                    <div className="details_boxs">
+                        <div className="detail_icons">
+                            <img src={el.icon} alt=""/>
+                        </div>
+                        <div className="details_cont">
+                            <p>{el.description}
+                            </p>
+                        </div>
+                    </div>
+
+                    ))}
+                    
+
+                  
+                </div>
+   </>
+  )
+}
+
+export default CourceJoinPoint
