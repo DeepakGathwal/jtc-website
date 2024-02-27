@@ -31,7 +31,6 @@ const Faq = () => {
 					<div class="tab-pane fade show active" id="edutabone" role="tabpanel"
 						aria-labelledby="edutabone-tab">
 						<div class="row g-5 align-items-center mt--20">
-							<div class="col-lg-6">
 								<div class="accordion-style-1">
 									<div class="edu-accordion" id="accordionExample2">
 										<div class="edu-accordion-item">
@@ -130,12 +129,7 @@ const Faq = () => {
 											</div>
 										</div>
 
-									</div>
 								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="accordion-style-1">
-									<div class="edu-accordion" id="accordionExample3">
 										<div class="edu-accordion-item">
 											<div class="edu-accordion-header" id="twoheadingOne">
 												<button class="edu-accordion-button" type="button"
@@ -249,8 +243,6 @@ const Faq = () => {
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
     </>
   )
 }
