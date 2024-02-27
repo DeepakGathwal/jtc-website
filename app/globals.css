@@ -17125,3 +17125,69 @@ form.send-form .main-btn-rect {
   padding-right: 8px;
   width: 25px;
 }
+
+.edu-accordion-02 .accordion-item{
+    transition: 0.4s;
+    background: #fff;
+    margin-bottom: 10px;
+}
+
+.edu-accordion-02 .accordion-button{
+    font-size: 20px;
+    border: 0 none;
+    background: transparent;
+    width: 100%;
+    text-align: left;
+    padding: 13px 35px;
+    font-weight: 700;
+    line-height: 32px;
+    position: relative;
+    border: 1px solid #EEEEEE;
+    border-radius: 5px;
+    transition: 0.4s;
+}
+
+.edu-accordion-02 .accordion-body{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 0;
+    padding: 0 35px;
+    padding-bottom: 35px;
+}
+
+.accordion-style-1 .accordion {display: flex; flex-wrap: wrap; 
+}
+.accordion-style-1 .accordion-item{
+    /* width: 46%; */
+    border: none;
+    margin-right: 5%;
+}
+.accordion-style-1 .accordion-header{
+    margin-bottom: 0;
+}
+
+.accordion-style-1 .accordion-item:last-child .accordion-button{
+    border-bottom: 1px solid #EEEEEE;
+}
+
+
+.accordion-style-1 .accordion-button{
+    font-size: 15px;
+    border: 0 none;
+    background: transparent;
+    border-top: 1px solid #EEEEEE !important;
+    width: 100%;
+    text-align: left;
+    padding: 20px 0;
+    font-weight: 700;
+    line-height: 32px;
+    position: relative;
+}
+
+.accordion-style-1 .accordion-body{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 20px;
+}
