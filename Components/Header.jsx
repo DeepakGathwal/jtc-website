@@ -79,7 +79,7 @@ export default function Header() {
                                     <div className="row-flex hover-results" id="contentOne" style={{ display: activeTab == activeTab ? 'flex' : 'none' }}>
                                     {cources && cources.map((el) => (
                                         <div className="course-card">
-                                            <Link href="/dashboard" className="cardlinks column-flex">
+                                            <Link href={'course/' + el.name} className="cardlinks column-flex">
                                                 <Image src={el.icon} alt={el.name} width={20} height={20} className="courseIcon" />
                                                 <h3>{el.name}</h3>
                                                 <div className="details">
