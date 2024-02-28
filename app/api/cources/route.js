@@ -31,13 +31,13 @@ export async  function GET(req){
 
 // All Cources Category
 export async  function PATCH(req){
-  const redisdata = await client.get("courceCategories");
+  const redisdata = await client.get("courceTypes");
   if(!redisdata){
-      const query =  `Select * from  jtc_cource_category`
+      const query =  `Select * from  jtc_courses_type`
       const data = await executeQuery(query);
       if(data.length > 0) {
       const value =  await JSON.stringify(data)
-      await client.set("courceCategories", value, {
+      await client.set("courceTypes", value, {
            EX: process.env.REDIS_EXP,  
           NX: true
         });

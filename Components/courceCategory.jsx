@@ -3,7 +3,17 @@ import { courceViodePoint } from '@/apis/apis'
 import { Accordion } from 'react-bootstrap-accordion';
 
 const CourceCategory = ({courcename}) => {
-  
+//     const [state, setState]  = useState([])
+//     const allData = async() => {
+//         const {data} = await allBatches(courcename)
+//         return setState(data)
+//         }
+    
+      
+// useEffect(() => {
+//     allData()
+// },[courcename])
+
   return (
     <div className="col-md-7">
     <div className="edu-card card-type-7 radius-small">

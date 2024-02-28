@@ -64,7 +64,7 @@ export async function POST(req){
     from jtc_batches as batch INNER Join jtc_courses as cource On cource.id = batch.cource_id WHERE batch.deleted_by = '0' && cource.name = '${course}' && cource.deleted_by = '0'`
 
       const data = await executeQuery(query);
-      
+      console.log(data);
       if(data.length > 0) {
       const value =  await JSON.stringify(data)
       await client.set(`batch${course}`, value);
@@ -73,6 +73,7 @@ export async function POST(req){
       else return NextResponse.json({message : "Data Empty"},{success : false}, {status : 206})
   }else{ 
    const value = await JSON.parse(redisdata)
+   console.log(value);
    return NextResponse.json({data : value}, { success : true}, {status : 200})
 }
 }

@@ -92,10 +92,10 @@ export default function Testimonials() {
 
                 <div className="shape-dot-wrapper shape-wrapper d-xl-block d-none">
                     <div className="shape-image shape-image-1">
-                        <img src="assets/images/shapes/shape-23.png" alt="Shape Thumb" />
+                        <img src="../assets/images/shapes/shape-23.png" alt="Shape Thumb" />
                     </div>
                     <div className="shape-image shape-image-2">
-                        <img src="assets/images/shapes/shape-14-02.png" alt="Shape Thumb" />
+                        <img src="../assets/images/shapes/shape-14-02.png" alt="Shape Thumb" />
                     </div>
                 </div>
 
