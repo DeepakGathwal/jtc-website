@@ -67,6 +67,7 @@
 .edu-header .mainmenu-nav ul li:hover .mega-menu {
     top: 90%;
     width: unset;
+    z-index: 99999;
 }
 .edu-header .mainmenu-nav ul li .mega-menu {
     position: absolute;
