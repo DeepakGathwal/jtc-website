@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { FaArrowRight } from "react-icons/fa6";
 import { homeCources, joinUsForm } from '@/apis/apis';
-import Link from 'next/link'
+import Tnc from './tnc';
 
 
 // ES6 modules
@@ -73,7 +73,7 @@ export default function BannerAreaHome() {
                                                         </div> */}
                                                         <div className="input-box mb--20">
                                                             <select name="cource" id="courses3"  className="courses valid" aria-invalid="false" value={field.cource} required onChange={handelChange}>
-                                                                <option disabled>Select Course</option>
+                                                                <option selected disabled>Select Course</option>
                                                                 {state && state.map((el) => (
                                                                     <option value={el.name}>{el.name}</option>
 
@@ -81,10 +81,7 @@ export default function BannerAreaHome() {
 
                                                             </select>
                                                         </div>
-                                                        <div className="comment-form-consent input-box mb--20">
-                                                            <label><input id="checkbox-6" type="checkbox" required className='termChecked'/></label>
-                                                            <label htmlFor="checkbox-6"> I have reviewed all <Link href="/termsandcondition">  Terms and Conditions</Link>.</label>
-                                                        </div>
+                                                       {/* <Tnc id = {"checkbox-6"}/> */}
                                                         <button className="rn-btn edu-btn w-100 mb--20" type="submit">
                                                             <span >Enquire Now</span>
                                                         </button>

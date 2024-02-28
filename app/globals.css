@@ -16309,7 +16309,9 @@ height: 100vh; }
     margin-top: 0;
     margin-bottom: 0;
     font-weight: 500;
-    display: flex; }
+    display: flex;
+  column-gap: 10px;
+    align-items: center; }
     .footer-style-default .information-list li i {
       font-size: 15px;
       margin-right: 12px;
@@ -17077,7 +17079,7 @@ form.send-form .main-btn-rect {
 }
 .termChecked{position: static !important;
   height: auto !important;
-  margin-right: 15px;
+  margin-right: 7px;
   opacity: 1 !important;
 }
 .comment-form-consent {display:flex;}
