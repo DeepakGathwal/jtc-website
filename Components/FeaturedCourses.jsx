@@ -2,6 +2,7 @@ import React , {useRef, useState, useEffect} from 'react'
 import Slider from "react-slick";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa6";
 import { homeCources } from '@/apis/apis';
+import Link from 'next/link';
 
 export default function FeaturedCourses() {
     const [state, setState] = useState([])
@@ -88,24 +89,26 @@ export default function FeaturedCourses() {
           sliderRef = slider;
         }} {...settings}>
             {state && state.map((el) => (
+           <Link href={"/course/"+el.name}>
             <div className="single-slick-card">
                             <div className="service-card service-card-8 shape-bg-1">
                                 <div className="inner">
                                     <div className="icon">
-                                        <a href="java-fullstack.php">
+                                     
                                             <img src={el.icon} alt={el.name}/>
-                                        </a>
+                                       
                                     </div>
                                     <div className="content">
-                                        <h6 className="title"><a href="java-fullstack.php">{el.name}</a></h6>
+                                        <h6 className="title">{el.name}</h6>
                                         
                                     </div>
                                     <div className="hover-action">
-                                        <a className="read-more-btn" href="java-fullstack.php"><FaArrowRight /></a>
+                                      <FaArrowRight />
                                     </div>
                                 </div>
                             </div>
                         </div>
+           </Link>
 
             ))}
                         {/* <!-- End Single Service  --> */}

@@ -30,7 +30,7 @@ export async  function GET(req){
 
 export async  function POST(req){
     const {name, phone, cource, email} = req.body
-    const  query =  `Insert into jtc_enquiry_form SET name = ${name}, email = ${email} , phone_number = ${phone}, cource = (SELECT id from jtc_cources WHERE name = ${cource}), form_id = '1'`
+    const  query =  `Insert into jtc_enquiry_form SET name = ${name}, email = ${email} , phone_number = ${phone}, cource = (SELECT id from jtc_courses WHERE name = ${cource}), form_id = '1'`
     const insertData = await executeQuery(query);
     if(insertData.affectedRows >  0){
         const message = `${name} Just fill the Get In Touch form. His Phone No. ${phone}. The Seleted Cource is ${cource}` 
