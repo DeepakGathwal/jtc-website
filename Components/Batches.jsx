@@ -10,9 +10,11 @@ const Batches = ({courcename}) => {
         const {data} = await allBatches(courcename)
         if(data.length > 0) return setState(data)
         }
+    
 useEffect(() => {
     allData()
 },[courcename])
+
   return (
     <div className="edu-elements-area edu-section-gap edu-section-gapTop bg-color-white">
     <div className="container">
