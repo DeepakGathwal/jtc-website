@@ -18,7 +18,7 @@ const SyllybusDownload = () => {
                         </div>
                         <div className="comment-form-consent input-box mb--20">
                         <label><input id="checkbox-7" type="checkbox" required/></label>
-                            <label for="checkbox-7"> I have reviewed all <a
+                            <label htmlFor="checkbox-7"> I have reviewed all <a
                                     href="termsandcondition.html" target="_blank"> Terms and
                                     Conditions</a>.</label>
                         </div>

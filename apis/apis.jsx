@@ -116,7 +116,7 @@ export const joinUsForm = async (field) => {
 
 
 
-export const allCourceCategory = async () => {
+export const allCourceTypes = async () => {
   try{
     const  {data}  = await instance.patch(cources);
  
@@ -141,8 +141,6 @@ export const termsAndCondition = async (id) => {
 };
 
 
-
-
 export const courcesList = async (id) => {
   try{
     const value = JSON.stringify({id})
@@ -152,7 +150,6 @@ export const courcesList = async (id) => {
     return err
   }
 };
-
 
 
 export const courseData = async (name) => {
@@ -176,17 +173,16 @@ export const coursePoint = async (course) => {
   }
 };
 
+
 export const courceViodePoint = async (course) => {
   try{
     const value = JSON.stringify({course})
-    const {data}  = await instance.patch(courseSections,value );
+    const {data}  = await instance.patch(about,value );
     return data;
   }catch(err){
     return err
   }
 };
-
-
 
 
 export const allBatches = async (course) => {
@@ -198,6 +194,36 @@ export const allBatches = async (course) => {
     return err
   }
 };
+
+
+export const courceCatgories = async (id) => {
+  try{
+    const {data}  = await instance.post(id);
+    return data;
+  }catch(err){
+    return err
+  }
+};
+
+export const courceChapter = async (id) => {
+  try{
+    const value = JSON.stringify({id})
+    const {data}  = await instance.patch(courseSections, value);
+    return data;
+  }catch(err){
+    return err
+  }
+};
+
+
+// export const courceTopic = async (id) => {
+//   try{
+//     const {data}  = await instance.post(id);
+//     return data;
+//   }catch(err){
+//     return err
+//   }
+// };
 
 
 
