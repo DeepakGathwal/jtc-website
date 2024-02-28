@@ -37,7 +37,7 @@
     border-bottom: none;
 }
 .acc-section .accordion-item .accordion-button::after {
-    background-image: url("../public/assets/images/icons/drop-icon.svg");
+    background-image: url("./drop-icon.svg");
     scale: 2.2;
 }
 .acc-section .accordion-item .accordion-button{

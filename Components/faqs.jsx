@@ -3,7 +3,7 @@ import React from 'react';
 import Image from "next/image";
 import Accordion from 'react-bootstrap/Accordion';
 import "./faq.css";
-import Buttonicon from "../public/assets/images/icons/connect-icon.svg"
+import Buttonicon from "./connect-icon.svg"
 const Faqs = () => {
     return (
         <>
