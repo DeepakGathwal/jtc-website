@@ -139,11 +139,7 @@ const Page = () => {
 					<div className="container">
 						<div className="row justify-content-between">
 							<CourceCategory courcename ={courcename}/>
-							
-
 						<SyllybusDownload/>
-
-
 						</div>
 					</div>
 				</div>
@@ -365,8 +361,7 @@ const Page = () => {
 							<div class="col-lg-2">
 								<div class="edu-event event-list1 radius-small">
 									<div class="inner">
-											{/* <img src="assets/images/event/event-01/event-01.jpg" alt="Event Images"> */}
-									<div class="batchdate" id="ID16">
+										<div class="batchdate" id="ID16">
 											<div class="txtdate w-100">
 												<h5 class="title">18<sup>th</sup></h5>
 											</div>
@@ -404,7 +399,6 @@ const Page = () => {
 							<div class="col-lg-2">
 								<div class="edu-event event-list1 radius-small">
 									<div class="inner">
-												{/* <img src="assets/images/event/event-01/event-01.jpg" alt="Event Images">  */}
 										<div class="batchdate" id="ID19">
 											<div class="txtdate w-100">
 												<h5 class="title">08<sup>th</sup></h5>
@@ -470,7 +464,6 @@ const Page = () => {
 												<a class="edu-btn popup-btn" data-popup="myModal1" href="javascript:;" onClick="getBatches(1)">Enroll Now <FaArrowRight /></a>
 											</div>
 										</div>
-
 									</div>
 								</div>
 							</div>

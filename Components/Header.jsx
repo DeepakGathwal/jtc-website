@@ -9,15 +9,22 @@ import { useRouter } from 'next/navigation';
 import Test from './test';
 import "./Header.css";
 import { allCourceCategory, courcesList, homeCources } from '@/apis/apis';
+import HireFromUs from './HireFromUs';
+
 
 export default function Header() {
     const router = useRouter();
     const [categories, setCategories] = useState([])
     const [show, setShow] = useState(false)
+    const [Hireshow, HiresetShow] = useState(false)
     const [cources, setCources] = useState([])
     const handelShow = () => {
         setShow(true)
     }
+    const hireshow = () => {
+        HiresetShow(true)
+    }
+    
    
     // State to manage which tab is active
     const [activeTab, setActiveTab] = useState(1);
@@ -95,7 +102,7 @@ export default function Header() {
                                 </div>
                             </li>
                             <li className="has-droupdown"  onClick={() => router.push("/tutorial")}>Tutorial</li>
-							<li className="has-droupdown">Hire from Us</li>
+							<li className="has-droupdown" onClick={hireshow}>Hire from Us</li>
 							<li className="has-droupdown">Join Us</li>
                             <li className="has-droupdown"  onClick={() => router.push("/blog")}>Blog</li>
                         </ul>
@@ -121,6 +128,7 @@ export default function Header() {
                                 <a className="white-box-icon popup-btn" data-popup="enqNow" href="javascript:;"><RiChat1Line/> </a>
                             </div>
                             <Test show={show} setShow={setShow}/>
+                            <HireFromUs Hireshow={Hireshow} HiresetShow={HiresetShow}/>
 
                             <div className="mobile-menu-bar ml--15 ml_sm--5 d-block d-xl-none">
                                 <div className="hamberger">

@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Link from 'next/link'
+import Tnc from './tnc';
 
 const Test = ({ show, setShow }) => {
   const handelClose = async () => {
@@ -12,9 +13,6 @@ const Test = ({ show, setShow }) => {
 
         <Modal.Header closeButton>
           <h3 className="mb-30">Get in Touch</h3>
-          <Modal.Title>
-
-          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className="popup-content">
@@ -41,10 +39,7 @@ const Test = ({ show, setShow }) => {
 
                           </select>
                         </div>
-                        <div className="comment-form-consent input-box mb--20">
-                          <label><input id="checkbox-1" type="checkbox" required className='termChecked' /></label>
-                          <label htmnlFor="checkbox-1">I have reviewed all  <Link href="/termsandcondition">  Terms and Conditions</Link>.</label>
-                        </div>
+                        <Tnc id = {"checkbox-1"}/>
                         <button className="rn-btn edu-btn w-100 mb--20" type="submit">
                           <span>Enquire Now</span>
                         </button>

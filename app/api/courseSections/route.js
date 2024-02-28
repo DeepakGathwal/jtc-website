@@ -8,7 +8,7 @@ export async  function PUT(req){
    
     const redisdata = await client.get(`point${course}`);
     if(!redisdata){
-        const getIdQuery = `Select id from jtc_cources WHERE name = '${course}' && deleted_by = '0'`
+        const getIdQuery = `Select id from jtc_courses WHERE name = '${course}' && deleted_by = '0'`
         const getId = await executeQuery(getIdQuery);
         if(getId.length > 0){
         const courceId = await getId[0].id
@@ -61,7 +61,7 @@ export async function POST(req){
         ELSE 'th'
     END AS formatted_date
     
-    from jtc_batches as batch INNER Join jtc_cources as cource On cource.id = batch.cource_id WHERE batch.deleted_by = '0' && cource.name = '${course}' && cource.deleted_by = '0'`
+    from jtc_batches as batch INNER Join jtc_courses as cource On cource.id = batch.cource_id WHERE batch.deleted_by = '0' && cource.name = '${course}' && cource.deleted_by = '0'`
 
       const data = await executeQuery(query);
       

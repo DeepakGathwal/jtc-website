@@ -49,7 +49,7 @@ export async function POST(req, context){
 //   const {id} = context.params;
 //   const redisdata = await client.get(`category${id}`);
 //   if(!redisdata){
-//     const query =  `Select id, name, icon from jtc_cources WHERE category Like '%${id}%' `
+//     const query =  `Select id, name, icon from jtc_courses WHERE category Like '%${id}%' `
 //       const data = await executeQuery(query);
 //       if(data.length > 0) {
 //       const value =  await JSON.stringify(data)

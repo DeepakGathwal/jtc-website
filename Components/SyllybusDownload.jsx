@@ -1,4 +1,5 @@
 import React from 'react'
+import Tnc from './tnc';
 
 const SyllybusDownload = () => {
   return (
@@ -16,12 +17,7 @@ const SyllybusDownload = () => {
                             <input type="tel" id="phone7" className="phone-input" name="phone"
                                 placeholder="Mobile Number" required/>
                         </div>
-                        <div className="comment-form-consent input-box mb--20">
-                        <label><input id="checkbox-7" type="checkbox" required/></label>
-                            <label for="checkbox-7"> I have reviewed all <a
-                                    href="termsandcondition.html" target="_blank"> Terms and
-                                    Conditions</a>.</label>
-                        </div>
+                        <Tnc id = {"checkbox-7"}/>
                         <button className="rn-btn edu-btn w-100 mb--20" type="submit">
                             <span>Download Curriculum</span>
                         </button>

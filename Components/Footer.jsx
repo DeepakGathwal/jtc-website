@@ -3,6 +3,10 @@ import { footerData } from '@/apis/apis';
 import React,{useState, useEffect} from 'react';
 import { FaAngleDoubleRight , FaFacebookF , FaYoutube ,  FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { IoCall } from "react-icons/io5";
+import { FiMapPin } from "react-icons/fi";
+import { MdMailOutline } from "react-icons/md";
+import { PiMapPinBold } from "react-icons/pi";
 
 export default function Footer() {
     const [state, setState] = useState([])
@@ -81,13 +85,12 @@ export default function Footer() {
                                     <div className="inner">
                                         <div className="widget-information">
                                             <ul className="information-list">
-                                                <li><i className="icon-map-pin-line"></i>{state && state.contact}
+                                                <li><PiMapPinBold style={{height:"15px",width:"34px"}}/> {state && state.contact}
                                                 </li>
-                                                <li><i className="icon-phone-fill"></i><a href="tel:+919990699111">{state && state.phone}</a>
+                                                <li><IoCall/><a href="tel:+919990699111"> {state && state.phone}</a>
                                                 </li>
-
-                                                <li><i className="icon-mail-line-2"></i><a target="_blank"
-                                                    href="mailto:info@jtcindia.org">{state && state.email}</a></li>
+                                                <li><MdMailOutline/><a target="_blank"
+                                                    href="mailto:info@jtcindia.org"> {state && state.email}</a></li>
                                             </ul>
                                         </div>
                                     </div>
