@@ -1,5 +1,5 @@
-import { allBatches } from '@/apis/apis';
 import React,{useState, useEffect} from 'react'
+import { allBatches } from '@/apis/apis';
 import { FaRegClock , FaArrowRight} from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
 import { SlCalender } from "react-icons/sl";
@@ -8,9 +8,10 @@ const Batches = ({courcename}) => {
     const [state, setState]  = useState([])
     const allData = async() => {
         const {data} = await allBatches(courcename)
-        if(data.length > 0) return setState(data)
+        return setState(data)
         }
     
+      
 useEffect(() => {
     allData()
 },[courcename])
