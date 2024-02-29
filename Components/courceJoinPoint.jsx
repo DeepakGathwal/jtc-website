@@ -32,8 +32,8 @@ const CourceJoinPoint = ({ coursename }) => {
                         </svg></span> Course</span> </h3>
             </div>
             <div className="learnCourse">
-                {state && state.map((el) => (
-                    <div className="details_boxs">
+                {state && state.map((el, i) => (
+                    <div key={i} className="details_boxs">
                         <div className="detail_icons">
                             <img src={el.icon} alt={el.description} />
                         </div>

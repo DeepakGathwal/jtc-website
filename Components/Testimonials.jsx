@@ -69,8 +69,8 @@ export default function Testimonials() {
                 <Slider ref={slider => {
           sliderRef = slider;
         }} {...settings}>
-            {state && state.map((el) => (
-                    <div className="testimonial-card-box">
+            {state && state.map((el, i) => (
+                    <div key={i} className="testimonial-card-box">
                         <div className="inner">
                             <div className="client-info">
                                 <div className="thumbnail">

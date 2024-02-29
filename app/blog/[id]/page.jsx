@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import { singleBlog } from '@/apis/apis'
+import Image from 'next/image'
 
 const Index = () => {
   const [state, setState] = useState([])
@@ -14,20 +15,20 @@ const Index = () => {
   }
 
   useEffect(() => {
-    allData()
+    allData();
   },[id])
 
   return (
     <>
-      {state && state.map((el) => (
+      {state && state.map((el,i) => (
         <>
-       <div className='d-flex justify-content-between fw-bold'>
+       <div key={i}  className='d-flex justify-content-between fw-bold'>
        <span>{el.addedAt}</span>
         <span>{el.category}</span>
        </div>
         <h4 className='text-center'>{el.name}</h4>
 
-        <img src={el.icon} alt="" srcset="" />
+        <Image src={el.icon} alt="" srcset="" width={40} height={40}/>
         <h6 className="m-3 p-3">{el.heading}</h6>
         <div className="m-5 p-5" style={{cssText : el.blog_css}} dangerouslySetInnerHTML={{ __html: el.blog_html }} />
         

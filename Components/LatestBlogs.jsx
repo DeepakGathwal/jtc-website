@@ -42,10 +42,10 @@ export default function LatestBlogs() {
                     </div>
                     </div>
                     <div className="row g-5 mt--30">
-                        {state.length > 0 && state.map((el) => (
+                        {state.length > 0 && state.map((el, i) => (
                           
                             <>
-                            <div className="col-lg-4 col-md-6 col-12">
+                            <div key={i} className="col-lg-4 col-md-6 col-12">
                          <div className="edu-blog blog-type-2 bg-white radius-small"> 
                                 <div className="inner">
                                     <div className="thumbnail">

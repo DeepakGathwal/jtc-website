@@ -83,18 +83,18 @@ export default function Header() {
                                 <div className="mega-menu row-flex">
                                     <div className="column-flex course-hover">
                                         <ul>
-                                            {categories && categories.map((el) => (
+                                            {categories && categories.map((el, i) => (
                                                 <>
-                                                    <li id={el.id} onMouseEnter={() => handleTabMouseEnter(el.id)}><Link href="/">{el.category}</Link></li>
+                                                    <li key={i} id={el.id} onMouseEnter={() => handleTabMouseEnter(el.id)}><Link href="/">{el.category}</Link></li>
 
                                                 </>
                                             ))}
                                         </ul>
                                     </div>
                                     <div className="row-flex hover-results" id="contentOne" style={{ display: activeTab == activeTab ? 'flex' : 'none' }}>
-                                        {cources && cources.map((el) => (
+                                        {cources && cources.map((el,o) => (
                                             <>
-                                                <div className="course-card">
+                                                <div key={o} className="course-card">
                                                     <Link href={'course/' + el.name} className="cardlinks column-flex">
                                                         <Image src={el.icon} alt={el.name} width={20} height={20} className="courseIcon" />
                                                         <h3>{el.name}</h3>

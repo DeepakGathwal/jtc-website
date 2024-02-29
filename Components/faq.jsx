@@ -48,8 +48,8 @@ const Faq = ({coursename}) => {
 								<div className="row g-5 align-items-center mt--20">
 									<div className="accordion-style-1">
 										<Accordion>
-											{state && state.map((el) =>(
-											<div className='col-md-6'>
+											{state && state.map((el, i) =>(
+											<div key={i} className='col-md-6'>
 											
 												<Accordion.Item eventKey={el.id}>
 													<Accordion.Header>{el.point}</Accordion.Header>

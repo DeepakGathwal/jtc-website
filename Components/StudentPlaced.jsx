@@ -70,8 +70,8 @@ export default function StudentPlaced() {
                                     sliderRef = slider;
                                 }} {...settings}>
 
-                                    {state && state.map((el) => (
-                                        <div className="single-slick-card">
+                                    {state && state.map((el, i) => (
+                                        <div key={i} className="single-slick-card">
                                             <div className="edu-card card-type-5 radius-small">
                                                 <div className="inner">
                                                     <img src={el.icon} alt="" />

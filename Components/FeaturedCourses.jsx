@@ -87,9 +87,9 @@ export default function FeaturedCourses() {
                             <Slider ref={slider => {
                                 sliderRef = slider;
                             }} {...settings}>
-                                {state && state.map((el) => (
-                                    <Link href={"/course/" + el.name}>
-                                        <div className="single-slick-card">
+                                {state && state.map((el, i) => (
+                                    <Link key={i} href={"/course/" + el.name}>
+                                        <div  className="single-slick-card">
                                             <div className="service-card service-card-8 shape-bg-1">
                                                 <div className="inner">
                                                     <div className="icon">
