@@ -11,7 +11,7 @@ const Batchenroll = ({ show, setShow }) => {
     <>
       <Modal show={show} onHide={() => batchenrollclose()}>
 
-        <Modal.Header closeButton>
+        <Modal.Header closeButton> 
         <h5 className="mb-30">Enroll Now: Secure Your Spot!</h5>
         </Modal.Header>
         <Modal.Body>

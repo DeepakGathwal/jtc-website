@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Counter from './Counter';
+import Image from 'next/image';
 import { allChoosingPoint } from '@/apis/apis';
 export default function WhyChooseUs() {
     const [state, setState] = useState([])
@@ -43,7 +44,7 @@ return (
                                 <div className="edu-counterup">
                                     <div className="inner">
                                         <div className="icon">
-                                            <img src="assets/images/icons/year.png" alt="Icons Images"/>
+                                            <Image src="assets/images/icons/year.png" alt="Icons Images"width={60} height={60}/>
                                         </div>
                                         <div className="content">
                                             <h3 className="counter">
@@ -62,7 +63,7 @@ return (
                                 <div className="edu-counterup">
                                     <div className="inner">
                                         <div className="icon">
-                                            <img src="assets/images/icons/courses.png" alt="Icons Images"/>
+                                            <Image src="assets/images/icons/courses.png" alt="Icons Images"width={60} height={60}/>
                                         </div>
                                         <div className="content">
                                             <h3 className="counter"><span className="odometer" data-count="50">{countersConfig1.map((config, index) => (
@@ -79,7 +80,7 @@ return (
                                 <div className="edu-counterup">
                                     <div className="inner">
                                         <div className="icon">
-                                            <img src="assets/images/icons/students.png" alt="Icons Images"/>
+                                            <Image src="assets/images/icons/students.png" alt="Icons Images"width={60} height={60}/>
                                         </div>
                                         <div className="content">
                                             <h3 className="counter">{countersConfig2.map((config, index) => (
@@ -96,7 +97,7 @@ return (
                                 <div className="edu-counterup">
                                     <div className="inner">
                                         <div className="icon">
-                                            <img src="assets/images/icons/companies.png" alt="Icons Images"/>
+                                            <Image src="assets/images/icons/companies.png" alt="Icons Images"width={60} height={60}/>
                                         </div>
                                         <div className="content">
                                             <h3 className="counter">{countersConfig3.map((config, index) => (
@@ -135,10 +136,10 @@ return (
 
                 <div className="shape-dot-wrapper shape-wrapper d-xl-block d-none">
                     <div className="shape-image shape-image-1">
-                        <img src="assets/images/shapes/shape-04-01.png" alt="Shape Thumb" />
+                        <Image src="assets/images/shapes/shape-04-01.png" alt="Shape Thumb" width={87} height={116}/>
                     </div>
                     <div className="shape-image shape-image-2">
-                        <img src="assets/images/shapes/shape-11.png" alt="Shape Thumb" />
+                        <Image src="assets/images/shapes/shape-11.png" alt="Shape Thumb" width={101} height={88}/>
                     </div>
                 </div>
             </div>

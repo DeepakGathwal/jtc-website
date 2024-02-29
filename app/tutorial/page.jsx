@@ -6,6 +6,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import "./hero.css";
 import FeaturedCourses from '@/Components/FeaturedCourses';
 import { allCourceTypes } from '@/apis/apis';
+import Image from 'next/image';
 
 
 
@@ -40,25 +41,25 @@ function Index() {
                     <div className="herofig d-xl-block d-none">
                         <div className="orbitfig">
                             <div className="centerlogo">
-                                <img src="assets/images/orbitimage/logo.webp" alt="" className="logo" />
+                                <img src="assets/images/orbitimage/logo.webp" alt="" className="logo" width={90} height={47}/>
                             </div>
                             <div className="first-orbit">
                                 <span className="firstItem"></span>
                                 <span className="secondItem"></span>
-                                <span className="thirdItem"><img src="assets/images/orbitimage/automation.svg" alt="" className="smaller-icon" /></span>
+                                <span className="thirdItem"><img src="assets/images/orbitimage/automation.svg" alt="" className="smaller-icon" width={36} height={32}/></span>
                             </div>
                             <div className="second-orbit">
                                 <span className="firstItem"></span>
                                 <span className="secondItem"></span>
-                                <span className="thirdItem"><img src="assets/images/orbitimage/webdevelopment.svg" alt="" className="mid-icon" /></span>
-                                <span className="fourthItem"><img src="assets/images/orbitimage/saleforce.svg" alt="" className="mid-icon" /></span>
+                                <span className="thirdItem"><img src="assets/images/orbitimage/webdevelopment.svg" alt="" className="mid-icon" width={36} height={32}/></span>
+                                <span className="fourthItem"><img src="assets/images/orbitimage/saleforce.svg" alt="" className="mid-icon" width={36} height={32}/></span>
                             </div>
                             <div className="third-orbit">
                                 <span className="firstItem"></span>
                                 <span className="secondItem"></span>
-                                <span className="thirdItem"><img src="assets/images/orbitimage/react.svg" alt="" className="large-icon" /></span>
-                                <span className="fourthItem"><img src="assets/images/orbitimage/javascript.svg" alt="" className="large-icon" /></span>
-                                <span className="fifthItem"><img src="assets/images/orbitimage/kubernotes.svg" alt="" className="large-icon" /></span>
+                                <span className="thirdItem"><img src="assets/images/orbitimage/react.svg" alt="" className="large-icon" width={36} height={32}/></span>
+                                <span className="fourthItem"><img src="assets/images/orbitimage/javascript.svg" alt="" className="large-icon" width={36} height={32}/></span>
+                                <span className="fifthItem"><img src="assets/images/orbitimage/kubernotes.svg" alt="" className="large-icon" width={36} height={32}/></span>
                             </div>
                         </div>
                     </div>
@@ -91,13 +92,13 @@ function Index() {
 
                 <div className="shape-dot-wrapper shape-wrapper d-xl-block d-none">
                     <div className="shape-image shape-image-1">
-                        <img src="assets/images/shapes/shape-07.png" alt="Shape Thumb" />
+                        <img src="assets/images/shapes/shape-07.png" alt="Shape Thumb" width={36} height={32}/>
                     </div>
                     <div className="shape-image shape-image-2">
-                        <img src="assets/images/shapes/shape-03-05.png" alt="Shape Thumb" />
+                        <img src="assets/images/shapes/shape-03-05.png" alt="Shape Thumb" width={36} height={32}/>
                     </div>
                     <div className="shape-image shape-image__3">
-                        <img src="assets/images/shapes/shape-04-06.png" alt="Shape Thumb" />
+                        <img src="assets/images/shapes/shape-04-06.png" alt="Shape Thumb" width={36} height={32}/>
                     </div>
                 </div>
             </div>

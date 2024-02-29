@@ -96,12 +96,11 @@ export default function BannerAreaHome() {
                         </div>
                     </div>
                     <div className="shape-dot-wrapper shape-wrapper d-xl-block d-none">
-                        <div className="shape shape-1"> <Image src="/assets/images/shapes/shape-01.png"  width={25} height={25}/></div>
+                        <div className="shape shape-1"> <Image src="/assets/images/shapes/shape-01.png" alt="Shape Thumb" width={25} height={25}/></div>
                         <div className="shape shape-2"><Image src="/assets/images/shapes/shape-02.png" alt="Shape Thumb" width={52} height={58}/></div>
-                        <div className="shape shape-3"><img src="/assets/images/shapes/shape-03.png" alt="Shape Thumb" /></div>
-                        <div className="shape shape-4"><img src="/assets/images/shapes/shape-04.png" alt="Shape Thumb" /></div>
-                        <div className="shape shape-5"><img src="/assets/images/shapes/shape-05.png" alt="Shape Thumb" /></div>
-                        <div className="shape shape-6"><img src="/assets/images/shapes/shape-05-05.png" alt="Shape Thumb" /></div>
+                        <div className="shape shape-3"><Image src="/assets/images/shapes/shape-03.png" alt="Shape Thumb" width={66} height={53}/></div>
+                        <div className="shape shape-4"><Image src="/assets/images/shapes/shape-04.png" alt="Shape Thumb" width={113} height={150}/></div>
+                        <div className="shape shape-5"><Image src="/assets/images/shapes/shape-05.png" alt="Shape Thumb" width={30} height={30}/></div>
                     </div>
                 </div>
             </div>

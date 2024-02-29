@@ -1,6 +1,7 @@
 import { homeCompany } from '@/apis/apis';
 import React, { useRef, useState, useEffect } from 'react';
 import Slider from "react-slick";
+import Image from 'next/image';
 
 export default function StudentPlaced() {
     const [state, setState] = useState([])
@@ -74,7 +75,7 @@ export default function StudentPlaced() {
                                         <div key={i} className="single-slick-card">
                                             <div className="edu-card card-type-5 radius-small">
                                                 <div className="inner">
-                                                    <img src={el.icon} alt="" />
+                                                    <Image src={el.icon} alt="companies" width={36} height={49}/>
                                                 </div>
                                             </div>
                                         </div>
@@ -87,16 +88,10 @@ export default function StudentPlaced() {
 
                     <div className="shape-dot-wrapper shape-wrapper d-xl-block d-none">
                         <div className="shape-image shape-image-1">
-                            <img src="assets/images/shapes/shape-13-10.png" alt="Shape Thumb" />
-                        </div>
-                        <div className="shape-image shape-image-2">
-                            <img src="assets/images/shapes/shape-04-03.png" alt="Shape Thumb" />
+                            <Image src="assets/images/shapes/shape-13-10.png" alt="Shape Thumb" width={143} height={130}/>
                         </div>
                         <div className="shape-image shape-image-3">
-                            <img src="assets/images/shapes/shape-15-03.png" alt="Shape Thumb" />
-                        </div>
-                        <div className="shape-image shape-image-4">
-                            <img src="assets/images/shapes/shape-03-07.png" alt="Shape Thumb" />
+                            <Image src="assets/images/shapes/shape-15-03.png" alt="Shape Thumb" width={76} height={47}/>
                         </div>
                     </div>
 

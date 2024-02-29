@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { FaArrowRight } from "react-icons/fa6";
 import { SiOpenbadges } from "react-icons/si";
 import { SlCalender } from "react-icons/sl";
-
+import Image from 'next/image';
 
 export default function LatestBlogs() {
     const [state, setState] = useState([])
@@ -50,7 +50,7 @@ export default function LatestBlogs() {
                                 <div className="inner">
                                     <div className="thumbnail">
                             <Link href={"/blog/"+el.id}>
-                                         <img src={el.icon} alt={el.name}/>
+                                         <Image src={el.icon} alt={el.name} width={365} height={122}/>
                             </Link>
                                     </div>
                                     <div className="content">
@@ -78,13 +78,13 @@ export default function LatestBlogs() {
 
                     <div className="shape-dot-wrapper shape-wrapper d-xl-block d-none">
                         <div className="shape-image shape-image-1">
-                            <img src="assets/images/shapes/shape-13-06.png" alt="Shape Thumb" />
+                            <Image src="assets/images/shapes/shape-13-06.png" alt="Shape Thumb" width={97} height={117}/>
                         </div>
                         <div className="shape-image shape-image-3">
-                            <img src="assets/images/shapes/shape-13-05.png" alt="Shape Thumb" />
+                            <Image src="assets/images/shapes/shape-13-05.png" alt="Shape Thumb" width={57} height={62}/>
                         </div>
                         <div className="shape-image shape-image-4">
-                            <img src="assets/images/shapes/shape-25.png" alt="Shape Thumb" />
+                            <Image src="assets/images/shapes/shape-25.png" alt="Shape Thumb" width={127} height={141}/>
                         </div>
                     </div>
 
@@ -92,7 +92,7 @@ export default function LatestBlogs() {
 
                 <div className="shape-dot-wrapper shape-wrapper d-xl-block d-none">
                     <div className="shape-image shape-image-2">
-                        <img src="assets/images/shapes/shape-24.png" alt="Shape Thumb" />
+                        <Image src="assets/images/shapes/shape-24.png" alt="Shape Thumb" width={180} height={180}/>
                     </div>
                 </div>
             </div>

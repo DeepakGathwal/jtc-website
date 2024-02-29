@@ -78,7 +78,7 @@ useEffect(() => {
                                     <Batchenroll show={show} setShow={setShow}/>
                                 </div>
                             </div>
-                        </div>
+                        </div> 
                     </div>
                 </div>
             </div>

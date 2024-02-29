@@ -7,6 +7,7 @@ import { IoCall } from "react-icons/io5";
 import { FiMapPin } from "react-icons/fi";
 import { MdMailOutline } from "react-icons/md";
 import { PiMapPinBold } from "react-icons/pi";
+import Image from 'next/image';
 
 export default function Footer() {
     const [state, setState] = useState([])
@@ -100,10 +101,10 @@ export default function Footer() {
 
                         <div className="shape-dot-wrapper shape-wrapper d-md-block d-none">
                             <div className="shape-image shape-image-1">
-                                <img src="../assets/images/shapes/shape-21-01.png" alt="Shape Thumb" />
+                                <Image src="../assets/images/shapes/shape-21-01.png" alt="Shape Thumb" width={143} height={130}/>
                             </div>
                             <div className="shape-image shape-image-2">
-                                <img src="../assets/images/shapes/shape-35.png" alt="Shape Thumb" />
+                                <Image src="../assets/images/shapes/shape-35.png" alt="Shape Thumb" width={122} height={123}/>
                             </div>
                         </div>
                     </div>
