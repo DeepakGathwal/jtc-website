@@ -96,6 +96,7 @@ const Faqs = () => {
                                                 </Accordion>
 											</div>
 									</div>
+                                    
 											<div className='col-md-4'>
 												<div className="col-flex connectus">
                                                     <h3>Having any Queries?</h3>

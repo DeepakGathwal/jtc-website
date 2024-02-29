@@ -8,9 +8,7 @@ import { FaGripLines } from "react-icons/fa";
 import { useRouter } from 'next/navigation';
 import Test from './test';
 import "./Header.css";
-import { allCourceCategory, courcesList, homeCources } from '@/apis/apis';
-import HireFromUs from './HireFromUs';
-
+import { allCourceTypes, courcesList, homeCources } from '@/apis/apis';
 
 export default function Header() {
     const router = useRouter();
@@ -36,7 +34,7 @@ export default function Header() {
     };
 
     const allData = async() =>{
-        const {data} = await allCourceCategory()
+        const {data} = await allCourceTypes()
         if(data.length > 0)
         return setCategories(data)
     }

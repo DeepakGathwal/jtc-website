@@ -24,8 +24,9 @@ export const executeQuery = async (newQuery, args) => {
         connection.query(newQuery, args, async (err, data) => {
         
           if (data) {
+       
            return resolve(data);
-            connection.release();
+            
      
             return value;
 

@@ -1,16 +1,16 @@
 import React,{useState, useEffect} from 'react'
 import { coursePoint } from '@/apis/apis'
 
-const CourceJoinPoint = ({ courcename }) => {
+const CourceJoinPoint = ({ coursename }) => {
     const [state, setState] = useState([])
     const allData = async () => {
-        const { data } = await coursePoint(courcename)
+        const { data } = await coursePoint(coursename)
 
         if (data.length > 0) return setState(data)
     }
     useEffect(() => {
         allData()
-    }, [courcename])
+    }, [coursename])
     return (
         <>
             <div className="section-title text-left sal-animate">
@@ -21,12 +21,12 @@ const CourceJoinPoint = ({ courcename }) => {
                             fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M1.00016 15.2711C18.1407 8.34427 70.832 -1.93441 144.473 12.3652"
-                                stroke="currentcolor" stroke-width="4"
+                                stroke="currentcolor" strokeWidth="4"
                             >
                             </path>
                             <path
                                 d="M26.2943 14.0041C38.9177 9.44643 77.3772 3.50055 130.227 16.1786"
-                                stroke="currentcolor" stroke-width="2"
+                                stroke="currentcolor" strokeWidth="2"
                             >
                             </path>
                         </svg></span> Course</span> </h3>

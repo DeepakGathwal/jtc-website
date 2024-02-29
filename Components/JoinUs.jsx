@@ -11,6 +11,7 @@ const JoinUs = () => {
     <Modal.Body>
     <div class="popup-content">
             <section class="contact">
+                
                 <div class="content">
                     <div class="form">
                         <div class="container checkout-page-style" style="padding:0">

@@ -56,6 +56,6 @@ const HireFromUs = ({ show, HiresetShow }) => {
             </Modal>
     </>
   )
-}
+}   
 
 export default HireFromUs
