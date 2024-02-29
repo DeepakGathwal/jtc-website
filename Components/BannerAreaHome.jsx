@@ -74,8 +74,8 @@ export default function BannerAreaHome() {
                                                         <div className="input-box mb--20">
                                                             <select name="cource" id="courses3"  className="courses valid" aria-invalid="false" value={field.cource} required onChange={handelChange}>
                                                                 <option selected>Select Course</option>
-                                                                {state && state.map((el) => (
-                                                                    <option value={el.id}>{el.name}</option>
+                                                                {state && state.map((el, i) => (
+                                                                    <option key={i} value={el.id}>{el.name}</option>
 
                                                                 ))}
 

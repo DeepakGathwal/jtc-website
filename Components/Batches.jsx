@@ -39,8 +39,8 @@ useEffect(() => {
             </div>
         </div>
         <div className="row g-5 justify-content-center">
-            {state && state.map((el) => (
-            <div className="col-lg-12" >
+            {state && state.map((el, i) => (
+            <div key={i} className="col-lg-12" >
                 <div className="row section-hover">
                     <div className="col-lg-2">
                         <div className="edu-event event-list1 radius-small">

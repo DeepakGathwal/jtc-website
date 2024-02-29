@@ -14,8 +14,8 @@ useEffect(() => {
 	<div className="eduvibe-widget-details mt--35">
 	<div className="widget-content">
 		<ul>
-			{state && state.map((el) => (
-				<li>{el.description}</li>
+			{state && state.map((el, i) => (
+				<li key={i}>{el.description}</li>
 
 			))}
 
