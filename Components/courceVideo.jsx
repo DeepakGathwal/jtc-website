@@ -1,15 +1,15 @@
 import React,{useState, useEffect} from 'react'
 import { courceViodePoint } from '@/apis/apis'
 
-const CourceVideo = ({courcename}) => {
+const CourceVideo = ({coursename}) => {
 	const [state, setState]  = useState([])
     const allData = async() => {
-        const {data} = await courceViodePoint(courcename)
+        const {data} = await courceViodePoint(coursename)
         if(data.length > 0)  return setState(data)
     }
 useEffect(() => {
     allData()
-},[courcename])
+},[coursename])
   return (
 	<div className="eduvibe-widget-details mt--35">
 	<div className="widget-content">

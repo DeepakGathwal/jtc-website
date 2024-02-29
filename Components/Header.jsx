@@ -8,9 +8,8 @@ import { FaGripLines } from "react-icons/fa";
 import { useRouter } from 'next/navigation';
 import Test from './test';
 import "./Header.css";
-import { allCourceCategory, courcesList, homeCources } from '@/apis/apis';
+import { allCourceTypes, courcesList, homeCources } from '@/apis/apis';
 import HireFromUs from './HireFromUs';
-
 
 export default function Header() {
     const router = useRouter();
@@ -36,7 +35,7 @@ export default function Header() {
     };
 
     const allData = async() =>{
-        const {data} = await allCourceCategory()
+        const {data} = await allCourceTypes()
         if(data.length > 0)
         return setCategories(data)
     }
@@ -80,12 +79,16 @@ export default function Header() {
                                     <div className="column-flex course-hover">
                                         <ul>
                                             {categories && categories.map((el) => (
-                                                <li id={el.id} onMouseEnter={() => handleTabMouseEnter(el.id)}><Link href="/">{el.category}</Link></li>
-                                            ))}
+<>
+<li id={el.id} onMouseEnter={() => handleTabMouseEnter(el.id)}><Link href="/">{el.category}</Link></li>
+
+</>
+))}
                                         </ul>
                                     </div>
                                     <div className="row-flex hover-results" id="contentOne" style={{ display: activeTab == activeTab ? 'flex' : 'none' }}>
                                     {cources && cources.map((el) => (
+                                        <>
                                         <div className="course-card">
                                             <Link href={'course/' + el.name} className="cardlinks column-flex">
                                                 <Image src={el.icon} alt={el.name} width={20} height={20} className="courseIcon" />
@@ -95,6 +98,7 @@ export default function Header() {
                                                 </div>
                                             </Link>
                                         </div>
+                                        </>
                                         ))}
                                         
                                     </div>

@@ -5,7 +5,6 @@ import { executeQuery } from "@/conn/conn";
 
 export async  function PUT(req){
     const {course} = await req.json();
-   
     const redisdata = await client.get(`point${course}`);
     if(!redisdata){
         const getIdQuery = `Select id from jtc_courses WHERE name = '${course}' && deleted_by = '0'`
@@ -30,20 +29,48 @@ export async  function PUT(req){
 }
 
 
-export async  function PATCH(req){
-  const {course} = await req.json();
-  const redisdata = await client.get(`viode${course}`);
+export async function PATCH(req){
+
+  const {id} = await req.json();
+ 
+  const redisdata = await client.get(`chapter${id}`);
   if(!redisdata){
-      const query =  `Select description from jtc_about_points WHERE point = '${course}' `
-      const data = await executeQuery(query);
-      if(data.length > 0) {
-      const value =  await JSON.stringify(data)
-      await client.set(`viode${course}`, value);
-        return NextResponse.json({data},{success : true}, {status : 200})
-      }
-      else return NextResponse.json({message : "Data Empty"},{success : false}, {status : 206})
-  }else{ 
+    const query =  `Select id, chapter_name from jtc_course_chapter WHERE category_id Like '%${id}%' && deleted_by = '0' `
+    const data = await executeQuery(query);
+    let promises = []
+    if(data.length > 0) 
+await data.map(async(ab) => {
+            promises.push(new Promise(async (resolve, reject) => {
+
+             const topicQuery = `Select topic from jtc_course_topics WHERE chapter_id Like '%${ab.id}%' && deleted_by = '0' `
+             const executeTopic = await executeQuery(topicQuery)
+               resolve({
+                chapter : ab.chapter_name,
+                topic : [...executeTopic]
+              });
+              
+            }))
+           })
+        try {
+          const data = await Promise.all(promises);
+          const value =  await JSON.stringify(data)
+          await client.set(`chapter${id}`, value);
+           return NextResponse.json({data},{success : true}, {status : 200})
+      
+        
+      
+        } catch (err) {
+           return NextResponse.json({message : "Data Empty"},{success : false}, {status : 206})
+
+        }
+        // The_Nautigal(())
+      
+     
+     
+   
+  }else{
    const value = await JSON.parse(redisdata)
+  
    return NextResponse.json({data : value}, { success : true}, {status : 200})
 }
 }
@@ -64,7 +91,6 @@ export async function POST(req){
     from jtc_batches as batch INNER Join jtc_courses as cource On cource.id = batch.cource_id WHERE batch.deleted_by = '0' && cource.name = '${course}' && cource.deleted_by = '0'`
 
       const data = await executeQuery(query);
-      console.log(data);
       if(data.length > 0) {
       const value =  await JSON.stringify(data)
       await client.set(`batch${course}`, value);
@@ -73,7 +99,7 @@ export async function POST(req){
       else return NextResponse.json({message : "Data Empty"},{success : false}, {status : 206})
   }else{ 
    const value = await JSON.parse(redisdata)
-   console.log(value);
+
    return NextResponse.json({data : value}, { success : true}, {status : 200})
 }
 }

@@ -25,6 +25,7 @@ export async  function GET(req, context){
 }
 
 
+
 export async  function PATCH(req, context){
 
   const {id} = context.params;
@@ -45,20 +46,28 @@ export async  function PATCH(req, context){
 }
 
 export async function POST(req, context){
-  console.log("hello");
-//   const {id} = context.params;
-//   const redisdata = await client.get(`category${id}`);
-//   if(!redisdata){
-//     const query =  `Select id, name, icon from jtc_courses WHERE category Like '%${id}%' `
-//       const data = await executeQuery(query);
-//       if(data.length > 0) {
-//       const value =  await JSON.stringify(data)
-//       await client.set(`category${id}`, value);
-//         return NextResponse.json({data},{success : true}, {status : 200})
-//       }
-//       else return NextResponse.json({message : "Data Empty"},{success : false}, {status : 206})
-//   }else{ 
-//    const value = await JSON.parse(redisdata)
-//    return NextResponse.json({data : value}, { success : true}, {status : 200})
-// }
+  const {id} = context.params;
+  const redisdata = await client.get(`category${id}`);
+  if(!redisdata){
+    const courceIdQuery = `Select id from jtc_courses WHERE name = '${id}'`
+    const courceId = await executeQuery(courceIdQuery)
+   
+    if(courceId.length > 0){
+      const id = courceId[0].id
+    const query =  `Select id, category_name from jtc_course_category WHERE course_id Like '%${id}%' && deleted_by = '0' `
+      const data = await executeQuery(query);
+
+      if(data.length > 0) {
+      const value =  await JSON.stringify(data)
+      await client.set(`category${id}`, value);
+        return NextResponse.json({data},{success : true}, {status : 200})
+      }
+      else return NextResponse.json({message : "Data Empty"},{success : false}, {status : 206})
+    }
+    else return NextResponse.json({message : "Cource Not Found"},{success : false}, {status : 206})
+  }else{
+   const value = await JSON.parse(redisdata)
+   return NextResponse.json({data : value}, { success : true}, {status : 200})
 }
+}
+

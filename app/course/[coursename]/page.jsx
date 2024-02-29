@@ -14,16 +14,16 @@ import Faq from '@/Components/faq';
 const Page = () => {
 	const router = useParams()
 	const [state, setState] = useState([])
-	const {courcename} = router
+	const {coursename} = router
 	const allCourseData = async() => {
-		const {data} = await courseData(courcename)
+		const {data} = await courseData(coursename)
 		if(data.length > 0)
 		return setState(...data)
 	}
 
 	useEffect(() => {
 	allCourseData()
-	},[courcename])
+	},[coursename])
 
   return (
     <>
@@ -79,18 +79,18 @@ const Page = () => {
 														fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path
 															d="M1.00016 15.2711C18.1407 8.34427 70.832 -1.93441 144.473 12.3652"
-															stroke="currentcolor" stroke-width="4"
+															stroke="currentcolor" strokeWidth="4"
 															>
 														</path>
 														<path
 															d="M26.2943 14.0041C38.9177 9.44643 77.3772 3.50055 130.227 16.1786"
-															stroke="currentcolor" stroke-width="2"
+															stroke="currentcolor" strokeWidth="2"
 															>
 														</path>
 													</svg></span> Overview</span></h3>
 									</div>
 									<p>{state && state.description}</p>
-									<CourceJoinPoint courcename ={courcename}/>
+									<CourceJoinPoint coursename ={coursename}/>
 								</div>
 							</div>
 						</div>
@@ -105,7 +105,7 @@ const Page = () => {
 											<embed type="video/webm" src={state && state.video_link} width={320} height={200}/>
 										</div>
 									</div>
-									<CourceVideo courcename ={courcename}/>
+									<CourceVideo coursename ={coursename}/>
 								</div>
 							</div>
 						</div>
@@ -123,10 +123,10 @@ const Page = () => {
 								className="svg-icon" id="svg-2"><svg width="100%" height="100%" viewBox="0 0 145 25"
 									fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M1.00016 15.2711C18.1407 8.34427 70.832 -1.93441 144.473 12.3652"
-										stroke="currentcolor" stroke-width="4"
+										stroke="currentcolor" strokeWidth="4"
 										></path>
 									<path d="M26.2943 14.0041C38.9177 9.44643 77.3772 3.50055 130.227 16.1786"
-										stroke="currentcolor" stroke-width="2"
+										stroke="currentcolor" strokeWidth="2"
 										></path>
 								</svg></span> Curriculum</span></h3>
 				</div>
@@ -134,7 +134,9 @@ const Page = () => {
 
 					<div className="container">
 						<div className="row justify-content-between">
-							<CourceCategory courcename ={courcename}/>
+							<CourceCategory coursename ={coursename}/>
+							
+
 						<SyllybusDownload/>
 						</div>
 					</div>
@@ -142,10 +144,10 @@ const Page = () => {
 			</div>
 		</div>
 
-		<Batches courcename ={courcename}/>
+		<Batches coursename ={coursename}/>
 
 		<Testimonials/>
-		<Faq/>
+		<Faq coursename={coursename}/>
     </>
   )
 }
