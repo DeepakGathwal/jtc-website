@@ -3,7 +3,7 @@ import React from 'react';
 import Image from "next/image";
 import Accordion from 'react-bootstrap/Accordion';
 import "./faq.css";
-import Buttonicon from "../assets/images/icons/connect-icon.svg"
+
 const Faqs = () => {
     return (
         <>
@@ -101,7 +101,7 @@ const Faqs = () => {
 												<div className="col-flex connectus">
                                                     <h3>Having any Queries?</h3>
                                                     <div className="fig">
-                                                        <Image src={Buttonicon} className='hello-call' alt="hello call us" />
+                                                        <Image src="../assets/images/icons/connect-icon.svg" className='hello-call' alt="hello call us" width={20} height={20} />
                                                     </div>
                                                     <span>Connect with us</span>
                                                     <span>+1 202-918-2132</span>

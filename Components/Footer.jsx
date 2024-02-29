@@ -69,8 +69,8 @@ export default function Footer() {
                                     <div className="inner">
                                         <ul className="footer-link link-hover">
                                             <li><a href="https://jtcindia.org/contact_us.php"><FaAngleDoubleRight /> Contact Us</a></li>
-                                            <li><a className="popup-btn" data-popup="joinNow" href="javascript:;"><FaAngleDoubleRight /> Join Us</a></li>
-                                            <li><a className="popup-btn" data-popup="hirefrom" href="javascript:;"><FaAngleDoubleRight /> Hire from Us</a></li>
+                                            <li><a className="popup-btn" data-popup="joinNow" ><FaAngleDoubleRight /> Join Us</a></li>
+                                            <li><a className="popup-btn" data-popup="hirefrom" ><FaAngleDoubleRight /> Hire from Us</a></li>
                                             <li><a href="https://jtcindia.org/termsAndCondition.php" target="_blank"><FaAngleDoubleRight /> Terms & Condition</a></li>
                                             <li><a href="https://jtcindia.org/privacyPolicy.php" target="_blank"><FaAngleDoubleRight />  Privacy Policy</a></li>
 

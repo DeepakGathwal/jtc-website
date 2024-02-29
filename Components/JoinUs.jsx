@@ -1,12 +1,17 @@
 import React from 'react'
+import Modal from 'react-bootstrap/Modal';
+import Tnc from './tnc';
 
-const JoinUs = () => {
+const JoinUs = ({joinForm,setjoinForm}) => {
+    const hireclose = async () => {
+        setjoinForm(false)
+    }
   return (
     <>
-    <Modal show={show} onHide={() => hireclose()}>
+    <Modal show={joinForm} onHide={() => hireclose()}>
 
     <Modal.Header closeButton>
-    <h3 className="mb-30">Partner with Us for Hiring</h3>
+    <h6 className="mb-30">Join Us Today</h6>
     </Modal.Header>
     <Modal.Body>
     <div class="popup-content">
@@ -14,10 +19,9 @@ const JoinUs = () => {
                 
                 <div class="content">
                     <div class="form">
-                        <div class="container checkout-page-style" style="padding:0">
+                        <div class="container checkout-page-style" style={{padding:0}}>
                             <div class="login-form-box">
-                                <h5 class="mb-30 text-center">Join Us Today</h5>
-                                <form class="login-form" onsubmit="event.preventDefault(); sendMail('registrationForm2'); reset(); return false;" id="registrationForm2">
+                               <form class="login-form" onsubmit="event.preventDefault(); sendMail('registrationForm2'); reset(); return false;" id="registrationForm2">
                                     <div class="input-box mb--20">
                                         <input type="text" name="name" id="name3" class="name" placeholder="Enter your name"
                                             required/>

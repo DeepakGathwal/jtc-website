@@ -3,20 +3,20 @@ import Modal from 'react-bootstrap/Modal';
 import Tnc from './tnc';
 
 
-const HireFromUs = ({ show, HiresetShow }) => {
+const HireFromUs = ({  Hireshow, setHireShow }) => {
         const hireclose = async () => {
-          HiresetShow(false)
+            setHireShow(false)
         }
   return (
     <>
-        <Modal show={show} onHide={() => hireclose()}>
+        <Modal show={Hireshow} onHide={() => hireclose()}>
 
             <Modal.Header closeButton>
-            <h3 className="mb-30">Partner with Us for Hiring</h3>
+            <h6 className="mb-30">Partner with Us for Hiring</h6>
             </Modal.Header>
             <Modal.Body>
             <div class="popup-content">
-                <div class="container checkout-page-style" style="padding:0">
+                <div class="container checkout-page-style" style={{padding:0}}>
                     <div class="login-form-box">
                         <form class="login-form" onsubmit="event.preventDefault(); sendMail('registrationForm1'); reset(); return false;" id="registrationForm1">
                             <div class="input-box mb--20">

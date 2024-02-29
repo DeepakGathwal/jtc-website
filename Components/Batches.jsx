@@ -68,7 +68,7 @@ useEffect(() => {
                                         </ul>
                                     </div>
                                     <div className="read-more-btn">
-                                        <a className="edu-btn popup-btn" data-popup="myModal1" href="javascript:;" onClick="getBatches(2)">Enroll Now <FaArrowRight /></a>
+                                        <a className="edu-btn popup-btn" data-popup="myModal1" onClick="getBatches(2)">Enroll Now <FaArrowRight /></a>
                                     </div>
                                 </div>
                             </div>
