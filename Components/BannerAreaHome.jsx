@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { FaArrowRight } from "react-icons/fa6";
-import { homeCources, joinUsForm } from '@/apis/apis';
+import { homeCourses, joinUsForm } from '@/apis/apis';
 import Tnc from './tnc';
 
 
@@ -12,19 +12,15 @@ export default function BannerAreaHome() {
     })
 
     const allData = async () => {
-        const data = await homeCources()
-        if (data.success) setState(data.data)
+        const {data} = await homeCourses()
+     
+        if (data.length > 0) setState(data)
     }
 
    
   const handelChange = (e) => {
     setField({ ...field, [e.target.name]: e.target.value })
   }
-
-    useEffect(() => {
-        allData()
-    }, [])
-
 
     const handelSubmit = async(e) => {
         e.preventDefault()
@@ -34,9 +30,13 @@ export default function BannerAreaHome() {
         else return alert(data.message)
     }
 
+    useEffect(() => {
+        allData()
+    },[])
+
     return (
         <>
-            {/* Start Banner Area */}
+        
             <div className="slider-area banner-style-1 bg-white height-650 d-flex align-items-center" >
                 <div className="container eduvibe-animated-shape">
                     <div className="row g-5 align-items-center">
@@ -58,7 +58,7 @@ export default function BannerAreaHome() {
 
                                     <div className="edu-card card-type-6 radius-small">
                                         <div className="inner">
-                                            <div className="container checkout-page-style" style={{ padding: 0 }}>
+                                            <div className="container checkout-page-style">
                                                 <div className="login-form-box">
                                                     <h3 className="mb-30">Get in Touch</h3>
                                                     <form className="login-form" id="downloadSyllabus" onSubmit={handelSubmit}>
@@ -73,15 +73,15 @@ export default function BannerAreaHome() {
                                                         </div> */}
                                                         <div className="input-box mb--20">
                                                             <select name="cource" id="courses3"  className="courses valid" aria-invalid="false" value={field.cource} required onChange={handelChange}>
-                                                                <option selected disabled>Select Course</option>
+                                                                <option selected>Select Course</option>
                                                                 {state && state.map((el) => (
-                                                                    <option value={el.name}>{el.name}</option>
+                                                                    <option value={el.id}>{el.name}</option>
 
                                                                 ))}
 
                                                             </select>
                                                         </div>
-                                                       {/* <Tnc id = {"checkbox-6"}/> */}
+                                                       <Tnc id = {"checkbox-6"}/>
                                                         <button className="rn-btn edu-btn w-100 mb--20" type="submit">
                                                             <span >Enquire Now</span>
                                                         </button>

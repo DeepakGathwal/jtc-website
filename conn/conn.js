@@ -54,19 +54,3 @@ export const executeQuery = async (newQuery, args) => {
 process.on("exit", () => {
   db.end(); // Close the connection pool
 });
-
-
-export const escapeRequestBody = async(req, res) => {
-  // Loop through each property in req.body
-  if (req.body && typeof(req.body) === 'object') {
-    // Loop through each property in req.body
-    for (const key in req.body) {
-      // Check if the property is present in req.body and is not null or undefined
-      if ( req.body[key] != null) {
-        // Escape the value using mysql.escape
-        req.body[key] = mysql.escape(req.body[key]);
-      }
-    }
-  }
-  // Move to the next middleware or route handler
-}

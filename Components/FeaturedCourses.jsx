@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react'
 import Slider from "react-slick";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa6";
-import { homeCources } from '@/apis/apis';
+import { homeCourses } from '@/apis/apis';
 import Link from 'next/link';
 
 export default function FeaturedCourses() {
@@ -50,7 +50,7 @@ export default function FeaturedCourses() {
     };
 
     const allData = async () => {
-        const { data } = await homeCources()
+        const { data } = await homeCourses()
         if (data.length > 0)
             return setState(data)
     }
