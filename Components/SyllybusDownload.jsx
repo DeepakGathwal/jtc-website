@@ -8,7 +8,7 @@ const SyllybusDownload = () => {
             <div className="container checkout-page-style" style={{padding:"0"}}>
                 <div className="login-form-box">
                     <h6 className="mb-30">Download Curriculum</h6>
-                    <form className="login-form" onsubmit="DownloadSyllabusjava(); reset(); return false;" id="downloadSyllabus_java">
+                    <form className="login-form" onSubmit="DownloadSyllabusjava(); reset(); return false;" id="downloadSyllabus_java">
                         <div className="input-box mb--20">
                             <input type="text" placeholder="Name" name="name7" id="name7" required/>
                         </div>

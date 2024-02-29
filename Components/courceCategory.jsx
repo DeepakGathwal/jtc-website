@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { courceCatgories, courceChapter } from '@/apis/apis';
+import { courseCatgories, courseChapter } from '@/apis/apis';
 import {
     Accordion,
     AccordionItem,
@@ -11,22 +11,23 @@ import 'react-accessible-accordion/dist/fancy-example.css';
 
 
 
-const CourceCategory = ({ courcename }) => {
+const CourceCategory = ({ coursename }) => {
     const [state, setState] = useState([])
     const [chapters, setChapters] = useState([])
 
     const allData = async () => {
-        const { data } = await courceCatgories(courcename)
+        const { data } = await courseCatgories(coursename)
+
         if (data.length > 0) return setState(data)
     }
 
 
     useEffect(() => {
         allData()
-    }, [courcename])
+    }, [coursename])
 
     const getCourceChapter = async (id) => {
-        const { data } = await courceChapter(id)
+        const { data } = await courseChapter(id)
         if (data.length > 0) return setChapters(data)
     }
 
@@ -52,7 +53,7 @@ const CourceCategory = ({ courcename }) => {
                                                         {chapters && chapters.map((ch) => (
 
                                                             <>
-                                                                <h4 >{c.chapter}</h4>
+                                                                <h4 >{ch.chapter}</h4>
                                                                 <div className="list_mod">
                                                                 {ch.topic && ch.topic.map((tp) => (
                                                                    <p> {tp.topic}</p>

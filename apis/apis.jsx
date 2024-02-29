@@ -196,7 +196,7 @@ export const allBatches = async (course) => {
 };
 
 
-export const courceCatgories = async (id) => {
+export const courseCatgories = async (id) => {
   try{
     const {data}  = await instance.post(id);
     return data;
@@ -205,7 +205,7 @@ export const courceCatgories = async (id) => {
   }
 };
 
-export const courceChapter = async (id) => {
+export const courseChapter = async (id) => {
   try{
     const value = JSON.stringify({id})
     const {data}  = await instance.patch(courseSections, value);
@@ -216,15 +216,15 @@ export const courceChapter = async (id) => {
 };
 
 
-// export const courceTopic = async (id) => {
-//   try{
-//     const {data}  = await instance.post(id);
-//     return data;
-//   }catch(err){
-//     return err
-//   }
-// };
-
+export const courseFaqs = async (course) => {
+  try{
+    const value = JSON.stringify({course})
+    const {data}  = await instance.post(about, value);
+    return data;
+  }catch(err){
+    return err
+  }
+};
 
 
 

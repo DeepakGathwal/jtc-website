@@ -14,16 +14,16 @@ import Faq from '@/Components/faq';
 const Page = () => {
 	const router = useParams()
 	const [state, setState] = useState([])
-	const {courcename} = router
+	const {coursename} = router
 	const allCourseData = async() => {
-		const {data} = await courseData(courcename)
+		const {data} = await courseData(coursename)
 		if(data.length > 0)
 		return setState(...data)
 	}
 
 	useEffect(() => {
 	allCourseData()
-	},[courcename])
+	},[coursename])
 
   return (
     <>
@@ -90,7 +90,7 @@ const Page = () => {
 													</svg></span> Overview</span></h3>
 									</div>
 									<p>{state && state.description}</p>
-									<CourceJoinPoint courcename ={courcename}/>
+									<CourceJoinPoint coursename ={coursename}/>
 								</div>
 							</div>
 						</div>
@@ -105,7 +105,7 @@ const Page = () => {
 											<embed type="video/webm" src={state && state.video_link} width={320} height={200}/>
 										</div>
 									</div>
-									<CourceVideo courcename ={courcename}/>
+									<CourceVideo coursename ={coursename}/>
 								</div>
 							</div>
 						</div>
@@ -134,7 +134,7 @@ const Page = () => {
 
 					<div className="container">
 						<div className="row justify-content-between">
-							<CourceCategory courcename ={courcename}/>
+							<CourceCategory coursename ={coursename}/>
 							
 
 						<SyllybusDownload/>
@@ -146,10 +146,10 @@ const Page = () => {
 			</div>
 		</div>
 
-		<Batches courcename ={courcename}/>
+		<Batches coursename ={coursename}/>
 
 		<Testimonials/>
-		<Faq/>
+		<Faq coursename={coursename}/>
     </>
   )
 }

@@ -51,10 +51,12 @@ export async function POST(req, context){
   if(!redisdata){
     const courceIdQuery = `Select id from jtc_courses WHERE name = '${id}'`
     const courceId = await executeQuery(courceIdQuery)
+   
     if(courceId.length > 0){
       const id = courceId[0].id
     const query =  `Select id, category_name from jtc_course_category WHERE course_id Like '%${id}%' && deleted_by = '0' `
       const data = await executeQuery(query);
+
       if(data.length > 0) {
       const value =  await JSON.stringify(data)
       await client.set(`category${id}`, value);

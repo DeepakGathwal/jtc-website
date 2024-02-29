@@ -23,7 +23,7 @@ const Test = ({ show, setShow }) => {
                 <div className="form">
                   <div className="container checkout-page-style" style={{ padding: '0' }}>
                     <div className="login-form-box">
-                      <form className="login-form" onsubmit="event.preventDefault(); sendMail('contactForm'); reset(); return false;"
+                      <form className="login-form" onSubmit="event.preventDefault(); sendMail('contactForm'); reset(); return false;"
                         method="post">
                         <div className="input-box mb--20">
                           <input type="text" placeholder="Name" name="name1" id="name1" required />

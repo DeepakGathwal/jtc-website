@@ -4,17 +4,17 @@ import { FaRegClock , FaArrowRight} from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
 import { SlCalender } from "react-icons/sl";
 
-const Batches = ({courcename}) => {
+const Batches = ({coursename}) => {
     const [state, setState]  = useState([])
     const allData = async() => {
-        const {data} = await allBatches(courcename)
+        const {data} = await allBatches(coursename)
         return setState(data)
         }
     
       
 useEffect(() => {
     allData()
-},[courcename])
+},[coursename])
 
   return (
     <div className="edu-elements-area edu-section-gap edu-section-gapTop bg-color-white">

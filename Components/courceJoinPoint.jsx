@@ -1,16 +1,16 @@
 import React,{useState, useEffect} from 'react'
 import { coursePoint } from '@/apis/apis'
 
-const CourceJoinPoint = ({ courcename }) => {
+const CourceJoinPoint = ({ coursename }) => {
     const [state, setState] = useState([])
     const allData = async () => {
-        const { data } = await coursePoint(courcename)
+        const { data } = await coursePoint(coursename)
 
         if (data.length > 0) return setState(data)
     }
     useEffect(() => {
         allData()
-    }, [courcename])
+    }, [coursename])
     return (
         <>
             <div className="section-title text-left sal-animate">
