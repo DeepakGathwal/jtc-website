@@ -123,8 +123,8 @@ return (
                                 </div>
                                 <ul className="jtcWhy">
 									
-                                    {state && state.map((el) => (
-                                        <li>{el.point}</li>
+                                    {state && state.map((el, i) => (
+                                        <li key={i}>{el.point}</li>
                                         
                                     ))}
 								</ul>

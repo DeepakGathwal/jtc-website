@@ -87,8 +87,8 @@ const HeroSection = () => {
                   <div className="title-top">
                     <span className="title">About Us</span>
                   </div>
-                  {state && state.map((el) => (
-                  <p className="description">
+                  {state && state.map((el, i) => (
+                  <p key={i} className="description">
                    {el.description}
                   </p>
 

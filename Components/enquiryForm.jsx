@@ -60,8 +60,8 @@ const handelChange = (e) => {
                             aria-invalid="false" required onChange={handelChange} >
                          
                             <option selected>Select Course</option>
-                                                                {state && state.map((el) => (
-                                                                    <option value={el.id}>{el.name}</option>
+                                                                {state && state.map((el, i) => (
+                                                                    <option key={i} value={el.id}>{el.name}</option>
 
                                                                 ))}
 

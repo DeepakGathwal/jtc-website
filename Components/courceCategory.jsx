@@ -39,8 +39,8 @@ const CourceCategory = ({ coursename }) => {
                     <div className="inner">
                         <div className="course-content">
                             <div className="edu-accordion-02">
-                                {state && state.map((el) => (
-                                    <Accordion onChange={(e) => getCourceChapter(el.id)}>
+                                {state && state.map((el, i) => (
+                                    <Accordion key={i} onChange={(e) => getCourceChapter(el.id)}>
                                         <AccordionItem>
                                             <AccordionItemHeading>
                                                 <AccordionItemButton>
@@ -50,13 +50,13 @@ const CourceCategory = ({ coursename }) => {
                                             <AccordionItemPanel>
                                                 <div className="card-body" >
                                                     <div className="module">
-                                                        {chapters && chapters.map((ch) => (
+                                                        {chapters && chapters.map((ch,i) => (
 
                                                             <>
-                                                                <h4 >{ch.chapter}</h4>
+                                                                <h4 key={i} >{ch.chapter}</h4>
                                                                 <div className="list_mod">
-                                                                {ch.topic && ch.topic.map((tp) => (
-                                                                   <p> {tp.topic}</p>
+                                                                {ch.topic && ch.topic.map((tp,j) => (
+                                                                   <p key={j}> {tp.topic}</p>
                                                                   ))}
                                                                 </div>
                                                             </>

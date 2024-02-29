@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { FaArrowRight } from "react-icons/fa6";
 import { homeCourses, joinUsForm } from '@/apis/apis';
 import Tnc from './tnc';
+import Image from 'next/image';
 
 
 // ES6 modules
@@ -74,8 +75,8 @@ export default function BannerAreaHome() {
                                                         <div className="input-box mb--20">
                                                             <select name="cource" id="courses3"  className="courses valid" aria-invalid="false" value={field.cource} required onChange={handelChange}>
                                                                 <option selected>Select Course</option>
-                                                                {state && state.map((el) => (
-                                                                    <option value={el.id}>{el.name}</option>
+                                                                {state && state.map((el, i) => (
+                                                                    <option key={i} value={el.id}>{el.name}</option>
 
                                                                 ))}
 
@@ -95,8 +96,8 @@ export default function BannerAreaHome() {
                         </div>
                     </div>
                     <div className="shape-dot-wrapper shape-wrapper d-xl-block d-none">
-                        <div className="shape shape-1"><img src="/assets/images/shapes/shape-01.png" alt="Shape Thumb" /></div>
-                        <div className="shape shape-2"><img src="/assets/images/shapes/shape-02.png" alt="Shape Thumb" /></div>
+                        <div className="shape shape-1"> <Image src="/assets/images/shapes/shape-01.png"  width={25} height={25}/></div>
+                        <div className="shape shape-2"><Image src="/assets/images/shapes/shape-02.png" alt="Shape Thumb" width={52} height={58}/></div>
                         <div className="shape shape-3"><img src="/assets/images/shapes/shape-03.png" alt="Shape Thumb" /></div>
                         <div className="shape shape-4"><img src="/assets/images/shapes/shape-04.png" alt="Shape Thumb" /></div>
                         <div className="shape shape-5"><img src="/assets/images/shapes/shape-05.png" alt="Shape Thumb" /></div>
