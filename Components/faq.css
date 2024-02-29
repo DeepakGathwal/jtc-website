@@ -3,6 +3,7 @@
     outline: 1px solid rgba(112, 128, 144, 0.089);
     border-radius: 5px;
 }
+
 .acc-section .accordion::-webkit-scrollbar {
     width: 0.1em;
     height: 0.2em;

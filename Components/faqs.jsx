@@ -4,6 +4,7 @@ import Image from "next/image";
 import Accordion from 'react-bootstrap/Accordion';
 import "./faq.css";
 import Buttonicon from "./connect-icon.svg"
+
 const Faqs = () => {
     return (
         <>
