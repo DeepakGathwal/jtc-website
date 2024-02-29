@@ -7,6 +7,9 @@ import { IoCall } from "react-icons/io5";
 
 
 const Faqs = () => {
+    const faqClicked = (event) => {
+        console.log('Element ID:', event.target.id);
+    }
     return (
         <>
             <div class="edu-accordion-area eduvibe-faq-page accordion-shape-1 edu-section-gap bg-color-white">
@@ -41,13 +44,13 @@ const Faqs = () => {
 											<div className='col-md-8'>
 									<div class="accordion-style-2 acc-section">
                                                 <Accordion>
-                                                    <Accordion.Item eventKey="0">
+                                                    <Accordion.Item id="faqOne" onClick={faqClicked} eventKey="0">
                                                         <Accordion.Header>Accordion Item #1</Accordion.Header>
                                                         <Accordion.Body>
                                                             UX design stands for User Experience design. It is the process of designing digital or physical products that are easy to use, intuitive, and enjoyable for the user.
                                                         </Accordion.Body>
                                                     </Accordion.Item>
-                                                    <Accordion.Item eventKey="1">
+                                                    <Accordion.Item id="faqTwo" onClick={faqClicked} eventKey="1">
                                                         <Accordion.Header>Accordion Item #2</Accordion.Header>
                                                         <Accordion.Body>
                                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -59,7 +62,7 @@ const Faqs = () => {
                                                             culpa qui officia deserunt mollit anim id est laborum.
                                                         </Accordion.Body>
                                                     </Accordion.Item>
-                                                    <Accordion.Item eventKey="2">
+                                                    <Accordion.Item id="faqThree" onClick={faqClicked} eventKey="2">
                                                         <Accordion.Header>Accordion Item #3</Accordion.Header>
                                                         <Accordion.Body>
                                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -71,7 +74,7 @@ const Faqs = () => {
                                                             culpa qui officia deserunt mollit anim id est laborum.
                                                         </Accordion.Body>
                                                     </Accordion.Item>
-                                                    <Accordion.Item eventKey="3">
+                                                    <Accordion.Item id="faqFour" onClick={faqClicked} eventKey="3">
                                                         <Accordion.Header>Accordion Item #4</Accordion.Header>
                                                         <Accordion.Body>
                                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -83,7 +86,7 @@ const Faqs = () => {
                                                             culpa qui officia deserunt mollit anim id est laborum.
                                                         </Accordion.Body>
                                                     </Accordion.Item>
-                                                    <Accordion.Item eventKey="3">
+                                                    <Accordion.Item id="faqFive" onClick={faqClicked} eventKey="3">
                                                         <Accordion.Header>Accordion Item #4</Accordion.Header>
                                                         <Accordion.Body>
                                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

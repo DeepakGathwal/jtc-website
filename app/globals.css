@@ -5657,8 +5657,10 @@ input[type="submit"] {
   transition: height .5s ease-in;
   max-width: 100%;
   z-index: 99; }
-  .edu-header.header-sticky.sticky {
-    position: fixed;
+  .edu-header.header-sticky.sticky
+  
+  {
+    position: sticky;
     top: 0;
     left: 0;
     background-color: var(--color-white) !important;

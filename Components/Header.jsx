@@ -56,13 +56,12 @@ export default function Header() {
 
   return (
   
-      <header className="edu-header header-style-2 disable-transparent header-sticky row-flex space-between-row align-items-center-row">
+      <header className="edu-header header-style-2 disable-transparent header-sticky sticky row-flex space-between-row align-items-center-row">
             <div className="row align-items-center w-100">
                 <div className="col-lg-6 col-xl-2 col-md-6 col-6">
                         <Link href="/">
                     <div className="logo">
-                            <img className="logo-light" src="/assets/images/logo/logo.webp" alt="JTC LOGO" />
-                        
+                            <Image className="logo-light" src="/assets/images/logo/logo.webp" alt="JTC LOGO" width={100} height={100}/>
                      </div>
                         </Link>
                 </div>
@@ -129,7 +128,7 @@ export default function Header() {
                             </div>
 
                             <div className="quote-icon quote-user d-block d-md-none ml--15 ml_sm--5">
-                                <a className="white-box-icon popup-btn" data-popup="enqNow" href="javascript:;"><RiChat1Line/> </a>
+                                <a className="white-box-icon popup-btn" data-popup="enqNow" ><RiChat1Line/> </a>
                             </div>
                             <Test show={show} setShow={setShow}/>
                             <HireFromUs Hireshow={Hireshow} HiresetShow={HiresetShow}/>

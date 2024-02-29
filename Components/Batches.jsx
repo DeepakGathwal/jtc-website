@@ -3,6 +3,7 @@ import { allBatches } from '@/apis/apis';
 import { FaRegClock , FaArrowRight} from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
 import { SlCalender } from "react-icons/sl";
+import Batchenroll from './batchenroll';
 
 const Batches = ({coursename}) => {
     const [state, setState]  = useState([])
@@ -10,7 +11,11 @@ const Batches = ({coursename}) => {
         const {data} = await allBatches(coursename)
         return setState(data)
         }
-    
+
+    const [show, setShow] = useState(false)
+    const batchenrollshow = () => {
+        setShow(true)
+    }
       
 useEffect(() => {
     allData()
@@ -68,8 +73,9 @@ useEffect(() => {
                                         </ul>
                                     </div>
                                     <div className="read-more-btn">
-                                        <a className="edu-btn popup-btn" data-popup="myModal1" href="javascript:;" onClick="getBatches(2)">Enroll Now <FaArrowRight /></a>
+                                        <button className="edu-btn popup-btn" onClick={batchenrollshow}>Enroll Now <FaArrowRight /></button>
                                     </div>
+                                    <Batchenroll show={show} setShow={setShow}/>
                                 </div>
                             </div>
                         </div>
