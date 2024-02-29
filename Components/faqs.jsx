@@ -3,7 +3,8 @@ import React from 'react';
 import Image from "next/image";
 import Accordion from 'react-bootstrap/Accordion';
 import "./faq.css";
-import Buttonicon from "../assets/images/icons/connect-icon.svg"
+import Buttonicon from "./connect-icon.svg"
+
 const Faqs = () => {
     return (
         <>
@@ -96,7 +97,7 @@ const Faqs = () => {
                                                 </Accordion>
 											</div>
 									</div>
-                                    
+
 											<div className='col-md-4'>
 												<div className="col-flex connectus">
                                                     <h3>Having any Queries?</h3>
