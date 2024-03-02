@@ -1,7 +1,6 @@
 import React,{useState, useEffect} from 'react';
 import Modal from 'react-bootstrap/Modal';
-import { homeCourses, joinUsForm } from '@/apis/apis';
-import Link from 'next/link'
+import { homeCourses, enquiryForm } from '@/apis/apis';
 import Tnc from './tnc';
 
 const EnquiryForm = ({ show, setShow }) => {
@@ -24,7 +23,7 @@ const handelChange = (e) => {
 
   const handelSubmit = async(e) => {
       e.preventDefault()
-      const data = await joinUsForm(field)
+      const data = await enquiryForm(field)
         setField("")
         alert(data.message)
         return setShow(false) 

@@ -103,13 +103,46 @@ export const aboutUS = async () => {
 
 
 
-export const joinUsForm = async (field) => {
+export const enquiryForm = async (field) => {
   try{
    
     const value = await JSON.stringify(field)
     const { data } = await instance.post(choosePoint, value);
     return data;
 
+  }catch(err){
+    return err
+  }
+};
+
+
+export const hireUsForm = async (field) => {
+  try{
+    const value = await JSON.stringify(field)
+    const { data } = await instance.patch(company, value);
+    return data;
+  }catch(err){
+    return err
+  }
+};
+
+
+export const joinUsForm = async (field) => {
+  try{
+    const value = await JSON.stringify(field)
+    const { data } = await instance.patch(choosePoint, value);
+    return data;
+  }catch(err){
+    return err
+  }
+};
+
+
+
+export const allRoles = async (field) => {
+  try{
+    const { data } = await instance.get(courseSections);
+    return data;
   }catch(err){
     return err
   }
