@@ -3,8 +3,6 @@ import { client } from "@/middelware/redisFile";
 import { NextResponse } from "next/server";
 
 
-
-
 // Get All Cources WithOut Category
 export async  function GET(req){
     const redisdata = await client.get("tnc");
