@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { FaArrowRight } from "react-icons/fa6";
-import { homeCourses, joinUsForm } from '@/apis/apis';
+import { homeCourses, enquiryForm } from '@/apis/apis';
 import Tnc from './tnc';
 
 
@@ -24,7 +24,7 @@ export default function BannerAreaHome() {
 
     const handelSubmit = async(e) => {
         e.preventDefault()
-        const data = await joinUsForm(field)
+        const data = await enquiryForm(field)
         setField("")
         if(data.success == true) return alert(data.message)
         else return alert(data.message)

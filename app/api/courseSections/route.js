@@ -103,3 +103,21 @@ export async function POST(req){
    return NextResponse.json({data : value}, { success : true}, {status : 200})
 }
 }
+
+export async function GET(req){
+  const redisdata = await client.get(`roles`);
+  if(!redisdata){
+    const query =  `Select id, role from jtc_roles WHERE vacancy = '1' && deleted_by = '0'`
+      const data = await executeQuery(query);
+      if(data.length > 0) {
+      const value =  await JSON.stringify(data)
+      await client.set(`roles`, value);
+        return NextResponse.json({data},{success : true}, {status : 200})
+      }
+      else return NextResponse.json({message : "Data Empty"},{success : false}, {status : 206})
+  }else{ 
+   const value = await JSON.parse(redisdata)
+   return NextResponse.json({data : value}, { success : true}, {status : 200})
+}
+}
+
