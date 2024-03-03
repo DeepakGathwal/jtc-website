@@ -7,6 +7,7 @@ import { IoCall } from "react-icons/io5";
 import { FiMapPin } from "react-icons/fi";
 import { MdMailOutline } from "react-icons/md";
 import { PiMapPinBold } from "react-icons/pi";
+import Image from 'next/image';
 
 export default function Footer() {
     const [state, setState] = useState([])
@@ -69,8 +70,8 @@ export default function Footer() {
                                     <div className="inner">
                                         <ul className="footer-link link-hover">
                                             <li><a href="https://jtcindia.org/contact_us.php"><FaAngleDoubleRight /> Contact Us</a></li>
-                                            <li><a className="popup-btn" data-popup="joinNow" href="javascript:;"><FaAngleDoubleRight /> Join Us</a></li>
-                                            <li><a className="popup-btn" data-popup="hirefrom" href="javascript:;"><FaAngleDoubleRight /> Hire from Us</a></li>
+                                            <li><a className="popup-btn" data-popup="joinNow" ><FaAngleDoubleRight /> Join Us</a></li>
+                                            <li><a className="popup-btn" data-popup="hirefrom" ><FaAngleDoubleRight /> Hire from Us</a></li>
                                             <li><a href="https://jtcindia.org/termsAndCondition.php" target="_blank"><FaAngleDoubleRight /> Terms & Condition</a></li>
                                             <li><a href="https://jtcindia.org/privacyPolicy.php" target="_blank"><FaAngleDoubleRight />  Privacy Policy</a></li>
 
@@ -100,10 +101,10 @@ export default function Footer() {
 
                         <div className="shape-dot-wrapper shape-wrapper d-md-block d-none">
                             <div className="shape-image shape-image-1">
-                                <img src="../assets/images/shapes/shape-21-01.png" alt="Shape Thumb" />
+                                <Image src="../assets/images/shapes/shape-21-01.png" alt="Shape Thumb" width={143} height={130}/>
                             </div>
                             <div className="shape-image shape-image-2">
-                                <img src="../assets/images/shapes/shape-35.png" alt="Shape Thumb" />
+                                <Image src="../assets/images/shapes/shape-35.png" alt="Shape Thumb" width={122} height={123}/>
                             </div>
                         </div>
                     </div>

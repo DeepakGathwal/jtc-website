@@ -3,13 +3,11 @@ import { client } from "@/middelware/redisFile";
 import { NextResponse } from "next/server";
 
 
-
-
 // Get All Cources WithOut Category
 export async  function GET(req){
     const redisdata = await client.get("tnc");
     if(!redisdata){
-        const query =  `Select id, name, icon from jtc_website_links WHERE nav_link = '/termsAndCondition' `
+        const query =  `Select id, name, image from jtc_website_links WHERE nav_link = '/termsAndCondition' `
         const data = await executeQuery(query);
         if(data.length > 0) {
         const value =  await JSON.stringify(data)

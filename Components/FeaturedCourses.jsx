@@ -1,8 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react'
 import Slider from "react-slick";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa6";
-import { homeCources } from '@/apis/apis';
+import { homeCourses } from '@/apis/apis';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function FeaturedCourses() {
     const [state, setState] = useState([])
@@ -50,7 +51,7 @@ export default function FeaturedCourses() {
     };
 
     const allData = async () => {
-        const { data } = await homeCources()
+        const { data } = await homeCourses()
         if (data.length > 0)
             return setState(data)
     }
@@ -87,14 +88,14 @@ export default function FeaturedCourses() {
                             <Slider ref={slider => {
                                 sliderRef = slider;
                             }} {...settings}>
-                                {state && state.map((el) => (
-                                    <Link href={"/course/" + el.name}>
-                                        <div className="single-slick-card">
+                                {state && state.map((el, i) => (
+                                    <Link key={i} href={"/course/" + el.name}>
+                                        <div  className="single-slick-card">
                                             <div className="service-card service-card-8 shape-bg-1">
                                                 <div className="inner">
                                                     <div className="icon">
 
-                                                        <img src={el.icon} alt={el.name} />
+                                                        <Image src={el.icon} alt={el.name} width={36} height={49} style={{width:"36px"}}/>
 
                                                     </div>
                                                     <div className="content">
@@ -123,14 +124,11 @@ export default function FeaturedCourses() {
                     </div>
 
                     <div className="shape-dot-wrapper shape-wrapper d-xl-block d-none">
-                        <div className="shape-image shape-image-1">
-                            <img src="assets/images/shapes/shape-07.png" alt="Shape Thumb" />
-                        </div>
                         <div className="shape-image shape-image-2">
-                            <img src="assets/images/shapes/shape-03-05.png" alt="Shape Thumb" />
+                            <Image src="assets/images/shapes/shape-03-05.png" alt="Shape Thumb" width={109} height={98}/>
                         </div>
                         <div className="shape-image shape-image-3">
-                            <img src="assets/images/shapes/shape-04-06.png" alt="Shape Thumb" />
+                            <Image src="assets/images/shapes/shape-04-06.png" alt="Shape Thumb" width={75} height={100}/>
                         </div>
                     </div>
                 </div>

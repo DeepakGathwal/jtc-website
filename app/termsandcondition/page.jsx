@@ -19,9 +19,9 @@ const TermsAndCondition = () => {
 
   return (
    <>
-    {state && state.map((el) => (
+    {state && state.map((el, i) => (
        <>
-        <div className="m-5 p-5" style={{cssText : el.page_css}} dangerouslySetInnerHTML={{ __html: el.page_html }} />
+        <div key={i} className="m-5 p-5" style={{cssText : el.page_css}} dangerouslySetInnerHTML={{ __html: el.page_html }} />
        </>
 
       ))}

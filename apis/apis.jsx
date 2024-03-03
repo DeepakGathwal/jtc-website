@@ -1,3 +1,4 @@
+
 import instance from "./commonapi";
 
 let choosePoint = "choosePoint"
@@ -64,7 +65,7 @@ export const alltestimonials = async () => {
     return err
   }
 };
-export const homeCources = async () => {
+export const homeCourses = async () => {
   try{
     const { data } = await instance.get(cources);
     return data;
@@ -102,11 +103,46 @@ export const aboutUS = async () => {
 
 
 
-export const joinUsForm = async (field) => {
+export const enquiryForm = async (field) => {
   try{
-    const { data } = await instance.post(choosePoint, {email : field.email, name : field.name, phone : field.phone, cource : field.cource});
+   
+    const value = await JSON.stringify(field)
+    const { data } = await instance.post(choosePoint, value);
     return data;
 
+  }catch(err){
+    return err
+  }
+};
+
+
+export const hireUsForm = async (field) => {
+  try{
+    const value = await JSON.stringify(field)
+    const { data } = await instance.patch(company, value);
+    return data;
+  }catch(err){
+    return err
+  }
+};
+
+
+export const joinUsForm = async (field) => {
+  try{
+    const value = await JSON.stringify(field)
+    const { data } = await instance.patch(choosePoint, value);
+    return data;
+  }catch(err){
+    return err
+  }
+};
+
+
+
+export const allRoles = async (field) => {
+  try{
+    const { data } = await instance.get(courseSections);
+    return data;
   }catch(err){
     return err
   }
@@ -126,9 +162,6 @@ export const allCourceTypes = async () => {
     return err
   }
 };
-
-
-
 
 
 export const termsAndCondition = async (id) => {

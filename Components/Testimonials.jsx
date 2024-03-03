@@ -1,6 +1,7 @@
 import React , {useRef, useState,useEffect} from 'react';
 import { alltestimonials } from '@/apis/apis';
 import Slider from "react-slick";
+import Image from 'next/image';
 
 export default function Testimonials() {
     const [state, setState] = useState([])
@@ -69,12 +70,12 @@ export default function Testimonials() {
                 <Slider ref={slider => {
           sliderRef = slider;
         }} {...settings}>
-            {state && state.map((el) => (
-                    <div className="testimonial-card-box">
+            {state && state.map((el, i) => (
+                    <div key={i} className="testimonial-card-box">
                         <div className="inner">
                             <div className="client-info">
                                 <div className="thumbnail">
-                                    <img src={el.image} alt={el.name}/>
+                                    <Image src={el.image} alt={el.name} width={55} height={55}/>
                                 </div>
                                 <div className="content">
                                     <h6 className="title">{el.name}</h6>
@@ -92,10 +93,10 @@ export default function Testimonials() {
 
                 <div className="shape-dot-wrapper shape-wrapper d-xl-block d-none">
                     <div className="shape-image shape-image-1">
-                        <img src="../assets/images/shapes/shape-23.png" alt="Shape Thumb" />
+                        <Image src="../assets/images/shapes/shape-23.png" alt="Shape Thumb" width={59} height={116}/>
                     </div>
                     <div className="shape-image shape-image-2">
-                        <img src="../assets/images/shapes/shape-14-02.png" alt="Shape Thumb" />
+                        <Image src="../assets/images/shapes/shape-14-02.png" alt="Shape Thumb" width={77} height={80}/>
                     </div>
                 </div>
 

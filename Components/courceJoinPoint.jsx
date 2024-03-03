@@ -1,5 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import { coursePoint } from '@/apis/apis'
+import Image from 'next/image'
 
 const CourceJoinPoint = ({ coursename }) => {
     const [state, setState] = useState([])
@@ -32,10 +33,10 @@ const CourceJoinPoint = ({ coursename }) => {
                         </svg></span> Course</span> </h3>
             </div>
             <div className="learnCourse">
-                {state && state.map((el) => (
-                    <div className="details_boxs">
+                {state && state.map((el, i) => (
+                    <div key={i} className="details_boxs">
                         <div className="detail_icons">
-                            <img src={el.icon} alt={el.description} />
+                            <Image src={el.icon} alt={el.description} width={36} height={32}/>
                         </div>
                         <div className="details_cont">
                             <p>{el.description}
