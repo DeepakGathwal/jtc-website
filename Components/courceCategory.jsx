@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { courseCatgories, courseChapter } from '@/apis/apis';
-import {
-    Accordion,
-    AccordionItem,
-    AccordionItemHeading,
-    AccordionItemButton,
-    AccordionItemPanel,
-} from 'react-accessible-accordion';
-import 'react-accessible-accordion/dist/fancy-example.css';
+import Image from 'next/image'
+
+import Buttonicon from "./icon/connect-icon.svg"
+import { courseChapter, courseCatgories } from '@/apis/apis'
+
+
 
 
 
@@ -26,92 +23,45 @@ const CourceCategory = ({ coursename }) => {
         allData()
     }, [coursename])
 
-    const getCourceChapter = async (id) => {
+    const getCourceChapter = async (event) => {
+        const {id} = event.target
         const { data } = await courseChapter(id)
         if (data.length > 0) return setChapters(data)
     }
 
-
     return (
-        <>
-            <div className="col-md-7">
-                <div className="edu-card card-type-7 radius-small">
-                    <div className="inner">
-                        <div className="course-content">
-                            <div className="edu-accordion-02">
-                                {state && state.map((el, i) => (
-                                    <Accordion key={i} onChange={(e) => getCourceChapter(el.id)}>
-                                        <AccordionItem>
-                                            <AccordionItemHeading>
-                                                <AccordionItemButton>
-                                                    {el.category_name}
-                                                </AccordionItemButton>
-                                            </AccordionItemHeading>
-                                            <AccordionItemPanel>
-                                                <div className="card-body" >
-                                                    <div className="module">
-                                                        {chapters && chapters.map((ch,i) => (
+        <>		
+        <div className='col-md-7'>
+            <div class="accordion-style-2 acc-section">
+                <div class="accordion custom">
+                {state && state.map((el) => (
+                    <div className="accordion-item">
+                        <input type="checkbox" id={"toggle"+el.id} className="accordion-toggle" />
+                        <label for={"toggle"+el.id} id={el.id} onClick={getCourceChapter} eventKey="0" className="accordion-title">
+                            <h2 id={el.id} class="accordion-header accordion-button">{el.category_name}</h2>
+                        </label>
+                        <div className="accordion-collapse">
+                            <div className="accordion-body">
+                            {chapters && chapters.map((ch) => (
+                                    <>
+                                        <h4 >{ch.chapter}</h4>
+                                        <div className="list_mod">
+                                        {ch.topic && ch.topic.map((tp) => (
+                                        <p> {tp.topic}</p>
+                                        ))}
+                                        </div>
+                                    </>
 
-                                                            <>
-                                                                <h4 key={i} >{ch.chapter}</h4>
-                                                                <div className="list_mod">
-                                                                {ch.topic && ch.topic.map((tp,j) => (
-                                                                   <p key={j}> {tp.topic}</p>
-                                                                  ))}
-                                                                </div>
-                                                            </>
+                                    ))}
 
-                                                        ))}
-
-                                                    </div>
-
-                                                </div>
-                                            </AccordionItemPanel>
-                                        </AccordionItem>
-                                    </Accordion>
-                                ))}
-
-
-
-
-                            </div>
+                                </div>
                         </div>
                     </div>
+                        ))}   
                 </div>
+                
             </div>
-
-
-            {/* <Accordion onChange={(e) => getCourceChapter("wed")}>
-<AccordionItem>
-    <AccordionItemHeading>
-        <AccordionItemButton>
-            What harsh truths do you prefer to ignore?
-        </AccordionItemButton>
-    </AccordionItemHeading>
-    <AccordionItemPanel>
-        <p>
-            Exercitation in fugiat est ut ad ea cupidatat ut in
-            cupidatat occaecat ut occaecat consequat est minim minim
-            esse tempor laborum consequat esse adipisicing eu
-            reprehenderit enim.
-        </p>
-    </AccordionItemPanel>
-</AccordionItem>
-<AccordionItem>
-    <AccordionItemHeading>
-        <AccordionItemButton>
-            Is free will real or just an illusion?
-        </AccordionItemButton>
-    </AccordionItemHeading>
-    <AccordionItemPanel>
-        <p>
-            In ad velit in ex nostrud dolore cupidatat consectetur
-            ea in ut nostrud velit in irure cillum tempor laboris
-            sed adipisicing eu esse duis nulla non.
-        </p>
-    </AccordionItemPanel>
-</AccordionItem> 
-</Accordion>*/}
+        </div>
         </>
     )
 }

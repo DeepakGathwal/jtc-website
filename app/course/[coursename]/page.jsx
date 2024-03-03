@@ -8,7 +8,7 @@ import CourceVideo from '@/Components/courceVideo';
 import { useParams } from 'next/navigation'
 import { courseData } from '@/apis/apis';
 import CourceJoinPoint from '@/Components/courceJoinPoint';
-import Faq from '@/Components/faq';
+import Faq from '@/Components/faqs';
 import Image from 'next/image';
 
 

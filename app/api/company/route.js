@@ -27,16 +27,22 @@ export async  function GET(req){
 
 
 export async  function PATCH(req){
-  const {name, phone, company,course,desigination,  email} = await req.json();
-   const  query =  `Insert into jtc_enquiry_form SET cource = "'${course}'",desigination = "'${desigination}'",company = "'${company}'",name = "'${name}'", email = "'${email}'" , phone_number = "'${phone}'",  form_id = '2'`
-  const insertData = await executeQuery(query);
+  const {name, phone, company, course, desigination,  email} = await req.json();
+  const findCource =   `Select name from jtc_courses WHERE id = ${course}`
+  const getCourceQuery = await executeQuery(findCource)
+  if(getCourceQuery.length == 0) return  NextResponse.json({message : "Cource Not Found"},{success : false}, {status : 206})
+   const  query =  `Insert into jtc_enquiry_form SET cource = "${course}",desigination = "${desigination}",company = "${company}",name = "${name}", email = "${email}" , phone_number = "${phone}",  form_id = '2'`
+
+   const insertData = await executeQuery(query);
   if(insertData.affectedRows >  0){
-      const message = `${company} Just fill the Hire From Us form. His Phone No. ${phone}.Company Email id ${email} Phone Number is ${phone}` 
-      const subject = "Get In Touch"
+    const courceName = getCourceQuery[0].name
+
+      const message = `${company} Just fill the Hire From Us form. His Phone No. ${phone}.Company Email id ${email} Phone Number is ${phone}. ${company} want hiring for ${courceName}` 
+      const subject = "Hire From Us"
       const options = {message, subject};
      await sendEmail(options)
- return NextResponse.json({message : "Form Submited Successfully"},{success : true}, {status : 200})
-  }
+     return NextResponse.json({message : "Form Submited Successfully", notification : message, success : true}, {status : 200})
+    }
   else return NextResponse.json({message : "Form Submition Issue"},{success : false}, {status : 206})
 }
 

@@ -1,5 +1,7 @@
 
 import instance from "./commonapi";
+import io from 'socket.io-client';
+const socket = io.connect('http://localhost:8000/');
 
 let choosePoint = "choosePoint"
 let cources = "cources"
@@ -9,6 +11,7 @@ let testimonials = "testimonials"
 let footer = "footer"
 let blog = "blog"
 let about = "about"
+let navbar = "navbar"
 let terms = "terms"
 
 
@@ -108,6 +111,7 @@ export const enquiryForm = async (field) => {
    
     const value = await JSON.stringify(field)
     const { data } = await instance.post(choosePoint, value);
+   await socket.emit('formSubmited',data)
     return data;
 
   }catch(err){
@@ -120,6 +124,7 @@ export const hireUsForm = async (field) => {
   try{
     const value = await JSON.stringify(field)
     const { data } = await instance.patch(company, value);
+  await  socket.emit('formSubmited',data)
     return data;
   }catch(err){
     return err
@@ -131,6 +136,19 @@ export const joinUsForm = async (field) => {
   try{
     const value = await JSON.stringify(field)
     const { data } = await instance.patch(choosePoint, value);
+   await socket.emit('formSubmited',data)
+    return data;
+  }catch(err){
+    return err
+  }
+};
+
+
+export const batchForm = async (field) => {
+  try{
+    const value = await JSON.stringify(field)
+    const { data } = await instance.put(choosePoint, value);
+  await  socket.emit('formSubmited',data)
     return data;
   }catch(err){
     return err
@@ -253,6 +271,19 @@ export const courseFaqs = async (course) => {
   try{
     const value = JSON.stringify({course})
     const {data}  = await instance.post(about, value);
+    return data;
+  }catch(err){
+    return err
+  }
+};
+
+
+
+
+export const allNavbarLinks = async () => {
+  try{
+   
+    const {data}  = await instance.get(navbar);
     return data;
   }catch(err){
     return err
