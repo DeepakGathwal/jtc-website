@@ -14,12 +14,14 @@
 }
 .acc-section .accordion-item {
     min-height: 74px;
-    background: linear-gradient(214deg, #DFFCFF, #CCDFFF);
-    padding: 8px 24px;
+    /* background: linear-gradient(214deg, #DFFCFF, #CCDFFF); */
+    padding: 0px 24px;
     font-family: 'Urbanist', sans-serif;
     border: none;
     border-radius: 18px;
     Transition: 0.4s;
+    background: #fff;
+    /* margin-bottom: 10px; */
 }
 .acc-section .accordion-item .accordion-body{
     font-size: 20px;
@@ -35,10 +37,11 @@
     background: transparent;
     width: 100%;
     text-align: left;
-    padding: 13px 12px;
+    padding: 13px 0px;
     font-weight: 700;
     line-height: 32px;
     position: relative;
+    border: 1px solid #EEEEEE;
     border-radius: 5px;
     transition: 0.4s;
 }

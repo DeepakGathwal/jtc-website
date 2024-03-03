@@ -15,7 +15,7 @@
 .acc-section .accordion-item {
     min-height: 74px;
     background: linear-gradient(214deg, #DFFCFF, #CCDFFF);
-    padding: 8px 24px;
+    padding: 0px 24px;
     font-family: 'Urbanist', sans-serif;
     border: none;
     border-radius: 18px;
