@@ -2,13 +2,9 @@
 import React from 'react';
 import { useEffect, useRef } from 'react';
 import Image from "next/image";
-import Accordion from 'react-bootstrap/Accordion';
+// import Accordion from 'react-bootstrap/Accordion';
 import "./faq.css";
-<<<<<<<< HEAD:.history/Components/faqs_20240303131421.jsx
-import Buttonicon from "./../public/assets/images/icons/connect-icon.svg"
-========
-import Buttonicon from "./icon/connect-icon.svg"
->>>>>>>> 6a4ce869199b2d59765a032f395c3624de04cb43:Components/faqs.jsx
+import Buttonicon from "../public/assets/images/icons/connect-icon.svg"
 
 const Faqs = () => {
     const faqClicked = (event) => {

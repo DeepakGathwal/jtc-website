@@ -10,7 +10,7 @@
 }
 .acc-section .accordion {
     overflow-y: scroll;
-    max-height: 374px;
+    max-height: 290px;
 }
 .acc-section .accordion-item {
     min-height: 74px;
