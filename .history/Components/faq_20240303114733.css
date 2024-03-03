@@ -1,0 +1,99 @@
+.acc-section .accordion::-webkit-scrollbar-thumb {
+    background-color: #a9a9a946;
+    outline: 1px solid rgba(112, 128, 144, 0.089);
+    border-radius: 5px;
+}
+
+.acc-section .accordion::-webkit-scrollbar {
+    width: 0.1em;
+    height: 0.2em;
+}
+.acc-section .accordion {
+    overflow-y: scroll;
+    max-height: 365px;
+}
+.acc-section .accordion-item {
+    min-height: 74px;
+    background: linear-gradient(214deg, #DFFCFF, #CCDFFF);
+    padding: 10px 24px;
+    font-family: 'Urbanist', sans-serif;
+    border: none;
+    border-radius: 18px;
+}
+.acc-section .accordion-item .accordion-body{
+    font-size: 20px;
+    font-weight: 400;
+    padding-top: 0;
+}
+.acc-section .accordion-item .accordion-button:focus {
+    border: none;
+}
+.acc-section .accordion-item .accordion-button {
+    background: transparent;
+    font-size: 24px;
+    font-weight: 800;
+    color: #231f40;
+    font-family: 'Urbanist', sans-serif;
+    border: none;
+    border-bottom: none;
+}
+.acc-section .accordion-item .accordion-button::after {
+    background-image: url("./drop-icon.svg");
+    scale: 2.2;
+}
+.acc-section .accordion-item .accordion-button{
+    box-shadow: none;
+}
+.acc-section .accordion-item .accordion-button:not(.collapsed){
+    box-shadow: none;
+}
+.connectus {
+    background: linear-gradient(214deg, #DFFCFF, #CCDFFF);
+}
+.acc-section .accordion-item:last-child {
+    margin-bottom: 0;
+}
+.acc-section .accordion-item{
+    margin-bottom: 24px;
+}
+.connectus .hello-call {
+    margin-top: -20px;
+    margin-bottom: -62px;
+}
+.connectus {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: linear-gradient(214deg, #DFFCFF, #CCDFFF);
+    border-radius: 18px;
+    align-items: center;
+    padding: 36px 30px;
+}
+
+.connectus h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 0;
+    color: #231F40;
+    font-family: 'Urbanist', sans-serif;
+}
+.connectus span:last-child {
+    color: #197DC6;
+    font-size: 16px;
+    font-weight: 400;
+}
+.connectus span {
+    font-size: 22px;
+    color: #143DCE;
+    font-weight: 700;
+}
+.custom .accordion-item .accordion-collapse {
+    display: none;
+    padding: 10px;
+}
+.custom .accordion-item .accordion-toggle:checked+.accordion-title+.accordion-content {
+    display: block;
+}
+.accordion-title {
+    cursor: pointer;
+}
