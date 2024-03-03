@@ -2,7 +2,7 @@
 import React from 'react';
 import { useEffect, useRef } from 'react';
 import Image from "next/image";
-// import Accordion from 'react-bootstrap/Accordion';
+import Accordion from 'react-bootstrap/Accordion';
 import "./faq.css";
 import Buttonicon from "./connect-icon.svg"
 

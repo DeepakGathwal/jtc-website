@@ -37,15 +37,9 @@
     border: none;
     border-bottom: none;
 }
-.acc-section .accordion-item .accordion-toggle + .accordion-title .accordion-button::after {
+.acc-section .accordion-item .accordion-button::after {
     background-image: url("./drop-icon.svg");
     scale: 2.2;
-    transition: all 0.5s;
-}
-.acc-section .accordion-item .accordion-toggle:checked + .accordion-title .accordion-button::after {
-    background-image: url("./drop-icon.svg");
-    scale: 2.2;
-    transform: rotate(360deg);
 }
 .acc-section .accordion-item .accordion-button{
     box-shadow: none;
@@ -93,38 +87,26 @@
     color: #143DCE;
     font-weight: 700;
 }
-.custom .accordion-item input[type="checkbox"] ~ label::before, .custom .accordion-item input[type="checkbox"]:checked ~ label::before, .custom .accordion-item input[type="checkbox"]:checked ~ label::after {
-    display: none;
+.custom .accordion-item input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 2rem;
+    padding: 0.1rem;
+    border: 0.25rem solid green;
+    border-radius: 0.5rem;
   }
 .custom .accordion-item .accordion-title {
     padding-left: 0;
-    cursor: pointer;
-    width: 100%;
 }
 .custom .accordion-item .accordion-collapse {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0.5s, opacity 0.5s linear;
-    height: 0;
-    overflow: hidden;
+    display: none;
 }
 .custom .accordion-item .accordion-toggle:checked+.accordion-title+.accordion-collapse {
-    visibility: visible;
-    opacity: 1;
-    height: auto;
+    display: block;
 }
-@media (max-width: 767px) {
-    .acc-section .accordion-item .accordion-button {
-        font-size: 18px;
-        padding-left: 0;
-        padding-right: 0;
-    }
-    .acc-section .accordion-item .accordion-body {
-        font-size: 16px;
-        padding-left: 0;
-        padding-right: 0;
-    }
-    .acc-section .accordion-item {
-        min-height: 50px;
-    }
+.accordion-title {
+    cursor: pointer;
 }
