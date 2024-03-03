@@ -2,10 +2,9 @@
 import React from 'react';
 import { useEffect, useRef } from 'react';
 import Image from "next/image";
-// import Accordion from 'react-bootstrap/Accordion';
+import Accordion from 'react-bootstrap/Accordion';
 import "./faq.css";
-import { IoCall } from "react-icons/io5";
-
+import Buttonicon from "./connect-icon.svg"
 
 const Faqs = () => {
     const faqClicked = (event) => {
@@ -103,20 +102,76 @@ const Faqs = () => {
                                                 
                                                 
                                             </div>
+                                            {/* <Accordion>
+                                                <Accordion.Item id="faqOne" onClick={faqClicked} eventKey="0">
+                                                    <Accordion.Header>Accordion Item #1</Accordion.Header>
+                                                    <Accordion.Body>
+                                                        UX design stands for User Experience design. It is the process of designing digital or physical products that are easy to use, intuitive, and enjoyable for the user.
+                                                    </Accordion.Body>
+                                                </Accordion.Item>
+                                                <Accordion.Item id="faqTwo" onClick={faqClicked} eventKey="1">
+                                                    <Accordion.Header>Accordion Item #2</Accordion.Header>
+                                                    <Accordion.Body>
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                                        aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                                        culpa qui officia deserunt mollit anim id est laborum.
+                                                    </Accordion.Body>
+                                                </Accordion.Item>
+                                                <Accordion.Item id="faqThree" onClick={faqClicked} eventKey="2">
+                                                    <Accordion.Header>Accordion Item #3</Accordion.Header>
+                                                    <Accordion.Body>
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                                        aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                                        culpa qui officia deserunt mollit anim id est laborum.
+                                                    </Accordion.Body>
+                                                </Accordion.Item>
+                                                <Accordion.Item id="faqFour" onClick={faqClicked} eventKey="3">
+                                                    <Accordion.Header>Accordion Item #4</Accordion.Header>
+                                                    <Accordion.Body>
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                                        aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                                        culpa qui officia deserunt mollit anim id est laborum.
+                                                    </Accordion.Body>
+                                                </Accordion.Item>
+                                                <Accordion.Item id="faqFive" onClick={faqClicked} eventKey="3">
+                                                    <Accordion.Header>Accordion Item #4</Accordion.Header>
+                                                    <Accordion.Body>
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                                        aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                                        culpa qui officia deserunt mollit anim id est laborum.
+                                                    </Accordion.Body>
+                                                </Accordion.Item>
+                                            </Accordion> */}
                                         </div>
 									</div>
+
 											<div className='col-md-4'>
 												<div className="col-flex connectus">
                                                     <h3>Having any Queries?</h3>
                                                     <div className="fig">
-                                                        <Image src="../assets/images/icons/connect-icon.svg" className='hello-call' alt="hello call us" width={20} height={20} />
+                                                        <Image src={Buttonicon} className='hello-call' alt="hello call us" />
                                                     </div>
-                                                    <p>Connect with us</p>
-                                                    <a href="tel:09990699111" >
-                                                        <IoCall /> +91-999-0699-111
-                                                    </a>
+                                                    <span>Connect with us</span>
+                                                    <span>+1 202-918-2132</span>
                                                 </div>
 											</div>
+										
 								</div>
 							</div>
 						</div>
