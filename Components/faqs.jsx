@@ -1,12 +1,24 @@
 "use client"
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import Image from "next/image";
 import Accordion from 'react-bootstrap/Accordion';
+import { courseFaqs } from '@/apis/apis';
 import "./faq.css";
 import { IoCall } from "react-icons/io5";
 
 
-const Faqs = () => {
+const Faqs = ({coursename}) => {
+    const [state, setState] = useState([])
+
+	const allFaqs = async() => {
+		const {data} = await courseFaqs(coursename)
+		if(data.length > 0)
+		return setState(data)
+	}
+
+	useEffect(() => {
+	allFaqs()
+	},[coursename])
     const faqClicked = (event) => {
         console.log('Element ID:', event.target.id);
     }
@@ -44,60 +56,14 @@ const Faqs = () => {
 											<div className='col-md-8'>
 									<div class="accordion-style-2 acc-section">
                                                 <Accordion>
-                                                    <Accordion.Item id="faqOne" onClick={faqClicked} eventKey="0">
-                                                        <Accordion.Header>Accordion Item #1</Accordion.Header>
-                                                        <Accordion.Body>
-                                                            UX design stands for User Experience design. It is the process of designing digital or physical products that are easy to use, intuitive, and enjoyable for the user.
-                                                        </Accordion.Body>
-                                                    </Accordion.Item>
-                                                    <Accordion.Item id="faqTwo" onClick={faqClicked} eventKey="1">
-                                                        <Accordion.Header>Accordion Item #2</Accordion.Header>
-                                                        <Accordion.Body>
-                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                            aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                                            culpa qui officia deserunt mollit anim id est laborum.
-                                                        </Accordion.Body>
-                                                    </Accordion.Item>
-                                                    <Accordion.Item id="faqThree" onClick={faqClicked} eventKey="2">
-                                                        <Accordion.Header>Accordion Item #3</Accordion.Header>
-                                                        <Accordion.Body>
-                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                            aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                                            culpa qui officia deserunt mollit anim id est laborum.
-                                                        </Accordion.Body>
-                                                    </Accordion.Item>
-                                                    <Accordion.Item id="faqFour" onClick={faqClicked} eventKey="3">
-                                                        <Accordion.Header>Accordion Item #4</Accordion.Header>
-                                                        <Accordion.Body>
-                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                            aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                                            culpa qui officia deserunt mollit anim id est laborum.
-                                                        </Accordion.Body>
-                                                    </Accordion.Item>
-                                                    <Accordion.Item id="faqFive" onClick={faqClicked} eventKey="3">
-                                                        <Accordion.Header>Accordion Item #4</Accordion.Header>
-                                                        <Accordion.Body>
-                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                            aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                                            culpa qui officia deserunt mollit anim id est laborum.
-                                                        </Accordion.Body>
-                                                    </Accordion.Item>
+                                                {state && state.map((el, i) =>(
+												<Accordion.Item eventKey={el.id}>
+													<Accordion.Header>{el.point}</Accordion.Header>
+													<Accordion.Body>{el.description}
+													</Accordion.Body>
+												</Accordion.Item>
+										
+											))}
                                                 </Accordion>
 											</div>
 									</div>

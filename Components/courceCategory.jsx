@@ -39,8 +39,8 @@ const CourceCategory = ({ coursename }) => {
                     <div className="inner">
                         <div className="course-content">
                             <div className="edu-accordion-02">
-                                {state && state.map((el, i) => (
-                                    <Accordion key={i} onChange={(e) => getCourceChapter(el.id)}>
+                                {state && state.map((el) => (
+                                    <Accordion onChange={(e) => getCourceChapter(el.id)}>
                                         <AccordionItem>
                                             <AccordionItemHeading>
                                                 <AccordionItemButton>
@@ -50,13 +50,13 @@ const CourceCategory = ({ coursename }) => {
                                             <AccordionItemPanel>
                                                 <div className="card-body" >
                                                     <div className="module">
-                                                        {chapters && chapters.map((ch,i) => (
+                                                        {chapters && chapters.map((ch) => (
 
                                                             <>
-                                                                <h4 key={i} >{ch.chapter}</h4>
+                                                                <h4 >{ch.chapter}</h4>
                                                                 <div className="list_mod">
-                                                                {ch.topic && ch.topic.map((tp,j) => (
-                                                                   <p key={j}> {tp.topic}</p>
+                                                                {ch.topic && ch.topic.map((tp) => (
+                                                                   <p> {tp.topic}</p>
                                                                   ))}
                                                                 </div>
                                                             </>
@@ -81,37 +81,6 @@ const CourceCategory = ({ coursename }) => {
             </div>
 
 
-            {/* <Accordion onChange={(e) => getCourceChapter("wed")}>
-<AccordionItem>
-    <AccordionItemHeading>
-        <AccordionItemButton>
-            What harsh truths do you prefer to ignore?
-        </AccordionItemButton>
-    </AccordionItemHeading>
-    <AccordionItemPanel>
-        <p>
-            Exercitation in fugiat est ut ad ea cupidatat ut in
-            cupidatat occaecat ut occaecat consequat est minim minim
-            esse tempor laborum consequat esse adipisicing eu
-            reprehenderit enim.
-        </p>
-    </AccordionItemPanel>
-</AccordionItem>
-<AccordionItem>
-    <AccordionItemHeading>
-        <AccordionItemButton>
-            Is free will real or just an illusion?
-        </AccordionItemButton>
-    </AccordionItemHeading>
-    <AccordionItemPanel>
-        <p>
-            In ad velit in ex nostrud dolore cupidatat consectetur
-            ea in ut nostrud velit in irure cillum tempor laboris
-            sed adipisicing eu esse duis nulla non.
-        </p>
-    </AccordionItemPanel>
-</AccordionItem> 
-</Accordion>*/}
         </>
     )
 }
