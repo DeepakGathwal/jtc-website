@@ -9320,7 +9320,9 @@ justify-content: center; }
     Service Style 8  
 ---------------------------------*/
 .service-activation-item5 .single-slick-card {
-  margin-bottom: 20px; }
+  margin-bottom: 30px;
+margin-right: 5px;
+border-radius: 5px; }
 
 .service-card-8 .inner {
   /* background: #EAF8F6; */
