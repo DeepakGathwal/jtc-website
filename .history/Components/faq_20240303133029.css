@@ -10,7 +10,7 @@
 }
 .acc-section .accordion {
     overflow-y: scroll;
-    max-height: 374px;
+    max-height: 290px;
 }
 .acc-section .accordion-item {
     min-height: 74px;
@@ -43,12 +43,12 @@
     transition: 0.4s;
 }
 .acc-section .accordion-item .accordion-button::after {
-    background-image: url("./icon/drop-icon.svg");
+    background-image: url("/assets/images/icons/drop-icon.svg");
     scale: 2.2;
     transition: all 0.5s;
 }
 .acc-section .accordion-item .accordion-toggle:checked + .accordion-title .accordion-button::after {
-    background-image: url("./icon/drop-icon.svg");
+    background-image: url("/assets/images/icons/drop-icon.svg");
     scale: 2.2;
     transform: rotate(360deg);
 }

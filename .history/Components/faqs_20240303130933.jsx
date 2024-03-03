@@ -2,9 +2,9 @@
 import React from 'react';
 import { useEffect, useRef } from 'react';
 import Image from "next/image";
-// import Accordion from 'react-bootstrap/Accordion';
+import Accordion from 'react-bootstrap/Accordion';
 import "./faq.css";
-import Buttonicon from "./icon/connect-icon.svg"
+// import Buttonicon from "./connect-icon.svg"
 
 const Faqs = () => {
     const faqClicked = (event) => {
@@ -91,7 +91,7 @@ const Faqs = () => {
                                                 <div className="accordion-item">
                                                     <input type="checkbox" id="toggle5" className="accordion-toggle" />
                                                     <label for="toggle5" id="faqFive" onClick={faqClicked} eventKey="0" className="accordion-title">
-                                                        <h2 id="faqFive" class="accordion-header accordion-button">Accordion Item #</h2>
+                                                        <h2 id="faqFive" class="accordion-header accordion-button">Accordion Item #5</h2>
                                                     </label>
                                                     <div className="accordion-collapse">
                                                         <div className="accordion-body">
