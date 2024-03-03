@@ -7,14 +7,18 @@ import Batchenroll from './batchenroll';
 
 const Batches = ({coursename}) => {
     const [state, setState]  = useState([])
+    const [id, setId] = useState(null)
+    const [course, setcourse] = useState(null)
     const allData = async() => {
         const {data} = await allBatches(coursename)
         return setState(data)
         }
 
     const [show, setShow] = useState(false)
-    const batchenrollshow = () => {
+    const batchenrollshow = (id,course) => {
         setShow(true)
+        setId(id)
+        setcourse(course)
     }
       
 useEffect(() => {
@@ -73,9 +77,8 @@ useEffect(() => {
                                         </ul>
                                     </div>
                                     <div className="read-more-btn">
-                                        <button className="edu-btn popup-btn" onClick={batchenrollshow}>Enroll Now <FaArrowRight /></button>
+                                        <button className="edu-btn popup-btn" onClick={(e, i) => batchenrollshow(el.id, el.cource)}>Enroll Now <FaArrowRight /></button>
                                     </div>
-                                    <Batchenroll show={show} setShow={setShow}/>
                                 </div>
                             </div>
                         </div> 
@@ -85,6 +88,7 @@ useEffect(() => {
 
             ))}
         </div>
+        {show && <Batchenroll show={show} setShow={setShow} id = {id} course={course}/>}
     </div>
 </div>
   )

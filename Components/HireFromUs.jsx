@@ -17,10 +17,10 @@ const HireFromUs = ({  Hireshow, setHireShow }) => {
         if (data.length > 0) setState(data)
     }
       
-
-const handelChange = (e) => {
-    setField({ ...field, [e.target.name]: e.target.value })
-  }
+    const handelChange = (e) => {
+        setField({ ...field, [e.target.name]: e.target.value })
+    }
+    
     useEffect(() => {
         allData()
     },[])
@@ -28,7 +28,6 @@ const handelChange = (e) => {
     const handelSubmit = async(e) => {
         e.preventDefault()
         const data = await hireUsForm(field)
-        e.preventDefault()
           setField("")
           alert(data.message)
           return setHireShow(false) 

@@ -8,7 +8,7 @@ import { NextResponse } from "next/server";
 export async  function GET(req){
     const redisdata = await client.get("aboutUs");
     if(!redisdata){
-        const query =  `Select description from jtc_about_points `
+        const query =  `Select description from jtc_about_points WHERE point = 'Website'`
         const data = await executeQuery(query);
         if(data.length > 0) {
         const value =  await JSON.stringify(data)
