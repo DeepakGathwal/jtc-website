@@ -2,19 +2,22 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
+import Megamenu from "./megamenu";
 import { IoCall } from "react-icons/io5";
 import { RiChat1Line } from "react-icons/ri";
 import { FaGripLines } from "react-icons/fa";
 import { useRouter } from 'next/navigation';
 import Test from './enquiryForm';
 import "./Header.css";
-import { allCourceTypes, courcesList, homeCourses } from '@/apis/apis';
+import { allCourceTypes, allNavbarLinks, courcesList, homeCourses } from '@/apis/apis';
 import HireFromUs from './HireFromUs';
 import JoinUs from './JoinUs';
 
 export default function Header() {
     const router = useRouter();
     const [categories, setCategories] = useState([])
+    const [megaMenu, setMegaMenu] = useState(false)
+    const [links, setLinks] = useState([])
     const [show, setShow] = useState(false)
     const [Hireshow, setHireShow] = useState(false)
     const [joinForm, setjoinForm] = useState(false)
@@ -22,56 +25,84 @@ export default function Header() {
     const handelShow = () => {
         setShow(true)
     }
-    const hireshow = () => {
-        setHireShow(true)
-    }
-    const joinshow = () => {
-        setjoinForm(true)
-    }
 
-
-    // State to manage which tab is active
     const [activeTab, setActiveTab] = useState(1);
 
-    // Event handler for tab mouse enter
-    const handleTabMouseEnter = (id) => {
-
-        setActiveTab(id);
-    };
 
     const allData = async () => {
         const { data } = await allCourceTypes()
         if (data.length > 0)
             return setCategories(data)
     }
-
+     
 
     const allCourses = async () => {
         const { data } = await courcesList(activeTab)
         setCources(data)
     }
 
+    const navbar = async() => {
+        const {data} = await allNavbarLinks()
+        
+      setLinks(data);
+        allData()
+    }
+
     useEffect(() => {
         allCourses()
     }, [activeTab])
 
+    const navBarFunction = async(link) => {
+        if(link == "/courses"){
+           
+            setMegaMenu(true)
+        }else if(link == "/hire"){
+            setHireShow(true)
+              setMegaMenu(false)
+        }else if(link == "/join"){
+            setjoinForm(true)
+              setMegaMenu(false)
+        }else {
+            setMegaMenu(false)
+            router.push(link)
+        }
+    }
+
+
     useEffect(() => {
-        allData()
+       navbar() 
     }, [])
 
   return (
+    <>
   
       <header className="edu-header header-style-2 disable-transparent header-sticky sticky row-flex space-between-row align-items-center-row">
             <div className="row align-items-center w-100">
                 <div className="col-lg-6 col-xl-2 col-md-6 col-6">
-                        <Link href="/">
-                    <div className="logo">
-                            <Image className="logo-light" src="/assets/images/logo/logo.webp" alt="JTC LOGO" width={100} height={100}/>
-                     </div>
-                        </Link>
-                </div>
+                <Link href="/">
+            <div className="logo">
+                    <Image className="logo-light" src="/assets/images/logo/logo.webp" alt="JTC LOGO" width={100} height={100}/>
+             </div>
+                </Link>
+        </div>    
 
-                <div className="col-lg-6 d-none d-xl-block">
+                    <div className="col-lg-6 d-none d-xl-block">
+                    <nav className="mainmenu-nav">
+                        <ul className="mainmenu">
+                {links && links.map((el) => (
+
+                         <>
+                            <li className="has-droupdown" onClick={() => navBarFunction(el.nav_link)}>{el.name}</li>
+                
+                               
+                         </>
+                            ))}
+                        </ul>
+                    </nav>
+                </div>
+                
+                
+           {/* <div className="col-lg-6 d-none d-xl-block">
                     <nav className="mainmenu-nav">
                         <ul className="mainmenu">
                             <li className="has-droupdown" onClick={() => router.push("/")}>Home</li>
@@ -116,7 +147,7 @@ export default function Header() {
                             <li className="has-droupdown" onClick={() => router.push("/blog")}>Blog</li>
                         </ul>
                     </nav>
-                </div>
+                </div> */}
 
                 <div className="col-lg-6 col-xl-4 col-md-6 col-6">
                     <div className="header-right d-flex justify-content-end">
@@ -153,6 +184,9 @@ export default function Header() {
 
             </div>
         </header>
+        {megaMenu &&    <Megamenu categories={categories} cources={cources} setActiveTab={setActiveTab} activeTab={activeTab} />
+                                }
+        </>
 
     )
 }
