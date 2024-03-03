@@ -70,9 +70,9 @@
     z-index: 99999;
 }
 .mega-menu {
-    position: fixed;
+    position: absolute;
     top: -350%;
-    left: 15%;
+    left: -150px;
     overflow: auto;
     background: #fff;
     border-radius: 6px;
