@@ -2,10 +2,9 @@
 import React from 'react';
 import { useEffect, useRef } from 'react';
 import Image from "next/image";
-// import Accordion from 'react-bootstrap/Accordion';
+import Accordion from 'react-bootstrap/Accordion';
 import "./faq.css";
-import { IoCall } from "react-icons/io5";
-
+import Buttonicon from "./../public/assets/images/icons/connect-icon.svg"
 
 const Faqs = () => {
     const faqClicked = (event) => {
@@ -105,18 +104,18 @@ const Faqs = () => {
                                             </div>
                                         </div>
 									</div>
+
 											<div className='col-md-4'>
 												<div className="col-flex connectus">
                                                     <h3>Having any Queries?</h3>
                                                     <div className="fig">
-                                                        <Image src="../assets/images/icons/connect-icon.svg" className='hello-call' alt="hello call us" width={20} height={20} />
+                                                        <Image src={Buttonicon} className='hello-call' alt="hello call us" />
                                                     </div>
-                                                    <p>Connect with us</p>
-                                                    <a href="tel:09990699111" >
-                                                        <IoCall /> +91-999-0699-111
-                                                    </a>
+                                                    <span>Connect with us</span>
+                                                    <span>+1 202-918-2132</span>
                                                 </div>
 											</div>
+										
 								</div>
 							</div>
 						</div>
