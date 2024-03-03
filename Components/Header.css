@@ -65,12 +65,12 @@
 }
 .edu-header .mainmenu-nav ul li:hover .mega-menu {
     top: 90%;
-    width: unset;
     z-index: 99999;
 }
 .mega-menu {
     position: fixed;
-    top: -350%;
+    top: 7.6rem;
+    z-index: 99999 !important;
     left: 15%;
     overflow: auto;
     background: #fff;
@@ -78,7 +78,6 @@
     box-shadow: #0000001c 0px 0px 16px;
     z-index: 5;
     transition: all 0.3s;
-    width: 0;
     font-family: "Urbanist", sans-serif;
 }
 .mega-menu .course-hover {
