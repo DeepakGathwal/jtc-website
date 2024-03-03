@@ -19,7 +19,8 @@ const JoinUs = ({joinForm,setjoinForm}) => {
     const allData = async () => {
         const {data} = await allRoles()
         
-        if (data.length > 0) setState(data)
+        // if (data.length > 0)
+         setState(data)
     }
     useEffect(() => {
         allData()

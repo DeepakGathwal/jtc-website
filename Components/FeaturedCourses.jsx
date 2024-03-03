@@ -14,6 +14,7 @@ export default function FeaturedCourses() {
     const previous = () => {
         sliderRef.slickPrev();
     };
+    const colors = ['#EAF8F6', '#FFF3EE', '#FAEFFA', '#EFF4FC'];
     var settings = {
         autoplay: false,
         className: "center",
@@ -90,7 +91,7 @@ export default function FeaturedCourses() {
                             }} {...settings}>
                                 {state && state.map((el, i) => (
                                     <Link key={i} href={"/course/" + el.name}>
-                                        <div  className="single-slick-card">
+                                        <div  className="single-slick-card" style={{ backgroundColor: colors[i % colors.length] }}>
                                             <div className="service-card service-card-8 shape-bg-1">
                                                 <div className="inner">
                                                     <div className="icon">
@@ -103,7 +104,9 @@ export default function FeaturedCourses() {
 
                                                     </div>
                                                     <div className="hover-action">
-                                                        <FaArrowRight />
+                                                        <div className='read-more-btn'>
+                                                            <FaArrowRight />
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

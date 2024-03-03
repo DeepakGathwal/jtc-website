@@ -32,7 +32,7 @@ export default function Footer() {
                                 <div className="edu-footer-widget">
                                     <div className="logo">
                                         <a href="https://jtcindia.org/index.php">
-                                            <img className="logo-light" src="../assets/images/logo/logoFooter.webp" alt="Site Logo" />
+                                            <Image className="logo-light" src="../assets/images/logo/logoFooter.webp" alt="Site Logo" height={51} width={100}/>
                                         </a>
                                     </div>
                                     <p className="description">{state && state.about}</p>
