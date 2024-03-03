@@ -50,7 +50,7 @@
 .acc-section .accordion-item .accordion-toggle:checked + .accordion-title .accordion-button::after {
     background-image: url("./icon/drop-icon.svg");
     scale: 2.2;
-    transform: rotate(360deg);
+    transform: rotate(0deg);
 }
 .acc-section .accordion-item .accordion-button{
     box-shadow: none;
@@ -114,15 +114,15 @@
 }
 .custom .accordion-item .accordion-collapse {
     visibility: hidden;
+    display: none;
     opacity: 0;
     transition: visibility 0.5s, opacity 0.5s linear;
-    height: 0;
     overflow: hidden;
 }
 .custom .accordion-item .accordion-toggle:checked+.accordion-title+.accordion-collapse {
     visibility: visible;
     opacity: 1;
-    height: auto;
+    display: block;
 }
 @media (max-width: 767px) {
     .acc-section .accordion-item .accordion-button {

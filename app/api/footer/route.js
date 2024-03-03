@@ -7,7 +7,7 @@ import { NextResponse } from "next/server";
 export async  function GET(req){
     const redisdata = await client.get("footer");
     if(!redisdata){
-        const query =  `Select * from jtc_footer`
+        const query =  `Select * from jtc_footer `
         const data = await executeQuery(query);
         if(data.length > 0) {
         const value =  await JSON.stringify(data)

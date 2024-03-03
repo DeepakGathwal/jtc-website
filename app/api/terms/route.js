@@ -1,6 +1,7 @@
 import { executeQuery } from "@/conn/conn";
 import { client } from "@/middelware/redisFile";
 import { NextResponse } from "next/server";
+import { sendEmail } from "@/middelware/sendEmail";
 
 
 // Get All Cources WithOut Category
@@ -20,3 +21,4 @@ export async  function GET(req){
      return NextResponse.json({data : value}, { success : true}, {status : 200})
 }
 }
+
