@@ -41,7 +41,7 @@ const CourceCategory = ({ coursename }) => {
                             <h2 id={el.id} class="accordion-header accordion-button">{el.category_name}</h2>
                         </label>
                         <div className="accordion-collapse">
-                            <div className="accordion-body">
+                            <div className="accordion-body module">
                             {chapters && chapters.map((ch) => (
                                     <>
                                         <h4 >{ch.chapter}</h4>
