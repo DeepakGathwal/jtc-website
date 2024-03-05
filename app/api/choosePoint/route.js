@@ -13,10 +13,7 @@ export async  function GET(req){
         const data = await executeQuery(query);
         if(data.length > 0) {
         const value = await JSON.stringify(data)
-        await client.set("choosePoint", value, {
-            EX: process.env.REDIS_EXP,   
-            NX: true
-          });
+        await client.set("choosePoint", value);
           return NextResponse.json({data},{success : true}, {status : 200})
         }
         else return NextResponse.json({message : "Data Empty"},{success : false}, {status : 206})

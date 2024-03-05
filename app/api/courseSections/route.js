@@ -15,10 +15,7 @@ export async  function PUT(req){
         const data = await executeQuery(query);
         if(data.length > 0) {
         const value = await JSON.stringify(data)
-        await client.set(`point${course}`, value, {
-          EX: process.env.REDIS_EXP,   
-          NX: true
-        });
+        await client.set(`point${course}`, value);
           return NextResponse.json({data},{success : true}, {status : 200})
         }
       } else return NextResponse.json({message : "Course Not found"},{success : false}, {status : 206})

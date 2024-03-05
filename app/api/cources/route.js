@@ -15,10 +15,7 @@ export async  function GET(req){
         const data = await executeQuery(query);
         if(data.length > 0) {
         const value =  await JSON.stringify(data)
-        await client.set("cources", value, {
-             EX: process.env.REDIS_EXP,  
-            NX: true
-          });
+        await client.set("cources", value);
           return NextResponse.json({data},{success : true}, {status : 200})
         }
         else return NextResponse.json({message : "Data Empty"},{success : false}, {status : 206})
@@ -37,10 +34,7 @@ export async  function PATCH(req){
       const data = await executeQuery(query);
       if(data.length > 0) {
       const value =  await JSON.stringify(data)
-      await client.set("courceTypes", value, {
-           EX: process.env.REDIS_EXP,  
-          NX: true
-        });
+      await client.set("courceTypes", value);
         return NextResponse.json({data},{success : true}, {status : 200})
       }
       else return NextResponse.json({message : "Data Empty"},{success : false}, {status : 206})

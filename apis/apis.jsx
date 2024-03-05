@@ -277,12 +277,8 @@ export const courseFaqs = async (course) => {
   }
 };
 
-
-
-
 export const allNavbarLinks = async () => {
-  try{
-   
+  try{   
     const {data}  = await instance.get(navbar);
     return data;
   }catch(err){
