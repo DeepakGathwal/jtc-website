@@ -7,7 +7,7 @@ export default function Testimonials() {
     const [state, setState] = useState([])
     const allData = async() => {
         const {data} = await alltestimonials();
-        if(data.length > 0)
+     
         return setState(data)
       }
 

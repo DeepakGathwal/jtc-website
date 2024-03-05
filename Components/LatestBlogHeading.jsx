@@ -10,8 +10,7 @@ const LatestBlogHeading = () => {
     const [state, setState] = useState([])
     const allData = async() => {
         const {data} = await blogs();
-        console.log(data);
-        if(data.length > 0)
+      
          return setState(data)
       }
 

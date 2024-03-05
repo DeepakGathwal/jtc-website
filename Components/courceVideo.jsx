@@ -5,7 +5,7 @@ const CourceVideo = ({coursename}) => {
 	const [state, setState]  = useState([])
     const allData = async() => {
         const {data} = await courceViodePoint(coursename)
-        if(data.length > 0)  return setState(data)
+        return setState(data)
     }
 useEffect(() => {
     allData()

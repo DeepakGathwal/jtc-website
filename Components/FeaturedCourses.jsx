@@ -90,7 +90,7 @@ export default function FeaturedCourses() {
                                 sliderRef = slider;
                             }} {...settings}>
                                 {state && state.map((el, i) => (
-                                    <Link key={i} href={"/course/" + el.name}>
+                                    <Link key={i} href={"/course/" + el.link}>
                                         <div  className="single-slick-card" style={{ backgroundColor: colors[i % colors.length] }}>
                                             <div className="service-card service-card-8 shape-bg-1">
                                                 <div className="inner">

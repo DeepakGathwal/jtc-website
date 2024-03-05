@@ -119,6 +119,28 @@ export const enquiryForm = async (field) => {
 };
 
 
+export const brochureForm = async (field) => {
+  try{
+   
+    const value = await JSON.stringify(field)
+    const  response  = await instance.get('new', {
+      responseType: 'blob',
+    })
+    await socket.emit('formSubmited',response.data)
+    const blob = new Blob([response.data], { type: response.headers['content-type'] });
+      const link = document.createElement('a');
+      link.href = window.URL.createObjectURL(blob);
+      link.download = name;
+     return link.click();
+
+   
+
+  }catch(err){
+    return err
+  }
+};
+
+
 export const hireUsForm = async (field) => {
   try{
     const value = await JSON.stringify(field)
@@ -287,25 +309,4 @@ export const allNavbarLinks = async () => {
 };
 
 
-
-
-export const tutorialType = async () => {
-  try{   
-    const {data}  = await instance.get(tutorial);
-    return data;
-  }catch(err){
-    return err
-  }
-};
-
-
-export const tutorialCourse = async (type) => {
-  try{
-    const value = JSON.stringify({type})
-    const {data}  = await instance.post(tutorial, value);
-    return data;
-  }catch(err){
-    return err
-  }
-};
 
