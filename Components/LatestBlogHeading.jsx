@@ -10,6 +10,7 @@ const LatestBlogHeading = () => {
     const [state, setState] = useState([])
     const allData = async() => {
         const {data} = await blogs();
+        console.log(data);
         if(data.length > 0)
          return setState(data)
       }
@@ -28,7 +29,7 @@ const LatestBlogHeading = () => {
                     
                        
 
-      <div className="row g-5 mt--30">
+      <div className="row g-5 mt-30">
                         {state.length > 0 && state.map((el, i) => (
                           
                             <>

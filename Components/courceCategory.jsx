@@ -32,13 +32,13 @@ const CourceCategory = ({ coursename }) => {
     return (
         <>		
         <div className='col-md-7'>
-            <div class="accordion-style-2 acc-section">
-                <div class="accordion custom">
+            <div className="accordion-style-2 acc-section">
+                <div className="accordion custom">
                 {state && state.map((el) => (
                     <div className="accordion-item">
                         <input type="checkbox" id={"toggle"+el.id} className="accordion-toggle" />
                         <label for={"toggle"+el.id} id={el.id} onClick={getCourceChapter} eventKey="0" className="accordion-title">
-                            <h2 id={el.id} class="accordion-header accordion-button">{el.category_name}</h2>
+                            <h2 id={el.id} className="accordion-header accordion-button">{el.category_name}</h2>
                         </label>
                         <div className="accordion-collapse">
                             <div className="accordion-body module">

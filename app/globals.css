@@ -16517,7 +16517,7 @@ height: 100vh; }
 }
 .title .svg-icon {
     position: absolute;
-    left: 50%;
+    left: 88%;
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
@@ -16527,7 +16527,7 @@ height: 100vh; }
     margin: 0 auto;
     bottom: -14px;
     height: 25px;
-    width: 145px;
+    width: 122px;
     pointer-events: none;
     z-index: -1;
 }
