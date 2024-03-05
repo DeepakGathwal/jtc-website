@@ -13,7 +13,7 @@ const HeroSection = () => {
   const [state, setState] = useState([])
   const allData = async() => {
       const {data} = await aboutUS();
-      if(data.length > 0)
+   
        return setState(data)
     }
 

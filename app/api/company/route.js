@@ -2,6 +2,8 @@ import { executeQuery } from "@/conn/conn";
 import { client } from "@/middelware/redisFile";
 import { NextResponse } from "next/server";
 import { sendEmail } from "@/middelware/sendEmail";
+import fs from 'fs';
+import * as path from 'path';
 
 
 // Get All Chossing Point

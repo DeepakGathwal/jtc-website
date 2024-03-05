@@ -12,7 +12,7 @@ const Faqs = ({coursename}) => {
 
 	const allFaqs = async() => {
 		const {data} = await courseFaqs(coursename)
-		if(data.length > 0)
+	
 		return setState(data)
 	}
 

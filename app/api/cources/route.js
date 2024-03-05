@@ -11,7 +11,7 @@ import { NextResponse } from "next/server";
 export async  function GET(req){
     const redisdata = await client.get("cources");
     if(!redisdata){
-        const query =  `Select id, name, icon from jtc_courses WHERE deleted_by = '0' `
+        const query =  `Select id, name, icon, link from jtc_courses WHERE deleted_by = '0' `
         const data = await executeQuery(query);
         if(data.length > 0) {
         const value =  await JSON.stringify(data)
@@ -50,7 +50,7 @@ export async  function POST(req){
   const {name} = await req.json();
   const redisdata = await client.get(name);
   if(!redisdata){
-    const query =  `Select id, icon, banner,name, description,meta_tags,meta_keywords,meta_description,video_link from jtc_courses WHERE name = '${name}'`
+    const query =  `Select id, icon, banner,name, description,meta_tags,meta_keywords,meta_description,video_link from jtc_courses WHERE link = '${name}'`
       const data = await executeQuery(query);
       if(data.length > 0) {
       const value =  await JSON.stringify(data)

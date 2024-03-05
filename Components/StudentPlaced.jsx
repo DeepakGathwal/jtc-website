@@ -7,7 +7,7 @@ export default function StudentPlaced() {
     const [state, setState] = useState([])
     const allData = async () => {
         const {data} = await homeCompany();
-        if(data.length > 0)
+     
        return setState(data)
     }
     useEffect(() => {
