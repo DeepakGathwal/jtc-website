@@ -4,24 +4,16 @@ import "../globals.css"
 import "./orbit.css";
 import { FaArrowRight } from "react-icons/fa6";
 import "./hero.css";
-import FeaturedCourses from '@/Components/FeaturedCourses';
-import { allCourceTypes } from '@/apis/apis';
+import {  tutorialType } from '@/apis/apis';
 import Image from 'next/image';
-import LatestTutorial from '@/Components/ProgrammingAndFramework';
-import ProgrammingAndFramework from '@/Components/ProgrammingAndFramework';
-import WebDevlopment from '@/Components/WebDevlopment';
-import Database from '@/Components/Database';
-import SoftwareTesting from '@/Components/SoftwareTesting';
-import DataStructure from '@/Components/DataStructure';
-import CloudComputing from '@/Components/CloudComputing';
-import TutorialTools from '@/Components/TutorialTools';
-
-
+import LatestTutorial from '@/Components/latestTutorial';
 
 function Index() {
+
+
     const [state, setState] = useState([])
     const allData = async() => {
-        const {data} = await allCourceTypes();
+        const {data} = await tutorialType();
         return setState(data)
       }
     
@@ -29,6 +21,8 @@ function Index() {
       useEffect(() => {
         allData()
       },[])
+
+
   return (
     <>
         <div className="hero-section">
@@ -41,9 +35,6 @@ function Index() {
                         <div className="hero-heading">
                         Explore our Extensive Range <br />
                         of <strong> Engaging Tutorials</strong>
-                        </div>
-                        <div className="read-more-btn">
-                            <a href="#recommendedcourses" className="edu-btn btn-mb">Explore Our Recommended Courses <i className="icon-arrow-right-line-right"></i></a>
                         </div>
                     </div>
                     <div className="herofig d-xl-block d-none">
@@ -75,15 +66,12 @@ function Index() {
             </div>
         </div>
         
-        <FeaturedCourses/>
-        <ProgrammingAndFramework/>
-        <WebDevlopment/>
-        <Database />
-        <SoftwareTesting />
-        <DataStructure />
-        <CloudComputing />
-        <TutorialTools />               
+        <LatestTutorial category={"Latest"} id = {0}/>
 
+        {state && state.map((el) => (
+            <LatestTutorial category={el.category} id = {el.id}/>
+
+        ))}
     </>
   )
 }

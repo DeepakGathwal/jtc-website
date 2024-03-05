@@ -30,21 +30,21 @@ const Batchenroll = ({ show, setShow, id, course }) => {
                     <h5 className="mb-30">Enroll Now: Secure Your Spot!</h5>
                 </Modal.Header>
                 <Modal.Body>
-                    <div class="container checkout-page-style">
-                        <div class="login-form-box">
-                            <form class="login-form" onSubmit={handelSubmit} id="batches1">
-                                <div class="input-box mb--20">
+                    <div className="container checkout-page-style">
+                        <div className="login-form-box">
+                            <form className="login-form" onSubmit={handelSubmit} id="batches1">
+                                <div className="input-box mb--20">
                                     <input type="text" id="batches" name="batches" value={course} readonly />
                                 </div>
-                                <div class="input-box mb--20">
+                                <div className="input-box mb--20">
                                     <input type="text" placeholder="Name" id="name4" name="name" onChange={handelChange} required />
                                 </div>
-                                <div class="input-box mb--20">
-                                    <input type="tel" id="phone4" class="phone-input" name="phone" onChange={handelChange}
+                                <div className="input-box mb--20">
+                                    <input type="tel" id="phone4" className="phone-input" name="phone" onChange={handelChange}
                                         placeholder="Mobile Number" required />
                                 </div>
                                 <Tnc id={"checkbox-4"} />
-                                <button class="rn-btn edu-btn w-100 mb--20" type="submit">
+                                <button className="rn-btn edu-btn w-100 mb--20" type="submit">
                                     <span>Enroll Now</span>
                                 </button>
                             </form>

@@ -27,9 +27,10 @@ export default function LatestBlogs() {
                         </div>
                         <div className="col-lg-6 col-md-6">
                         <div className="view-more-btn text-end">
-                            <a className="edu-btn" href="blog/index.php">
+                           <Link href='/blog' className="edu-btn">
                                 Browse All Blogs  <FaArrowRight />
-                            </a>
+                           </Link>
+                          
                         </div>
                     </div>
                     </div>

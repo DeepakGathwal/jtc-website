@@ -12,8 +12,7 @@ let footer = "footer"
 let blog = "blog"
 let about = "about"
 let navbar = "navbar"
-let terms = "terms"
-
+let tutorial = "tutorial"
 
 export const blogs = async () => {
   try{
@@ -277,6 +276,7 @@ export const courseFaqs = async (course) => {
   }
 };
 
+
 export const allNavbarLinks = async () => {
   try{   
     const {data}  = await instance.get(navbar);
@@ -287,4 +287,25 @@ export const allNavbarLinks = async () => {
 };
 
 
+
+
+export const tutorialType = async () => {
+  try{   
+    const {data}  = await instance.get(tutorial);
+    return data;
+  }catch(err){
+    return err
+  }
+};
+
+
+export const tutorialCourse = async (type) => {
+  try{
+    const value = JSON.stringify({type})
+    const {data}  = await instance.post(tutorial, value);
+    return data;
+  }catch(err){
+    return err
+  }
+};
 
