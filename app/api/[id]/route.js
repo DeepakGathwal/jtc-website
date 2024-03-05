@@ -21,10 +21,7 @@ export async  function GET(req, context){
 }
 }
 
-
-
 export async  function PATCH(req, context){
-
   const {id} = context.params;
   const redisdata = await client.get(`tnc${id}`);
   if(!redisdata){
@@ -46,12 +43,12 @@ export async function POST(req, context){
   const {id} = context.params;
   const redisdata = await client.get(`category${id}`);
   if(!redisdata){
-    const courceIdQuery = `Select id from jtc_courses WHERE name = '${id}'`
+    const courceIdQuery = `Select id from jtc_courses WHERE link = '${id}'`
     const courceId = await executeQuery(courceIdQuery)
    
     if(courceId.length > 0){
-      const id = courceId[0].id
-    const query =  `Select id, category_name from jtc_course_category WHERE course_id Like '%${id}%' && deleted_by = '0' `
+      const newid = courceId[0].id
+    const query =  `Select id, category_name from jtc_course_category WHERE course_id Like '%${newid}%' && deleted_by = '0' `
       const data = await executeQuery(query);
 
       if(data.length > 0) {

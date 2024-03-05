@@ -28,7 +28,7 @@ export async  function PATCH(req){
   const {course} = await req.json();
   const redisdata = await client.get(`viode${course}`);
   if(!redisdata){
-      const query =  `Select description from jtc_about_points WHERE point = '${course}' `
+      const query =  `Select description from jtc_about_points WHERE point = (SELECT name from jtc_courses where link = '${course}') `
       const data = await executeQuery(query);
       if(data.length > 0) {
       const value =  await JSON.stringify(data)
@@ -46,7 +46,7 @@ export async  function POST(req){
   const {course} = await req.json();
   const redisdata = await client.get(`faqs${course}`);
   if(!redisdata){
-      const query =  `Select id,point,description from jtc_faqs WHERE faqs_about = '${course}' `
+      const query =  `Select id,point,description from jtc_faqs WHERE faqs_about = (SELECT name from jtc_courses where link = '${course}')  `
       const data = await executeQuery(query);
       if(data.length > 0) {
       const value =  await JSON.stringify(data)
