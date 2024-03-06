@@ -23,13 +23,13 @@ export async  function GET(req, context){
 
 export async  function PATCH(req, context){
   const {id} = context.params;
-  const redisdata = await client.get(`tnc${id}`);
+  const redisdata = await client.get(id);
   if(!redisdata){
       const query =  `Select page_css,page_html from jtc_website_links WHERE nav_link = '/${id}' `
       const data = await executeQuery(query);
       if(data.length > 0) {
       const value =  await JSON.stringify(data)
-      await client.set(`tnc${id}`, value);
+      await client.set(id, value);
         return NextResponse.json({data},{success : true}, {status : 200})
       }
       else return NextResponse.json({message : "Data Empty"},{success : false}, {status : 206})
@@ -65,3 +65,7 @@ export async function POST(req, context){
 }
 }
 
+
+export async function PUT(req, context){
+ 
+}

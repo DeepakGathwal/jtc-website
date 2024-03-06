@@ -4,7 +4,6 @@ import React,{useState, useEffect} from 'react';
 import { FaAngleDoubleRight , FaFacebookF , FaYoutube ,  FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoCall } from "react-icons/io5";
-import { FiMapPin } from "react-icons/fi";
 import { MdMailOutline } from "react-icons/md";
 import { PiMapPinBold } from "react-icons/pi";
 import Image from 'next/image';
@@ -13,11 +12,10 @@ export default function Footer() {
     const [state, setState] = useState([])
     const allData = async() => {
         const {data} = await footerData();
-        if(data.length > 0)
         return setState(...data)
       }
     
-
+     
       useEffect(() => {
         allData()
       },[])
@@ -49,16 +47,18 @@ export default function Footer() {
                                 </div>
                             </div>
 
+                        
+
                             <div className="col-lg-2 col-md-6 col-sm-6 col-6">
                                 <div className="edu-footer-widget explore-widget">
                                     <h5 className="widget-title">Explore</h5>
                                     <div className="inner">
                                         <ul className="footer-link link-hover">
-                                            <li><a href="https://www.jtcindia.org"><FaAngleDoubleRight /> Home</a></li>
-                                            <li><a href="https://www.jtcindia.org/about_us.php"><FaAngleDoubleRight /> About Us</a></li>
-                                            <li><a href="https://www.jtcindia.org/tutorials/index.php"><FaAngleDoubleRight /> Tutorials</a></li>
-                                            <li><a href="https://www.jtcindia.org/courses.php"><FaAngleDoubleRight /> Courses</a></li>
-
+                                        {state && state.links && state.links.map((el) =>{
+                                            if(el.explore == "1") return(
+                                            <li><a href={el.nav_link}><FaAngleDoubleRight />{el.name}</a></li>
+                                            )})}
+                                    
                                         </ul>
                                     </div>
                                 </div>
@@ -69,12 +69,10 @@ export default function Footer() {
                                     <h5 className="widget-title">Useful Links</h5>
                                     <div className="inner">
                                         <ul className="footer-link link-hover">
-                                            <li><a href="https://jtcindia.org/contact_us.php"><FaAngleDoubleRight /> Contact Us</a></li>
-                                            <li><a className="popup-btn" data-popup="joinNow" ><FaAngleDoubleRight /> Join Us</a></li>
-                                            <li><a className="popup-btn" data-popup="hirefrom" ><FaAngleDoubleRight /> Hire from Us</a></li>
-                                            <li><a href="https://jtcindia.org/termsAndCondition.php" target="_blank"><FaAngleDoubleRight /> Terms & Condition</a></li>
-                                            <li><a href="https://jtcindia.org/privacyPolicy.php" target="_blank"><FaAngleDoubleRight />  Privacy Policy</a></li>
-
+                                        {state && state.links && state.links.map((el) =>{
+                                            if(el.explore == "0") return(
+                                            <li><a href={el.nav_link}><FaAngleDoubleRight />{el.name}</a></li>
+                                            )})}
                                         </ul>
                                     </div>
                                 </div>

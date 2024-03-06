@@ -3,20 +3,23 @@ import { blogs } from '@/apis/apis';
 import Link from 'next/link';
 import { FaArrowRight } from "react-icons/fa6";
 import { SiOpenbadges } from "react-icons/si";
+import { usePathname } from 'next/navigation'
 import { SlCalender } from "react-icons/sl";
 import Image from 'next/image';
 
 const LatestBlogHeading = () => {
+    const path = usePathname()
     const [state, setState] = useState([])
     const allData = async() => {
-        const {data} = await blogs();
+        const {data} = await blogs(path);
+        console.log(data);
       
          return setState(data)
       }
 
       useEffect(() => {
         allData()
-      },[])
+      },[path])
   return (
     <>
 
@@ -26,8 +29,6 @@ const LatestBlogHeading = () => {
             <div className="wrapper">
                 <div className="container eduvibe-animated-shape">
                     
-                       
-
       <div className="row g-5 mt-30">
                         {state.length > 0 && state.map((el, i) => (
                           

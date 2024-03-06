@@ -14,7 +14,7 @@ let about = "about"
 let navbar = "navbar"
 let tutorial = "tutorial"
 
-export const blogs = async () => {
+export const blogs = async (id) => {
   try {
     const { data } = await instance.get(blog);
     return data;
@@ -315,6 +315,29 @@ export const tutorialCourse = async (type) => {
   try {
     const value = JSON.stringify({ type })
     const { data } = await instance.post(tutorial, value);
+    return data;
+  } catch (err) {
+    return err
+  }
+};
+
+
+
+export const tutorialChapter = async (course) => {
+  try {
+    const value = JSON.stringify({ course })
+    const { data } = await instance.put(tutorial, value);
+    return data;
+  } catch (err) {
+    return err
+  }
+};
+
+
+export const tutorialTopic = async (topic) => {
+  try {
+    const value = JSON.stringify({ topic })
+    const { data } = await instance.patch(tutorial, value);
     return data;
   } catch (err) {
     return err

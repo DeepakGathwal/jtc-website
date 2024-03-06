@@ -1,9 +1,6 @@
 import React,{useState, useEffect} from 'react'
-import { blogs } from '@/apis/apis';
 import Link from 'next/link';
 import { FaArrowRight } from "react-icons/fa6";
-import { SiOpenbadges } from "react-icons/si";
-import { SlCalender } from "react-icons/sl";
 import Image from 'next/image';
 import LatestBlogHeading from './LatestBlogHeading';
 
