@@ -12,7 +12,8 @@ const SyllybusDownload = ({coursename}) => {
       }
     const submitForm = async(e) => {
         e.preventDefault()
-        const data =  await  brochureForm(field)
+        field.course = coursename
+         await  brochureForm(field)
         e.preventDefault()
 
     }

@@ -15,42 +15,42 @@ let navbar = "navbar"
 let tutorial = "tutorial"
 
 export const blogs = async () => {
-  try{
+  try {
     const { data } = await instance.get(blog);
     return data;
 
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
 
 export const singleBlog = async (id) => {
-  try{
+  try {
     const { data } = await instance.get(id);
     return data;
 
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
 
 export const allChoosingPoint = async () => {
-  try{
+  try {
     const { data } = await instance.get(choosePoint);
     return data;
 
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
 
 
 export const footerData = async () => {
-  try{
+  try {
     const { data } = await instance.get(footer);
     return data;
 
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
@@ -59,20 +59,20 @@ export const footerData = async () => {
 
 
 export const alltestimonials = async () => {
-  try{
+  try {
     const { data } = await instance.get(testimonials);
     return data;
 
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
 export const homeCourses = async () => {
-  try{
+  try {
     const { data } = await instance.get(cources);
     return data;
 
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
@@ -82,22 +82,22 @@ export const homeCourses = async () => {
 
 
 export const homeCompany = async () => {
-  try{
+  try {
     const { data } = await instance.get(company);
     return data;
 
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
 
 
 export const aboutUS = async () => {
-  try{
+  try {
     const { data } = await instance.get(about);
     return data;
 
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
@@ -106,72 +106,65 @@ export const aboutUS = async () => {
 
 
 export const enquiryForm = async (field) => {
-  try{
-   
+  try {
+
     const value = await JSON.stringify(field)
     const { data } = await instance.post(choosePoint, value);
-   await socket.emit('formSubmited',data)
+    await socket.emit('formSubmited', data)
     return data;
 
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
 
 
 export const brochureForm = async (field) => {
-  try{
-   
-    const value = await JSON.stringify(field)
-    const  response  = await instance.get('new', {
-      responseType: 'blob',
-    })
-    await socket.emit('formSubmited',response.data)
+  try {
+    const response = await instance.post(company, JSON.stringify(field), { responseType: 'blob' });
     const blob = new Blob([response.data], { type: response.headers['content-type'] });
-      const link = document.createElement('a');
-      link.href = window.URL.createObjectURL(blob);
-      link.download = name;
-     return link.click();
-
-   
-
-  }catch(err){
-    return err
+    
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = `${field.course}.pdf`;
+    
+    return link.click();
+  } catch (err) {
+    return err;
   }
 };
 
-
 export const hireUsForm = async (field) => {
-  try{
+  try {
     const value = await JSON.stringify(field)
     const { data } = await instance.patch(company, value);
-  await  socket.emit('formSubmited',data)
+    await socket.emit('formSubmited', data)
     return data;
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
 
 
 export const joinUsForm = async (field) => {
-  try{
+  try {
     const value = await JSON.stringify(field)
     const { data } = await instance.patch(choosePoint, value);
-   await socket.emit('formSubmited',data)
+    await socket.emit('formSubmited', data)
     return data;
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
 
 
 export const batchForm = async (field) => {
-  try{
+  try {
     const value = await JSON.stringify(field)
     const { data } = await instance.put(choosePoint, value);
-  await  socket.emit('formSubmited',data)
+    await socket.emit('formSubmited', data)
     return data;
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
@@ -179,165 +172,162 @@ export const batchForm = async (field) => {
 
 
 export const allRoles = async (field) => {
-  try{
+  try {
     const { data } = await instance.get(courseSections);
     return data;
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
 
 
 
-
-
 export const allCourceTypes = async () => {
-  try{
-    const  {data}  = await instance.patch(cources);
- 
+  try {
+    const { data } = await instance.patch(cources);
+
     return data;
 
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
 
 
 export const termsAndCondition = async (id) => {
-  try{
-    const {data}  = await instance.patch(id);
+  try {
+    const { data } = await instance.patch(id);
     return data;
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
 
 
 export const courcesList = async (id) => {
-  try{
-    const value = JSON.stringify({id})
-    const {data}  = await instance.put(cources, value);
+  try {
+    const value = JSON.stringify({ id })
+    const { data } = await instance.put(cources, value);
     return data;
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
 
 
 export const courseData = async (name) => {
-  try{
-    const value = JSON.stringify({name})
-    const {data}  = await instance.post(cources, value);
+  try {
+    const value = JSON.stringify({ name })
+    const { data } = await instance.post(cources, value);
     return data;
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
 
 
 export const coursePoint = async (course) => {
-  try{
-    const value = JSON.stringify({course})
-    const {data}  = await instance.put(courseSections,value );
+  try {
+    const value = JSON.stringify({ course })
+    const { data } = await instance.put(courseSections, value);
     return data;
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
 
 
 export const courceViodePoint = async (course) => {
-  try{
-    const value = JSON.stringify({course})
-    const {data}  = await instance.patch(about,value );
+  try {
+    const value = JSON.stringify({ course })
+    const { data } = await instance.patch(about, value);
     return data;
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
 
 
 export const allBatches = async (course) => {
-  try{
-    const value = JSON.stringify({course})
-    const {data}  = await instance.post(courseSections,value );
+  try {
+    const value = JSON.stringify({ course })
+    const { data } = await instance.post(courseSections, value);
     return data;
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
 
 
 export const courseCatgories = async (id) => {
-  try{
-    const {data}  = await instance.post(id);
+  try {
+    const { data } = await instance.post(id);
     return data;
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
 
 export const courseChapter = async (id) => {
-  try{
-    const value = JSON.stringify({id})
-    const {data}  = await instance.patch(courseSections, value);
+  try {
+    const value = JSON.stringify({ id })
+    const { data } = await instance.patch(courseSections, value);
     return data;
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
 
 
 export const courseFaqs = async (course) => {
-  try{
-    const value = JSON.stringify({course})
-    const {data}  = await instance.post(about, value);
+  try {
+    const value = JSON.stringify({ course })
+    const { data } = await instance.post(about, value);
     return data;
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
 
 
 export const allNavbarLinks = async () => {
-  try{   
-    const {data}  = await instance.get(navbar);
+  try {
+    const { data } = await instance.get(navbar);
     return data;
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
 
 
 
-
 export const tutorialType = async () => {
-  try{   
-    const {data}  = await instance.get(tutorial);
+  try {
+    const { data } = await instance.get(tutorial);
     return data;
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
 
 
 export const tutorialCourse = async (type) => {
-  try{
-    const value = JSON.stringify({type})
-    const {data}  = await instance.post(tutorial, value);
+  try {
+    const value = JSON.stringify({ type })
+    const { data } = await instance.post(tutorial, value);
     return data;
-  }catch(err){
+  } catch (err) {
     return err
   }
 };
 
 
 export const boucherDownload = async (type) => {
-  try{
-    const value = JSON.stringify({type})
-    const {data}  = await instance.post(tutorial, value);
+  try {
+    const value = JSON.stringify({ type })
+    const { data } = await instance.post(tutorial, value);
     return data;
-  }catch(err){
+  } catch (err) {
     return err
   }
 };

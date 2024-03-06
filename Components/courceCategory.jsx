@@ -34,20 +34,20 @@ const CourceCategory = ({ coursename }) => {
         <div className='col-md-7'>
             <div className="accordion-style-2 acc-section">
                 <div className="accordion custom">
-                {state && state.map((el) => (
-                    <div className="accordion-item">
+                {state && state.map((el, i) => (
+                    <div key={i} className="accordion-item">
                         <input type="checkbox" id={"toggle"+el.id} className="accordion-toggle" />
                         <label for={"toggle"+el.id} id={el.id} onClick={getCourceChapter} eventKey="0" className="accordion-title">
                             <h2 id={el.id} className="accordion-header accordion-button">{el.category_name}</h2>
                         </label>
                         <div className="accordion-collapse">
                             <div className="accordion-body module">
-                            {chapters && chapters.map((ch) => (
+                            {chapters && chapters.map((ch, i) => (
                                     <>
-                                        <h4 >{ch.chapter}</h4>
+                                        <h4 key={i}>{ch.chapter}</h4>
                                         <div className="list_mod">
-                                        {ch.topic && ch.topic.map((tp) => (
-                                        <p> {tp.topic}</p>
+                                        {ch.topic && ch.topic.map((tp, p) => (
+                                        <p key={p}> {tp.topic}</p>
                                         ))}
                                         </div>
                                     </>

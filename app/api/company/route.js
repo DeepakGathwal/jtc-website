@@ -48,25 +48,24 @@ export async  function PATCH(req){
 
 export async  function POST(req){
   const {name, phone,email, course} = await req.json();
-  const findCource =   `Select id,name from jtc_courses WHERE name = ${course} Union All Select name, brochure from jtc_brochures WHERE course_id = '${course}'`
+  const findCource =  `Select course.id,course.name as course, brochures.brochure from jtc_courses as course INNER JOIN jtc_brochures as brochures On brochures.course_id = course.id  WHERE course.link = '${course}' `
   const getCourceQuery = await executeQuery(findCource)
   if(getCourceQuery.length == 0) return  NextResponse.json({message : "Cource Not Found"},{success : false}, {status : 206})
-   const query =  `Insert into jtc_enquiry_form SET cource = "${course}",name = "${name}", email = "${email}" , phone_number = "${phone}",  form_id = '4'`
+  const courseId = await getCourceQuery[0].id
+  const query =  `Insert into jtc_enquiry_form SET cource = "${courseId}",name = "${name}", email = "${email}" , phone_number = "${phone}",  form_id = '5'`
 
    const insertData = await executeQuery(query);
   if(insertData.affectedRows >  0){
-    const courceName = getCourceQuery[0].name
+    const courceName = getCourceQuery[0].course
 
       const message = `${name} Just fill Download Curriculum form. His Download ${courceName} Brochure. His phone no. is ${phone}` 
       const subject = "Download Curriculum"
       const options = {message, subject};
 
      await sendEmail(options)
-     const pdfFile = getCourceQuery[1].brochure
-     const decodedPdfData = Buffer.from(pdfFile, 'base64');
-     NextResponse.setHeader('Content-Disposition', 'attachment; filename=filename.txt');
-     NextResponse.setHeader('Content-Type', 'application/text');
-     return NextResponse.send(decodedPdfData).json({message : "Form Submited Successfully", notification : message, success : true}, {status : 200})
+     const pdfFile = Buffer.from(getCourceQuery[0].brochure, 'base64');
+     return new NextResponse(pdfFile, { headers: { 'content-type': 'application/text' } });
+  
     }
   else return NextResponse.json({message : "Form Submition Issue"},{success : false}, {status : 206})
 }

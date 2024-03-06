@@ -57,7 +57,7 @@ const Faqs = ({coursename}) => {
 									<div className="accordion-style-2 acc-section">
                                                 <Accordion>
                                                 {state && state.map((el, i) =>(
-												<Accordion.Item eventKey={el.id}>
+												<Accordion.Item key={i} eventKey={el.id}>
 													<Accordion.Header>{el.point}</Accordion.Header>
 													<Accordion.Body>{el.description}
 													</Accordion.Body>

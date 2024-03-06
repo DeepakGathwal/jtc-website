@@ -68,8 +68,10 @@ function Index() {
         
         <LatestTutorial category={"Latest"} id = {0}/>
 
-        {state && state.map((el) => (
-            <LatestTutorial category={el.category} id = {el.id}/>
+        {state && state.map((el, i) => (
+            <div key={i}>
+                            <LatestTutorial category={el.category} id = {el.id}/>
+            </div>
 
         ))}
     </>
