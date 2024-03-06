@@ -322,13 +322,3 @@ export const tutorialCourse = async (type) => {
 };
 
 
-export const boucherDownload = async (type) => {
-  try {
-    const value = JSON.stringify({ type })
-    const { data } = await instance.post(tutorial, value);
-    return data;
-  } catch (err) {
-    return err
-  }
-};
-
