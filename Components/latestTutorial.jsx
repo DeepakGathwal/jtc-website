@@ -1,48 +1,59 @@
-import React,{useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image'
 import { tutorialCourse } from '@/apis/apis';
 
-const ProgrammingAndFramework = ({category, id}) => {
+const ProgrammingAndFramework = ({ category, id }) => {
 
-	const [state, setState] = useState([])
-    const allData = async() => {
-        const {data} = await tutorialCourse(id);
-		console.log(data);
+    const [state, setState] = useState([])
+    const allData = async () => {
+        const { data } = await tutorialCourse(id);
+        console.log(data);
         return setState(data)
-      }
-    
+    }
 
-      useEffect(() => {
+
+    useEffect(() => {
         allData()
-      },[])
+    }, [])
+    const words = category.split(' ');
+    const lastWord = words.pop();
 
 
-  return (
-    <>
-      <section className="top_courses mt--40" id="tutorial">
-	<div className="container">
-		<div className="row">
-		<div className="section-title white-title sal-animate mb--40 mt--40" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-                           
-						   <h3 className="title tg-svg">{category} <span className="position-relative color-primary"><span className="svg-icon" id="svg-2"><svg width="100%" height="100%" viewBox="0 0 145 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1.00016 15.2711C18.1407 8.34427 70.832 -1.93441 144.473 12.3652" stroke="currentcolor" strokeWidth="4" ></path>
-<path d="M26.2943 14.0041C38.9177 9.44643 77.3772 3.50055 130.227 16.1786" stroke="currentcolor" strokeWidth="2" ></path>
-</svg></span>Tutorials </span> </h3>
-					   </div>
-			</div>
-		<div className="row">
-			
-			{state && state.map((el, i) => (
-				<div key={i} className="col-md-2 col-6"  >
-				<div className="tutor_box">
-					<Image width={100} height={50} src={el.icon} alt={el.icon}/>
-					<p>{el.name}</p>
-				</div>
-			</div>
-			))}
+    return (
+        <>
+            <div className="container">
+                <div className="row">
+                    <div className="section-title white-title sal-animate mb--40 mt--40">
+
+                        <h3 className="title tg-svg">
+                            {words.map((word, index) => (
+                                <React.Fragment key={index}>
+                                    <span>{word}</span>{' '}
+                                </React.Fragment>
+                            ))}
+                            <span style={{ position: 'relative', display: 'inline-block', color: '#525FE1' }}>
+                                {lastWord}
+                                <svg width="14" height="14" viewBox="0 0 145 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.00016 15.2711C18.1407 8.34427 70.832 -1.93441 144.473 12.3652" stroke="currentColor" strokeWidth="4"></path>
+                                    <path d="M26.2943 14.0041C38.9177 9.44643 77.3772 3.50055 130.227 16.1786" stroke="currentColor" strokeWidth="2"></path>
+                                </svg>
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div className="row">
+
+                    {state && state.map((el, i) => (
+                        <div key={i} className="col-md-2 col-6"  >
+                            <div className="tutor_box">
+                                <Image width={100} height={50} src={el.icon} alt={el.icon} />
+                                <p>{el.name}</p>
+                            </div>
+                        </div>
+                    ))}
 
 
-			{/* <div className="col-md-2 col-6"  >
+                    {/* <div className="col-md-2 col-6"  >
 				<div className="tutor_box">
 					<Image width={100} height={50} src="./assets/images/tutorial_icon/jdbc.png" alt=""/>
 					<p>JDBC</p>
@@ -116,11 +127,10 @@ const ProgrammingAndFramework = ({category, id}) => {
 				</div>
 				
 			</div> */}
-		</div>
-	</div>
-</section>
-    </>
-  )
+                </div>
+            </div>
+        </>
+    )
 }
 
 export default ProgrammingAndFramework

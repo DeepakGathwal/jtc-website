@@ -13129,13 +13129,13 @@ Gallery Item
 .edu-blog-widget {
   background: #F5F5F5;
   border-radius: 5px;
-  padding: 30px; }
+  padding: 15px; }
   @media only screen and (max-width: 767px) {
     .edu-blog-widget {
       padding: 20px; } }
   .edu-blog-widget .widget-title {
-    padding-bottom: 20px;
-    margin-bottom: 28px;
+    padding: 10px 0;
+    /* margin-bottom: 28px; */
     border-bottom: 1px solid rgba(45, 40, 78, 0.07);
     font-weight: 700;
     font-size: 24px;
@@ -13175,7 +13175,7 @@ Gallery Item
       display: flex;
       justify-content: space-between;
       position: relative; }
-      .edu-blog-widget.widget-categories .category-list li a::after {
+      /* .edu-blog-widget.widget-categories .category-list li a::after {
         position: absolute;
         content: "";
         background: #EEEEEE;
@@ -13183,7 +13183,7 @@ Gallery Item
         width: 1px;
         right: 60px;
         top: 50%;
-        transform: translateY(-50%); }
+        transform: translateY(-50%); } */
     .edu-blog-widget.widget-categories .category-list li + li {
       margin-top: 15px; }
   .edu-blog-widget.widget-latest-post .latest-post {
@@ -16515,9 +16515,31 @@ height: 100vh; }
     display: inline-block;
     z-index: 1;
 }
+ /* .title::last-word{
+  color: white;
+ } */
+
+.section-title .title span svg{
+  position: absolute;
+  left: 60%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  text-align: center;
+  margin: 0 auto;
+  bottom: -14px;
+  height: 25px;
+  width: 145px;
+  pointer-events: none;
+  z-index: -1;
+  color: #FFA41B;
+}
+
 .title .svg-icon {
     position: absolute;
-    left: 50%;
+    left: 88%;
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
@@ -16527,7 +16549,7 @@ height: 100vh; }
     margin: 0 auto;
     bottom: -14px;
     height: 25px;
-    width: 145px;
+    width: 122px;
     pointer-events: none;
     z-index: -1;
 }
@@ -17240,4 +17262,10 @@ form.send-form .main-btn-rect {
     font-size: 16px;
     line-height: 26px;
     margin-bottom: 20px;
+}
+.edu-blog-sidebar{
+  position: fixed;
+  width: 22%;
+  height: 85vh;
+  overflow-x: scroll;
 }
