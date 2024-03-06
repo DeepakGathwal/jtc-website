@@ -1,8 +1,15 @@
+"use client"
 import Link from 'next/link';
-import React from 'react'
+import { React  ,useState } from 'react'
 import { FaArrowLeft,FaArrowRight } from "react-icons/fa";
-
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import { FaGripLines } from "react-icons/fa6";
 const page = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <>
       <div class="edu-blog-details-area mt--20 bg-color-white">
@@ -37,7 +44,7 @@ const page = () => {
               </div>
             </aside>
           </div>
-          <div class="col-lg-9 order-1 order-lg-2">
+          <div class="col-lg-9 order-1 order-lg-2 pt--20">
             <div class="blog-details-1">
                <div className="row g-5">
                   <div className="col-md-12 col-12 d-flex mb--20 justify-content-between">
