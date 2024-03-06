@@ -7,7 +7,7 @@ export async  function GET(req, context){
     const {id} = context.params;
     const redisdata = await client.get(`blog${id}`);
     if(!redisdata){
-        const query =  `Select blog.video_link,blog.heading,blog.banner,blog.blog_html,blog.blog_css,blog.id,blog.name,category.name as category, blog.icon, Date_Format(blog.created_at, '%d-%M-%Y') as addedAt from jtc_blogs as blog Left Join jtc_blog_category as category On category.id = blog.blog_category Where blog.deleted_by = '0' && blog.id = ${id}  `
+        const query =  `Select blog.video_link,blog.heading,blog.banner,blog.blog_html,blog.blog_css,blog.id,blog.name,category.name as category, blog.icon, Date_Format(blog.created_at, '%d-%M-%Y') as addedAt from jtc_blogs as blog Left Join jtc_blog_category as category On category.id = blog.blog_category Where blog.deleted_by = '0' && blog.link = "${id}"  `
         const data = await executeQuery(query);
         if(data.length > 0) {
         const value = await JSON.stringify(data)

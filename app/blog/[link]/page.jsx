@@ -7,16 +7,16 @@ import Image from 'next/image'
 const Index = () => {
   const [state, setState] = useState([])
   const router = useParams()
-  const {id} = router
+  const {link} = router
 
   const allData = async()=>{
-    const {data} = await singleBlog(id)
+    const {data} = await singleBlog(link)
     setState(data);
   }
 
   useEffect(() => {
     allData();
-  },[id])
+  },[link])
 
   return (
     <>

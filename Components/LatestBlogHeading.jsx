@@ -36,7 +36,7 @@ const LatestBlogHeading = () => {
                          <div className="edu-blog blog-type-2 bg-white radius-small"> 
                                 <div className="inner">
                                     <div className="thumbnail">
-                            <Link href={"/blog/"+el.id}>
+                            <Link href={"/blog/"+el.link}>
                                          <Image src={el.icon} alt={el.name} width={365} height={122}/>
                             </Link>
                                     </div>
@@ -50,7 +50,7 @@ const LatestBlogHeading = () => {
                                                 <li><SlCalender /> {el.addedAt}</li>
                                             </ul>
                                             <div className="read-more-btn">
-                                            <Link href={"/blog/"+el.id}>
+                                            <Link href={"/blog/"+el.link}>
                                                 Read More <FaArrowRight />
                                                 </Link>
                                             </div>
