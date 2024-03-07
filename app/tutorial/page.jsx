@@ -2,13 +2,12 @@
 import React,{useState, useEffect} from 'react';
 import "../globals.css"
 import "./orbit.css";
-import { FaArrowRight } from "react-icons/fa6";
 import "./hero.css";
 import {  tutorialType } from '@/apis/apis';
 import Image from 'next/image';
 import LatestTutorial from '@/Components/latestTutorial';
 
-function Index() {
+const Tutorial = () => {
 
 
     const [state, setState] = useState([])
@@ -21,7 +20,6 @@ function Index() {
       useEffect(() => {
         allData()
       },[])
-
 
   return (
     <>
@@ -78,4 +76,4 @@ function Index() {
   )
 }
 
-export default Index
+export default Tutorial
