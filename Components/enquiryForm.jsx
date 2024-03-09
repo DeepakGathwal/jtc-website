@@ -49,7 +49,7 @@ const handelChange = (e) => {
                         </div>
                         <div className="input-box mb--20">
                           <input type="tel" id="phone1" className="phone-input" name="phone"
-                            placeholder="Mobile Number" required onChange={handelChange} value={field.phone} />
+                            placeholder={field.phone ? "Mobile Number" : ""} required onChange={handelChange} value={field.phone} />
                         </div>
                          {/* <div className="input-box mb--20">
                                                             <input type="email"   id="phone" className="phone-input" name="email" placeholder="@email.com" required onChange={handelChange} value={field.email}/>

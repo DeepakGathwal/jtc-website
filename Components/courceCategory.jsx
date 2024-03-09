@@ -32,6 +32,8 @@ const CourceCategory = ({ coursename }) => {
     return (
         <>		
         <div className='col-md-7'>
+        <div class="edu-card card-type-7 radius-small">
+		<div class="inner">
             <div className="accordion-style-2 acc-section">
                 <div className="accordion custom">
                 {state && state.map((el, i) => (
@@ -58,6 +60,8 @@ const CourceCategory = ({ coursename }) => {
                         </div>
                     </div>
                         ))}   
+                </div>
+                </div>
                 </div>
                 
             </div>

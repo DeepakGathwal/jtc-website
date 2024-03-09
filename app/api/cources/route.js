@@ -50,7 +50,7 @@ export async  function POST(req){
   const {name} = await req.json();
   const redisdata = await client.get(name);
   if(!redisdata){
-    const query =  `Select id, icon, banner,name, description,meta_tags,meta_keywords,meta_description,video_link from jtc_courses WHERE link = '${name}'`
+    const query =  `Select link,id, icon, banner,name, description,meta_tags,meta_keywords,meta_description,video_link from jtc_courses WHERE link = '${name}'`
       const data = await executeQuery(query);
       if(data.length > 0) {
       const value =  await JSON.stringify(data)
@@ -67,7 +67,7 @@ export async  function PUT(req){
   const {id} = await req.json();
   const redisdata = await client.get(`category${id}`);
   if(!redisdata){
-    const query =  `Select id, name, icon from jtc_courses WHERE category Like '%${id}%' `
+    const query =  `Select id, name, icon, link from jtc_courses WHERE category Like '%${id}%' `
       const data = await executeQuery(query);
       if(data.length > 0) {
       const value =  await JSON.stringify(data)
