@@ -64,9 +64,6 @@
 .acc-section .accordion-item:last-child {
     margin-bottom: 0;
 }
-.acc-section .accordion-item{
-    margin-bottom: 24px;
-}
 .connectus .hello-call {
     /* margin-top: -20px; */
     margin-bottom: -32px;
@@ -111,6 +108,7 @@
     padding-left: 0;
     cursor: pointer;
     width: 100%;
+    border: 1px solid #EEEEEE;
 }
 .custom .accordion-item .accordion-collapse {
     visibility: hidden;

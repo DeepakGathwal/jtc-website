@@ -17275,3 +17275,11 @@ form.send-form .main-btn-rect {
 .offcanvas-start{
     top:130px;  
 }
+
+#phone{
+  appearance: none;
+}
+/* .blog_show .blog-post{display:none;}
+.blog_show .blog-post:nth-child(-n+3){
+  display:block
+} */

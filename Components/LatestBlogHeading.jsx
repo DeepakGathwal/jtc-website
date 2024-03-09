@@ -1,22 +1,26 @@
 import React,{useState, useEffect} from 'react'
 import { blogs } from '@/apis/apis';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation'
 import { FaArrowRight } from "react-icons/fa6";
 import { SiOpenbadges } from "react-icons/si";
 import { SlCalender } from "react-icons/sl";
 import Image from 'next/image';
 
 const LatestBlogHeading = () => {
+    const router = usePathname()
     const [state, setState] = useState([])
     const allData = async() => {
         const {data} = await blogs();
-      
-         return setState(data)
+     
+      if(data){
+       if( router == "/blog") return setState(data)
+     
       }
-
+          }  
       useEffect(() => {
         allData()
-      },[])
+      },[router])
   return (
     <>
 
@@ -28,11 +32,11 @@ const LatestBlogHeading = () => {
                     
                        
 
-      <div className="row g-5 mt-30">
+      <div className="row g-5 mt-30 blog_show">
                         {state.length > 0 && state.map((el, i) => (
                           
                             <>
-                            <div key={i} className="col-lg-4 col-md-6 col-12">
+                            <div key={i} className="col-lg-4 col-md-6 col-12 blog-post">
                          <div className="edu-blog blog-type-2 bg-white radius-small"> 
                                 <div className="inner">
                                     <div className="thumbnail">

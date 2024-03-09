@@ -67,7 +67,7 @@ export default function BannerAreaHome() {
                                                             <input type="text" placeholder="Name" name="name" id="name6" required onChange={handelChange} value={field.name}/>
                                                         </div>
                                                         <div className="input-box mb--20">
-                                                            <input type="number"  min="10" id="phone" className="phone-input" name="phone" placeholder="Mobile Number" required onChange={handelChange} value={field.phone}/>
+                                                            <input type="number"  maxLength="10" id="phone" className="phone-input" name="phone" placeholder="Mobile Number" required onChange={handelChange} value={field.phone}/>
                                                         </div>
                                                         {/* <div className="input-box mb--20">
                                                             <input type="email"   id="phone" className="phone-input" name="email" placeholder="@email.com" required onChange={handelChange} value={field.email}/>
