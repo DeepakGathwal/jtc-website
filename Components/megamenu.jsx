@@ -21,7 +21,7 @@ const Megamenu = ({categories, cources, setActiveTab, activeTab}) => {
                                     {cources && cources.map((el,o) => (
                                         <>
                                             <div key={o} className="course-card">
-                                                <Link href={'/course/' + el.link} className="cardlinks column-flex">
+                                                <Link href={'/course/'+el.link} className="cardlinks column-flex">
                                                     <Image src={el.icon} alt={el.name} width={20} height={20} className="courseIcon" />
                                                     <h3>{el.name}</h3>
                                                     <div className="details">

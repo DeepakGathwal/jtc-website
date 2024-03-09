@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link';
+import { usePathname } from 'next/navigation'
 import Image from 'next/image';
 import Megamenu from "./megamenu";
 import { IoCall } from "react-icons/io5";
@@ -14,6 +15,7 @@ import HireFromUs from './HireFromUs';
 import JoinUs from './JoinUs';
 
 export default function Header() {
+    const path = usePathname()
     const router = useRouter();
     const [categories, setCategories] = useState([])
     const [megaMenu, setMegaMenu] = useState(false)
@@ -55,7 +57,7 @@ export default function Header() {
     const navBarFunction = async(link) => {
         if(link == "/courses"){
            
-          return  setMegaMenu(true)
+          return  setMegaMenu(!megaMenu)
         }else if(link == "/hire"){
             setHireShow(true)
           return    setMegaMenu(false)
@@ -67,7 +69,9 @@ export default function Header() {
            return router.push(link)
         }
     }
-
+    useEffect(() => {
+        return  setMegaMenu(false)
+    },[path])
 
     useEffect(() => {
        navbar() 

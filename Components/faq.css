@@ -42,30 +42,28 @@
     border-radius: 5px;
     transition: 0.4s;
 }
-.acc-section .accordion-item .accordion-button::after {
-    background-image: url("./icon/drop-icon.svg");
+.edu-card .inner .acc-section .accordion-item .accordion-button::after {
+    background-image: url("./icon/dropIcon.svg");
     scale: 2.2;
     transition: all 0.5s;
-}
-.acc-section .accordion-item .accordion-toggle:checked + .accordion-title .accordion-button::after {
-    background-image: url("./icon/drop-icon.svg");
-    scale: 2.2;
     transform: rotate(0deg);
 }
-.acc-section .accordion-item .accordion-button{
+.edu-card .inner .acc-section .accordion-item .accordion-toggle:checked + .accordion-title .accordion-button::after {
+    background-image: url("./icon/dropIcon.svg");
+    scale: 2.2;
+    transform: rotate(180deg) !important;
+}
+.edu-card .inner .acc-section .accordion-item .accordion-button{
     box-shadow: none;
 }
-.acc-section .accordion-item .accordion-button:not(.collapsed){
+.edu-card .inner .acc-section .accordion-item .accordion-button:not(.collapsed){
     box-shadow: none;
 }
 .connectus {
     background: linear-gradient(214deg, #DFFCFF, #CCDFFF);
 }
-.acc-section .accordion-item:last-child {
+.edu-card .inner .acc-section .accordion-item:last-child {
     margin-bottom: 0;
-}
-.acc-section .accordion-item{
-    margin-bottom: 24px;
 }
 .connectus .hello-call {
     /* margin-top: -20px; */
@@ -111,6 +109,7 @@
     padding-left: 0;
     cursor: pointer;
     width: 100%;
+    border: 1px solid #EEEEEE;
 }
 .custom .accordion-item .accordion-collapse {
     visibility: hidden;

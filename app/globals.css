@@ -5096,8 +5096,11 @@ textarea:-ms-input-placeholder {
   border-bottom: 1px solid #EEEEEE; }
 
 /* Breadcrumb  */
-.edu-breadcrumb-area {
-  background-image: url(/assets/images/bg/breadcrumb-bg.jpg); }
+.breadcrumb-inner {
+  /* background-image: url(/assets/images/bg/breadcrumb-bg.jpg);  */
+  position: relative;
+}
+.breadCrumb_banner {}
   .edu-breadcrumb-area .shape-image {
     position: absolute;
     z-index: -1; }
@@ -5123,7 +5126,7 @@ textarea:-ms-input-placeholder {
 /* Animation  */
 .eduvibe-animated-shape {
   position: relative;
-  z-index: 9; }
+  z-index: 9; padding:0 !important }
 
 @-webkit-keyframes eduvibe-vsm-y-move {
   0% {
@@ -11883,7 +11886,7 @@ border-radius: 5px; }
 ------------------------------*/
 .breadcrumb-style-1 .page-title .title {
   margin-bottom: 5px; color:#fff; }
-
+.page-title { position: absolute;z-index: 999999; width:100%; bottom: 50px; left:200px}
 .breadcrumb-style-1 .edu-breadcrumb {
   align-items: center; }
   .breadcrumb-style-1 .edu-breadcrumb li {
@@ -12476,7 +12479,7 @@ Gallery Item
     justify-content: center;
     align-items: center;
     transition: 0.4s; }
-    .contact-address-card-1 .inner .icon i {
+    .contact-address-card-1 .inner .icon svg {
       color: var(--color-primary);
       font-size: 24px;
       transition: 0.4s; }
@@ -12495,18 +12498,18 @@ Gallery Item
         color: var(--color-primary); }
   .contact-address-card-1.phone .inner .icon {
     background: rgba(251, 124, 86, 0.1); }
-    .contact-address-card-1.phone .inner .icon i {
+    .contact-address-card-1.phone .inner .icon svg {
       color: var(--color-secondary); }
   .contact-address-card-1.email .inner .icon {
     background: rgba(255, 164, 27, 0.1); }
-    .contact-address-card-1.email .inner .icon i {
+    .contact-address-card-1.email .inner .icon svg {
       color: #FFA41B; }
   .contact-address-card-1:hover {
     background: var(--color-secondary);
     transform: translateY(-15px); }
     .contact-address-card-1:hover .inner .icon {
       background: var(--color-white); }
-      .contact-address-card-1:hover .inner .icon i {
+      .contact-address-card-1:hover .inner .icon svg {
         color: var(--color-secondary); }
     .contact-address-card-1:hover .inner .content .title {
       color: var(--color-white); }
@@ -14889,7 +14892,7 @@ height: 100vh; }
       padding: 0 20px; } }
   .eduvibe-sidebar.course-details-sidebar {
     padding: 0 0px 0 20px;
-    margin-left: -20px; }
+    margin-left: -20px; position: relative; z-index: 9; }
     @media only screen and (max-width: 1199px) {
       .eduvibe-sidebar.course-details-sidebar {
         margin-left: 0px;
@@ -17268,4 +17271,27 @@ form.send-form .main-btn-rect {
   width: 22%;
   height: 85vh;
   overflow-x: scroll;
+}
+.offcanvas>.edu-blog-widget{
+  overflow: auto;
+}
+.offcanvas-start{
+    top:130px;  
+}
+
+#phone{
+  appearance: none;
+}
+/* .blog_show .blog-post{display:none;}
+.blog_show .blog-post:nth-child(-n+3){
+  display:block
+} */
+.accordion-button:not(.collapsed)::after{
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.accordion-button::after{
+  scale: 1.5;
 }

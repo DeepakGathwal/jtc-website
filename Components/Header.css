@@ -79,13 +79,26 @@
     z-index: 5;
     transition: all 0.3s;
     font-family: "Urbanist", sans-serif;
+    max-height: 300px;
 }
 .mega-menu .course-hover {
     background: #F2F8FB;
     min-width: 200px;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
+    overflow-y: scroll;
 }
+
+.mega-menu .course-hover::-webkit-scrollbar-thumb {
+    background-color: #a9a9a946 !important;
+    outline: 1px solid rgba(112, 128, 144, 0.089) !important;
+    border-radius: 5px !important;}
+
+    .mega-menu .course-hover::-webkit-scrollbar {
+        width: 0.2em;
+        height: 0.2em;
+    }
+
 .mega-menu .course-hover ul li {
     display: flex;
     flex-direction: column;
@@ -123,7 +136,6 @@
     width: 509px;
     flex-wrap: wrap;
     gap: 10px;
-    max-height: 212px;
     overflow: scroll;
 }
 .mega-menu .hover-results .course-card .cardlinks {

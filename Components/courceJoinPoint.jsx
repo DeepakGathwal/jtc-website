@@ -7,7 +7,7 @@ const CourceJoinPoint = ({ coursename }) => {
     const allData = async () => {
         const { data } = await coursePoint(coursename)
 
-        if (data.length > 0) return setState(data)
+    return setState(data)
     }
     useEffect(() => {
         allData()

@@ -33,7 +33,7 @@ const LatestBlogHeading = () => {
                         {state.length > 0 && state.map((el, i) => (
                           
                             <>
-                            <div key={i} className="col-lg-4 col-md-6 col-12">
+                            <div key={i} className="col-lg-4 col-md-6 col-12 blog-post">
                          <div className="edu-blog blog-type-2 bg-white radius-small"> 
                                 <div className="inner">
                                     <div className="thumbnail">
