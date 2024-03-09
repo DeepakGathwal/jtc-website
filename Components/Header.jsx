@@ -55,16 +55,16 @@ export default function Header() {
     const navBarFunction = async(link) => {
         if(link == "/courses"){
            
-            setMegaMenu(true)
+          return  setMegaMenu(true)
         }else if(link == "/hire"){
             setHireShow(true)
-              setMegaMenu(false)
+          return    setMegaMenu(false)
         }else if(link == "/join"){
             setjoinForm(true)
-              setMegaMenu(false)
+            return  setMegaMenu(false)
         }else {
             setMegaMenu(false)
-            router.push(link)
+           return router.push(link)
         }
     }
 

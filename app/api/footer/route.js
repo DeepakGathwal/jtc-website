@@ -11,7 +11,7 @@ export async  function GET(req){
         const data = await executeQuery(query);
         if(data.length > 0) {
           for (let index = 0; index < data.length; index++) {
-            const query =  `Select name, nav_link, explore from jtc_website_links WHERE deleted_by = '0'  ORDER by nav_link ASC`
+            const query =  `Select name, nav_link, explore from jtc_website_links WHERE deleted_by = '0' && name Not Like 'JOIN%'  && name Not Like 'Hire%' && name != "Courses"  ORDER by nav_link ASC`
               const executeApi = await executeQuery(query)
               if(executeApi.length > 0){
 

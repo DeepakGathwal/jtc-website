@@ -19,9 +19,6 @@ const Faqs = ({coursename}) => {
 	useEffect(() => {
 	allFaqs()
 	},[coursename])
-    const faqClicked = (event) => {
-        console.log('Element ID:', event.target.id);
-    }
     return (
         <>
             <div className="edu-accordion-area eduvibe-faq-page accordion-shape-1 edu-section-gap bg-color-white">

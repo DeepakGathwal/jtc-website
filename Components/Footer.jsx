@@ -1,6 +1,7 @@
 "use client"
 import { footerData } from '@/apis/apis';
 import React,{useState, useEffect} from 'react';
+import Link from 'next/link'
 import { FaAngleDoubleRight , FaFacebookF , FaYoutube ,  FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoCall } from "react-icons/io5";
@@ -14,7 +15,6 @@ export default function Footer() {
         const {data} = await footerData();
         return setState(...data)
       }
-    
      
       useEffect(() => {
         allData()
@@ -54,9 +54,13 @@ export default function Footer() {
                                     <h5 className="widget-title">Explore</h5>
                                     <div className="inner">
                                         <ul className="footer-link link-hover">
-                                        {state && state.links && state.links.map((el) =>{
+                                        {state && state.links && state.links.map((el, i) =>{
                                             if(el.explore == "1") return(
-                                            <li><a href={el.nav_link}><FaAngleDoubleRight />{el.name}</a></li>
+                                            <li key={i}>
+                                                <Link href={el.nav_link}>
+                                                <FaAngleDoubleRight /> {el.name}
+                                                </Link>
+                                                </li>
                                             )})}
                                     
                                         </ul>
@@ -69,9 +73,13 @@ export default function Footer() {
                                     <h5 className="widget-title">Useful Links</h5>
                                     <div className="inner">
                                         <ul className="footer-link link-hover">
-                                        {state && state.links && state.links.map((el) =>{
+                                        {state && state.links && state.links.map((el, i) =>{
                                             if(el.explore == "0") return(
-                                            <li><a href={el.nav_link}><FaAngleDoubleRight />{el.name}</a></li>
+                                                <li key={i}>
+                                                <Link href={el.nav_link}>
+                                                <FaAngleDoubleRight /> {el.name}
+                                                </Link>
+                                                </li>
                                             )})}
                                         </ul>
                                     </div>

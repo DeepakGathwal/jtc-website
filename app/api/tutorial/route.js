@@ -93,7 +93,7 @@ export async function PATCH(req){
     if(!redisdata){
         const query =  `Select tutorial_css,tutorial_html,meta_description,meta_keywords,meta_tags from jtc_tutorials_topics WHERE link = "${topic}" && deleted_by = '0' `
         const data = await executeQuery(query);
-        console.log(data);
+
         if(data.length > 0) {
         const value =  await JSON.stringify(data)
         await client.set(`topic${topic}`, value);

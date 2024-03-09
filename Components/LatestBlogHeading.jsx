@@ -12,11 +12,11 @@ const LatestBlogHeading = () => {
     const [state, setState] = useState([])
     const allData = async() => {
         const {data} = await blogs(path);
-        console.log(data);
+      if(path == "/")
+      return  data && setState(data.slice(0, 3));
       
-         return setState(data)
-      }
-
+       else  return  data &&  setState(data)
+    }
       useEffect(() => {
         allData()
       },[path])

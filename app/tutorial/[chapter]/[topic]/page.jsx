@@ -1,11 +1,11 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, {useState, useEffect } from 'react'
 import Link from 'next/link';
 import { useParams,useRouter } from 'next/navigation'
 import { FaArrowLeft,FaArrowRight } from "react-icons/fa";
 import { tutorialChapter, tutorialTopic } from '@/apis/apis';
 
-const page = () => {
+const Page = () => {
   const [state, setState] = useState([])
   const [section, setSection] = useState([])
   const router = useParams()
@@ -64,7 +64,7 @@ const page = () => {
                <div className="row g-5">
                   <div className="col-md-12 col-12 d-flex mb--20 justify-content-between">
                     <div className="load-more-btn">
-                                <button className="edu-btn" href="courses.php"><FaArrowLeft/> Previous</button>
+                                <button className="edu-btn"href="courses.php"><FaArrowLeft/> Previous</button>
                             </div>
                             <div className="load-more-btn">
                                 <button className="edu-btn" href="courses.php">Next <FaArrowRight /></button>
@@ -95,4 +95,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

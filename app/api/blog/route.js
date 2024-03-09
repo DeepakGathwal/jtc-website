@@ -9,7 +9,7 @@ import { client } from "@/middelware/redisFile";
 export async  function GET(req){
     const redisdata = await client.get("blogs");
     if(!redisdata){
-        const query = `Select blog.link,blog.id,blog.name,category.name as category, blog.icon, Date_Format(blog.created_at, '%d-%M-%Y') as addedAt from jtc_blogs as blog Left Join jtc_blog_category as category On category.id = blog.blog_category Where blog.deleted_by = '0'`
+        const query = `Select blog.link,blog.id,blog.name,category.name as category, blog.icon, Date_Format(blog.created_at, '%d-%M-%Y') as addedAt from jtc_blogs as blog Left Join jtc_blog_category as category On category.id = blog.blog_category Where blog.deleted_by = '0' Order by blog.id desc`
         const data = await executeQuery(query);
         if(data.length > 0) {
        
