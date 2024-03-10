@@ -53,8 +53,7 @@ export default function FeaturedCourses() {
 
     const allData = async () => {
         const { data } = await homeCourses()
-        if (data.length > 0)
-            return setState(data)
+        return data && setState(data);
     }
 
 

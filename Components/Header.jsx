@@ -33,8 +33,7 @@ export default function Header() {
 
     const allData = async () => {
         const { data } = await allCourceTypes()
-        if (data.length > 0)
-            return setCategories(data)
+        return data && setCategories(data);
     }
      
 

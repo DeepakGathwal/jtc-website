@@ -18,8 +18,8 @@ const Page = () => {
 	const {coursename} = router
 	const allCourseData = async() => {
 		const {data} = await courseData(coursename)
-		if(data.length > 0)
-		return setState(...data)
+		
+		return data && setState(...data)
 	}
 
 	useEffect(() => {

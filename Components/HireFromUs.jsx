@@ -14,7 +14,7 @@ const HireFromUs = ({ Hireshow, setHireShow }) => {
 
     const allData = async () => {
         const { data } = await homeCourses();
-        if (data.length > 0) setState(data);
+        return data && setState(data);
     };
 
     const validateForm = () => {
