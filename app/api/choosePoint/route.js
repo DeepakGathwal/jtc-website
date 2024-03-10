@@ -26,7 +26,6 @@ export async  function GET(req){
 
 export async  function POST(req){
     const {name, phone, course, email} = await req.json();
-
     const findCource =   `Select name from jtc_courses WHERE id = ${course}`
     const getCourceQuery = await executeQuery(findCource)
     if(getCourceQuery.length == 0) return  NextResponse.json({message : "Cource Not Found"},{success : false}, {status : 206})

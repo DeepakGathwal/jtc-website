@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Tnc from './tnc';
 import { hireUsForm, homeCourses } from '@/apis/apis';
+import Link from 'next/link';
 
 const HireFromUs = ({ Hireshow, setHireShow }) => {
     const [field, setField] = useState({
@@ -22,8 +23,8 @@ const HireFromUs = ({ Hireshow, setHireShow }) => {
         const newErrors = { ...errors };
 
         // Name validation
-        if (!field.name.trim()) {
-            newErrors.name = "Please enter your name";
+        if (!/^[a-zA-Z\s]+$/.test(field.name.trim())) {
+            newErrors.name = "Name should only contain alphabets.";
             isValid = false;
         } else {
             newErrors.name = "";
@@ -129,7 +130,7 @@ const HireFromUs = ({ Hireshow, setHireShow }) => {
                                     {/* <Tnc id={"checkbox-2"}></Tnc> */}
                                     <div className="input-box mb--20">
                                         <input type="checkbox" id="checkbox-2" name="checkbox" checked={field.checkbox} onChange={(e) => setField({ ...field, checkbox: e.target.checked })} />
-                                        <label htmlFor="checkbox-2">I accept the terms and conditions</label>
+                                        <label htmlFor="checkbox-2">I accept the <Link href="/termsandcondition">Terms &#38; Conditions</Link>.</label>
                                         {errors.checkbox && <span className="error-message red">{errors.checkbox}</span>}
                                     </div>
                                     <button className="rn-btn edu-btn w-100 mb-20" type="submit">

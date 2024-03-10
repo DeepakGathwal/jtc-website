@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { FaArrowRight } from "react-icons/fa6";
 import { homeCourses, enquiryForm } from '@/apis/apis';
-import Tnc from './tnc';
 import Image from 'next/image';
+import Link from 'next/link';
 
 // ES6 modules
 export default function BannerAreaHome() {
@@ -32,8 +32,8 @@ export default function BannerAreaHome() {
         const newErrors = { ...errors };
 
         // Name validation
-        if (!/^[A-Za-z\s]+$/.test(field.name)) {
-            newErrors.name = "Please enter a valid name";
+        if (!/^[a-zA-Z\s]+$/.test(field.name)) {
+            newErrors.name = "Name should contain alphabets only.";
             isValid = false;
         } else {
             newErrors.name = "";
@@ -140,7 +140,7 @@ export default function BannerAreaHome() {
                                                         {/* <Tnc id={"checkbox-6"} /> */}
                                                         <div className="input-box mb--20">
                                                             <input type="checkbox" id="checkbox-6" name="checkbox" checked={check} onChange={() => setCheck(!check)} />
-                                                            <label htmlFor="checkbox-6">I accept the terms and conditions</label>
+                                                            <label htmlFor="checkbox-6">I accept the <Link href="/termsandcondition">Terms &#38; Conditions</Link>.</label>
                                                             {errors.checkbox && <span className="error-message red">{errors.checkbox}</span>}
                                                         </div>
                                                         <button className="rn-btn edu-btn w-100 mb--20" type="submit">

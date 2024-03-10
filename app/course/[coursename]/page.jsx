@@ -34,36 +34,15 @@ const Page = () => {
 				<div className="row">
 					
 						<div className="breadcrumb-inner text-start">
-							<img src='/assets/images/bg/breadcrumb-bg.jpg' alt='' className='breadCrumb_banner' />
+							<Image width={1520} height={212} src='/assets/images/bg/breadcrumb-bg.jpg' alt='' className='breadCrumb_banner' />
 							<div className="page-title">
-								<h3 class="title">Contact Us</h3>
+								<h3 className="title" id="c_name">{state && state.name}</h3>
 							</div>
 						
 					</div>
 				</div>
 
-				<div class="shape-dot-wrapper shape-wrapper d-xl-block d-none">
-                    <div class="shape-dot-wrapper shape-wrapper d-xl-block d-none">
-                        <div class="shape-image shape-image-1">
-                            <Image src="assets/images/shapes/shape-11-07.png" alt="Shape Thumb" />
-                        </div>
-                        <div class="shape-image shape-image-2">
-                            <Image src="assets/images/shapes/shape-01-02.png" alt="Shape Thumb" />
-                        </div>
-                        <div class="shape-image shape-image-3">
-                            <Image src="assets/images/shapes/shape-03.png" alt="Shape Thumb" />
-                        </div>
-                        <div class="shape-image shape-image-4">
-                            <Image src="assets/images/shapes/shape-13-12.png" alt="Shape Thumb" />
-                        </div>
-                        <div class="shape-image shape-image-5">
-                            <Image src="assets/images/shapes/shape-36.png" alt="Shape Thumb" />
-                        </div>
-                        <div class="shape-image shape-image-6">
-                            <Image src="assets/images/shapes/shape-05-07.png" alt="Shape Thumb" />
-                        </div>
-                    </div>
-                </div>
+				
 			</div>
 		</div>
 		<div className="edu-course-details-area edu-section-gap bg-color-white">
@@ -137,8 +116,6 @@ const Page = () => {
 					<div className="container">
 						<div className="row justify-content-between">
 							<CourceCategory coursename ={coursename}/>
-							
-
 						<SyllybusDownload coursename ={coursename}/>
 						</div>
 					</div>
@@ -147,7 +124,7 @@ const Page = () => {
 		</div>
 
 		<Batches coursename ={coursename}/>
-		
+
 		<Testimonials/>
 		<Faq coursename={coursename}/>
     </>
