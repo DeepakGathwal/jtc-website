@@ -77,7 +77,6 @@ export default function FeaturedCourses() {
                             </div>
                         </div>
                     </div>
-
                     <div className="row">
                         <div className="col-lg-12 mt--60 mb_dec--20 slick-activation-wrapper service-activation-item5 edu-slick-arrow-top order-3">
                             <div style={{ textAlign: "center" }}>
@@ -113,19 +112,9 @@ export default function FeaturedCourses() {
                                         </div>
                                     </Link>
                                 ))}
-
                             </Slider>
-
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <div className="load-more-btn mt--60 text-center aling-items-center">
-                                <a className="edu-btn" href="courses.php">View All Courses <FaArrowRight /></a>
-                            </div>
-                        </div>
-                    </div>
-
                     <div className="shape-dot-wrapper shape-wrapper d-xl-block d-none">
                         <div className="shape-image shape-image-2">
                             <Image src="assets/images/shapes/shape-03-05.png" alt="Shape Thumb" width={109} height={98}/>

@@ -17295,3 +17295,6 @@ form.send-form .main-btn-rect {
 .accordion-button::after{
   scale: 1.5;
 }
+.red {
+  color: red;
+}

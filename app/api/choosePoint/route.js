@@ -25,16 +25,17 @@ export async  function GET(req){
 
 
 export async  function POST(req){
-    const {name, phone, cource, email} = await req.json();
-    const findCource =   `Select name from jtc_courses WHERE id = ${cource}`
+    const {name, phone, course, email} = await req.json();
+
+    const findCource =   `Select name from jtc_courses WHERE id = ${course}`
     const getCourceQuery = await executeQuery(findCource)
     if(getCourceQuery.length == 0) return  NextResponse.json({message : "Cource Not Found"},{success : false}, {status : 206})
-    const  query =  `Insert into jtc_enquiry_form SET name = "${name}", email = "${email}" , phone_number = "${phone}", cource =  "${cource}", form_id = '1'`
+    const  query =  `Insert into jtc_enquiry_form SET name = "${name}", email = "${email}" , phone_number = "${phone}", cource =  "${course}", form_id = '1'`
         const insertData = await executeQuery(query);
     if(insertData.affectedRows >  0){
         const courceName = getCourceQuery[0].name
 
-        const message = `${name} Just fill the Get In Touch form. His Phone No. ${phone} and the Seleted Cource is ${courceName}` 
+        const message = `${name} Just fill the Get In Touch form. His Phone No. ${phone} and the Seleted Course is ${courceName}` 
         const subject = "Get In Touch"
         const options = {message, subject};
        await sendEmail(options)

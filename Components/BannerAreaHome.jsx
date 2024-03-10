@@ -1,43 +1,101 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import { FaArrowRight } from "react-icons/fa6";
 import { homeCourses, enquiryForm } from '@/apis/apis';
 import Tnc from './tnc';
 import Image from 'next/image';
 
-
 // ES6 modules
 export default function BannerAreaHome() {
-    const [state, setState] = useState([])
+    const [state, setState] = useState([]);
+    const [check,setCheck] = useState(false)
     const [field, setField] = useState({
-        name : "", phone : " " , cource : "", email : ""
-    })
+        name: "",
+        phone: "",
+        course: "",
+        email: ""
+    });
+    const [errors, setErrors] = useState({
+        name: "",
+        phone: "",
+        course: "",
+        email: "",
+        checkbox: ""
+    });
 
     const allData = async () => {
-        const {data} = await homeCourses()
-     
-        if (data.length > 0) setState(data)
-    }
+        const { data } = await homeCourses();
+        if (data.length > 0) setState(data);
+    };
 
-   
-  const handelChange = (e) => {
-    setField({ ...field, [e.target.name]: e.target.value })
-  }
+    const validateForm = () => {
+        let isValid = true;
+        const newErrors = { ...errors };
 
-    const handelSubmit = async(e) => {
-        e.preventDefault()
-        const data = await enquiryForm(field)
-        setField("")
-        if(data.success == true) return alert(data.message)
-        else return alert(data.message)
-    }
+        // Name validation
+        if (!/^[A-Za-z\s]+$/.test(field.name)) {
+            newErrors.name = "Please enter a valid name";
+            isValid = false;
+        } else {
+            newErrors.name = "";
+        }
+
+        // Phone validation
+        if (!/^\d{10}$/.test(field.phone)) {
+            newErrors.phone = "Please enter a valid 10-digit phone number";
+            isValid = false;
+        } else {
+            newErrors.phone = "";
+        }
+
+        // Course validation
+        if (field.course === "" || field.course === "Select Course") {
+            newErrors.course = "Please select a course";
+            isValid = false;
+        } else {
+            newErrors.course = "";
+        }
+
+        // Checkbox validation
+        if (!check) {
+            newErrors.checkbox = "Please accept the terms and conditions";
+            isValid = false;
+        } else {
+            newErrors.checkbox = "";
+        }
+
+        setErrors(newErrors);
+        return isValid;
+    };
+
+    const handelChange = (e) => {
+        setField({ ...field, [e.target.name]: e.target.value });
+    };
+
+    const handelSubmit = async (e) => {
+        e.preventDefault();
+        if (validateForm()) {
+            const data = await enquiryForm(field);
+            setField({
+                name: "",
+                phone: "",
+                course: "",
+                email: ""
+            });
+            setCheck(!check)
+           
+            if (data.success === true) {
+                return alert(data.message)
+            }
+            else return alert(data.message);
+        }
+    };
 
     useEffect(() => {
-        allData()
-    },[])
+        allData();
+    }, []);
 
     return (
         <>
-        
             <div className="slider-area banner-style-1 bg-white height-650 d-flex align-items-center" >
                 <div className="container eduvibe-animated-shape">
                     <div className="row g-5 align-items-center">
@@ -56,7 +114,6 @@ export default function BannerAreaHome() {
                         <div className="col-lg-12 col-xl-6 banner-right-content">
                             <div className="row g-5">
                                 <div className="col-lg-9 col-md-6 col-sm-6 offset-lg-3">
-
                                     <div className="edu-card card-type-6 radius-small">
                                         <div className="inner">
                                             <div className="container checkout-page-style">
@@ -64,27 +121,30 @@ export default function BannerAreaHome() {
                                                     <h3 className="mb-30">Get in Touch</h3>
                                                     <form className="login-form" id="downloadSyllabus" onSubmit={handelSubmit}>
                                                         <div className="input-box mb--20">
-                                                            <input type="text" placeholder="Name" name="name" id="name6" required onChange={handelChange} value={field.name}/>
+                                                            <input type="text" placeholder="Name" name="name" id="name6" onChange={handelChange} value={field.name} />
+                                                            {errors.name && <span className="error-message red">{errors.name}</span>}
                                                         </div>
                                                         <div className="input-box mb--20">
-                                                            <input type="number"  maxLength="10" id="phone" className="phone-input" name="phone" placeholder="Mobile Number" required onChange={handelChange} value={field.phone}/>
+                                                            <input type="tel" maxLength="10" id="phone" className="phone-input" name="phone" placeholder="Mobile Number" onChange={handelChange} value={field.phone} />
+                                                            {errors.phone && <span className="error-message red">{errors.phone}</span>}
                                                         </div>
-                                                        {/* <div className="input-box mb--20">
-                                                            <input type="email"   id="phone" className="phone-input" name="email" placeholder="@email.com" required onChange={handelChange} value={field.email}/>
-                                                        </div> */}
                                                         <div className="input-box mb--20">
-                                                            <select name="cource" id="courses3"  className="courses valid" aria-invalid="false" value={field.cource} required onChange={handelChange}>
-                                                                <option selected>Select Course</option>
+                                                            <select name="course" id="courses3" className="courses valid" aria-invalid="false" value={field.course} onChange={handelChange}>
+                                                                <option>Select Course</option>
                                                                 {state && state.map((el, i) => (
                                                                     <option key={i} value={el.id}>{el.name}</option>
-
                                                                 ))}
-
                                                             </select>
+                                                            {errors.course && <span className="error-message red">{errors.course}</span>}
                                                         </div>
-                                                       <Tnc id = {"checkbox-6"}/>
+                                                        {/* <Tnc id={"checkbox-6"} /> */}
+                                                        <div className="input-box mb--20">
+                                                            <input type="checkbox" id="checkbox-6" name="checkbox" checked={check} onChange={() => setCheck(!check)} />
+                                                            <label htmlFor="checkbox-6">I accept the terms and conditions</label>
+                                                            {errors.checkbox && <span className="error-message red">{errors.checkbox}</span>}
+                                                        </div>
                                                         <button className="rn-btn edu-btn w-100 mb--20" type="submit">
-                                                            <span >Enquire Now</span>
+                                                            <span>Enquire Now</span>
                                                         </button>
                                                     </form>
                                                 </div>
@@ -96,14 +156,14 @@ export default function BannerAreaHome() {
                         </div>
                     </div>
                     <div className="shape-dot-wrapper shape-wrapper d-xl-block d-none">
-                        <div className="shape shape-1"> <Image src="/assets/images/shapes/shape-01.png" alt="Shape Thumb" width={25} height={25}/></div>
-                        <div className="shape shape-2"><Image src="/assets/images/shapes/shape-02.png" alt="Shape Thumb" width={52} height={58}/></div>
-                        <div className="shape shape-3"><Image src="/assets/images/shapes/shape-03.png" alt="Shape Thumb" width={66} height={53}/></div>
-                        <div className="shape shape-4"><Image src="/assets/images/shapes/shape-04.png" alt="Shape Thumb" width={113} height={150}/></div>
-                        <div className="shape shape-5"><Image src="/assets/images/shapes/shape-05.png" alt="Shape Thumb" width={30} height={30}/></div>
+                        <div className="shape shape-1"> <Image src="/assets/images/shapes/shape-01.png" alt="Shape Thumb" width={25} height={25} /></div>
+                        <div className="shape shape-2"><Image src="/assets/images/shapes/shape-02.png" alt="Shape Thumb" width={52} height={58} /></div>
+                        <div className="shape shape-3"><Image src="/assets/images/shapes/shape-03.png" alt="Shape Thumb" width={66} height={53} /></div>
+                        <div className="shape shape-4"><Image src="/assets/images/shapes/shape-04.png" alt="Shape Thumb" width={113} height={150} /></div>
+                        <div className="shape shape-5"><Image src="/assets/images/shapes/shape-05.png" alt="Shape Thumb" width={30} height={30} /></div>
                     </div>
                 </div>
             </div>
         </>
-    )
+    );
 }
