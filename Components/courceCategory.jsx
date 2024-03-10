@@ -23,16 +23,17 @@ const CourceCategory = ({ coursename }) => {
     }, [coursename])
 
     const getCourceChapter = async (event) => {
+    
         const {id} = event.target
         const { data } = await courseChapter(id)
-        return data && setState(data);
+        return data && setChapters(data);
     }
 
     return (
         <>		
         <div className='col-md-7'>
-        <div class="edu-card card-type-7 radius-small">
-		<div class="inner">
+        <div className="edu-card card-type-7 radius-small">
+		<div className="inner">
             <div className="accordion-style-2 acc-section">
                 <div className="accordion custom">
                 {state && state.map((el, i) => (

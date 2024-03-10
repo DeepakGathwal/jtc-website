@@ -46,7 +46,11 @@ export async  function POST(req){
   const {course} = await req.json();
   const redisdata = await client.get(`faqs${course}`);
   if(!redisdata){
-      const query =  `Select id,point,description from jtc_faqs WHERE faqs_about = (SELECT name from jtc_courses where link = '${course}')  `
+    const courseName = `SELECT name from jtc_courses where link = '${course}'`
+    const callQuery = await executeQuery(courseName)
+    if(callQuery.length > 0) {
+    const courceName = callQuery[0].name
+      const query =  `Select id,point,description from jtc_faqs WHERE faqs_about Like '%${courceName}%'  `
       const data = await executeQuery(query);
       if(data.length > 0) {
       const value =  await JSON.stringify(data)
@@ -54,7 +58,7 @@ export async  function POST(req){
         return NextResponse.json({data},{success : true}, {status : 200})
       }
       else return NextResponse.json({message : "Data Empty"},{success : false}, {status : 206})
-  }else{ 
+  }}else{ 
    const value = await JSON.parse(redisdata)
    return NextResponse.json({data : value}, { success : true}, {status : 200})
 }
