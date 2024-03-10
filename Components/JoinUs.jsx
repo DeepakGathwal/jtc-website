@@ -55,10 +55,9 @@ const JoinUs = ({ joinForm, setjoinForm }) => {
     };
 
     const allData = async () => {
-        const { data } = await allRoles();
-        setState(data);
-    };
-
+        const {data} = await allRoles()
+        return data && setState(data);
+    }
     useEffect(() => {
         allData();
     }, []);

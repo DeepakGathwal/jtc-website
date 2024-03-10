@@ -14,8 +14,7 @@ const CourceCategory = ({ coursename }) => {
 
     const allData = async () => {
         const { data } = await courseCatgories(coursename)
-
-        if (data.length > 0) return setState(data)
+        return data && setState(data);
     }
 
 
@@ -26,7 +25,7 @@ const CourceCategory = ({ coursename }) => {
     const getCourceChapter = async (event) => {
         const {id} = event.target
         const { data } = await courseChapter(id)
-        if (data.length > 0) return setChapters(data)
+        return data && setState(data);
     }
 
     return (
