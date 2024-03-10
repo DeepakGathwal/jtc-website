@@ -14,6 +14,8 @@ let about = "about"
 let navbar = "navbar"
 let tutorial = "tutorial"
 
+
+// All Lists of Blogs 
 export const blogs = async (id) => {
   try {
     const { data } = await instance.get(blog);
@@ -24,6 +26,7 @@ export const blogs = async (id) => {
   }
 };
 
+// Get a single blog
 export const singleBlog = async (id) => {
   try {
     const { data } = await instance.get(id);
@@ -34,6 +37,7 @@ export const singleBlog = async (id) => {
   }
 };
 
+// All choosing Points
 export const allChoosingPoint = async () => {
   try {
     const { data } = await instance.get(choosePoint);
@@ -44,7 +48,7 @@ export const allChoosingPoint = async () => {
   }
 };
 
-
+// Footer Data aPi
 export const footerData = async () => {
   try {
     const { data } = await instance.get(footer);
@@ -57,7 +61,7 @@ export const footerData = async () => {
 
 
 
-
+// Testomainals Data 
 export const alltestimonials = async () => {
   try {
     const { data } = await instance.get(testimonials);
@@ -67,6 +71,8 @@ export const alltestimonials = async () => {
     return err
   }
 };
+
+// Lis of cources
 export const homeCourses = async () => {
   try {
     const { data } = await instance.get(cources);
@@ -80,7 +86,7 @@ export const homeCourses = async () => {
 
 
 
-
+// Lis of comapnies
 export const homeCompany = async () => {
   try {
     const { data } = await instance.get(company);
@@ -91,7 +97,7 @@ export const homeCompany = async () => {
   }
 };
 
-
+// About Us Point
 export const aboutUS = async () => {
   try {
     const { data } = await instance.get(about);
@@ -104,7 +110,7 @@ export const aboutUS = async () => {
 
 
 
-
+// Sumbit Get Us Now Form
 export const enquiryForm = async (field) => {
   try {
 
@@ -118,7 +124,7 @@ export const enquiryForm = async (field) => {
   }
 };
 
-
+//  handel Download Brousher form
 export const brochureForm = async (field) => {
   try {
     const response = await instance.post(company, JSON.stringify(field), { responseType: 'blob' });
@@ -134,6 +140,8 @@ export const brochureForm = async (field) => {
   }
 };
 
+
+// handel hire from us form
 export const hireUsForm = async (field) => {
   try {
     const value = await JSON.stringify(field)
@@ -145,7 +153,7 @@ export const hireUsForm = async (field) => {
   }
 };
 
-
+// Handel join us form
 export const joinUsForm = async (field) => {
   try {
     const value = await JSON.stringify(field)
@@ -157,7 +165,7 @@ export const joinUsForm = async (field) => {
   }
 };
 
-
+// Batch Enroll form 
 export const batchForm = async (field) => {
   try {
     const value = await JSON.stringify(field)
@@ -170,7 +178,7 @@ export const batchForm = async (field) => {
 };
 
 
-
+//  all vaccieny avialble list of roles
 export const allRoles = async (field) => {
   try {
     const { data } = await instance.get(courseSections);
@@ -181,7 +189,7 @@ export const allRoles = async (field) => {
 };
 
 
-
+// all courses types
 export const allCourceTypes = async () => {
   try {
     const { data } = await instance.patch(cources);
@@ -193,7 +201,7 @@ export const allCourceTypes = async () => {
   }
 };
 
-
+// get static pages
 export const termsAndCondition = async (id) => {
   try {
     const { data } = await instance.patch(id);
@@ -204,6 +212,7 @@ export const termsAndCondition = async (id) => {
 };
 
 
+// get all course list
 export const courcesList = async (id) => {
   try {
     const value = JSON.stringify({ id })
@@ -214,7 +223,7 @@ export const courcesList = async (id) => {
   }
 };
 
-
+// course basic details
 export const courseData = async (name) => {
   try {
     const value = JSON.stringify({ name })
@@ -225,7 +234,7 @@ export const courseData = async (name) => {
   }
 };
 
-
+// all choosing point
 export const coursePoint = async (course) => {
   try {
     const value = JSON.stringify({ course })
@@ -236,7 +245,7 @@ export const coursePoint = async (course) => {
   }
 };
 
-
+// course video point
 export const courceViodePoint = async (course) => {
   try {
     const value = JSON.stringify({ course })
@@ -247,7 +256,7 @@ export const courceViodePoint = async (course) => {
   }
 };
 
-
+// all batches list
 export const allBatches = async (course) => {
   try {
     const value = JSON.stringify({ course })
@@ -258,7 +267,7 @@ export const allBatches = async (course) => {
   }
 };
 
-
+// single course categories
 export const courseCatgories = async (id) => {
   try {
     const { data } = await instance.post(id);
@@ -268,6 +277,7 @@ export const courseCatgories = async (id) => {
   }
 };
 
+// course chapter
 export const courseChapter = async (id) => {
   try {
     const value = JSON.stringify({ id })
@@ -278,7 +288,7 @@ export const courseChapter = async (id) => {
   }
 };
 
-
+// course faqs
 export const courseFaqs = async (course) => {
   try {
     const value = JSON.stringify({ course })
@@ -289,7 +299,7 @@ export const courseFaqs = async (course) => {
   }
 };
 
-
+// navbar link api
 export const allNavbarLinks = async () => {
   try {
     const { data } = await instance.get(navbar);
@@ -300,7 +310,7 @@ export const allNavbarLinks = async () => {
 };
 
 
-
+// list of types tutorial
 export const tutorialType = async () => {
   try {
     const { data } = await instance.get(tutorial);
@@ -310,7 +320,7 @@ export const tutorialType = async () => {
   }
 };
 
-
+// tuturial couses
 export const tutorialCourse = async (type) => {
   try {
     const value = JSON.stringify({ type })
@@ -322,7 +332,7 @@ export const tutorialCourse = async (type) => {
 };
 
 
-
+// tutorial chapters
 export const tutorialChapter = async (course) => {
   try {
     const value = JSON.stringify({ course })
@@ -333,7 +343,7 @@ export const tutorialChapter = async (course) => {
   }
 };
 
-
+// tutorial topics
 export const tutorialTopic = async (topic) => {
   try {
     const value = JSON.stringify({ topic })

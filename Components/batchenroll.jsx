@@ -53,7 +53,7 @@ const Batchenroll = ({ show, setShow, id, course }) => {
         if (validateForm()) {
             const data = await batchForm(field);
             setField({
-                name: "",
+                name: "", 
                 phone: "",
                 email: "",
                 id: id

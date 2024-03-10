@@ -36,7 +36,29 @@ export async  function PATCH(req){
   if(insertData.affectedRows >  0){
     const courceName = getCourceQuery[0].name
 
-      const message = `${company} Just fill the Hire From Us form. His Phone No. ${phone}.Company Email id ${email} Phone Number is ${phone}. ${company} want hiring for ${courceName}` 
+      const message = `
+      <table style="border-collapse: collapse; border: 2px solid black;width: 50%">
+        <tr>
+            <th style="border: 2px solid black; padding: 8px; font-size: 18px">Name</th>
+            <td style="border: 2px solid black; padding: 8px;font-size: 16px">${name}</td>
+        </tr>
+        <tr>
+            <th style="border: 2px solid black; padding: 8px;font-size: 18px">Phone</th>
+            <td style="border: 2px solid black; padding: 8px;font-size: 16px">${phone}</td>
+        </tr>
+        <tr>
+            <th style="border: 2px solid black; padding: 8px;font-size: 18px">Company Name</th>
+            <td style="border: 2px solid black; padding: 8px;font-size: 16px">${company}</td>
+        </tr>
+        <tr>
+            <th style="border: 2px solid black; padding: 8px;font-size: 18px">Designation</th>
+            <td style="border: 2px solid black; padding: 8px;font-size: 16px">${desigination}</td>
+        </tr>
+        <tr>
+            <th style="border: 2px solid black; padding: 8px;font-size: 18px">Hiring Profile</th>
+            <td style="border: 2px solid black; padding: 8px;font-size: 16px">${courceName}</td>
+        </tr>
+    </table>`
       const subject = "Hire From Us"
       const options = {message, subject};
      await sendEmail(options)
@@ -58,7 +80,23 @@ export async  function POST(req){
   if(insertData.affectedRows >  0){
     const courceName = getCourceQuery[0].course
 
-      const message = `${name} Just fill Download Curriculum form. His Download ${courceName} Brochure. His phone no. is ${phone}` 
+      const message = `
+      <table style="border-collapse: collapse; border: 2px solid black;width: 50%">
+        <tr>
+            <th style="border: 2px solid black; padding: 8px; font-size: 18px">Name</th>
+            <td style="border: 2px solid black; padding: 8px;font-size: 16px">${name}</td>
+        </tr>
+        <tr>
+            <th style="border: 2px solid black; padding: 8px;font-size: 18px">Phone</th>
+            <td style="border: 2px solid black; padding: 8px;font-size: 16px">${phone}</td>
+        </tr>
+        <tr>
+            <th style="border: 2px solid black; padding: 8px;font-size: 18px">Course</th>
+            <td style="border: 2px solid black; padding: 8px;font-size: 16px">${courceName}</td>
+        </tr>
+    </table>
+      `
+       
       const subject = "Download Curriculum"
       const options = {message, subject};
 
