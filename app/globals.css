@@ -17121,7 +17121,7 @@ form.send-form .main-btn-rect {
 
 .mobF {display:none!important;}
 .modal-content{
-  width: 81%;
+ 
     border-radius: 3.3rem;
     padding: 20px;
 }
@@ -17305,3 +17305,4 @@ input[type="checkbox"] a{
 input[type="checkbox"] ~ label a{
   color: var(--color-primary);
 }
+.modal-dialog{width:400px}
