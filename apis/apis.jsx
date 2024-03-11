@@ -110,7 +110,7 @@ export const aboutUS = async () => {
 
 
 
-// Sumbit Get Us Now Form
+// Sumbit Git Us Now Form
 export const enquiryForm = async (field) => {
   try {
 
