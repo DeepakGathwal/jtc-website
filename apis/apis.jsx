@@ -110,7 +110,7 @@ export const aboutUS = async () => {
 
 
 
-// Sumbit Get Us Now Form
+// Sumbit Git Us Now Form
 export const enquiryForm = async (field) => {
   try {
 
@@ -129,12 +129,7 @@ export const brochureForm = async (field) => {
   try {
     const response = await instance.post(company, JSON.stringify(field), { responseType: 'blob' });
     const blob = new Blob([response.data], { type: response.headers['content-type'] });
-    
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = `${field.course}.pdf`;
-    
-    return link.click();
+    return blob;
   } catch (err) {
     return err;
   }
