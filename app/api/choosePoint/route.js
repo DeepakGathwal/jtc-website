@@ -2,6 +2,7 @@ import { executeQuery } from "@/conn/conn";
 import { sendEmail } from "@/middelware/sendEmail";
 import { NextResponse } from "next/server";
 import { client } from "@/middelware/redisFile";
+import { Table } from "react-bootstrap";
 
 
 
@@ -34,7 +35,21 @@ export async  function POST(req){
     if(insertData.affectedRows >  0){
         const courceName = getCourceQuery[0].name
 
-        const message = `${name} Just fill the Get In Touch form. His Phone No. ${phone} and the Seleted Course is ${courceName}` 
+        const message = `<table style="border-collapse: collapse; border: 2px solid black;width: 50%">
+        <tr>
+            <th style="border: 2px solid black; padding: 8px; font-size: 18px">Name</th>
+            <td style="border: 2px solid black; padding: 8px;font-size: 16px">${name}</td>
+        </tr>
+        <tr>
+            <th style="border: 2px solid black; padding: 8px;font-size: 18px">Phone</th>
+            <td style="border: 2px solid black; padding: 8px;font-size: 16px">${phone}</td>
+        </tr>
+        <tr>
+            <th style="border: 2px solid black; padding: 8px;font-size: 18px">Course</th>
+            <td style="border: 2px solid black; padding: 8px;font-size: 16px">${courceName}</td>
+        </tr>
+    </table>
+` 
         const subject = "Get In Touch"
         const options = {message, subject};
        await sendEmail(options)
@@ -54,7 +69,29 @@ export async  function PUT(req){
           const data = await executeQuery(query);
           if(data.affectedRows > 0) {
             const {week_days, time_to, time_from, date} = getCourceQuery[0]
-            const message =  `${name} is selected ${week_days} Batch at ${date}. The Batch timming is ${time_to} - ${time_from}. His Phone Number is ${phone}.` 
+            const message =  `
+            <table style="border-collapse: collapse; border: 2px solid black;width: 50%">
+        <tr>
+            <th style="border: 2px solid black; padding: 8px; font-size: 18px">Name</th>
+            <td style="border: 2px solid black; padding: 8px;font-size: 16px">${name}</td>
+        </tr>
+        <tr>
+            <th style="border: 2px solid black; padding: 8px;font-size: 18px">Phone</th>
+            <td style="border: 2px solid black; padding: 8px;font-size: 16px">${phone}</td>
+        </tr>
+        <tr>
+            <th style="border: 2px solid black; padding: 8px;font-size: 18px">Batch Date</th>
+            <td style="border: 2px solid black; padding: 8px;font-size: 16px">${date}</td>
+        </tr>
+        <tr>
+            <th style="border: 2px solid black; padding: 8px;font-size: 18px">Batch Time</th>
+            <td style="border: 2px solid black; padding: 8px;font-size: 16px">${time_to} - ${time_from}</td>
+        </tr>
+        <tr>
+            <th style="border: 2px solid black; padding: 8px;font-size: 18px">Batch Days</th>
+            <td style="border: 2px solid black; padding: 8px;font-size: 16px">${week_days}</td>
+        </tr>
+    </table>` 
             const subject = "Batch Enroll"
             const options = {message, subject};
            await sendEmail(options)
@@ -76,7 +113,22 @@ export async  function PATCH(req){
     if(insertData.affectedRows >  0){
         const roleName = getRoleQuery[0].role
      
-        const message = `A new Job Application Recived  for ${roleName} role.Name is ${name} and  phone No. is ${phone}` 
+        const message = `
+        <table style="border-collapse: collapse; border: 2px solid black;width: 50%">
+    <tr>
+        <th style="border: 2px solid black; padding: 8px; font-size: 18px">Name</th>
+        <td style="border: 2px solid black; padding: 8px;font-size: 16px">${name}</td>
+    </tr>
+    <tr>
+        <th style="border: 2px solid black; padding: 8px;font-size: 18px">Phone</th>
+        <td style="border: 2px solid black; padding: 8px;font-size: 16px">${phone}</td>
+    </tr>
+    <tr>
+        <th style="border: 2px solid black; padding: 8px;font-size: 18px">Hiring Profile</th>
+        <td style="border: 2px solid black; padding: 8px;font-size: 16px">${roleName}</td>
+    </tr>
+</table>
+        ` 
         const subject = "Join Us Form"
         const options = {message, subject};
        await sendEmail(options)

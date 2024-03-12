@@ -3,6 +3,9 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import { singleBlog } from '@/apis/apis'
 import Image from 'next/image'
+import { SlCalender } from "react-icons/sl";
+import { FaArrowRight } from "react-icons/fa6";
+import { SiOpenbadges } from "react-icons/si";
 
 const Index = () => {
   const [state, setState] = useState([])
@@ -22,18 +25,71 @@ const Index = () => {
     <>
       {state && state.map((el,i) => (
         <>
-       <div key={i}  className='d-flex justify-content-between fw-bold'>
+        <div className="edu-breadcrumb-area breadcrumb-style-1 bg-image">
+          <div className="container-fluid eduvibe-animated-shape">
+            <div className="row">
+                <div className="breadcrumb-inner text-start">
+                  <Image width={1500} height={100} src={el.banner} alt='' className='breadCrumb_banner' />
+                  <div className="page-title">
+                    <h3 className="title" id="c_name">{el.name}</h3>
+                  </div>
+              </div>
+            </div>
+			    </div>
+		    </div>
+        <div className="edu-blog-details-area edu-section-gap bg-color-white">
+            <div className="container">
+                <div className="row g-5">
+                    <div className="col-lg-10 offset-lg-1">
+                        <div className="blog-details-1 style-variation3">
+
+                            <div className="content-blog-top">
+
+                                <div className="content-status-top d-flex flex-wrap justify-content-between mb--30 align-items-center">
+                                    <div className="status-group mt_sm--10">
+                                        {/* <a href="https://jtcindia.org/blog" className="eduvibe-status status-05 color-primary w-600">Education</a> */}
+                                        <span className="eduvibe-status status-05 color-primary w-600"><SiOpenbadges />&nbsp;{el.category}</span>
+                                    </div>
+                                    <ul className="blog-meta mt_sm--10">
+                                    <li><SlCalender />&nbsp;{el.addedAt}</li>
+                                    </ul>
+                                </div>
+
+                                <h4 className="title">{el.name}</h4>
+
+                                <div className="thumbnail block-alignwide">
+                                    <Image className="radius-small w-100 mb--30" src={el.icon} alt="Blog Images" width={40} height={40}/>
+                                </div>
+                            </div>
+
+                            <div className="blog-main-content">
+                                <blockquote className="blockquote-style-1">“{el.heading}”
+                                    <Image className="quote-image" src="../assets/images/icons/quote-2.png" alt="Quote Images" height={60} width={60}/>
+                                </blockquote>
+                                <div className="content"
+                                style={{cssText : el.blog_css}} dangerouslySetInnerHTML={{ __html: el.blog_html }} >
+                                </div>
+                                
+                        <iframe width="560" height="315" src={el.video_link} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                          </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+       {/* <div key={i}  className='d-flex justify-content-between fw-bold'>
        <span>{el.addedAt}</span>
         <span>{el.category}</span>
        </div>
         <h4 className='text-center'>{el.name}</h4>
 
-        <Image src={el.icon} alt="" srcset="" width={40} height={40}/>
+        <Image src={el.icon} alt="" srcset="" width={40} height={40} className="radius-small w-100 mb--30"/>
         <h6 className="m-3 p-3">{el.heading}</h6>
         <div className="m-5 p-5" style={{cssText : el.blog_css}} dangerouslySetInnerHTML={{ __html: el.blog_html }} />
         
         
-<iframe className="m-4 p-4" width="560" height="315" src={el.video_link} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen/>
+<iframe className="m-4 p-4" width="560" height="315" src={el.video_link} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen/> */}
 
         </>
       ))}

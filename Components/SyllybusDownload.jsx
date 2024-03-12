@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Tnc from './tnc';
 import { brochureForm } from '@/apis/apis';
 import Link from 'next/link';
@@ -10,6 +10,7 @@ const SyllybusDownload = ({ coursename }) => {
     const [errors, setErrors] = useState({
         name: "", phone: "", checkbox: ""
     });
+    const formRef = useRef(null); // Ref for form element (optional)
 
     const handelChange = (e) => {
         setField({ ...field, [e.target.name]: e.target.value });
@@ -50,9 +51,24 @@ const SyllybusDownload = ({ coursename }) => {
     const submitForm = async (e) => {
         e.preventDefault();
         if (validateForm()) {
-          const value =   await brochureForm(field);
-          console.log(value);
-            e.preventDefault()
+            try {
+                const blob = await brochureForm(field);
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = `${field.course}.pdf`;
+                link.click();
+
+                // Reset form fields
+                setField({ name: "", phone: "", course: coursename, checkbox: false });
+
+                // Optional: Clear form elements (for browsers with caching issues)
+                const form = formRef.current;
+                if (form) {
+                    form.reset();
+                }
+            } catch (err) {
+                console.error(err);
+            }
         }
     };
 
@@ -63,7 +79,7 @@ const SyllybusDownload = ({ coursename }) => {
                     <div className="container checkout-page-style" style={{ padding: "0" }}>
                         <div className="login-form-box">
                             <h6 className="mb-30">Download Curriculum</h6>
-                            <form className="login-form" onSubmit={submitForm} id="downloadSyllabus_java">
+                            <form className="login-form" onSubmit={submitForm} id="downloadSyllabus_java" ref={formRef}>
                                 <div className="input-box mb--20">
                                     <input type="text" placeholder="Name" name="name" id="name7" onChange={handelChange} />
                                     {errors.name && <span className="error-message red">{errors.name}</span>}
