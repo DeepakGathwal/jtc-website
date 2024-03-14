@@ -30,7 +30,7 @@ export async  function PATCH(req){
   const findCource =   `Select name from jtc_courses WHERE id = ${course}`
   const getCourceQuery = await executeQuery(findCource)
   if(getCourceQuery.length == 0) return  NextResponse.json({message : "Cource Not Found"},{success : false}, {status : 206})
-   const  query =  `Insert into jtc_enquiry_form SET cource = "${course}",desigination = "${desigination}",company = "${company}",name = "${name}", email = "${email}" , phone_number = "${phone}",  form_id = '2'`
+   const  query =  `Insert into jtc_enquiry_form SET course = "${course}",desigination = "${desigination}",company = "${company}",name = "${name}", email = "${email}" , phone_number = "${phone}",  form_id = '2'`
 
    const insertData = await executeQuery(query);
   if(insertData.affectedRows >  0){
@@ -74,7 +74,7 @@ export async  function POST(req){
   const getCourceQuery = await executeQuery(findCource)
   if(getCourceQuery.length == 0) return  NextResponse.json({message : "Cource Not Found"},{success : false}, {status : 206})
   const courseId = await getCourceQuery[0].id
-  const query =  `Insert into jtc_enquiry_form SET cource = "${courseId}",name = "${name}", email = "${email}" , phone_number = "${phone}",  form_id = '5'`
+  const query =  `Insert into jtc_enquiry_form SET course = "${courseId}",name = "${name}", email = "${email}" , phone_number = "${phone}",  form_id = '5'`
 
    const insertData = await executeQuery(query);
   if(insertData.affectedRows >  0){

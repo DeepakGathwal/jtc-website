@@ -30,7 +30,7 @@ export async  function POST(req){
     const findCource =   `Select name from jtc_courses WHERE id = ${course}`
     const getCourceQuery = await executeQuery(findCource)
     if(getCourceQuery.length == 0) return  NextResponse.json({message : "Cource Not Found"},{success : false}, {status : 206})
-    const  query =  `Insert into jtc_enquiry_form SET name = "${name}", email = "${email}" , phone_number = "${phone}", cource =  "${course}", form_id = '1'`
+    const  query =  `Insert into jtc_enquiry_form SET name = "${name}", email = "${email}" , phone_number = "${phone}", course =  "${course}", form_id = '1'`
         const insertData = await executeQuery(query);
     if(insertData.affectedRows >  0){
         const courceName = getCourceQuery[0].name
@@ -108,7 +108,7 @@ export async  function PATCH(req){
     const getRoleQuery = await executeQuery(findRole)
     if(getRoleQuery.length == 0) return  NextResponse.json({message : "Cource Not Found"},{success : false}, {status : 206})
 
-    const  query =  `Insert into jtc_enquiry_form SET cource = "${role}",name = "${name}", email = "${email}" , phone_number = "${phone}",  form_id = '3'`
+    const  query =  `Insert into jtc_enquiry_form SET course = "${role}",name = "${name}", email = "${email}" , phone_number = "${phone}",  form_id = '3'`
     const insertData = await executeQuery(query);
     if(insertData.affectedRows >  0){
         const roleName = getRoleQuery[0].role

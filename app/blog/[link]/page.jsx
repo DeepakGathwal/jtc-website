@@ -28,7 +28,7 @@ const Index = () => {
         <div className="edu-breadcrumb-area breadcrumb-style-1 bg-image">
           <div className="container-fluid eduvibe-animated-shape">
             <div className="row">
-                <div className="breadcrumb-inner text-start">
+                <div className="breadcrumb-inner text-start" style={{minHeight:'212px'}}>
                   <Image width={1500} height={100} src={el.banner} alt='' className='breadCrumb_banner' />
                   <div className="page-title">
                     <h3 className="title" id="c_name">{el.name}</h3>
