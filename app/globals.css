@@ -16655,7 +16655,7 @@ height: 100vh; }
 .details_boxs .details_cont {text-align: center;margin-top: 20px;}
 .card-body {max-height: 250px;overflow-y: auto;}
 .module {overflow: hidden;margin-bottom: 20px;}
-.module h4 {font-size: 16px;float: left;margin-right: 10px;font-weight: 700;text-transform: uppercase;}
+.module h4 {font-size: 16px;margin-right: 10px;font-weight: 700;text-transform: uppercase;}
 .module .list_mod {float: left;}
 .module .list_mod p {display: inline-block; box-shadow: 0 0 4px #ccc;padding: 8px;margin-bottom: 8px;border-radius: 10px;margin-left: 5px;}
 .detail_form { padding: 10px;}

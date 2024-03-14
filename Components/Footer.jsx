@@ -13,7 +13,7 @@ export default function Footer() {
     const [state, setState] = useState([])
     const allData = async() => {
         const {data} = await footerData();
-        return setState(...data)
+        return data && setState(...data)
       }
      
       useEffect(() => {
