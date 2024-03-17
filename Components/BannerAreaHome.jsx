@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaArrowRight } from "react-icons/fa6";
 import { homeCourses, enquiryForm } from '@/apis/apis';
+import Modal from './Modal';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -8,6 +9,8 @@ import Link from 'next/link';
 export default function BannerAreaHome() {
     const [state, setState] = useState([]);
     const [check,setCheck] = useState(false)
+    const [message, setMessage] = useState("");
+    
     const [field, setField] = useState({
         name: "",
         phone: "",
@@ -82,18 +85,15 @@ export default function BannerAreaHome() {
                 email: ""
             });
             setCheck(!check)
-           
-            if (data.success === true) {
-                return alert(data.message)
-            }
-            else return alert(data.message);
+            setMessage("Your Request is Submitted. We will touch you soon...");
+            
         }
     };
 
     useEffect(() => {
         allData();
     }, []);
-
+    
     return (
         <>
             <div className="slider-area banner-style-1 bg-white height-650 d-flex align-items-center" >
@@ -118,6 +118,7 @@ export default function BannerAreaHome() {
                                         <div className="inner">
                                             <div className="container checkout-page-style">
                                                 <div className="login-form-box">
+                                                
                                                     <h3 className="mb-30">Get in Touch</h3>
                                                     <form className="login-form" id="downloadSyllabus" onSubmit={handelSubmit}>
                                                         <div className="input-box mb--20">
@@ -147,6 +148,7 @@ export default function BannerAreaHome() {
                                                             <span>Enquire Now</span>
                                                         </button>
                                                     </form>
+                                                    {message}
                                                 </div>
                                             </div>
                                         </div>
@@ -167,3 +169,4 @@ export default function BannerAreaHome() {
         </>
     );
 }
+

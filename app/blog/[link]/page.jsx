@@ -14,7 +14,7 @@ const Index = () => {
 
   const allData = async()=>{
     const {data} = await singleBlog(link)
-    setState(data);
+   return data &&  setState(data);
   }
 
   useEffect(() => {
