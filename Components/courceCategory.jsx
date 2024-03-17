@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
-import Buttonicon from "./icon/connect-icon.svg";
 import { courseChapter, courseCatgories } from '@/apis/apis';
 
 const CourceCategory = ({ coursename,router }) => {

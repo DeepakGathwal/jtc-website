@@ -1,5 +1,3 @@
-"use client"
-
 import BannerAreaHome from "@/Components/BannerAreaHome";
 import FeaturedCourses from "@/Components/FeaturedCourses";
 import WhyChooseUs from "@/Components/WhyChooseUs";

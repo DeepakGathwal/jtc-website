@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Tnc from './tnc';
+import { ToastContainer, toast } from 'react-toastify';
+
 import { brochureForm } from '@/apis/apis';
 import Link from 'next/link';
 
@@ -66,6 +68,7 @@ const SyllybusDownload = ({ coursename }) => {
                 if (form) {
                     form.reset();
                 }
+                toast("Syllabus Download Sussessfull")
             } catch (err) {
                 console.error(err);
             }
@@ -104,7 +107,7 @@ const SyllybusDownload = ({ coursename }) => {
                     </div>
                 </div>
             </div>
-
+            <ToastContainer />
         </div>
     );
 }

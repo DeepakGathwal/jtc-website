@@ -1,3 +1,4 @@
+"use client"
 import React,{useState, useEffect} from 'react'
 import { blogs } from '@/apis/apis';
 import Link from 'next/link';

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { homeCourses, enquiryForm } from '@/apis/apis';
-import Tnc from './tnc';
+import { ToastContainer, toast } from 'react-toastify';
+
 import Link from 'next/link';
 
 const EnquiryForm = ({ show, setShow }) => {
@@ -72,13 +73,37 @@ const EnquiryForm = ({ show, setShow }) => {
             newErrors.course = "";
         }
 
-        // Checkbox validation
-        if (!field.checkbox) {
-            newErrors.checkbox = "Please accept the terms and conditions";
-            isValid = false;
-        } else {
-            newErrors.checkbox = "";
-        }
+    // Checkbox validation
+    if (!field.checkbox) {
+        newErrors.checkbox = "Please accept the terms and conditions";
+        isValid = false;
+    } else {
+        newErrors.checkbox = "";
+    }
+
+    setErrors(newErrors);
+    return isValid;
+};
+
+  const handelSubmit = async(e) => {
+      e.preventDefault();
+      if (validateForm()) {
+          const data = await enquiryForm(field);
+          setField({
+              name: "",
+              phone: "",
+              course: "",
+              email: ""
+          });
+          
+          toast(data.message);
+          return setShow(false);
+      }
+  }
+
+  useEffect(() => {
+      allData();
+  },[])
 
         setErrors(newErrors);
         return isValid;
@@ -126,7 +151,7 @@ const EnquiryForm = ({ show, setShow }) => {
                       </form>
                     </div>
                   </div>
-
+<ToastContainer/>
         </Modal.Body>
 
       </Modal>

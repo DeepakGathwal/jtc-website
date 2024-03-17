@@ -2,6 +2,7 @@
 import { footerData } from '@/apis/apis';
 import React,{useState, useEffect} from 'react';
 import Link from 'next/link'
+import { useParams, useRouter } from 'next/navigation'
 import { FaAngleDoubleRight , FaFacebookF , FaYoutube ,  FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoCall } from "react-icons/io5";
@@ -10,6 +11,7 @@ import { PiMapPinBold } from "react-icons/pi";
 import Image from 'next/image';
 
 export default function Footer() {
+    const router = useParams()
     const [state, setState] = useState([])
     const allData = async() => {
         const {data} = await footerData();
@@ -19,6 +21,10 @@ export default function Footer() {
       useEffect(() => {
         allData()
       },[])
+
+      useEffect(() => {
+        window.scrollTo(0,0)
+      },[router])
 
     return (
         <>

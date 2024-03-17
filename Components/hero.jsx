@@ -1,3 +1,4 @@
+"use client"
 import React , {useRef, useState,useEffect} from 'react';
 import "./hero.css"
 import Image from "next/image";

@@ -43,13 +43,13 @@
     transition: 0.4s;
 }
 .edu-card .inner .acc-section .accordion-item .accordion-button::after {
-    background-image: url("./icon/dropIcon.svg");
+    background-image: url("../public/icon/dropIcon.svg");
     scale: 2.2;
     transition: all 0.5s;
     transform: rotate(0deg);
 }
 .edu-card .inner .acc-section .accordion-item .accordion-toggle:checked + .accordion-title .accordion-button::after {
-    background-image: url("./icon/dropIcon.svg");
+    background-image: url("../public/icon/dropIcon.svg");
     scale: 2.2;
     transform: rotate(180deg) !important;
 }
