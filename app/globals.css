@@ -13412,7 +13412,11 @@ Gallery Item
       margin-right: 0;
       max-width: initial; } }
   .blog-details-1 .block-alignwide img {
-    width: 100%; }
+    max-width: 1167px;
+    max-height: 389px;
+    object-fit: cover;
+    width: 100%;
+  }
 
 .content-blog-top .title {
   margin-top: 10px;
@@ -17327,4 +17331,11 @@ input[type="checkbox"] ~ label a{
   align-items: center;
   z-index: 99999999999;
   background: #fff;
+}
+
+
+.blog-detailed .breadCrumb_banner {
+    max-height: 200px;
+    object-fit: cover;
+    height: 200px;
 }
