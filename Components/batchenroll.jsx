@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Tnc from './tnc';
+import { ToastContainer, toast } from 'react-toastify';
 import { batchForm } from '@/apis/apis';
 import Link from 'next/link';
 
@@ -58,7 +59,7 @@ const Batchenroll = ({ show, setShow, id, course }) => {
                 email: "",
                 id: id
             });
-            alert(data.message);
+            toast(data.message);
             setShow(false);
         }
     };
@@ -98,6 +99,7 @@ const Batchenroll = ({ show, setShow, id, course }) => {
                             </form>
                         </div>
                     </div>
+                    <ToastContainer/>
                 </Modal.Body>
             </Modal>
         </>

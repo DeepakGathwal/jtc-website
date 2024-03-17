@@ -54,10 +54,8 @@ export default function Header() {
     }, [activeTab])
 
     const navBarFunction = async(link) => {
-        if(link == "/courses"){
-           
-          return  setMegaMenu(!megaMenu)
-        }else if(link == "/hire"){
+        if(link == "/courses") return  setMegaMenu(!megaMenu)
+        else if(link == "/hire"){
             setHireShow(true)
           return    setMegaMenu(false)
         }else if(link == "/join"){
@@ -104,54 +102,6 @@ export default function Header() {
                     </nav>
                 </div>
                 
-                
-           {/* <div className="col-lg-6 d-none d-xl-block">
-                    <nav className="mainmenu-nav">
-                        <ul className="mainmenu">
-                            <li className="has-droupdown" onClick={() => router.push("/")}>Home</li>
-                            <li className="has-droupdown" onClick={() => router.push("/about")}>
-                                About Us
-                            </li>
-                            <li className="has-droupdown">Courses
-                                <div className="mega-menu row-flex">
-                                    <div className="column-flex course-hover">
-                                        <ul>
-                                            {categories && categories.map((el, i) => (
-                                                <>
-                                                    <li key={i} id={el.id} onMouseEnter={() => handleTabMouseEnter(el.id)}><Link href="/">{el.category}</Link></li>
-
-                                                </>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                    <div className="row-flex hover-results" id="contentOne" style={{ display: activeTab == activeTab ? 'flex' : 'none' }}>
-                                        {cources && cources.map((el,o) => (
-                                            <>
-                                                <div key={o} className="course-card">
-                                                    <Link href={'course/' + el.name} className="cardlinks column-flex">
-                                                        <Image src={el.icon} alt={el.name} width={20} height={20} className="courseIcon" />
-                                                        <h3>{el.name}</h3>
-                                                        <div className="details">
-                                                            <span className="info">{el.name}</span>
-                                                        </div>
-                                                    </Link>
-                                                </div>
-                                            </>
-                                        ))}
-
-                                    </div>
-
-                                </div>
-                            </li>
-                            <li className="has-droupdown" onClick={() => router.push("/tutorial")}>Tutorial</li>
-                            <li className="has-droupdown" onClick={hireshow}>Hire from Us</li>
-
-                            <li className="has-droupdown" onClick={joinshow}>Join Us</li>
-                            <li className="has-droupdown" onClick={() => router.push("/blog")}>Blog</li>
-                        </ul>
-                    </nav>
-                </div> */}
-
                 <div className="col-lg-6 col-xl-4 col-md-6 col-6">
                     <div className="header-right d-flex justify-content-end">
                         <div className="header-menu-bar">

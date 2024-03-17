@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaArrowRight } from "react-icons/fa6";
 import { homeCourses, enquiryForm } from '@/apis/apis';
+import { ToastContainer, toast } from 'react-toastify';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -83,11 +84,10 @@ export default function BannerAreaHome() {
                 email: ""
             });
             setCheck(!check)
-           
-            if (data.success === true) {
-                return alert(data.message)
-            }
-            else return alert(data.message);
+       
+            if (data.success == true) 
+                return toast(data.message)
+            else return toast(data.message);
         }
     };
 
@@ -146,10 +146,10 @@ export default function BannerAreaHome() {
                                                         </div>
                                                         <button className="rn-btn edu-btn w-100 mb--20" type="submit">
                                                             <span>Enquire Now</span>
-                                                        </button>
+                                                            </button>
                                                     </form>
+                                                    </div>
                                                 </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -165,6 +165,9 @@ export default function BannerAreaHome() {
                     </div>
                 </div>
             </div>
+            <ToastContainer/>
         </>
     );
 }
+
+
