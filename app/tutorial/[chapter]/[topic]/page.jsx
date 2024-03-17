@@ -16,12 +16,12 @@ const Page = () => {
     if(topic == "None") return navigate.push('/')
       const {data} = await tutorialChapter(chapter)
       singleTopic()
-     return setState(data)
+     return data && setState(data)
   } 
 
   const singleTopic = async() => {
     const {data} = await tutorialTopic(topic)
-    setSection(data)
+    return  data && setSection(data)
   }
 
   useEffect(() => {

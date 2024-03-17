@@ -49,7 +49,8 @@ useEffect(() => {
                     <div className="col-lg-2">
                         <div className="edu-event event-list1 radius-small">
                             <div className="inner">
-                                <div className="badge">{el.status}</div>
+
+                                <div className="badge">{el.status !=  "Available" && el.status}</div>
                                 <div className="batchdate" id="ID4">
                                     <div className="txtdate w-100">
                                         <h5 className="title">{el.date}
