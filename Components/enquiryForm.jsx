@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { homeCourses, enquiryForm } from '@/apis/apis';
-import Tnc from './tnc';
+import { ToastContainer, toast } from 'react-toastify';
+
 import Link from 'next/link';
 
 const EnquiryForm = ({ show, setShow }) => {
@@ -74,7 +75,8 @@ const validateForm = () => {
               course: "",
               email: ""
           });
-          alert(data.message);
+          
+          toast(data.message);
           return setShow(false);
       }
   }
@@ -125,7 +127,7 @@ const validateForm = () => {
                       </form>
                     </div>
                   </div>
-
+<ToastContainer/>
         </Modal.Body>
 
       </Modal>

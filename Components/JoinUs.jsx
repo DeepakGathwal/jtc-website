@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import Tnc from './tnc';
+import { ToastContainer, toast } from 'react-toastify';
+
 import { allRoles, joinUsForm } from '@/apis/apis';
 import Link from 'next/link';
 
@@ -67,7 +68,7 @@ const JoinUs = ({ joinForm, setjoinForm }) => {
         if (validateForm()) {
             const data = await joinUsForm(field);
             setField("");
-            alert(data.message);
+            toast(data.message);
             setjoinForm(false);
         }
     };
@@ -143,6 +144,7 @@ const JoinUs = ({ joinForm, setjoinForm }) => {
                             </div>
                         </section>
                     </div>
+                    <ToastContainer/>
                 </Modal.Body>
             </Modal>
         </>
