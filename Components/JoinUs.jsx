@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import { ToastContainer, toast } from 'react-toastify';
 
 import { allRoles, joinUsForm } from '@/apis/apis';
 import Link from 'next/link';
 
-const JoinUs = ({ joinForm, setjoinForm }) => {
+const JoinUs = ({ joinForm, setjoinForm , toast}) => {
     const [field, setField] = useState({
         name: "",
         phone: "",
@@ -68,8 +67,8 @@ const JoinUs = ({ joinForm, setjoinForm }) => {
         if (validateForm()) {
             const data = await joinUsForm(field);
             setField("");
-            toast(data.message);
-            setjoinForm(false);
+         return await   toast(data.message);
+        
         }
     };
 
@@ -144,9 +143,9 @@ const JoinUs = ({ joinForm, setjoinForm }) => {
                             </div>
                         </section>
                     </div>
-                    <ToastContainer/>
                 </Modal.Body>
             </Modal>
+                
         </>
     );
 };

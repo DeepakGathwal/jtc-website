@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Tnc from './tnc';
-import { ToastContainer, toast } from 'react-toastify';
-
 import { hireUsForm, homeCourses } from '@/apis/apis';
 import Link from 'next/link';
 
-const HireFromUs = ({ Hireshow, setHireShow }) => {
+const HireFromUs = ({ Hireshow, setHireShow, toast }) => {
     const [field, setField] = useState({
         name: "", phone: "", company: "", course: "", desigination: "", email: ""
     });
@@ -88,8 +86,8 @@ const HireFromUs = ({ Hireshow, setHireShow }) => {
         e.preventDefault();
         if (validateForm()) {
             const data = await hireUsForm(field);
-            toast(data.message);
-          return  setHireShow(false);
+          
+          return await   toast(data.message);
         }
     };
 
@@ -142,9 +140,9 @@ const HireFromUs = ({ Hireshow, setHireShow }) => {
                             </div>
                         </div>
                     </div>
-                    <ToastContainer/>
                 </Modal.Body>
             </Modal>
+          
         </>
     )
 }
