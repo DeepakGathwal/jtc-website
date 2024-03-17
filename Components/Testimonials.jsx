@@ -1,3 +1,4 @@
+"use client"
 import React , {useRef, useState,useEffect} from 'react';
 import { alltestimonials } from '@/apis/apis';
 import Slider from "react-slick";

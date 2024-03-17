@@ -187,7 +187,7 @@ export default function Header() {
 
             </div>
         </header>
-        {megaMenu &&    <Megamenu categories={categories} cources={cources} setActiveTab={setActiveTab} activeTab={activeTab} />
+        {megaMenu &&    <Megamenu categories={categories} cources={cources} setActiveTab={setActiveTab} activeTab={activeTab} setMegaMenu={setMegaMenu}/>
                                 }
         </>
 

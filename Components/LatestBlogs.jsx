@@ -1,4 +1,5 @@
-import React,{useState, useEffect} from 'react'
+"use client"
+import React from 'react'
 import Link from 'next/link';
 import { FaArrowRight } from "react-icons/fa6";
 import Image from 'next/image';

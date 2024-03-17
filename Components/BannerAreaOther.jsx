@@ -1,4 +1,3 @@
-import React from 'react'
 import  "../app/tutorial/hero.css"
 import  "../app/tutorial/orbit.css"
 import BannerAreaText from './BannerAreaText'

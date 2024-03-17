@@ -1,5 +1,4 @@
-"use client"
-import React, { useEffect } from 'react';         
+import React from 'react';         
 import "../globals.css";
 import HeroSection from "../../Components/hero";
 import WhyChooseUs from "@/Components/WhyChooseUs";
