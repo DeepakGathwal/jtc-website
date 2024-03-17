@@ -50,7 +50,7 @@ export async  function POST(req){
     const callQuery = await executeQuery(courseName)
     if(callQuery.length > 0) {
     const courceName = callQuery[0].name
-      const query =  `Select id,point,description from jtc_faqs WHERE faqs_about Like '%${courceName}%'  `
+      const query =  `Select id,point,description from jtc_faqs WHERE  FIND_IN_SET('${courceName}',faqs_about) `
       const data = await executeQuery(query);
       if(data.length > 0) {
       const value =  await JSON.stringify(data)

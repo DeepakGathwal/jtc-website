@@ -48,7 +48,7 @@ export async function POST(req, context){
    
     if(courceId.length > 0){
       const newid = courceId[0].id
-    const query =  `Select id, category_name from jtc_course_category WHERE course_id Like '%${newid}%' && deleted_by = '0' `
+    const query =  `Select id, category_name from jtc_course_category WHERE  FIND_IN_SET(${newid},course_id ) && deleted_by = '0' `
       const data = await executeQuery(query);
 
       if(data.length > 0) {

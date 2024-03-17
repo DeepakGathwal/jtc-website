@@ -67,7 +67,7 @@ export async  function PUT(req){
   const {id} = await req.json();
   const redisdata = await client.get(`category${id}`);
   if(!redisdata){
-    const query =  `Select id, name, icon, link from jtc_courses WHERE category Like '%${id}%' `
+    const query =  `Select id, name, icon, link from jtc_courses WHERE FIND_IN_SET( ${id},category) && deleted_by = '0' `
       const data = await executeQuery(query);
       if(data.length > 0) {
       const value =  await JSON.stringify(data)

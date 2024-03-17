@@ -27,7 +27,7 @@ export async  function POST(req){
   const {type} =  await req.json();
   let queryApi = ''
     if(type == 0) queryApi = ' order by id desc Limit 12'
-    else queryApi = ` && category LIKE '%${type}%' `
+    else queryApi = ` &&  FIND_IN_SET(${type},category) `
     const redisdata = await client.get(`tutorial${type}`);
     if(!redisdata){
         const query =  `Select id,link,name,icon, meta_tags,meta_keywords,meta_description from jtc_tutorial_cources WHERE  deleted_by = '0'  ${queryApi}`

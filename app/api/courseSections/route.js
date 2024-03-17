@@ -11,7 +11,7 @@ export async  function PUT(req){
         const getId = await executeQuery(getIdQuery);
         if(getId.length > 0){
         const courceId = await getId[0].id
-        const query =  `Select description, icon from jtc_course_join_point Where course_id LIKE '%${courceId}%'  `
+        const query =  `Select description, icon from jtc_course_join_point Where FIND_IN_SET(${courceId}, course_id)`
         const data = await executeQuery(query);
         if(data.length > 0) {
         const value = await JSON.stringify(data)
@@ -32,14 +32,14 @@ export async function PATCH(req){
  
   const redisdata = await client.get(`chapter${id}`);
   if(!redisdata){
-    const query =  `Select id, chapter_name from jtc_course_chapter WHERE category_id Like '%${id}%' && deleted_by = '0' `
+    const query =  `Select id, chapter_name from jtc_course_chapter WHERE FIND_IN_SET( ${id},category_id)  && deleted_by = '0' `
     const data = await executeQuery(query);
     let promises = []
     if(data.length > 0) 
 await data.map(async(ab) => {
             promises.push(new Promise(async (resolve, reject) => {
 
-             const topicQuery = `Select topic from jtc_course_topics WHERE chapter_id Like '%${ab.id}%' && deleted_by = '0' `
+             const topicQuery = `Select topic from jtc_course_topics WHERE FIND_IN_SET( ${ab.id},chapter_id ) && deleted_by = '0' `
              const executeTopic = await executeQuery(topicQuery)
                resolve({
                 chapter : ab.chapter_name,
