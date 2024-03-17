@@ -3,14 +3,14 @@ import Image from 'next/image';
 import Buttonicon from "./icon/connect-icon.svg";
 import { courseChapter, courseCatgories } from '@/apis/apis';
 
-const CourceCategory = ({ coursename }) => {
+const CourceCategory = ({ coursename,router }) => {
     const [state, setState] = useState([]);
     const [chapters, setChapters] = useState([]);
     const [activeTab, setActiveTab] = useState(null);
 
     const allData = async () => {
         const { data } = await courseCatgories(coursename);
-        return data && setState(data);
+        return data  ? setState(data) : router.push('/');
     };
 
     useEffect(() => {

@@ -7,13 +7,13 @@ import "./faq.css";
 import { IoCall } from "react-icons/io5";
 
 
-const Faqs = ({coursename}) => {
+const Faqs = ({coursename, router}) => {
     const [state, setState] = useState([])
 
 	const allFaqs = async() => {
 		const {data} = await courseFaqs(coursename)
 	
-		return setState(data)
+		return data  ? setState(data) : router.push('/')
 	}
 
 	useEffect(() => {

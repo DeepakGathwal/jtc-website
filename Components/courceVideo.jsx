@@ -1,11 +1,11 @@
 import React,{useState, useEffect} from 'react'
 import { courceViodePoint } from '@/apis/apis'
 
-const CourceVideo = ({coursename}) => {
+const CourceVideo = ({coursename, router}) => {
 	const [state, setState]  = useState([])
     const allData = async() => {
         const {data} = await courceViodePoint(coursename)
-        return setState(data)
+        return data ? setState(data) : router.push('/')
     }
 useEffect(() => {
     allData()

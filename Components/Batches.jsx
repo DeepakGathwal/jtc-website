@@ -5,16 +5,16 @@ import { IoLocationOutline } from "react-icons/io5";
 import { SlCalender } from "react-icons/sl";
 import Batchenroll from './batchenroll';
 
-const Batches = ({coursename}) => {
+const Batches = ({coursename, router}) => {
     const [state, setState]  = useState([])
     const [id, setId] = useState(null)
     const [course, setcourse] = useState(null)
+    const [show, setShow] = useState(false)
     const allData = async() => {
         const {data} = await allBatches(coursename)
-        return setState(data)
+        return  data  ? setState(data) : router.push('/')
         }
 
-    const [show, setShow] = useState(false)
     const batchenrollshow = (id,course) => {
         setShow(true)
         setId(id)

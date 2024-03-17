@@ -13,7 +13,7 @@ const Page = () => {
   const {chapter,topic } = router
 
   const allChapters = async() => {
-    if(topic == "None") return navigate.push('/')
+    if(topic == 'undefined') return navigate.push('/')
       const {data} = await tutorialChapter(chapter)
       singleTopic()
      return data && setState(data)

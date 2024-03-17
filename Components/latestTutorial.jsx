@@ -8,7 +8,6 @@ const ProgrammingAndFramework = ({ category, id }) => {
     const [state, setState] = useState([])
     const allData = async () => {
         const { data } = await tutorialCourse(id);
-        console.log(data);
         return  data && setState(data)
     }
 

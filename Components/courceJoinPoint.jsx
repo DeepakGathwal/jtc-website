@@ -2,12 +2,12 @@ import React,{useState, useEffect} from 'react'
 import { coursePoint } from '@/apis/apis'
 import Image from 'next/image'
 
-const CourceJoinPoint = ({ coursename }) => {
+const CourceJoinPoint = ({ coursename,router }) => {
     const [state, setState] = useState([])
     const allData = async () => {
         const { data } = await coursePoint(coursename)
 
-    return setState(data)
+    return  data  ? setState(data) : router.push('/')
     }
     useEffect(() => {
         allData()

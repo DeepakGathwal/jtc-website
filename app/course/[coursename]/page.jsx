@@ -5,7 +5,7 @@ import SyllybusDownload from '@/Components/SyllybusDownload';
 import Testimonials from '@/Components/Testimonials';
 import CourceCategory from '@/Components/courceCategory';
 import CourceVideo from '@/Components/courceVideo';
-import { useParams } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import { courseData } from '@/apis/apis';
 import CourceJoinPoint from '@/Components/courceJoinPoint';
 import Faq from '@/Components/faqs';
@@ -13,13 +13,14 @@ import Image from 'next/image';
 
 
 const Page = () => {
-	const router = useParams()
+	const params = useParams()
+	const router = useRouter()
 	const [state, setState] = useState([])
-	const { coursename } = router
+	const { coursename } = params
 	const allCourseData = async () => {
 		const { data } = await courseData(coursename)
 
-		return data && setState(...data)
+		return data ?  setState(...data) : router.push('/')
 	}
 
 	useEffect(() => {
@@ -71,7 +72,7 @@ const Page = () => {
 													</svg></span> Overview</span></h3>
 										</div>
 										<p>{state && state.description}</p>
-										<CourceJoinPoint coursename={coursename} />
+										<CourceJoinPoint coursename={coursename} router={router}/>
 									</div>
 								</div>
 							</div>
@@ -86,7 +87,7 @@ const Page = () => {
 												<embed type="video/webm" src={state && state.video_link} width={320} height={200} />
 											</div>
 										</div>
-										<CourceVideo coursename={coursename} />
+										<CourceVideo coursename={coursename} router={router}/>
 									</div>
 								</div>
 							</div>
@@ -115,7 +116,7 @@ const Page = () => {
 
 						<div className="container">
 							<div className="row justify-content-between">
-								<CourceCategory coursename={coursename} />
+								<CourceCategory coursename={coursename} router={router} />
 								<SyllybusDownload coursename={coursename} />
 							</div>
 						</div>
@@ -123,10 +124,10 @@ const Page = () => {
 				</div>
 			</div>
 
-			<Batches coursename={coursename} />
+			<Batches coursename={coursename} router={router}/>
 
 			<Testimonials />
-			<Faq coursename={coursename} />
+			<Faq coursename={coursename} router={router}/>
 		</>
 	)
 }
