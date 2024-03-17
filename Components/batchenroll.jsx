@@ -99,9 +99,9 @@ const Batchenroll = ({ show, setShow, id, course }) => {
                             </form>
                         </div>
                     </div>
-                    <ToastContainer/>
                 </Modal.Body>
             </Modal>
+                    <ToastContainer/>
         </>
     );
 }

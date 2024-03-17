@@ -142,9 +142,9 @@ const HireFromUs = ({ Hireshow, setHireShow }) => {
                             </div>
                         </div>
                     </div>
-                    <ToastContainer/>
                 </Modal.Body>
             </Modal>
+            <ToastContainer/>
         </>
     )
 }

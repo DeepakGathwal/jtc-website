@@ -144,9 +144,10 @@ const JoinUs = ({ joinForm, setjoinForm }) => {
                             </div>
                         </section>
                     </div>
-                    <ToastContainer/>
+                  
                 </Modal.Body>
             </Modal>
+            <ToastContainer/>
         </>
     );
 };
