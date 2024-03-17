@@ -125,7 +125,7 @@
     visibility: visible;
     opacity: 1;
     display: block;
-}
+} 
 @media (max-width: 767px) {
     .acc-section .accordion-item .accordion-button {
         font-size: 18px;
