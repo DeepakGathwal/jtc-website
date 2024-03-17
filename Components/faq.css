@@ -112,13 +112,16 @@
     border: 1px solid #EEEEEE;
 }
 .custom .accordion-item .accordion-collapse {
-    visibility: hidden;
+    /* visibility: hidden; */
     display: none;
     opacity: 0;
     transition: visibility 0.5s, opacity 0.5s linear;
     overflow: hidden;
 }
-.custom .accordion-item .accordion-toggle:checked+.accordion-title+.accordion-collapse {
+.custom .accordion-item .accordion-title.active +.accordion-collapse .accordion-body {
+    padding-top: 20px;
+}
+.custom .accordion-item .accordion-title.active +.accordion-collapse {
     visibility: visible;
     opacity: 1;
     display: block;
