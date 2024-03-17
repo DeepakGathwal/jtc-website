@@ -10,6 +10,8 @@ import Link from 'next/link';
 export default function BannerAreaHome() {
     const [state, setState] = useState([]);
     const [check,setCheck] = useState(false)
+    const [message, setMessage] = useState("");
+    
     const [field, setField] = useState({
         name: "",
         phone: "",
@@ -94,7 +96,7 @@ export default function BannerAreaHome() {
     useEffect(() => {
         allData();
     }, []);
-
+    
     return (
         <>
             <div className="slider-area banner-style-1 bg-white height-650 d-flex align-items-center" >
@@ -119,6 +121,7 @@ export default function BannerAreaHome() {
                                         <div className="inner">
                                             <div className="container checkout-page-style">
                                                 <div className="login-form-box">
+                                                
                                                     <h3 className="mb-30">Get in Touch</h3>
                                                     <form className="login-form" id="downloadSyllabus" onSubmit={handelSubmit}>
                                                         <div className="input-box mb--20">
@@ -169,5 +172,4 @@ export default function BannerAreaHome() {
         </>
     );
 }
-
 
