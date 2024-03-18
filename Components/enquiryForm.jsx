@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { homeCourses, enquiryForm } from '@/apis/apis';
-import Link from 'next/link';
 import Tnc from './tnc';
 
 const EnquiryForm = ({ show, setShow,setMessage }) => {

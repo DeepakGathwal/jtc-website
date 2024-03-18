@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Tnc from './tnc';
 import { hireUsForm, homeCourses } from '@/apis/apis';
-import Link from 'next/link';
 
 const HireFromUs = ({ Hireshow, setHireShow, setMessage }) => {
     const [field, setField] = useState({

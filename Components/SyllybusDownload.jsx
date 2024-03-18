@@ -1,8 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Tnc from './tnc';
-
 import { brochureForm } from '@/apis/apis';
-import Link from 'next/link';
 
 const SyllybusDownload = ({ coursename, toast }) => {
     const [field, setField] = useState({

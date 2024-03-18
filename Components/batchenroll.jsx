@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import Tnc from './tnc';
 import { ToastContainer, toast } from 'react-toastify';
 import { batchForm } from '@/apis/apis';
-import Link from 'next/link';
+
 
 const Batchenroll = ({ show, setShow, id, course }) => {
     const [field, setField] = useState({

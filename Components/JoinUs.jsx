@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { allRoles, joinUsForm } from '@/apis/apis';
-import Link from 'next/link';
 import Tnc from './tnc';
 
 
