@@ -1,11 +1,8 @@
 import React, { useState, useRef } from 'react';
 import Tnc from './tnc';
-import { ToastContainer, toast } from 'react-toastify';
-
 import { brochureForm } from '@/apis/apis';
-import Link from 'next/link';
 
-const SyllybusDownload = ({ coursename }) => {
+const SyllybusDownload = ({ coursename, toast }) => {
     const [field, setField] = useState({
         name: "", phone: "", course: coursename
     });
@@ -53,29 +50,25 @@ const SyllybusDownload = ({ coursename }) => {
     const submitForm = async (e) => {
         e.preventDefault();
         if (validateForm()) {
-            try {
-                const blob = await brochureForm(field);
-                const link = document.createElement('a');
-                link.href = URL.createObjectURL(blob);
-                link.download = `${field.course}.pdf`;
-                link.click();
-
-                // Reset form fields
-                setField({ name: "", phone: "", course: coursename, checkbox: false });
-
-                // Optional: Clear form elements (for browsers with caching issues)
-                const form = formRef.current;
-                if (form) {
-                    form.reset();
-                }
-                toast("Syllabus Download Sussessfull")
-            } catch (err) {
-                console.error(err);
-            }
+         
+                field.course = coursename
+                await  brochureForm(field).then(() => {
+   
+                    // Reset form fields
+                    
+                 
+                    // Optional: Clear form elements (for browsers with caching issues)
+                    const form = formRef.current;
+                    if (form) {
+                        form.reset()
+                      return  toast("Syllabus Download Sussessfull")
+                    }
+                })
         }
     };
 
     return (
+        <>
         <div className="col-md-4" id="downloadSyllabus">
             <div className="edu-card card-type-7 radius-small">
                 <div className="inner">
@@ -92,12 +85,8 @@ const SyllybusDownload = ({ coursename }) => {
                                         placeholder="Mobile Number" onChange={handelChange} />
                                     {errors.phone && <span className="error-message red">{errors.phone}</span>}
                                 </div>
-                                {/* <Tnc id={"checkbox-7"} /> */}
-                                <div className="input-box mb--20">
-                                    <input type="checkbox" id="checkbox" name="checkbox" checked={field.checkbox} onChange={(e) => setField({ ...field, checkbox: e.target.checked })} />
-                                    <label htmlFor="checkbox">I accept the <Link href="/termsandcondition">Terms &#38; Conditions</Link>.</label><br />
-                                    {errors.checkbox && <span className="error-message red">{errors.checkbox}</span>}
-                                </div>
+                                <Tnc id={"checkbox-7"}  field={field} setField={setField} errors={errors} />
+                        
                                 <button className="rn-btn edu-btn w-100 mb--20" type="submit">
                                     <span>Download Curriculum</span>
                                 </button>
@@ -107,8 +96,9 @@ const SyllybusDownload = ({ coursename }) => {
                     </div>
                 </div>
             </div>
-            <ToastContainer />
         </div>
+          
+        </>
     );
 }
 

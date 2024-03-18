@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
-
 import { allRoles, joinUsForm } from '@/apis/apis';
-import Link from 'next/link';
+import Tnc from './tnc';
 
-const JoinUs = ({ joinForm, setjoinForm , toast}) => {
+
+const JoinUs = ({ joinForm, setjoinForm , setMessage}) => {
     const [field, setField] = useState({
         name: "",
         phone: "",
@@ -37,8 +37,8 @@ const JoinUs = ({ joinForm, setjoinForm , toast}) => {
         }
 
         // Checkbox validation
-        if (!field.agree) {
-            newErrors.agree = "Please agree to the terms and conditions.";
+        if (!field.checkbox) {
+            newErrors.checkbox = "Please agree to the terms and conditions.";
             isValid = false;
         }
 
@@ -66,8 +66,9 @@ const JoinUs = ({ joinForm, setjoinForm , toast}) => {
         e.preventDefault();
         if (validateForm()) {
             const data = await joinUsForm(field);
-            setField("");
-         return await   toast(data.message);
+           await setField("");
+         return await  hireclose().then(() => setMessage(data.message) )
+           
         
         }
     };
@@ -122,17 +123,8 @@ const JoinUs = ({ joinForm, setjoinForm , toast}) => {
                                                     </select>
                                                     {errors.role && <span style={{ color: 'red' }}>{errors.role}</span>}
                                                 </div>
-                                                {/* <Tnc id="checkbox-3"></Tnc> */}
-                                                <div className="input-box mb--20">
-                                                    <input
-                                                        type="checkbox"
-                                                        name="agree"
-                                                        id="agree"
-                                                        onChange={handelChange}
-                                                    />
-                                                    <label htmlFor="agree">I agree to the <Link href="/termsandcondition">Terms &#38; Conditions</Link>.</label>
-                                                    {errors.agree && <span style={{ color: 'red' }}>{errors.agree}</span>}
-                                                </div>
+                                                <Tnc id="checkbox-3" field={field} setField={setField} errors={errors}/>
+                                               
                                                 <button className="rn-btn edu-btn w-100 mb--20" type="submit">
                                                     <span>Join Now</span>
                                                 </button>
@@ -143,9 +135,10 @@ const JoinUs = ({ joinForm, setjoinForm , toast}) => {
                             </div>
                         </section>
                     </div>
+                  
                 </Modal.Body>
             </Modal>
-                
+         
         </>
     );
 };

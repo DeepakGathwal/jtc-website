@@ -129,7 +129,12 @@ export const brochureForm = async (field) => {
   try {
     const response = await instance.post(company, JSON.stringify(field), { responseType: 'blob' });
     const blob = new Blob([response.data], { type: response.headers['content-type'] });
-    return blob;
+    
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = `${field.course}.pdf`;
+    
+    return link.click();
   } catch (err) {
     return err;
   }
