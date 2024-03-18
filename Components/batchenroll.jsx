@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import Tnc from './tnc';
 import { ToastContainer, toast } from 'react-toastify';
 import { batchForm } from '@/apis/apis';
-import Link from 'next/link';
+
 
 const Batchenroll = ({ show, setShow, id, course }) => {
     const [field, setField] = useState({
@@ -87,12 +87,8 @@ const Batchenroll = ({ show, setShow, id, course }) => {
                                         placeholder="Mobile Number" />
                                     {errors.phone && <span className="error-message red">{errors.phone}</span>}
                                 </div>
-                                {/* <Tnc id={"checkbox-4"} /> */}
-                                <div className="input-box mb--20">
-                                    <input type="checkbox" id="checkbox-4" name="checkbox" checked={field.checkbox} onChange={(e) => setField({ ...field, checkbox: e.target.checked })} />
-                                    <label htmlFor="checkbox-4">I accept the <Link href="/termsandcondition">Terms &#38; Conditions</Link>.</label>
-                                    {errors.checkbox && <span className="error-message red">{errors.checkbox}</span>}
-                                </div>
+                                <Tnc id={"checkbox-4"} field={field} setField={setField} errors={errors}/>
+                               
                                 <button className="rn-btn edu-btn w-100 mb--20" type="submit">
                                     <span>Enroll Now</span>
                                 </button>

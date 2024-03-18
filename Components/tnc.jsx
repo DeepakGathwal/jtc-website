@@ -1,12 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
 
-const Tnc = ({id}) => {
+const Tnc = ({id, field, setField, errors}) => {
   return (
-    <div className="comment-form-consent input-box mb--20">
-        <label><input id={id} type="checkbox" required className='termChecked'/></label>
-        <label htmlFor={id}>I have reviewed all &nbsp;<Link href="/termsandcondition">Terms &#38; Conditions</Link>.</label>
-    </div>
+    <div className="input-box mb--20">
+                                        <input type="checkbox" id={id} name="checkbox" checked={field.checkbox} onChange={(e) => setField({ ...field, checkbox: e.target.checked })} />
+                                        <label htmlFor={id}>I accept the <Link href="/termsandcondition">Terms &#38; Conditions</Link>.</label>
+                                        <br />
+                                        {errors.checkbox && <span className="error-message red">{errors.checkbox}</span>}
+                                    </div>
   )
 }
 

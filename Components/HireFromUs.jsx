@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Tnc from './tnc';
 import { hireUsForm, homeCourses } from '@/apis/apis';
-import Link from 'next/link';
 
-const HireFromUs = ({ Hireshow, setHireShow, toast }) => {
+const HireFromUs = ({ Hireshow, setHireShow, setMessage }) => {
     const [field, setField] = useState({
         name: "", phone: "", company: "", course: "", desigination: "", email: ""
     });
@@ -86,14 +85,18 @@ const HireFromUs = ({ Hireshow, setHireShow, toast }) => {
         e.preventDefault();
         if (validateForm()) {
             const data = await hireUsForm(field);
-          
-          return await   toast(data.message);
+          setField("")
+         return await  hireclose().then(() => setMessage(data.message) )
         }
+    };
+
+    const hireclose = async () => {
+        setHireShow(false);
     };
 
     return (
         <>
-            <Modal show={Hireshow} onHide={() => setHireShow(false)}>
+            <Modal show={Hireshow} onHide={() => hireclose()}>
                 <Modal.Header closeButton>
                     <h6 className="mb-30">Partner with Us for Hiring</h6>
                 </Modal.Header>
@@ -127,12 +130,8 @@ const HireFromUs = ({ Hireshow, setHireShow, toast }) => {
                                         </select>
                                         {errors.course && <span className="error-message red">{errors.course}</span>}
                                     </div>
-                                    {/* <Tnc id={"checkbox-2"}></Tnc> */}
-                                    <div className="input-box mb--20">
-                                        <input type="checkbox" id="checkbox-2" name="checkbox" checked={field.checkbox} onChange={(e) => setField({ ...field, checkbox: e.target.checked })} />
-                                        <label htmlFor="checkbox-2">I accept the <Link href="/termsandcondition">Terms &#38; Conditions</Link>.</label>
-                                        {errors.checkbox && <span className="error-message red">{errors.checkbox}</span>}
-                                    </div>
+                                    <Tnc id={"checkbox-2"} field={field} setField={setField} errors={errors}/>
+                                    
                                     <button className="rn-btn edu-btn w-100 mb-20" type="submit">
                                         <span>Hire Now</span>
                                     </button>
@@ -142,7 +141,7 @@ const HireFromUs = ({ Hireshow, setHireShow, toast }) => {
                     </div>
                 </Modal.Body>
             </Modal>
-          
+           
         </>
     )
 }

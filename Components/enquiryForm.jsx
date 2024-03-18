@@ -1,28 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { homeCourses, enquiryForm } from '@/apis/apis';
+import Tnc from './tnc';
 
-import Link from 'next/link';
+const EnquiryForm = ({ show, setShow,setMessage }) => {
+  const [state, setState] = useState([]);
+    const [field, setField] = useState({
+        name: "", phone: "", course: "", email: "", checkbox: false // Include checkbox state
+    });
+    const [errors, setErrors] = useState({
+        name: "", phone: "", course: "", checkbox: ""
+    });
+     const [showModal, setShowModal] = useState(false); // State to control modal visibility
+    
+    async function fetchData() {
+        const { data } = await homeCourses();
+        setState(data);
+    }
+    useEffect(() => {
+        fetchData();
+    }, []);
 
-const EnquiryForm = ({ show, setShow, toast }) => {
+    const handelChange = (e) => {
+        setField({ ...field, [e.target.name]: e.target.value });
+    };
 
-  const [state, setState] = useState([])
-  const [field, setField] = useState({
-      name : "", phone : "", course : "", email : ""
-  })
-  const [errors, setErrors] = useState({
-      name: "", phone: "", course: "", checkbox: ""
-  });
-
-  const allData = async () => {
-      const {data} = await homeCourses()
-      return data && setState(data);
-  }
-
- 
-const handelChange = (e) => {
-  setField({ ...field, [e.target.name]: e.target.value })
-}
+    
 
 const validateForm = () => {
     let isValid = true;
@@ -68,28 +71,23 @@ const validateForm = () => {
       e.preventDefault();
       if (validateForm()) {
           const data = await enquiryForm(field);
-          setField({
-              name: "",
-              phone: "",
-              course: "",
-              email: ""
-          });
-         if(data.success == true) {
+          if(data.success == true) {
+           setField("");
           
-          return  await toast(data.message)  
+          return await  hireclose().then(() => setMessage(data.message) )
           
           }
         }
         
   }
 
-  useEffect(() => {
-      allData()
-  },[])
 
+  const hireclose = async () => {
+    setShow(false)
+};
   return (
     <>
-      <Modal show={show} onHide={() => setShow(false)}>
+      <Modal show={show} onHide={() => hireclose() }>
 
         <Modal.Header closeButton>
           <h3 className="mb-30">Get in Touch</h3>
@@ -117,12 +115,8 @@ const validateForm = () => {
                           </select>
                           {errors.course && <span className="error-message red">{errors.course}</span>}
                         </div>
-                        {/* <Tnc id = {"checkbox-1"}/> */}
-                        <div className="input-box mb--20">
-                            <input type="checkbox" id="checkbox-1" name="checkbox" checked={field.checkbox} onChange={(e) => setField({ ...field, checkbox: e.target.checked })} />
-                            <label htmlFor="checkbox-1">I accept the <Link href="/termsandcondition">Terms &#38; Conditions</Link>.</label>
-                            {errors.checkbox && <span className="error-message red">{errors.checkbox}</span>}
-                        </div>
+                        <Tnc id = {"checkbox-1"} field={field} setField={setField} errors={errors}/>
+                       
                         <button className="rn-btn edu-btn w-100 mb--20" type="submit">
                           <span>Enquire Now</span>
                         </button>
@@ -133,7 +127,7 @@ const validateForm = () => {
         </Modal.Body>
 
       </Modal>
-
+ 
 
 
     </>
