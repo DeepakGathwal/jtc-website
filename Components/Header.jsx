@@ -10,6 +10,7 @@ import { FaGripLines } from "react-icons/fa";
 import { useRouter } from 'next/navigation';
 import Test from './enquiryForm';
 import "./Header.css";
+import { ToastContainer, toast } from 'react-toastify';
 import { allCourceTypes, allNavbarLinks, courcesList, homeCourses } from '@/apis/apis';
 import HireFromUs from './HireFromUs';
 import JoinUs from './JoinUs';
@@ -120,9 +121,9 @@ export default function Header() {
                             <div className="quote-icon quote-user d-block d-md-none ml--15 ml_sm--5">
                                 <a className="white-box-icon popup-btn" data-popup="enqNow" ><RiChat1Line /> </a>
                             </div>
-                            <Test show={show} setShow={setShow} />
-                            <HireFromUs Hireshow={Hireshow} setHireShow={setHireShow} />
-                            <JoinUs joinForm={joinForm} setjoinForm={setjoinForm} />
+                            <Test show={show} setShow={setShow}  toast={toast}/>
+                            <HireFromUs Hireshow={Hireshow} setHireShow={setHireShow}  toast={toast}/>
+                            <JoinUs joinForm={joinForm} setjoinForm={setjoinForm} toast={toast} />
 
                             <div className="mobile-menu-bar ml--15 ml_sm--5 d-block d-xl-none">
                                 <div className="hamberger">
@@ -137,6 +138,7 @@ export default function Header() {
 
             </div>
         </header>
+        <ToastContainer/>
         {megaMenu &&    <Megamenu categories={categories} cources={cources} setActiveTab={setActiveTab} activeTab={activeTab} setMegaMenu={setMegaMenu}/>
                                 }
         </>
