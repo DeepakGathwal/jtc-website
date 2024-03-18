@@ -16653,8 +16653,8 @@ height: 100vh; }
 .pdf_download a {display:block; border-radius:20px; border:1px solid #333; padding:8px 60px; font-weight:bold;}
 .eroll_Btn a {display:block; border-radius:20px; background:#0c3462; padding:8px 60px; color:#fff; font-weight:bold;}
 .video_wrapper object {border:5px solid #333; display:block}
-.learnCourse {display:flex; justify-content: space-between;}
-.details_boxs { background: #FFF3EE;padding: 20px;border-radius: 10px; margin:10px;}
+.learnCourse {display:flex; justify-content: space-between;flex-wrap: wrap;}
+.details_boxs { background: #FFF3EE;padding: 20px;border-radius: 10px; margin:10px;width:30%}
 .details_boxs .detail_icons {width: 60px;background: #fff;border-radius: 50%;margin: 0 auto;padding: 10px;}
 .details_boxs .details_cont {text-align: center;margin-top: 20px;}
 .card-body {max-height: 250px;overflow-y: auto;}
