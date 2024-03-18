@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "./responsive.css";
 import Header from "@/Components/Header";
 import Footer from "@/Components/Footer";
 import "slick-carousel/slick/slick.css";

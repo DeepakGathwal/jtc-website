@@ -5100,7 +5100,7 @@ textarea:-ms-input-placeholder {
   /* background-image: url(/assets/images/bg/breadcrumb-bg.jpg);  */
   position: relative;
 }
-.breadCrumb_banner {}
+
   .edu-breadcrumb-area .shape-image {
     position: absolute;
     z-index: -1; }
@@ -5122,6 +5122,7 @@ textarea:-ms-input-placeholder {
     .edu-breadcrumb-area .shape-image.shape-image-6 {
       bottom: -30px;
       left: -108px; }
+      .page-flex {display:flex; flex-wrap: wrap;}
 
 /* Animation  */
 .eduvibe-animated-shape {
@@ -6353,7 +6354,7 @@ button.edu-btn {
   font-size: 40px; }
   @media only screen and (max-width: 575px) {
     .section-title .title {
-      font-size: 32px; } }
+      font-size: 27px; } }
   @media only screen and (max-width: 767px) {
     .section-title .title br {
       display: none; } }
@@ -11680,7 +11681,7 @@ border-radius: 5px; }
       padding: 30px 15px; } }
   @media only screen and (max-width: 767px) {
     .edu-counterup {
-      padding: 30px 15px; } }
+      padding: 30px 15px; margin:10px } }
   .edu-counterup .inner .icon {
     margin-bottom: 25px; }
     .edu-counterup .inner .icon img {

@@ -96,7 +96,7 @@ export default function Header() {
         <>
 
             <header className="edu-header header-style-2 disable-transparent header-sticky sticky row-flex space-between-row align-items-center-row">
-                <div className="row align-items-center w-100">
+                <div className="align-items-center w-100 page-flex">
                     <div className="col-lg-6 col-xl-2 col-md-6 col-6">
                         <Link href="/">
                             <div className="logo">

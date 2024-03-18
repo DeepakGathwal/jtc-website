@@ -1,0 +1,21 @@
+@media screen and (max-width:540px){
+    .banner-style-1 .inner .content  {text-align: center;}
+    .banner-style-1 .inner .content .title {font-size:27px}
+    a.edu-btn, button.edu-btn {height: 40px; line-height: 40px; font-size:14px; margin-bottom:30px;}
+    
+    .header-style-2 {padding:0;}
+    .page-flex {flex-wrap: wrap;}
+    .edu-counterup .inner .content .counter {font-size:24px; line-height: 40px;}
+    .choose-us-2 {margin-left:25px; margin-right:25px;}
+    .eduvibe-animated-shape {padding:0 25px !important}
+    .edu-counterup {padding:15px}
+    .edu-counterup .inner .icon {margin-bottom:10px;}
+    .about-hero-section .hero-mainhead {font-size:37px !important; line-height: 40px !important;}
+    .section-title .pre-title, .banner-style-1 .inner .content .pre-title {font-size:14px;}
+    .details_boxs {width:100%}
+    a.edu-btn.btn-bg-alt, button.edu-btn.btn-bg-alt {line-height: 40px;}
+    .video-popup-wrapper embed{width:100%;}
+    .acc-section .accordion-item {padding-left:0 !important; padding-right:0 !important}
+    .custom .accordion-item .accordion-title {padding-right:10px !important; padding-left:10px !important}
+    
+}
