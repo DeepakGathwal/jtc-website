@@ -87,12 +87,8 @@ const SyllybusDownload = ({ coursename, toast }) => {
                                         placeholder="Mobile Number" onChange={handelChange} />
                                     {errors.phone && <span className="error-message red">{errors.phone}</span>}
                                 </div>
-                                {/* <Tnc id={"checkbox-7"} /> */}
-                                <div className="input-box mb--20">
-                                    <input type="checkbox" id="checkbox" name="checkbox" checked={field.checkbox} onChange={(e) => setField({ ...field, checkbox: e.target.checked })} />
-                                    <label htmlFor="checkbox">I accept the <Link href="/termsandcondition">Terms &#38; Conditions</Link>.</label><br />
-                                    {errors.checkbox && <span className="error-message red">{errors.checkbox}</span>}
-                                </div>
+                                <Tnc id={"checkbox-7"}  field={field} setField={setField} errors={errors} />
+                        
                                 <button className="rn-btn edu-btn w-100 mb--20" type="submit">
                                     <span>Download Curriculum</span>
                                 </button>

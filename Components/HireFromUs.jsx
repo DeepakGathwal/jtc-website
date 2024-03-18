@@ -131,12 +131,8 @@ const HireFromUs = ({ Hireshow, setHireShow, setMessage }) => {
                                         </select>
                                         {errors.course && <span className="error-message red">{errors.course}</span>}
                                     </div>
-                                    {/* <Tnc id={"checkbox-2"}></Tnc> */}
-                                    <div className="input-box mb--20">
-                                        <input type="checkbox" id="checkbox-2" name="checkbox" checked={field.checkbox} onChange={(e) => setField({ ...field, checkbox: e.target.checked })} />
-                                        <label htmlFor="checkbox-2">I accept the <Link href="/termsandcondition">Terms &#38; Conditions</Link>.</label>
-                                        {errors.checkbox && <span className="error-message red">{errors.checkbox}</span>}
-                                    </div>
+                                    <Tnc id={"checkbox-2"} field={field} setField={setField} errors={errors}/>
+                                    
                                     <button className="rn-btn edu-btn w-100 mb-20" type="submit">
                                         <span>Hire Now</span>
                                     </button>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { homeCourses, enquiryForm } from '@/apis/apis';
 import Link from 'next/link';
+import Tnc from './tnc';
 
 const EnquiryForm = ({ show, setShow,setMessage }) => {
   const [state, setState] = useState([]);
@@ -115,12 +116,8 @@ const validateForm = () => {
                           </select>
                           {errors.course && <span className="error-message red">{errors.course}</span>}
                         </div>
-                        {/* <Tnc id = {"checkbox-1"}/> */}
-                        <div className="input-box mb--20">
-                            <input type="checkbox" id="checkbox-1" name="checkbox" checked={field.checkbox} onChange={(e) => setField({ ...field, checkbox: e.target.checked })} />
-                            <label htmlFor="checkbox-1">I accept the <Link href="/termsandcondition">Terms &#38; Conditions</Link>.</label>
-                            {errors.checkbox && <span className="error-message red">{errors.checkbox}</span>}
-                        </div>
+                        <Tnc id = {"checkbox-1"} field={field} setField={setField} errors={errors}/>
+                       
                         <button className="rn-btn edu-btn w-100 mb--20" type="submit">
                           <span>Enquire Now</span>
                         </button>
