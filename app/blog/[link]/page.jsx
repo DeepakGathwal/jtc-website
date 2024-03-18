@@ -25,7 +25,7 @@ const Index = () => {
     <>
       {state && state.map((el,i) => (
         <>
-        <div className="edu-breadcrumb-area breadcrumb-style-1 bg-image">
+        <div className="edu-breadcrumb-area breadcrumb-style-1 bg-image blog-detailed">
           <div className="container-fluid eduvibe-animated-shape">
             <div className="row">
                 <div className="breadcrumb-inner text-start" style={{minHeight:'212px'}}>
@@ -57,14 +57,14 @@ const Index = () => {
 
                                 <h4 className="title">{el.name}</h4>
 
-                                <div className="thumbnail block-alignwide">
+                                <div className="thumbnail block-alignwide blog-thumb-banner">
                                     <Image className="radius-small w-100 mb--30" src={el.icon} alt="Blog Images" width={40} height={40}/>
                                 </div>
                             </div>
 
                             <div className="blog-main-content">
                                 <blockquote className="blockquote-style-1">“{el.heading}”
-                                    <Image className="quote-image" src="../assets/images/icons/quote-2.png" alt="Quote Images" height={60} width={60}/>
+                                    <Image className="quote-image" src="/assets/images/icons/quote-2.png" alt="Quote Images" height={60} width={60}/>
                                 </blockquote>
                                 <div className="content"
                                 style={{cssText : el.blog_css}} dangerouslySetInnerHTML={{ __html: el.blog_html }} >
