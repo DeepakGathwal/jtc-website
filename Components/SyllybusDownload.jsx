@@ -1,11 +1,10 @@
 import React, { useState, useRef } from 'react';
 import Tnc from './tnc';
-import { ToastContainer, toast } from 'react-toastify';
 
 import { brochureForm } from '@/apis/apis';
 import Link from 'next/link';
 
-const SyllybusDownload = ({ coursename }) => {
+const SyllybusDownload = ({ coursename, toast }) => {
     const [field, setField] = useState({
         name: "", phone: "", course: coursename
     });
@@ -53,29 +52,25 @@ const SyllybusDownload = ({ coursename }) => {
     const submitForm = async (e) => {
         e.preventDefault();
         if (validateForm()) {
-            try {
-                const blob = await brochureForm(field);
-                const link = document.createElement('a');
-                link.href = URL.createObjectURL(blob);
-                link.download = `${field.course}.pdf`;
-                link.click();
-
-                // Reset form fields
-                setField({ name: "", phone: "", course: coursename, checkbox: false });
-
-                // Optional: Clear form elements (for browsers with caching issues)
-                const form = formRef.current;
-                if (form) {
-                    form.reset();
-                }
-                toast("Syllabus Download Sussessfull")
-            } catch (err) {
-                console.error(err);
-            }
+         
+                field.course = coursename
+                await  brochureForm(field).then(() => {
+   
+                    // Reset form fields
+                    
+                 
+                    // Optional: Clear form elements (for browsers with caching issues)
+                    const form = formRef.current;
+                    if (form) {
+                        form.reset()
+                      return  toast("Syllabus Download Sussessfull")
+                    }
+                })
         }
     };
 
     return (
+        <>
         <div className="col-md-4" id="downloadSyllabus">
             <div className="edu-card card-type-7 radius-small">
                 <div className="inner">
@@ -107,8 +102,9 @@ const SyllybusDownload = ({ coursename }) => {
                     </div>
                 </div>
             </div>
-            <ToastContainer />
         </div>
+          
+        </>
     );
 }
 

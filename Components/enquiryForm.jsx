@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { homeCourses, enquiryForm } from '@/apis/apis';
-
 import Link from 'next/link';
 
-const EnquiryForm = ({ show, setShow }) => {
+const EnquiryForm = ({ show, setShow,setMessage }) => {
   const [state, setState] = useState([]);
     const [field, setField] = useState({
         name: "", phone: "", course: "", email: "", checkbox: false // Include checkbox state
@@ -12,37 +11,21 @@ const EnquiryForm = ({ show, setShow }) => {
     const [errors, setErrors] = useState({
         name: "", phone: "", course: "", checkbox: ""
     });
-    const [message, setMessage] = useState(""); // State to hold the message
-    const [showModal, setShowModal] = useState(false); // State to control modal visibility
-
+     const [showModal, setShowModal] = useState(false); // State to control modal visibility
+    
+    async function fetchData() {
+        const { data } = await homeCourses();
+        setState(data);
+    }
     useEffect(() => {
-        async function fetchData() {
-            const { data } = await homeCourses();
-            setState(data);
-        }
         fetchData();
     }, []);
 
-    const handleChange = (e) => {
+    const handelChange = (e) => {
         setField({ ...field, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        if (validateForm()) {
-            const data = await enquiryForm(field);
-            setMessage(data.message); // Set the message
-            setShowModal(true); // Show the modal
-            // Clear form fields
-            setField({
-                name: "",
-                phone: "",
-                course: "",
-                email: "",
-                checkbox: false // Reset checkbox state
-            });
-        }
-    };
+    
 
 const validateForm = () => {
     let isValid = true;
@@ -88,28 +71,23 @@ const validateForm = () => {
       e.preventDefault();
       if (validateForm()) {
           const data = await enquiryForm(field);
-          setField({
-              name: "",
-              phone: "",
-              course: "",
-              email: ""
-          });
-         if(data.success == true) {
+          if(data.success == true) {
+           setField("");
           
-          return  await toast(data.message)  
+          return await  hireclose().then(() => setMessage(data.message) )
           
           }
         }
         
   }
 
-  useEffect(() => {
-      allData()
-  },[])
 
+  const hireclose = async () => {
+    setShow(false)
+};
   return (
     <>
-      <Modal show={show} onHide={() => setShow(false)}>
+      <Modal show={show} onHide={() => hireclose() }>
 
         <Modal.Header closeButton>
           <h3 className="mb-30">Get in Touch</h3>
@@ -149,18 +127,11 @@ const validateForm = () => {
                       </form>
                     </div>
                   </div>
-<ToastContainer/>
+
         </Modal.Body>
 
       </Modal>
- <Modal show={showModal} onHide={() => setShowModal(false)}>
-                <Modal.Header closeButton>
-                    <h3 className="mb-30">Thank You!</h3>
-                </Modal.Header>
-                <Modal.Body>
-                    <p>{message}</p>
-                </Modal.Body>
-            </Modal>
+ 
 
 
     </>

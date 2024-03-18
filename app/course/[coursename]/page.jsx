@@ -7,6 +7,7 @@ import CourceCategory from '@/Components/courceCategory';
 import CourceVideo from '@/Components/courceVideo';
 import { useParams, useRouter } from 'next/navigation'
 import { courseData } from '@/apis/apis';
+import { ToastContainer, toast } from 'react-toastify';
 import CourceJoinPoint from '@/Components/courceJoinPoint';
 import Faq from '@/Components/faqs';
 import Image from 'next/image';
@@ -117,7 +118,7 @@ const Page = () => {
 						<div className="container">
 							<div className="row justify-content-between">
 								<CourceCategory coursename={coursename} router={router} />
-								<SyllybusDownload coursename={coursename} />
+								<SyllybusDownload coursename={coursename} toast={toast}/>
 							</div>
 						</div>
 					</div>
@@ -128,6 +129,7 @@ const Page = () => {
 
 			<Testimonials />
 			<Faq coursename={coursename} router={router}/>
+			<ToastContainer/>
 		</>
 	)
 }

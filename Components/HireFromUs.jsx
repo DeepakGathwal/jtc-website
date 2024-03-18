@@ -4,7 +4,7 @@ import Tnc from './tnc';
 import { hireUsForm, homeCourses } from '@/apis/apis';
 import Link from 'next/link';
 
-const HireFromUs = ({ Hireshow, setHireShow, toast }) => {
+const HireFromUs = ({ Hireshow, setHireShow, setMessage }) => {
     const [field, setField] = useState({
         name: "", phone: "", company: "", course: "", desigination: "", email: ""
     });
@@ -86,14 +86,18 @@ const HireFromUs = ({ Hireshow, setHireShow, toast }) => {
         e.preventDefault();
         if (validateForm()) {
             const data = await hireUsForm(field);
-          
-          return await   toast(data.message);
+          setField("")
+         return await  hireclose().then(() => setMessage(data.message) )
         }
+    };
+
+    const hireclose = async () => {
+        setHireShow(false);
     };
 
     return (
         <>
-            <Modal show={Hireshow} onHide={() => setHireShow(false)}>
+            <Modal show={Hireshow} onHide={() => hireclose()}>
                 <Modal.Header closeButton>
                     <h6 className="mb-30">Partner with Us for Hiring</h6>
                 </Modal.Header>
@@ -142,7 +146,7 @@ const HireFromUs = ({ Hireshow, setHireShow, toast }) => {
                     </div>
                 </Modal.Body>
             </Modal>
-            <ToastContainer/>
+           
         </>
     )
 }
