@@ -17340,3 +17340,10 @@ input[type="checkbox"] ~ label a{
     object-fit: cover;
     height: 200px;
 }
+.errorPage{
+  margin:0px;
+  text-align:center;
+}
+.errorPage h1 img {width:auto; height: auto;}
+.backToHome {text-align: right; margin-right:20px; margin-top:20px}
+.backToHome a {display:inline-block; background:#525FE1; padding:10px 20px; color:white; border-radius:20px}

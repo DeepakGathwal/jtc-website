@@ -22,10 +22,13 @@
     .hero-pad {text-align: center;}
     .edu-blog-details-area {padding:0 25px;}
     .slick-dots {display: none;}
+    .modal.fade .modal-dialog {left:50%; margin-left:-200px;}
+    .modal-backdrop {z-index: 999999;}
+    .modal {z-index: 9999999;}
     
     
 }
-@media screen and (min-width:541px)and(max-width:768px){
+@media screen and (min-width:541px) and (max-width:768px){
     .banner-style-1 .inner .content  {text-align: center;}
     .banner-style-1 .inner .content .title {font-size:27px}
     a.edu-btn, button.edu-btn {height: 40px; line-height: 40px; font-size:14px; margin-bottom:30px;}
