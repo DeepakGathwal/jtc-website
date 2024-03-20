@@ -62,7 +62,7 @@ const Page = () => {
           <div className="col-lg-9 order-1 order-lg-2">
             <div className="blog-details-1">
                <div className="row g-5">
-                  <div className="col-md-12 col-12 d-flex mb--20 justify-content-between">
+                  <div className="col-md-12 col-12 page-flex mb--20 justify-content-between">
                     <div className="load-more-btn">
                                 <button className="edu-btn"href="courses.php"><FaArrowLeft/> Previous</button>
                             </div>
@@ -77,7 +77,7 @@ const Page = () => {
 
            ))} 
             <div className="row g-5 mb--20">
-                  <div className="col-md-12 d-flex justify-content-between">
+                  <div className="col-md-12 page-flex justify-content-between">
                     <div className="load-more-btn">
                                 <button className="edu-btn" href="courses.php"> <FaArrowLeft /> Previous</button>
                             </div>

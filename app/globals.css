@@ -5127,7 +5127,7 @@ textarea:-ms-input-placeholder {
 /* Animation  */
 .eduvibe-animated-shape {
   position: relative;
-  z-index: 9; padding:0 !important }
+  z-index: 9; padding:0; }
 
 @-webkit-keyframes eduvibe-vsm-y-move {
   0% {
