@@ -13847,8 +13847,7 @@ Gallery Item
     .banner-style-1 {
       height: auto;
       min-height: auto;
-      padding: 100px 0;
-      padding-top: 150px; } }
+     } }
   @media only screen and (max-width: 767px) {
     .banner-style-1 {
       height: auto;

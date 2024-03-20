@@ -48,6 +48,20 @@
     .acc-section .accordion-item {padding-left:0 !important; padding-right:0 !important}
     .custom .accordion-item .accordion-title {padding-right:10px !important; padding-left:10px !important}
     .edu-breadcrumb-area {display:none;}
+    .mob-justify {width:100%; padding-top:40px}
+    
+    
+    
+}
+@media screen and (min-width:768px) and (max-width:900px){
+    .banner-style-1 .inner .content  {margin-top:40px}
+    .banner-style-1 .inner .content .title {font-size:27px;}
+    a.edu-btn, button.edu-btn {height: 40px; line-height: 40px; font-size:14px; margin-bottom:30px;}
+    .shape-dot-wrapper {display:none !important}
+    .header-style-2 .header-menu-bar {width:100%; justify-content: space-between !important;}
+    a.edu-btn, button.edu-btn {margin:0}
+    
+    .mob-place {width:50% !important}
     
     
     

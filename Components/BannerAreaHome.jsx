@@ -116,7 +116,7 @@ export default function BannerAreaHome() {
                         </div>
                         <div className="col-lg-12 col-xl-6 banner-right-content">
                             <div className="row g-5">
-                                <div className="col-lg-9 col-md-6 col-sm-6 offset-lg-3">
+                                <div className="col-lg-9 col-md-6 col-sm-6 offset-lg-3 mob-justify">
                                     <div className="edu-card card-type-6 radius-small">
                                         <div className="inner">
                                             <div className="container checkout-page-style">
