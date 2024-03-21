@@ -28,7 +28,7 @@
     
     
 }
-@media screen and (min-width:541px) and (max-width:768px){
+@media screen and (min-width:541px) and (max-width:767px){
     .banner-style-1 .inner .content  {text-align: center;}
     .banner-style-1 .inner .content .title {font-size:27px}
     a.edu-btn, button.edu-btn {height: 40px; line-height: 40px; font-size:14px; margin-bottom:30px;}
@@ -54,14 +54,46 @@
     
 }
 @media screen and (min-width:768px) and (max-width:900px){
+    .banner-style-1 .inner .content  {text-align: center;}
     .banner-style-1 .inner .content  {margin-top:40px}
     .banner-style-1 .inner .content .title {font-size:27px;}
     a.edu-btn, button.edu-btn {height: 40px; line-height: 40px; font-size:14px; margin-bottom:30px;}
     .shape-dot-wrapper {display:none !important}
     .header-style-2 .header-menu-bar {width:100%; justify-content: space-between !important;}
     a.edu-btn, button.edu-btn {margin:0}
-    
+    .mob-justify {width:100%; padding-top:40px}
     .mob-place {width:50% !important}
+    .about-section .abt-img {
+        /* margin-right: 100px; */
+        position: relative;
+        width: 65%;
+        margin: 0 auto;
+    }
+    .edu-breadcrumb-area{
+        display:none
+    }
+    
+    
+    
+}
+@media screen and (min-width:901px) and (max-width:1024px){
+    .banner-style-1 .inner .content  {margin-top:40px}
+    .banner-style-1 .inner .content .title {font-size:45px;}
+    a.edu-btn, button.edu-btn {height: 40px; line-height: 40px; font-size:14px; margin-bottom:30px;}
+    .shape-dot-wrapper {display:none !important}
+    .header-style-2 .header-menu-bar {width:100%; justify-content: space-between !important;}
+    a.edu-btn, button.edu-btn {margin:0}
+    .edu-counterup {margin:10px}
+    .mob-place {width:50% !important}
+    .forTablet {width:50% !important}
+    .forTablet .mob-justify {width:100%}
+    .container {max-width:90%; margin-top:50px}
+    .edu-breadcrumb-area{
+        display:none
+    }
+    a.edu-btn, button.edu-btn {line-height: 40px !important;}
+    .details_boxs {width:46%}
+    .edu-event.event-list .inner .content .event-meta li {margin:0 13px}
     
     
     

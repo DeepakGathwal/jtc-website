@@ -102,7 +102,7 @@ export default function BannerAreaHome() {
             <div className="slider-area banner-style-1 bg-white height-650 d-flex align-items-center" >
                 <div className="container eduvibe-animated-shape">
                     <div className="row g-5 align-items-center">
-                        <div className="col-lg-12 col-xl-6 my-4">
+                        <div className="col-lg-12 col-xl-6 my-4 forTablet">
                             <div className="inner">
                                 <div className="content">
                                     <span className="pre-title" id="changingPreTitle">Your Future Starts Now</span>
@@ -114,7 +114,7 @@ export default function BannerAreaHome() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-12 col-xl-6 banner-right-content">
+                        <div className="col-lg-12 col-xl-6 banner-right-content forTablet">
                             <div className="row g-5">
                                 <div className="col-lg-9 col-md-6 col-sm-6 offset-lg-3 mob-justify">
                                     <div className="edu-card card-type-6 radius-small">
