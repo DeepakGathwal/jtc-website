@@ -17354,6 +17354,9 @@ input[type="checkbox"] ~ label a{
 }
 .codebg h3 {
   margin: 10px 0 !important;
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
 }
 .codebg pre.code {
   white-space: pre-wrap;
