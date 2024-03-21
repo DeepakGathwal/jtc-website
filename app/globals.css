@@ -17346,3 +17346,53 @@ input[type="checkbox"] ~ label a{
 .errorPage h1 img {width:auto; height: auto;}
 .backToHome {text-align: right; margin-right:20px; margin-top:20px}
 .backToHome a {display:inline-block; background:#525FE1; padding:10px 20px; color:white; border-radius:20px}
+
+.codebg {
+  background:#f6f6f6;
+  border-radius: 10px;
+  padding: 5px 20px;
+}
+.codebg h3 {
+  margin: 10px 0 !important;
+}
+.codebg pre.code {
+  white-space: pre-wrap;
+  display: flex;
+  flex-direction: column;
+  background: #454545;
+  color: #fff;
+  padding: 15px;
+  font-size: 15px;
+  font-weight: 400;
+  margin: 10px 0 15px 0 !important;
+}
+pre.code:before {
+    font-family: monospace;
+}
+pre.code code {
+    color: #fff;
+}
+pre.code code:before {
+    width: 8em;         /* doesn't work */
+    padding-left: auto; /* doesn't work */
+    margin-left: auto;  /* doesn't work */
+    text-align: right;  /* doesn't work */
+}
+.gjs-button {
+  border-radius: 5px;
+  display: inline-block;
+  height: 60px;
+  line-height: 60px;
+  color: var(--color-white);
+  background: var(--color-primary);
+  padding: 0 30px;
+  font-size: 18px;
+  font-weight: 700;
+  transition: 0.4s;
+  font-family: var(--font-primary);
+  border: 0 none;
+  margin: 20px 0;
+}
+.gjs-button a {
+  color: #fff;
+}
