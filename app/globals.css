@@ -9582,7 +9582,7 @@ border-radius: 5px; }
   padding: 20px 30px 30px;
   border-radius: 5px; }
   .edu-course-widget .widget-title {
-    border-bottom: 1px solid rgba(45, 40, 78, 0.07);
+    border-bottom: 1px solid #e7eaee;
     padding-bottom: 20px;
     font-weight: 700;
     font-size: 24px;
@@ -13134,7 +13134,7 @@ Gallery Item
     Blog Sidebar Styles 
 ----------------------------*/
 .edu-blog-widget {
-  background: #F5F5F5;
+  background: #f8f9fa;
   border-radius: 5px;
   padding: 15px; }
   @media only screen and (max-width: 767px) {

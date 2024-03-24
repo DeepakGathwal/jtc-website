@@ -1,0 +1,43 @@
+
+@media (min-width: 992px) {
+    .tutorial-menu{
+        display: none;
+    }
+}
+@media (max-width: 991px) {
+    .tutorial-menu {
+        display: flex;
+        position: fixed;
+        top: 10em;
+        left: 0;
+        padding: 6px;
+        background: #525fe1;
+        color: #fff;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        z-index: 9999;
+    }
+    .tutorial-menu svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+@media (max-width: 541px) {
+    aside.edu-blog-sidebar.active {
+        top: 5.7em;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 5.7em)
+    }
+}
+@media (min-width: 541px) and (max-width:991px) {
+    .edu-blog-details-area {
+        padding: 0 25px;
+    }
+    aside.edu-blog-sidebar.active {
+        top: 5.7em;
+        left: 0;
+        width: 300px;
+        height: calc(100vh - 5.7em)
+    }
+}
