@@ -115,7 +115,7 @@ const Page = () => {
 					</div>
 					<div className="course-details-card mt--40">
 
-						<div className="container">
+						<div className="">
 							<div className="row justify-content-between">
 								<CourceCategory coursename={coursename} router={router} />
 								<SyllybusDownload coursename={coursename} toast={toast}/>

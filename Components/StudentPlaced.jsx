@@ -55,7 +55,7 @@ export default function StudentPlaced() {
             <div className="eduvibe-home-five-course slider-dots edu-course-area edu-section-gapTop edu-section-gapBottom bg-image">
                 <div className="container eduvibe-animated-shape">
                     <div className="row g-5">
-                        <div className="col-lg-6 col-md-6">
+                        <div className="col-lg-6 col-md-12">
                             <div className="section-title text-start">
                                 <span className="pre-title">Companies</span>
                                 <h3 className="title tg-svg">JTC <span className="position-relative color-primary"><span className="svg-icon" id="svg-3"><svg width="100%" height="100%" viewBox="0 0 145 25" fill="none" xmlns="http://www.w3.org/2000/svg">
