@@ -3,28 +3,66 @@
     .tutorial-menu{
         display: none;
     }
+    .tut-header-nav {
+        display: none;
+    }
 }
 @media (max-width: 991px) {
     .tutorial-menu {
         display: flex;
-        position: fixed;
-        top: 10em;
-        left: 0;
-        padding: 6px;
-        background: #525fe1;
         color: #fff;
-        border-top-right-radius: 10px;
-        border-bottom-right-radius: 10px;
         z-index: 9999;
     }
     .tutorial-menu svg {
         width: 18px;
         height: 18px;
     }
+    .tut-header-nav ul {
+        width: calc(100% - 28px);
+        max-width: calc(100% - 28px);
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        list-style: none;
+        padding: 0;
+        margin: 0 0 0 10px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .tut-header-nav ul li {
+        margin: 0;
+    }
+    .tut-header-nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2rem;
+        padding-inline: 1rem;
+        padding-block: 0.6rem;
+        display: inline-block;
+        text-wrap: nowrap;
+    }
+    .edu-blog-widget{
+        border-radius: 0;
+    }
+    .tut-header-nav {
+        background: #282a35;
+        display: flex;
+        flex-direction: row;
+        position: sticky;
+        top: 90px;
+        width: 100%;
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        justify-content: space-between;
+        align-items: center;
+        height: 32px;
+    }
 }
 @media (max-width: 541px) {
     aside.edu-blog-sidebar.active {
-        top: 5.7em;
+        top: 7.6em;
         left: 0;
         width: 100%;
         height: calc(100vh - 5.7em)
@@ -35,7 +73,7 @@
         padding: 0 25px;
     }
     aside.edu-blog-sidebar.active {
-        top: 5.7em;
+        top: 7.6em;
         left: 0;
         width: 300px;
         height: calc(100vh - 5.7em)

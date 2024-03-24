@@ -43,17 +43,28 @@ const Page = () => {
 
   return (
     <>
+    <div className="tut-header-nav">
+      <span className={`tutorial-menu ${istutActive ? 'active' : ''}`} onClick={toggleMenu}>
+      <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8.59375 14.8438H41.4062M8.59375 25H41.4062M8.59375 35.1562H41.4062" stroke="white" stroke-width="4.6875" stroke-miterlimit="10" stroke-linecap="round"/>
+      </svg>
+      </span>
+      <ul>
+        <li><Link href="#" title="HTML Tutorial">Python</Link></li>
+        <li><Link href="#" title="HTML Tutorial">Javascript</Link></li>
+        <li><Link href="#" title="HTML Tutorial">SQL</Link></li>
+        <li><Link href="#" title="HTML Tutorial">Selenium</Link></li>
+        <li><Link href="#" title="HTML Tutorial">Mongo DB</Link></li>
+        <li><Link href="#" title="HTML Tutorial">Oracle</Link></li>
+        <li><Link href="#" title="HTML Tutorial">React JS</Link></li>
+        <li><Link href="#" title="HTML Tutorial">Jquery</Link></li>
+        <li><Link href="#" title="HTML Tutorial">Java</Link></li>
+        <li><Link href="#" title="HTML Tutorial">Next JS</Link></li>
+      </ul>
+    </div>
       <div className="edu-blog-details-area mt--20 bg-color-white">
        <div className="row w-100">
           <div className="col-lg-3 order-2 order-lg-1">
-            <span className={`tutorial-menu ${istutActive ? 'active' : ''}`} onClick={toggleMenu}>
-              <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11.875 10.6875H33.25M11.875 19H33.25M11.875 27.3125H33.25" stroke="white" stroke-width="3.125" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M5.9375 11.875C6.59334 11.875 7.125 11.3433 7.125 10.6875C7.125 10.0317 6.59334 9.5 5.9375 9.5C5.28166 9.5 4.75 10.0317 4.75 10.6875C4.75 11.3433 5.28166 11.875 5.9375 11.875Z" stroke="white" stroke-width="3.125" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M5.9375 20.1875C6.59334 20.1875 7.125 19.6558 7.125 19C7.125 18.3442 6.59334 17.8125 5.9375 17.8125C5.28166 17.8125 4.75 18.3442 4.75 19C4.75 19.6558 5.28166 20.1875 5.9375 20.1875Z" stroke="white" stroke-width="3.125" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M5.9375 28.5C6.59334 28.5 7.125 27.9683 7.125 27.3125C7.125 26.6567 6.59334 26.125 5.9375 26.125C5.28166 26.125 4.75 26.6567 4.75 27.3125C4.75 27.9683 5.28166 28.5 5.9375 28.5Z" stroke="white" stroke-width="3.125" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-</span>
             <aside className={`edu-blog-sidebar ${istutActive ? 'active' : ''}`}>
               <div className="edu-blog-widget widget-categories">
                 {state && state.map((el, i) => (
