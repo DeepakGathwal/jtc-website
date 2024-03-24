@@ -2,7 +2,6 @@ import { executeQuery } from "@/conn/conn";
 import { sendEmail } from "@/middelware/sendEmail";
 import { NextResponse } from "next/server";
 import { client } from "@/middelware/redisFile";
-import { Table } from "react-bootstrap";
 
 
 

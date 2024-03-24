@@ -1,6 +1,7 @@
 "use client"
 import React, {useState, useEffect } from 'react'
 import Link from 'next/link';
+import { setCookie } from 'cookies-next';
 import { useParams,useRouter } from 'next/navigation'
 import { FaArrowLeft,FaArrowRight } from "react-icons/fa";
 import { tutorialChapter, tutorialTopic } from '@/apis/apis';
@@ -11,9 +12,9 @@ const Page = () => {
   const router = useParams()
   const navigate = useRouter();
   const {chapter,topic } = router
-
   const allChapters = async() => {
     if(topic == 'undefined') return navigate.push('/')
+    setCookie('code', `${chapter}&&${topic}`);
       const {data} = await tutorialChapter(chapter)
       singleTopic()
      return data && setState(data)
@@ -21,6 +22,7 @@ const Page = () => {
 
   const singleTopic = async() => {
     const {data} = await tutorialTopic(topic)
+    setCookie('code', `${chapter}&&${topic}`);
     return  data && setSection(data)
   }
 

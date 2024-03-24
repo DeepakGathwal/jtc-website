@@ -10,6 +10,7 @@ let company = "company"
 let testimonials = "testimonials"
 let footer = "footer"
 let blog = "blog"
+let codes = "code"
 let about = "about"
 let navbar = "navbar"
 let tutorial = "tutorial"
@@ -355,3 +356,25 @@ export const tutorialTopic = async (topic) => {
 };
 
 
+
+export const sendCode = async(chapter, topic, code) =>{
+  try{
+    const value = JSON.stringify({ chapter, topic, code })
+    const { data } = await instance.post(codes, value);
+    return data;
+  } catch (err) {
+    return err
+  
+  }
+}
+
+export const executeCode = async(initalcode) =>{
+  try{
+    const value = JSON.stringify({initalcode })
+    const { data } = await instance.patch(codes, value);
+    return data;
+  } catch (err) {
+    return err
+  
+  }
+}
