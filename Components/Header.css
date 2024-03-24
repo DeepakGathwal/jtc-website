@@ -221,9 +221,102 @@
 .edu-header .inner-header {
     min-height: 90px;
 }
+.mega-pop-menu {
+    display: none;
+}
+.mega-pop-menu .menu {
+    padding: 15px 20px;
+    list-style: none;
+    margin: 0;
+    width: 100%;
+}
+.mega-pop-menu .menu li.men-list a {
+    padding: 8px 0;
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Urbanist", sans-serif;
+}
+.mega-pop-menu .menu li.men-list:hover {
+    color: blue;
+}
+.mega-pop-menu .menu li.men-list {
+    font-size: 16px;
+    line-height: 1.63;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #6f6b80;
+    font-weight: 500;
+}
+.mega-pop-menu .course-menu.active li.men-list .courses-button .course-link:nth-child(odd) {
+    background: #FFF3EE;
+}
+.mega-pop-menu .course-menu.active li.men-list .courses-button .course-link:nth-child(even) {
+    background: #FAEFFA;
+}
+.mega-pop-menu .course-menu.active li.men-list .courses-button .course-link {
+    padding: 3px 10px;
+    display: block;
+    font-size: 15px;
+    color: #231F40;
+}
+.mega-pop-menu .course-menu.active li.men-list .courses-button {
+    display: none;
+    flex-direction: row;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+}
+.mega-pop-menu .course-menu.active li.men-list .courses-button.active {
+    display: flex;
+}
+.mega-pop-menu .course-menu.active li.men-list {
+    width: 100%;
+}
+.mega-pop-menu .course-menu.active .menu {
+    padding: 0 0 0 10px;
+}
+.mega-pop-menu .menu li + li {
+    border-top: 1px solid #eeeeee;
+}
+.mega-pop-menu .menu .course-menu + li.men-list {
+    border-top: 1px solid #eeeeee;
+}
+.mega-pop-menu .course-menu {
+    display: none;
+}
+.course-menu.active {
+    width: 100%;
+    border-top: 1px solid #eeeeee;
+    padding: 0px 0;
+    display: flex;
+    flex-direction: column;
+}
 
-@media (max-width:768px) {
+
+@media screen and  (max-width:1241px) {
     .mega-menu {
         display: none;
+    }
+    header .mob-menu {
+        margin: 0 15px;
+    }
+    .mega-pop-menu {
+        display: flex;
+        position: fixed;
+        background: #fff;
+        top: 90px;
+        right: -300%;
+        z-index: 9999;
+        width: 100%;
+        max-width: 100%;
+        max-height: calc(100vh - 90px);
+        min-height: calc(100vh - 90px);
+        transition: all 0.8s ease;
+        overflow: auto;
+        border-top: 1px solid #eeeeee;
+    }
+    .mega-pop-menu.active {
+        right: 0;
     }
 }

@@ -39,8 +39,8 @@ return (
     <div className="eduvibe-home-two-counter edu-counterup-area counterup-wrapper-1 edu-section-gapBottom edu-section-gapTop">
             <div className="container eduvibe-animated-shape">
                 <div className="row gy-5 align-items-center">
-                    <div className="col-lg-6">
-                        <div className="row g-5 pr--75 pr_md--0 pr_sm--0">
+                    <div className="col-lg-6 mob-place">
+                        <div className="page-flex for-mob g-5 pr--75 pr_md--0 pr_sm--0">
                             <div className="col-lg-6 col-md-6 col-sm-6 col-6">
                                 <div className="edu-counterup">
                                     <div className="inner">
@@ -113,7 +113,7 @@ return (
 
                         </div>
                     </div>
-                    <div className="col-lg-6">
+                    <div className="col-lg-6 mob-place">
                         <div className="choose-us-2">
                             <div className="inner">
                                 <div className="section-title text-left" >

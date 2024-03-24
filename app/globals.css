@@ -5100,7 +5100,7 @@ textarea:-ms-input-placeholder {
   /* background-image: url(/assets/images/bg/breadcrumb-bg.jpg);  */
   position: relative;
 }
-.breadCrumb_banner {}
+
   .edu-breadcrumb-area .shape-image {
     position: absolute;
     z-index: -1; }
@@ -5122,11 +5122,12 @@ textarea:-ms-input-placeholder {
     .edu-breadcrumb-area .shape-image.shape-image-6 {
       bottom: -30px;
       left: -108px; }
+      .page-flex {display:flex; flex-wrap: wrap;}
 
 /* Animation  */
 .eduvibe-animated-shape {
   position: relative;
-  z-index: 9; padding:0 !important }
+  z-index: 9; padding:0; }
 
 @-webkit-keyframes eduvibe-vsm-y-move {
   0% {
@@ -6353,7 +6354,7 @@ button.edu-btn {
   font-size: 40px; }
   @media only screen and (max-width: 575px) {
     .section-title .title {
-      font-size: 32px; } }
+      font-size: 27px; } }
   @media only screen and (max-width: 767px) {
     .section-title .title br {
       display: none; } }
@@ -11680,7 +11681,7 @@ border-radius: 5px; }
       padding: 30px 15px; } }
   @media only screen and (max-width: 767px) {
     .edu-counterup {
-      padding: 30px 15px; } }
+      padding: 30px 15px; margin:10px } }
   .edu-counterup .inner .icon {
     margin-bottom: 25px; }
     .edu-counterup .inner .icon img {
@@ -13846,8 +13847,7 @@ Gallery Item
     .banner-style-1 {
       height: auto;
       min-height: auto;
-      padding: 100px 0;
-      padding-top: 150px; } }
+     } }
   @media only screen and (max-width: 767px) {
     .banner-style-1 {
       height: auto;
@@ -16653,8 +16653,8 @@ height: 100vh; }
 .pdf_download a {display:block; border-radius:20px; border:1px solid #333; padding:8px 60px; font-weight:bold;}
 .eroll_Btn a {display:block; border-radius:20px; background:#0c3462; padding:8px 60px; color:#fff; font-weight:bold;}
 .video_wrapper object {border:5px solid #333; display:block}
-.learnCourse {display:flex; justify-content: space-between;}
-.details_boxs { background: #FFF3EE;padding: 20px;border-radius: 10px; margin:10px;}
+.learnCourse {display:flex; justify-content: space-between;flex-wrap: wrap;}
+.details_boxs { background: #FFF3EE;padding: 20px;border-radius: 10px; margin:10px;width:30%}
 .details_boxs .detail_icons {width: 60px;background: #fff;border-radius: 50%;margin: 0 auto;padding: 10px;}
 .details_boxs .details_cont {text-align: center;margin-top: 20px;}
 .card-body {max-height: 250px;overflow-y: auto;}
@@ -17338,4 +17338,64 @@ input[type="checkbox"] ~ label a{
     max-height: 200px;
     object-fit: cover;
     height: 200px;
+}
+.errorPage{
+  margin:0px;
+  text-align:center;
+}
+.errorPage h1 img {width:auto; height: auto;}
+.backToHome {text-align: right; margin-right:20px; margin-top:20px}
+.backToHome a {display:inline-block; background:#525FE1; padding:10px 20px; color:white; border-radius:20px}
+
+.codebg {
+  background:#f6f6f6;
+  border-radius: 10px;
+  padding: 5px 20px;
+}
+.codebg h3 {
+  margin: 10px 0 !important;
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
+}
+.codebg pre.code {
+  white-space: pre-wrap;
+  display: flex;
+  flex-direction: column;
+  background: #454545;
+  color: #fff;
+  padding: 15px;
+  font-size: 15px;
+  font-weight: 400;
+  margin: 10px 0 15px 0 !important;
+}
+pre.code:before {
+    font-family: monospace;
+}
+pre.code code {
+    color: #fff;
+}
+pre.code code:before {
+    width: 8em;         /* doesn't work */
+    padding-left: auto; /* doesn't work */
+    margin-left: auto;  /* doesn't work */
+    text-align: right;  /* doesn't work */
+}
+.gjs-button {
+  border-radius: 5px;
+  display: inline-block;
+  height: 60px;
+  line-height: 60px;
+  color: var(--color-white);
+  background: var(--color-primary);
+  padding: 0 30px;
+  font-size: 18px;
+  font-weight: 700;
+  transition: 0.4s;
+  font-family: var(--font-primary);
+  border: 0 none;
+  margin: 20px 0;
+}
+.gjs-button a {
+  color: #fff;
 }

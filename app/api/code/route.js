@@ -1,5 +1,5 @@
 import { executeQuery } from "@/conn/conn";
-import { execSync } from 'child_process';
+import { execSync, spawnSync } from 'child_process';
 import fs from 'fs';
 import { JSDOM } from 'jsdom';
 import { client } from "@/middelware/redisFile";
@@ -38,7 +38,7 @@ export async function POST(req) {
     }
 }
 
-// All Cources Category
+// Java Compiler
 export async function PATCH(req) {
     const { initalcode } = await req.json() 
     const findName = initalcode.split(/public\s+static\s+void\s+main\s*\(\s*String\s*\[\s*\]\s*/)[0];
@@ -67,5 +67,36 @@ try {
         
     ]);
 }
+
+}
+
+// Python Compiler
+export async function PUT(req) {
+    const { initalcode } = await req.json() 
+    
+   // Execute Python script synchronously
+const pythonProcess = spawnSync('python', ['-c', initalcode]);
+
+// Handle output
+if (pythonProcess.stdout && pythonProcess.stdout.length > 0) {
+    const stdoutData = pythonProcess.stdout.toString('utf8');
+    return NextResponse.json({ data: stdoutData }, { success: true }, { status: 200 });
+}
+
+// Handle errors
+if (pythonProcess.stderr && pythonProcess.stderr.length > 0) {
+    const stderrData = pythonProcess.stderr.toString('utf8');
+    return NextResponse.json({ data: stderrData }, { success: false }, { status: 500 });
+}
+
+// Handle process exit
+if (pythonProcess.status !== 0) {
+    console.error(`Python process exited with code ${pythonProcess.status}`);
+    return NextResponse.json({ data: 'Python process exited with non-zero status' }, { success: false }, { status: 500 });
+}
+
+// If no output, error, or non-zero exit status, assume success
+return NextResponse.json({ data: 'Python script executed successfully' }, { success: true }, { status: 200 });
+ 
 
 }

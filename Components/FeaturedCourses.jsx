@@ -45,7 +45,7 @@ export default function FeaturedCourses() {
             {
                 breakpoint: 577,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 2,
                     slidesToScroll: 1,
                 }
             },
@@ -65,7 +65,7 @@ export default function FeaturedCourses() {
         <>
 
             <div className="eduvibe-home-five-cats edu-about-area about-style-5 edu-section-gap  bg-color-white">
-                <div className="container eduvibe-animated-shape">
+                <div className="container eduvibe-animated-shape for-mob">
                     <div className="row g-5">
                         <div className="col-lg-6 col-md-6 order-1">
                             <div className="section-title white-title text-start">

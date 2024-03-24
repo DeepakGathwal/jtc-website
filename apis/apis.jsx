@@ -368,10 +368,21 @@ export const sendCode = async(chapter, topic, code) =>{
   }
 }
 
-export const executeCode = async(initalcode) =>{
+export const executejava = async(initalcode) =>{
   try{
     const value = JSON.stringify({initalcode })
     const { data } = await instance.patch(codes, value);
+    return data;
+  } catch (err) {
+    return err
+  
+  }
+}
+
+export const executepython = async(initalcode) =>{
+  try{
+    const value = JSON.stringify({initalcode })
+    const { data } = await instance.put(codes, value);
     return data;
   } catch (err) {
     return err

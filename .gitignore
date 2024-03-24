@@ -7,6 +7,8 @@
 .yarn/install-state.gz
 
 /.history/
+*.class
+!important.class
 
 /public
 

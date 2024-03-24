@@ -2,13 +2,14 @@
 import React,{useEffect, useState} from 'react'
 import { useParams,useRouter } from 'next/navigation'
 import { getCookie } from 'cookies-next';
-import { executeCode, sendCode } from '@/apis/apis';
+import {  executejava, executepython, sendCode } from '@/apis/apis';
 import AceEditor from 'react-ace';
 import 'ace-builds/src-noconflict/mode-javascript';
 import 'ace-builds/src-noconflict/theme-monokai';
 
 const Page = () => {
     const [initalcode, setInitialCode] = useState('')
+    const [language, setLanguage] = useState([])
 const value = getCookie('code')
 
 const router = useParams()
@@ -26,10 +27,14 @@ const getCode = async() =>{
 const [output, setOutput] = useState('');
 
 const runCode = async () => {
-   
-      const {data} = await executeCode(initalcode) // Send code to backend for execution
+   if(language == 'python'){
+      const {data} = await executepython(initalcode) // Send code to backend for execution
       return  setOutput(data);
-  
+    }else {
+    const {data} = await executejava(initalcode) // Send code to backend for execution
+    return  setOutput(data);
+
+  }
   };
 
 const handleCodeChange= (newCode) => {
@@ -54,6 +59,10 @@ useEffect(() => {
       style={{ width: '100%', height: '300px' }} // Set editor style
     />  }
      <div>
+        <select name="language" id="" onChange={(e) => setLanguage(e.target.value)} >
+          <option value="java">Java</option>
+          <option value="python">Python</option>
+        </select>
         <button onClick={runCode}>Run Code</button>
       </div>
       <div>

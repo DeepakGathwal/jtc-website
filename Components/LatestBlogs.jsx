@@ -14,7 +14,7 @@ export default function LatestBlogs() {
             <div className="wrapper">
                 <div className="container eduvibe-animated-shape">
                     <div className="row g-5">
-                        <div className="col-lg-6 col-md-6">
+                        <div className="col-xs-6 col-lg-6 col-md-6">
                             <div className="section-title text-start">
                                 <span className="pre-title">Always Smart to Read Blogs</span>
                                 <h3 className="title tg-svg">Latest <span className="position-relative color-primary"><span className="svg-icon" id="svg-3"><svg width="100%" height="100%" viewBox="0 0 145 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,7 +23,7 @@ export default function LatestBlogs() {
                                 </svg></span>Blog</span></h3>
                             </div>
                         </div>
-                        <div className="col-lg-6 col-md-6">
+                        <div className="col-xs-6 col-lg-6 col-md-6">
                         <div className="view-more-btn text-end">
                            <Link href='/blog' className="edu-btn">
                                 Browse All Blogs  <FaArrowRight />
