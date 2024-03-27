@@ -14,6 +14,7 @@ let codes = "code"
 let about = "about"
 let navbar = "navbar"
 let tutorial = "tutorial"
+let compiler = "compiler"
 
 
 // All Lists of Blogs 
@@ -383,6 +384,28 @@ export const executepython = async(initalcode) =>{
   try{
     const value = JSON.stringify({initalcode })
     const { data } = await instance.put(codes, value);
+    return data;
+  } catch (err) {
+    return err
+  
+  }
+}
+
+export const executecpp = async(initalcode) =>{
+  try{
+    const value = JSON.stringify({initalcode })
+    const { data } = await instance.post(compiler, value);
+    return data;
+  } catch (err) {
+    return err
+  
+  }
+}
+
+export const executec = async(initalcode) =>{
+  try{
+    const value = JSON.stringify({initalcode })
+    const { data } = await instance.put(compiler, value);
     return data;
   } catch (err) {
     return err

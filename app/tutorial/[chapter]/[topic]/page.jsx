@@ -46,7 +46,7 @@ const Page = () => {
     <div className="tut-header-nav">
       <span className={`tutorial-menu ${istutActive ? 'active' : ''}`} onClick={toggleMenu}>
       <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M8.59375 14.8438H41.4062M8.59375 25H41.4062M8.59375 35.1562H41.4062" stroke="white" stroke-width="4.6875" stroke-miterlimit="10" stroke-linecap="round"/>
+        <path d="M8.59375 14.8438H41.4062M8.59375 25H41.4062M8.59375 35.1562H41.4062" stroke="white" strokeWidth="4.6875" strokeMiterlimit="10" strokeLinecap="round"/>
       </svg>
       </span>
       <ul>

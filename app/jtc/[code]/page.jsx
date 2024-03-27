@@ -2,7 +2,7 @@
 import React,{useEffect, useState} from 'react'
 import { useParams,useRouter } from 'next/navigation'
 import { getCookie } from 'cookies-next';
-import {  executejava, executepython, sendCode } from '@/apis/apis';
+import {  executejava, executepython, sendCode , executecpp,executec} from '@/apis/apis';
 import AceEditor from 'react-ace';
 import 'ace-builds/src-noconflict/mode-javascript';
 import 'ace-builds/src-noconflict/theme-monokai';
@@ -21,20 +21,30 @@ const getCode = async() =>{
     const topic = value && value.split('&&')[1]
     const {data} = await sendCode(chapter, topic, code)
    
-    setInitialCode(data);
+   return data  ?  setInitialCode(data) : router.push('/tutorial');
 }
 
 const [output, setOutput] = useState('');
 
 const runCode = async () => {
-   if(language == 'python'){
-      const {data} = await executepython(initalcode) // Send code to backend for execution
-      return  setOutput(data);
-    }else {
-    const {data} = await executejava(initalcode) // Send code to backend for execution
-    return  setOutput(data);
-
+  console.log(language)
+let data ; 
+  switch(language){
+    case 'python':data =  await executepython(initalcode)
+    break;
+    case 'c++':data =  await executecpp(initalcode)
+    break;
+    case 'conly':data =  await executec(initalcode)
+    break;
+    
+    default:data =  await executejava(initalcode)
+    break;
+    
   }
+   
+    return data && setOutput(data.data);
+
+  
   };
 
 const handleCodeChange= (newCode) => {
@@ -50,7 +60,7 @@ useEffect(() => {
   return (
     <div>
    {initalcode && <AceEditor
-      mode="java" // Set the editor mode
+      mode="javascript" // Set the editor mode
       theme="monokai" // Set the editor theme
       onChange={handleCodeChange} // Set the onChange event handler
       name="code-editor" // Set the editor name
@@ -62,6 +72,8 @@ useEffect(() => {
         <select name="language" id="" onChange={(e) => setLanguage(e.target.value)} >
           <option value="java">Java</option>
           <option value="python">Python</option>
+          <option value="c++">C++</option>
+          <option value="conly">C</option>
         </select>
         <button onClick={runCode}>Run Code</button>
       </div>

@@ -8,7 +8,10 @@
 
 /.history/
 *.class
-!important.class
+*.exe
+*.cpp
+*.c
+
 
 /public
 
