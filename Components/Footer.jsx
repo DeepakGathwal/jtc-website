@@ -115,9 +115,11 @@ export default function Footer() {
                             <div className="shape-image shape-image-1">
                                 <Image src="../assets/images/shapes/shape-21-01.png" alt="Shape Thumb" width={143} height={130}/>
                             </div>
+                            
                             <div className="shape-image shape-image-2">
-                                <Image src="../assets/images/shapes/shape-35.png" alt="Shape Thumb" width={122} height={123}/>
+                                <Image src="/assets/images/shapes/shape-35.png" alt="Shape Thumb" width={122} height={123}/>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
