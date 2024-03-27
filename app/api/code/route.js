@@ -42,29 +42,33 @@ export async function POST(req) {
 export async function PATCH(req) {
     const { initalcode } = await req.json() 
     const findName = initalcode.split(/public\s+static\s+void\s+main\s*\(\s*String\s*\[\s*\]\s*/)[0];
+ 
   const reversedString = findName.split('').reverse().join('');
-  
     const removeCurly = reversedString.split('ssalc')[0].replace('{', '').trim()
-    
+
     const newClassName = removeCurly.split('').reverse().join('');
-  
-fs.writeFileSync(`${newClassName}.java`, initalcode)
+    try {
+        fs.writeFileSync(`${newClassName}.java`, initalcode);
+       } catch (error) {
+        return NextResponse.json({ data:  ` error to execute that code ${initalcode}` }, { success: true }, { status: 200 })
+      }
+
 try {
     const dataBuffer = await execSync(`javac ${newClassName}.java && java ${newClassName}`);
+  if(!dataBuffer)   return NextResponse.json({ data:  ` error to execute that code ${initalcode}` }, { success: true }, { status: 200 })
 
     const data = await  dataBuffer.toString('utf8'); // Convert buffer to string
+  if(!data)   return NextResponse.json({ data:  ` error to execute that code ${initalcode}` }, { success: true }, { status: 200 })
 
     return NextResponse.json({ data }, { success: true }, { status: 200 })
 
 } catch (error) {
-    return NextResponse.json({ data: error.message }, { success: true }, { status: 200 })
-
+    return NextResponse.json({ data: error.message }, { success: false }, { status: 206 })
 
 } finally{
     await Promise.all([
         fs.unlinkSync(`${newClassName}.java`),
-        fs.unlinkSync(`${newClassName}.class`)
-        
+        fs.unlinkSync(`${newClassName}.class`) 
     ]);
 }
 

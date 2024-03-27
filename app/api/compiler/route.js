@@ -9,7 +9,13 @@ import { NextResponse } from "next/server";
 // Java Compiler
 export async function POST(req) {
     const { initalcode } = await req.json()  
-fs.writeFileSync(`cppcompiler.cpp`, initalcode)
+
+try {
+    fs.writeFileSync(`cppcompiler.cpp`, initalcode)
+   
+  } catch (error) {
+   return NextResponse.json({ data: `Error writing file: ${error.message}` }, { success: false }, { status: 206 });
+  }
 const command = `g++ -o cppcompiler cppcompiler.cpp && cppcompiler.exe`;
 try {
     const dataBuffer = await execSync(command);
@@ -17,9 +23,7 @@ try {
     return NextResponse.json({ data }, { success: true }, { status: 200 })
 
 } catch (error) {
-    return NextResponse.json({ data: error.message }, { success: true }, { status: 200 })
-
-
+    return NextResponse.json({ data: error.message }, { success: false }, { status: 206 })
 }
 
 }
@@ -27,7 +31,12 @@ try {
 // Python Compiler
 export async function PUT(req) {
     const { initalcode } = await req.json()  
-fs.writeFileSync(`ccompiler.c`, initalcode)
+try {
+    fs.writeFileSync(`ccompiler.c`, initalcode)
+   
+  } catch (error) {
+   return NextResponse.json({ data: `Error writing file: ${error.message}` }, { success: false }, { status: 206 });
+  }
 const command = `g++ -o ccompiler ccompiler.c && ccompiler.exe`;
 try {
     const dataBuffer = await execSync(command);
@@ -35,9 +44,7 @@ try {
     return NextResponse.json({ data }, { success: true }, { status: 200 })
 
 } catch (error) {
-    return NextResponse.json({ data: error.message }, { success: true }, { status: 200 })
-
-
+    return NextResponse.json({ data: error.message }, { success: false }, { status: 206 })
 }
 
 }

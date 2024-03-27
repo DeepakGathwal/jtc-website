@@ -18,6 +18,7 @@ const {code} = router
 
 const getCode = async() =>{
     const chapter = value && value.split('&&')[0]
+    setLanguage(chapter)
     const topic = value && value.split('&&')[1]
     const {data} = await sendCode(chapter, topic, code)
    
@@ -27,7 +28,6 @@ const getCode = async() =>{
 const [output, setOutput] = useState('');
 
 const runCode = async () => {
-  console.log(language)
 let data ; 
   switch(language){
     case 'python':data =  await executepython(initalcode)
@@ -36,15 +36,13 @@ let data ;
     break;
     case 'conly':data =  await executec(initalcode)
     break;
-    
-    default:data =  await executejava(initalcode)
+    case 'core-java':data =  await executejava(initalcode)
     break;
-    
+    default: return setOutput("Language Not Select") 
   }
    
     return data && setOutput(data.data);
 
-  
   };
 
 const handleCodeChange= (newCode) => {
@@ -70,7 +68,7 @@ useEffect(() => {
     />  }
      <div>
         <select name="language" id="" onChange={(e) => setLanguage(e.target.value)} >
-          <option value="java">Java</option>
+          <option value="core-java">Java</option>
           <option value="python">Python</option>
           <option value="c++">C++</option>
           <option value="conly">C</option>
